@@ -95,9 +95,9 @@
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label11.Location = new System.Drawing.Point(510, 266);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 20);
+            this.label11.Size = new System.Drawing.Size(126, 20);
             this.label11.TabIndex = 109;
-            this.label11.Text = "Admin";
+            this.label11.Text = "asadadasdsad";
             // 
             // label10
             // 

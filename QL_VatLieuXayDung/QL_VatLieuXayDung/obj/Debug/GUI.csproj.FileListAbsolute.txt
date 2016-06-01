@@ -63,3 +63,6 @@ C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXay
 C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe.licenses
 C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDatHangNCC.resources
 C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmGiamGia.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.exe.config
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.pdb
