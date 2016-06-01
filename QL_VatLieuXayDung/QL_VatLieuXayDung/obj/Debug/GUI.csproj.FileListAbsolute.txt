@@ -1,0 +1,65 @@
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.pdb
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.FormMain.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmKhachHang.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLoaiSanPham.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhaCungCap.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhanVien.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhaSanXuat.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhomTaiKhoan.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmPhanQuyen.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmSanPham.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLienHe.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongTinNguoiDung.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.Properties.Resources.resources
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csproj.GenerateResource.Cache
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe.licenses
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.exe
+E:\bt visual 2016\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.pdb
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.exe.config
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.exe
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.pdb
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.FormMain.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmCauHinh.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDangNhap.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmKhachHang.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLoaiSanPham.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhaCungCap.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhanVien.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhaSanXuat.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhomTaiKhoan.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmPhanQuyen.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmSanPham.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLienHe.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongTinNguoiDung.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.Properties.Resources.resources
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csproj.GenerateResource.Cache
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe.licenses
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.pdb
+E:\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.exe.config
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.pdb
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.exe
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\bin\Debug\QL_VatLieuXayDung.pdb
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.FormMain.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmCauHinh.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDangNhap.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmKhachHang.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLoaiSanPham.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhaCungCap.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhanVien.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhaSanXuat.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmNhomTaiKhoan.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmPhanQuyen.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmSanPham.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLienHe.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongTinNguoiDung.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.Properties.Resources.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe.licenses
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDatHangNCC.resources
+C:\Users\Lee_Shawran\Desktop\QL_VatLieuXayDung_2\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmGiamGia.resources
