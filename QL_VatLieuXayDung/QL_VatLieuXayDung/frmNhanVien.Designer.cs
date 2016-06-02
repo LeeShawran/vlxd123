@@ -62,7 +62,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblNhanvien = new System.Windows.Forms.Label();
             this.dgvNV = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +72,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNhanvien = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,6 +130,7 @@
             this.cmbChucvu_NV.Name = "cmbChucvu_NV";
             this.cmbChucvu_NV.Size = new System.Drawing.Size(205, 21);
             this.cmbChucvu_NV.TabIndex = 85;
+            this.cmbChucvu_NV.SelectedIndexChanged += new System.EventHandler(this.cmbChucvu_NV_SelectedIndexChanged);
             // 
             // lblChucvu_NV
             // 
@@ -339,7 +340,6 @@
             this.btnThem_NV.Text = "Thêm";
             this.btnThem_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem_NV.UseVisualStyleBackColor = true;
-            this.btnThem_NV.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox2
             // 
@@ -389,17 +389,6 @@
             this.groupBox3.TabIndex = 84;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhân viên";
-            // 
-            // lblNhanvien
-            // 
-            this.lblNhanvien.AutoSize = true;
-            this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblNhanvien.Location = new System.Drawing.Point(592, 8);
-            this.lblNhanvien.Name = "lblNhanvien";
-            this.lblNhanvien.Size = new System.Drawing.Size(181, 33);
-            this.lblNhanvien.TabIndex = 85;
-            this.lblNhanvien.Text = "NHÂN VIÊN";
             // 
             // dgvNV
             // 
@@ -463,6 +452,17 @@
             // 
             this.Column9.HeaderText = "Ghi chú";
             this.Column9.Name = "Column9";
+            // 
+            // lblNhanvien
+            // 
+            this.lblNhanvien.AutoSize = true;
+            this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblNhanvien.Location = new System.Drawing.Point(592, 8);
+            this.lblNhanvien.Name = "lblNhanvien";
+            this.lblNhanvien.Size = new System.Drawing.Size(181, 33);
+            this.lblNhanvien.TabIndex = 85;
+            this.lblNhanvien.Text = "NHÂN VIÊN";
             // 
             // frmNhanVien
             // 

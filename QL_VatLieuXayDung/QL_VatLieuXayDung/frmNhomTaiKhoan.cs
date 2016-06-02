@@ -20,30 +20,41 @@ namespace QL_VatLieuXayDung
             conn = Connect.getConnect();
         }
 
-        public void lamMoi()
+        public void Refresh_NTK()
         {
             conn.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_NHOM_TAI_KHOAN", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            dgvNhomTK.DataSource = dt;
+            dgvNTK.DataSource = dt;
             conn.Close();
         }
 
         private void frmNhomTaiKhoan_Load(object sender, EventArgs e)
         {
-            lamMoi();
+            btnLuu_NTK.Enabled = false;
+            Refresh_NTK();
+        }
+
+        private bool Kiem_tra_khoa_chinh()
+        {
+            bool tatkt = false;
+            string MaNTK = txtMaNTK_NTK.Text;
+            OleDbCommand cmd = new OleDbCommand("select * from T_NHOM_TAI_KHOAN", conn);
+            OleDbDataReader PK = cmd.ExecuteReader();
+            while (PK.Read())
+            {
+                if (MaNTK == PK.GetString(0))
+                {
+                    tatkt = true;
+                    break;
+                }
+            }
+            return tatkt;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //btnThem.Enabled = false;
-            //groupBox1.Enabled = true;
-            //btnLuu.Enabled = true;
-            //btnSua.Enabled = false;
-            //btnXoa.Enabled = false;
-            //txttennhom.Enabled = true;
-
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_MAN_HINH", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -53,21 +64,21 @@ namespace QL_VatLieuXayDung
             conn.Open();
             //OleDbCommand cm = new OleDbCommand("insert into T_NHOM_TAI_KHOAN(MANHOM,TENNHOM) values ('" + txtmanhom.Text + "','" + txttennhom.Text + "')", conn);
 
-            OleDbCommand cm2 = new OleDbCommand("insert into T_NHOM_TAI_KHOAN(MANHOM,TENNHOM) values ('" + txtmanhom.Text + "','" + txttennhom.Text + "')", conn);
+            OleDbCommand cm2 = new OleDbCommand("insert into T_NHOM_TAI_KHOAN(MANHOM,TENNHOM) values ('" + txtMaNTK_NTK.Text + "','" + txtTenNTK_NTK.Text + "')", conn);
             cm2.ExecuteNonQuery();
 
             //MessageBox.Show(""+b);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 MessageBox.Show("" + dt.Rows[i].Field<string>(0));
-                OleDbCommand cm8 = new OleDbCommand("insert into T_PHAN_QUYEN(MANHOM,MAMH,COQUYEN) values ('" + txtmanhom.Text + "','" + dt.Rows[i].Field<string>(0) + "'," + 0 + ")", conn);
+                OleDbCommand cm8 = new OleDbCommand("insert into T_PHAN_QUYEN(MANHOM,MAMH,COQUYEN) values ('" + txtMaNTK_NTK.Text + "','" + dt.Rows[i].Field<string>(0) + "'," + 0 + ")", conn);
 
                 cm8.ExecuteNonQuery();
             }
             //OleDbCommand cm2 = new OleDbCommand("insert into T_PHAN_QUYEN(MANHOM,TENNHOM) values ('" + txtmanhom.Text 
             //cm.ExecuteNonQuery();
             conn.Close();
-            lamMoi();
+            Refresh_NTK();
 
            
         }
@@ -84,14 +95,14 @@ namespace QL_VatLieuXayDung
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 MessageBox.Show("" + dt.Rows[i].Field<string>(0));
-                OleDbCommand cm8 = new OleDbCommand("delete from T_PHAN_QUYEN where MANHOM='" + txtmanhom.Text + "'", conn);
+                OleDbCommand cm8 = new OleDbCommand("delete from T_PHAN_QUYEN where MANHOM='" + txtMaNTK_NTK.Text + "'", conn);
                 cm8.ExecuteNonQuery();
             }
 
-            OleDbCommand cm2 = new OleDbCommand("delete from T_NHOM_TAI_KHOAN where MANHOM='" + txtmanhom.Text + "'", conn);
+            OleDbCommand cm2 = new OleDbCommand("delete from T_NHOM_TAI_KHOAN where MANHOM='" + txtMaNTK_NTK.Text + "'", conn);
             cm2.ExecuteNonQuery();
             conn.Close();
-            lamMoi();
+            Refresh_NTK();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -101,23 +112,18 @@ namespace QL_VatLieuXayDung
 
         private void dgvNhomTK_Click(object sender, EventArgs e)
         {
-            txtmanhom.Text = dgvNhomTK.CurrentRow.Cells[0].Value.ToString();
-            txttennhom.Text = dgvNhomTK.CurrentRow.Cells[1].Value.ToString();
+            txtMaNTK_NTK.Text = dgvNTK.CurrentRow.Cells[0].Value.ToString();
+            txtTenNTK_NTK.Text = dgvNTK.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
           
             conn.Open();
-            OleDbCommand cm2 = new OleDbCommand("update T_NHOM_TAI_KHOAN set TENNHOM=N'" + txttennhom.Text + "' where MANHOM='"+txtmanhom.Text+"'", conn);
+            OleDbCommand cm2 = new OleDbCommand("update T_NHOM_TAI_KHOAN set TENNHOM=N'" + txtTenNTK_NTK.Text + "' where MANHOM='"+txtMaNTK_NTK.Text+"'", conn);
             cm2.ExecuteNonQuery();
             conn.Close();
-            lamMoi();
-        }
-
-        private void bntLammoi_Click(object sender, EventArgs e)
-        {
-            lamMoi();
+            Refresh_NTK();
         }
     }
 }

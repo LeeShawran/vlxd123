@@ -62,7 +62,7 @@ namespace QL_VatLieuXayDung
             else
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_SAN_XUAT values('" + txtMaNCC_NCC.Text + "','" + txtTenNCC_NCC.Text + "','" + txtDiachi_NCC.Text + "','" + txtDienthoai_NCC.Text + "','" + txtGhiChu_NCC.Text + "')", conn);
+                OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_CUNG_CAP values('" + txtMaNCC_NCC.Text + "','" + txtTenNCC_NCC.Text + "','" + txtDiachi_NCC.Text + "','" + txtDienthoai_NCC.Text + "','" + txtGhiChu_NCC.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
                     MessageBox.Show("Đã có mã nhả cung cấp này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -101,7 +101,7 @@ namespace QL_VatLieuXayDung
         private void btnXoa_NCC_Click(object sender, EventArgs e)
         {
             conn.Open();
-            OleDbCommand cmd = new OleDbCommand("Delete from T_CUNG_CAP where MANCC='" + txtMaNCC_NCC.Text + "'", conn);
+            OleDbCommand cmd = new OleDbCommand("Delete from T_NHA_CUNG_CAP where MANCC='" + txtMaNCC_NCC.Text + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
             Refresh_Nha_CC();

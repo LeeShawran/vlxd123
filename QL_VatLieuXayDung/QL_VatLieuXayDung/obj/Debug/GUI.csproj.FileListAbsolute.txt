@@ -113,3 +113,4 @@ D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayD
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThanhToanNCC.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDonDatHangNCC.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDatHangNCC_2.resources
+D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.fmPhieuNhapNCC.resources
