@@ -23,18 +23,20 @@ namespace QL_VatLieuXayDung
 
         public void Refresh_Loai_SP()
         {
-            conn.Open();
+           
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_LOAI_SP", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvLoaiSP.DataSource = dt;
-            conn.Close();
+            
         }
 
         private void frmLoaiSanPham_Load(object sender, EventArgs e)
         {
+            conn.Open();
             Refresh_Loai_SP();
             btnLuu_LoaiSP.Enabled=false;
+            conn.Close();
         }
 
         private bool Kiem_tra_khoa_chinh()
@@ -59,6 +61,7 @@ namespace QL_VatLieuXayDung
             if (this.txtMaLoai_LoaiSP.TextLength == 0 || this.txtTenLoai_LoaiSP.TextLength == 0)
             {
                 MessageBox.Show("Bạn chưa nhập thông tin loại sản phẩm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
             }
             else
             {
@@ -67,15 +70,16 @@ namespace QL_VatLieuXayDung
                 if (Kiem_tra_khoa_chinh())
                 {
                     MessageBox.Show("Đã có mã loại sản phẩm này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 else
                 {
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                     Refresh_Loai_SP();
                     txtMaLoai_LoaiSP.Clear();
                     txtTenLoai_LoaiSP.Clear();
                 }
+                conn.Close();
             }
         }
 
@@ -98,8 +102,9 @@ namespace QL_VatLieuXayDung
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("Delete from T_LOAI_SP where MALOAI='" + txtMaLoai_LoaiSP.Text +"'", conn);
             cmd.ExecuteNonQuery();
-            conn.Close();
+           
             Refresh_Loai_SP();
+            conn.Close();
             txtMaLoai_LoaiSP.Clear();
             txtTenLoai_LoaiSP.Clear();
         }
@@ -118,8 +123,9 @@ namespace QL_VatLieuXayDung
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("Update T_LOAI_SP set TENLOAI='" + txtTenLoai_LoaiSP.Text + "' where MALOAI='" + txtMaLoai_LoaiSP.Text + "'", conn);
             cmd.ExecuteNonQuery();
-            conn.Close();
+           
             Refresh_Loai_SP();
+            conn.Close();
             txtMaLoai_LoaiSP.Clear();
             txtTenLoai_LoaiSP.Clear();
             txtMaLoai_LoaiSP.ReadOnly = false;
@@ -127,6 +133,7 @@ namespace QL_VatLieuXayDung
             btnXoa_LoaiSP.Enabled = true;
             btnSua_LoaiSP.Enabled = true;
             btnLuu_LoaiSP.Enabled = false;
+            conn.Close();
         }
 
         private void btnAsc_LoaiSP_Click(object sender, EventArgs e)

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaCungCap));
-            this.txtGhiChu_NCC = new System.Windows.Forms.TextBox();
-            this.lblGhichu_NCC = new System.Windows.Forms.Label();
             this.txtMaNCC_NCC = new System.Windows.Forms.TextBox();
             this.lblNCC_NCC = new System.Windows.Forms.Label();
             this.txtDienthoai_NCC = new System.Windows.Forms.TextBox();
@@ -40,7 +38,6 @@
             this.lblDiachi_NCC = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnThem_NCC = new System.Windows.Forms.Button();
             this.btnLuu_NCC = new System.Windows.Forms.Button();
             this.btnXoa_NCC = new System.Windows.Forms.Button();
@@ -61,29 +58,11 @@
             this.ColumnTenNCC_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDchi_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDthoai_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGchu_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtGhiChu_NCC
-            // 
-            this.txtGhiChu_NCC.Location = new System.Drawing.Point(394, 72);
-            this.txtGhiChu_NCC.Multiline = true;
-            this.txtGhiChu_NCC.Name = "txtGhiChu_NCC";
-            this.txtGhiChu_NCC.Size = new System.Drawing.Size(190, 41);
-            this.txtGhiChu_NCC.TabIndex = 29;
-            // 
-            // lblGhichu_NCC
-            // 
-            this.lblGhichu_NCC.AutoSize = true;
-            this.lblGhichu_NCC.Location = new System.Drawing.Point(328, 79);
-            this.lblGhichu_NCC.Name = "lblGhichu_NCC";
-            this.lblGhichu_NCC.Size = new System.Drawing.Size(47, 13);
-            this.lblGhichu_NCC.TabIndex = 28;
-            this.lblGhichu_NCC.Text = "Ghi chú:";
             // 
             // txtMaNCC_NCC
             // 
@@ -113,7 +92,7 @@
             this.txtDiachi_NCC.Location = new System.Drawing.Point(394, 24);
             this.txtDiachi_NCC.Multiline = true;
             this.txtDiachi_NCC.Name = "txtDiachi_NCC";
-            this.txtDiachi_NCC.Size = new System.Drawing.Size(190, 39);
+            this.txtDiachi_NCC.Size = new System.Drawing.Size(190, 68);
             this.txtDiachi_NCC.TabIndex = 24;
             // 
             // txtTenNCC_NCC
@@ -150,7 +129,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnThem_NCC);
             this.groupBox2.Controls.Add(this.btnLuu_NCC);
             this.groupBox2.Controls.Add(this.btnXoa_NCC);
@@ -161,15 +139,6 @@
             this.groupBox2.TabIndex = 83;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 372);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 54);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Xuất excel";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnThem_NCC
             // 
@@ -245,8 +214,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtGhiChu_NCC);
-            this.groupBox1.Controls.Add(this.lblGhichu_NCC);
             this.groupBox1.Controls.Add(this.txtMaNCC_NCC);
             this.groupBox1.Controls.Add(this.lblNCC_NCC);
             this.groupBox1.Controls.Add(this.txtDienthoai_NCC);
@@ -341,8 +308,7 @@
             this.ColumnMaNCC_NCC,
             this.ColumnTenNCC_NCC,
             this.ColumnDchi_NCC,
-            this.ColumnDthoai_NCC,
-            this.ColumnGchu_NCC});
+            this.ColumnDthoai_NCC});
             this.dgvNCC.Location = new System.Drawing.Point(28, 19);
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.Size = new System.Drawing.Size(556, 271);
@@ -363,21 +329,15 @@
             // 
             // ColumnDchi_NCC
             // 
-            this.ColumnDchi_NCC.DataPropertyName = "DCHINCC";
+            this.ColumnDchi_NCC.DataPropertyName = "DIACHI";
             this.ColumnDchi_NCC.HeaderText = "Địa chỉ";
             this.ColumnDchi_NCC.Name = "ColumnDchi_NCC";
             // 
             // ColumnDthoai_NCC
             // 
-            this.ColumnDthoai_NCC.DataPropertyName = "DTHOAINCC";
+            this.ColumnDthoai_NCC.DataPropertyName = "DIENTHOAI";
             this.ColumnDthoai_NCC.HeaderText = "Điện thoại";
             this.ColumnDthoai_NCC.Name = "ColumnDthoai_NCC";
-            // 
-            // ColumnGchu_NCC
-            // 
-            this.ColumnGchu_NCC.DataPropertyName = "GCHUNCC";
-            this.ColumnGchu_NCC.HeaderText = "Ghi chú";
-            this.ColumnGchu_NCC.Name = "ColumnGchu_NCC";
             // 
             // frmNhaCungCap
             // 
@@ -403,8 +363,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtGhiChu_NCC;
-        private System.Windows.Forms.Label lblGhichu_NCC;
         private System.Windows.Forms.TextBox txtMaNCC_NCC;
         private System.Windows.Forms.Label lblNCC_NCC;
         private System.Windows.Forms.TextBox txtDienthoai_NCC;
@@ -414,7 +372,6 @@
         private System.Windows.Forms.Label lblDiachi_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnThem_NCC;
         private System.Windows.Forms.Button btnLuu_NCC;
         private System.Windows.Forms.Button btnXoa_NCC;
@@ -435,6 +392,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenNCC_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDchi_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDthoai_NCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGchu_NCC;
     }
 }

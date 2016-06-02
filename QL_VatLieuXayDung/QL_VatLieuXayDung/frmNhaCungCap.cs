@@ -22,18 +22,20 @@ namespace QL_VatLieuXayDung
 
         public void Refresh_Nha_CC()
         {
-            conn.Open();
+           
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_NHA_CUNG_CAP", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvNCC.DataSource = dt;
-            conn.Close();
+          
         }
 
         private void frmNhaCungCap_Load(object sender, EventArgs e)
         {
+            conn.Open();
             Refresh_Nha_CC();
             btnLuu_NCC.Enabled = false;
+            conn.Close();
         }
 
         private bool Kiem_tra_khoa_chinh()
@@ -58,26 +60,28 @@ namespace QL_VatLieuXayDung
             if (this.txtMaNCC_NCC.TextLength == 0 || this.txtTenNCC_NCC.TextLength == 0)
             {
                 MessageBox.Show("Bạn chưa nhập thông tin nhà cung cấp !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
             }
             else
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_CUNG_CAP values('" + txtMaNCC_NCC.Text + "','" + txtTenNCC_NCC.Text + "','" + txtDiachi_NCC.Text + "','" + txtDienthoai_NCC.Text + "','" + txtGhiChu_NCC.Text + "')", conn);
+                OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_CUNG_CAP values('" + txtMaNCC_NCC.Text + "','" + txtTenNCC_NCC.Text + "','" + txtDiachi_NCC.Text + "','" + txtDienthoai_NCC.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
                     MessageBox.Show("Đã có mã nhả cung cấp này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 else
                 {
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                     Refresh_Nha_CC();
                     txtMaNCC_NCC.Clear();
                     txtTenNCC_NCC.Clear();
                     txtDiachi_NCC.Clear();
                     txtDienthoai_NCC.Clear();
-                    txtGhiChu_NCC.Clear();   
+                   
                 }
+                conn.Close();
             }
         }
 
@@ -91,7 +95,6 @@ namespace QL_VatLieuXayDung
                 txtTenNCC_NCC.Text = row.Cells[1].Value.ToString();
                 txtDiachi_NCC.Text = row.Cells[2].Value.ToString();
                 txtDienthoai_NCC.Text = row.Cells[3].Value.ToString();
-                txtGhiChu_NCC.Text = row.Cells[4].Value.ToString();
             }
             catch (Exception)
             {
@@ -103,13 +106,13 @@ namespace QL_VatLieuXayDung
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("Delete from T_NHA_CUNG_CAP where MANCC='" + txtMaNCC_NCC.Text + "'", conn);
             cmd.ExecuteNonQuery();
-            conn.Close();
+            
             Refresh_Nha_CC();
+            conn.Close();
             txtMaNCC_NCC.Clear();
             txtTenNCC_NCC.Clear();
             txtDiachi_NCC.Clear();
             txtDienthoai_NCC.Clear();
-            txtGhiChu_NCC.Clear();   
         }
 
         private void btnSua_NCC_Click(object sender, EventArgs e)
@@ -124,7 +127,7 @@ namespace QL_VatLieuXayDung
         private void btnLuu_NCC_Click(object sender, EventArgs e)
         {
             conn.Open();
-            OleDbCommand cmd = new OleDbCommand("Update T_NHA_CUNG_CAP set TENNCC='" + txtTenNCC_NCC.Text + "', DCHINCC='" + txtDiachi_NCC.Text + "', DTHOAINCC='" + txtDienthoai_NCC.Text + "', GCHUNCC='" + txtGhiChu_NCC.Text + "' where MANCC='" + txtMaNCC_NCC.Text + "'", conn);
+            OleDbCommand cmd = new OleDbCommand("Update T_NHA_CUNG_CAP set TENNCC='" + txtTenNCC_NCC.Text + "', DIACHI='" + txtDiachi_NCC.Text + "', DIENTHOAI='" + txtDienthoai_NCC.Text + "' where MANCC='" + txtMaNCC_NCC.Text + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
             Refresh_Nha_CC();
@@ -132,7 +135,6 @@ namespace QL_VatLieuXayDung
             txtTenNCC_NCC.Clear();
             txtDiachi_NCC.Clear();
             txtDienthoai_NCC.Clear();
-            txtGhiChu_NCC.Clear();
             txtMaNCC_NCC.ReadOnly = false;
             btnThem_NCC.Enabled = true;
             btnXoa_NCC.Enabled = true;

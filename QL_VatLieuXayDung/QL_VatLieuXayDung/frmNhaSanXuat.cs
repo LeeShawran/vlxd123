@@ -22,18 +22,20 @@ namespace QL_VatLieuXayDung
 
         public void Refresh_Nha_SX()
         {
-            conn.Open();
+          
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_NHA_SAN_XUAT", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvNSX.DataSource = dt;
-            conn.Close();
+           
         }
 
         private void frmNhaSanXuat_Load(object sender, EventArgs e)
         {
+            conn.Open();
             Refresh_Nha_SX();
             btnLuu_NSX.Enabled = false;
+            conn.Close();
         }
 
         private bool Kiem_tra_khoa_chinh()
@@ -58,26 +60,26 @@ namespace QL_VatLieuXayDung
             if (this.txtMaNSX_NSX.TextLength == 0 || this.txtTenNSX_NSX.TextLength == 0)
             {
                 MessageBox.Show("Bạn chưa nhập thông tin nhà sản xuất !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
             }
             else
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_SAN_XUAT values('" + txtMaNSX_NSX.Text + "','" + txtTenNSX_NSX.Text + "','" + txtDienthoai_NSX.Text + "','" + txtEmail_NSX.Text + "','" + txtDiachi_NSX.Text + "')", conn);
+                OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_SAN_XUAT values('" + txtMaNSX_NSX.Text + "','" + txtTenNSX_NSX.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
                     MessageBox.Show("Đã có mã nhả sản xuất này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 else
                 {
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                     Refresh_Nha_SX();
                     txtMaNSX_NSX.Clear();
                     txtTenNSX_NSX.Clear();
-                    txtDienthoai_NSX.Clear();
-                    txtEmail_NSX.Clear();
-                    txtDiachi_NSX.Clear();
+             
                 }
+                conn.Close();
             }
         }
 
@@ -89,9 +91,7 @@ namespace QL_VatLieuXayDung
                 row = dgvNSX.Rows[e.RowIndex];
                 txtMaNSX_NSX.Text = row.Cells[0].Value.ToString();
                 txtTenNSX_NSX.Text = row.Cells[1].Value.ToString(); 
-                txtDienthoai_NSX.Text = row.Cells[2].Value.ToString();
-                txtEmail_NSX.Text = row.Cells[3].Value.ToString();
-                txtDiachi_NSX.Text = row.Cells[4].Value.ToString();
+
             }
             catch (Exception)
             {
@@ -103,13 +103,11 @@ namespace QL_VatLieuXayDung
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("Delete from T_NHA_SAN_XUAT where MANSX='" + txtMaNSX_NSX.Text + "'", conn);
             cmd.ExecuteNonQuery();
-            conn.Close();
             Refresh_Nha_SX();
+            conn.Close();
             txtMaNSX_NSX.Clear();
             txtTenNSX_NSX.Clear();
-            txtDienthoai_NSX.Clear();
-            txtEmail_NSX.Clear();
-            txtDiachi_NSX.Clear();
+ 
         }
 
         private void btnSua_NSX_Click(object sender, EventArgs e)
@@ -124,15 +122,14 @@ namespace QL_VatLieuXayDung
         private void btnLuu_NSX_Click(object sender, EventArgs e)
         {
             conn.Open();
-            OleDbCommand cmd = new OleDbCommand("Update T_NHA_SAN_XUAT set TENNSX='" + txtTenNSX_NSX.Text + "', DTHOAINSX='" + txtDienthoai_NSX.Text + "', EMAILNSX='" + txtEmail_NSX.Text + "', DCHINSX='" + txtDiachi_NSX.Text + "' where MANSX='" + txtMaNSX_NSX.Text + "'", conn);
+            OleDbCommand cmd = new OleDbCommand("Update T_NHA_SAN_XUAT set TENNSX='" + txtTenNSX_NSX.Text + "' where MANSX='" + txtMaNSX_NSX.Text + "'", conn);
             cmd.ExecuteNonQuery();
-            conn.Close();
             Refresh_Nha_SX();
+            conn.Close();
+          
             txtMaNSX_NSX.Clear();
             txtTenNSX_NSX.Clear();
-            txtDienthoai_NSX.Clear();
-            txtEmail_NSX.Clear();
-            txtDiachi_NSX.Clear();
+      
             txtMaNSX_NSX.ReadOnly = false;
             btnThem_NSX.Enabled = true;
             btnXoa_NSX.Enabled = true;
