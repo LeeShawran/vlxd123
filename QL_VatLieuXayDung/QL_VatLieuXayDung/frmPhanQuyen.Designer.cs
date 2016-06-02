@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhanQuyen));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvPhanQuyen = new System.Windows.Forms.DataGridView();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.dgvNhomTK = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPhanQuyen = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhanQuyen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhanQuyen)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -53,6 +53,32 @@
             this.groupBox3.Size = new System.Drawing.Size(1075, 407);
             this.groupBox3.TabIndex = 90;
             this.groupBox3.TabStop = false;
+            // 
+            // dgvNhomTK
+            // 
+            this.dgvNhomTK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhomTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhomTK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dgvNhomTK.Location = new System.Drawing.Point(29, 19);
+            this.dgvNhomTK.Name = "dgvNhomTK";
+            this.dgvNhomTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNhomTK.Size = new System.Drawing.Size(378, 371);
+            this.dgvNhomTK.TabIndex = 47;
+            this.dgvNhomTK.SelectionChanged += new System.EventHandler(this.dgvNhomTK_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dgvPhanQuyen
             // 
@@ -66,6 +92,24 @@
             this.dgvPhanQuyen.Name = "dgvPhanQuyen";
             this.dgvPhanQuyen.Size = new System.Drawing.Size(561, 371);
             this.dgvPhanQuyen.TabIndex = 46;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAMH";
+            this.Column1.HeaderText = "Mã màn hình";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENMH";
+            this.Column2.HeaderText = "Tên màn hình";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "COQUYEN";
+            this.Column3.HeaderText = "Có quyền";
+            this.Column3.Name = "Column3";
             // 
             // btnLuu
             // 
@@ -90,51 +134,6 @@
             this.label6.TabIndex = 91;
             this.label6.Text = "PHÂN QUYỀN";
             // 
-            // dgvNhomTK
-            // 
-            this.dgvNhomTK.AllowUserToAddRows = false;
-            this.dgvNhomTK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNhomTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhomTK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dgvNhomTK.Location = new System.Drawing.Point(29, 19);
-            this.dgvNhomTK.Name = "dgvNhomTK";
-            this.dgvNhomTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhomTK.Size = new System.Drawing.Size(378, 330);
-            this.dgvNhomTK.TabIndex = 47;
-            this.dgvNhomTK.SelectionChanged += new System.EventHandler(this.dgvNhomTK_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MAMH";
-            this.Column1.HeaderText = "Mã màn hình";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TENMH";
-            this.Column2.HeaderText = "Tên màn hình";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "COQUYEN";
-            this.Column3.HeaderText = "Có quyền";
-            this.Column3.Name = "Column3";
-            // 
             // frmPhanQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,8 +146,8 @@
             this.Text = "frmPhanQuyen";
             this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhanQuyen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhanQuyen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

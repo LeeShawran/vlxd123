@@ -22,15 +22,19 @@ namespace QL_VatLieuXayDung
             conn = Connect.getConnect();
         }
 
-        private void frmPhanQuyen_Load(object sender, EventArgs e)
+        public void loadTable()
         {
-            conn.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_NHOM_TAI_KHOAN", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvNhomTK.DataSource = dt;
+        }
+        private void frmPhanQuyen_Load(object sender, EventArgs e)
+        {
+            conn.Open();
+            loadTable();
             conn.Close();
-            this.dgvNhomTK.AutoGenerateColumns = false;
+           
         }
 
         private void dgvNhomTK_SelectionChanged(object sender, EventArgs e)
@@ -42,12 +46,12 @@ namespace QL_VatLieuXayDung
                     try
                     {
                         string manhom = item.Cells[0].Value.ToString();
-                        OleDbDataAdapter adapter = new OleDbDataAdapter("select T_MAN_HINH.MAMH,T_MAN_HINH.TENMH,T_PHAN_QUYEN.COQUYEN from T_PHAN_QUYEN,T_MAN_HINH,T_NHOM_TAI_KHOAN where T_MAN_HINH.MAMH = T_PHAN_QUYEN.MAMH AND T_PHAN_QUYEN.MANHOM = T_NHOM_TAI_KHOAN.MANHOM AND T_PHAN_QUYEN.MANHOM='" + manhom + "'", conn);
+                        OleDbDataAdapter adapter = new OleDbDataAdapter("select T_MAN_HINH.MAMH,T_MAN_HINH.TENMH,T_PHAN_QUYEN.COQUYEN from T_PHAN_QUYEN,T_MAN_HINH,T_NHOM_TAI_KHOAN where T_MAN_HINH.MAMH = T_PHAN_QUYEN.MAMH AND T_PHAN_QUYEN.MANHOM = T_NHOM_TAI_KHOAN.MANHOM AND T_PHAN_QUYEN.MANHOM='" + manhom + "' ORDER BY T_MAN_HINH.MAMH ASC", conn);
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dgvPhanQuyen.DataSource = dt;
                         conn.Close();
-                        
+
                     }
                     catch { }
                 }
@@ -56,7 +60,20 @@ namespace QL_VatLieuXayDung
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            conn.Open();
 
+            OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_MAN_HINH", conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                OleDbCommand cm2 = new OleDbCommand("update T_PHAN_QUYEN set COQUYEN='" + dgvPhanQuyen.Rows[i].Cells[2].Value + "' where (MANHOM='" + dgvNhomTK.CurrentRow.Cells[0].Value.ToString() + "' AND MAMH= '" + dt.Rows[i].Field<string>(0) + "')", conn);
+                cm2.ExecuteNonQuery();
+
+            }
+            loadTable();
+            conn.Close();
         }
     }
 }

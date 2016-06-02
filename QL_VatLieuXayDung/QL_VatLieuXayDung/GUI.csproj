@@ -78,6 +78,12 @@
     <Compile Include="frmDatHangNCC.Designer.cs">
       <DependentUpon>frmDatHangNCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDatHangNCC_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatHangNCC_2.Designer.cs">
+      <DependentUpon>frmDatHangNCC_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGiamGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatHangNCC.resx">
       <DependentUpon>frmDatHangNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatHangNCC_2.resx">
+      <DependentUpon>frmDatHangNCC_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiamGia.resx">
       <DependentUpon>frmGiamGia.cs</DependentUpon>

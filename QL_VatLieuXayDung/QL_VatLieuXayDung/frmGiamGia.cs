@@ -23,6 +23,8 @@ namespace QL_VatLieuXayDung
         public void Refresh_GG()
         {
             conn.Open();
+            dgvGG.Columns["Column3"].DefaultCellStyle.Format = @"dd/MM/yyyy";
+            dgvGG.Columns["Column4"].DefaultCellStyle.Format = @"dd/MM/yyyy";
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_GIAM_GIA", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
