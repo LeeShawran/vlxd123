@@ -11,10 +11,10 @@ using System.Data.OleDb;
 
 namespace QL_VatLieuXayDung
 {
-    public partial class frmDatHangNCC : Form
+    public partial class frmDonDatHangNCC : Form
     {
         OleDbConnection conn;
-        public frmDatHangNCC()
+        public frmDonDatHangNCC()
         {
             InitializeComponent();
             conn = Connect.getConnect();
@@ -22,11 +22,11 @@ namespace QL_VatLieuXayDung
         public void loadLai()
         {
             conn.Open();
-            dgvDatNCC.Columns["Column4"].DefaultCellStyle.Format = @"dd/MM/yyyy";
+            dgvDDHNCC.Columns["Column4"].DefaultCellStyle.Format = @"dd/MM/yyyy";
             OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_NCC", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            dgvDatNCC.DataSource = dt;
+            dgvDDHNCC.DataSource = dt;
             conn.Close();
         }
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace QL_VatLieuXayDung
         private void frmDatHangNCC_Load(object sender, EventArgs e)
         {
             loadLai();
-            btnLuuPD.Enabled = false;
+            btnLuuDDH.Enabled = false;
             dtpNgayLap.Format = DateTimePickerFormat.Custom;
             dtpNgayLap.CustomFormat = "dd/MM/yyyy";
         }
@@ -45,7 +45,7 @@ namespace QL_VatLieuXayDung
         private bool Kiem_tra_khoa_chinh()
         {
             bool a = false;
-            string MaPD = txtMaPD.Text;
+            string MaPD = txtMaDDHNCC.Text;
             OleDbCommand cmd = new OleDbCommand("select * from T_DON_DAT_HANG_NCC", conn);
             OleDbDataReader PK = cmd.ExecuteReader();
             while (PK.Read())

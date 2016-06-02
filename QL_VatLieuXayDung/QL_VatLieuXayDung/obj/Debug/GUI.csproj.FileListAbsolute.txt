@@ -75,7 +75,6 @@ D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csprojResolve
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.FormMain.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmCauHinh.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDangNhap.resources
-D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDatHangNCC.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmGiamGia.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmKhachHang.resources
 D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmLoaiSanPham.resources
@@ -111,3 +110,6 @@ D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayD
 D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.Properties.Resources.resources
 D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csproj.GenerateResource.Cache
 D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe.licenses
+D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThanhToanNCC.resources
+D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDonDatHangNCC.resources
+D:\Khoaluan\vlxd\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDatHangNCC_2.resources
