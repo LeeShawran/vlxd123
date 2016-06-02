@@ -48,21 +48,21 @@
             this.lblTenNCC_NCC = new System.Windows.Forms.Label();
             this.lblNCC = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblStatus_NCC = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnAsc_NCC = new System.Windows.Forms.Button();
+            this.btnDes_NCC = new System.Windows.Forms.Button();
             this.dgvNCC = new System.Windows.Forms.DataGridView();
-            this.lblStatus_NCC = new System.Windows.Forms.Label();
             this.ColumnMaNCC_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTenNCC_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDchi_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDthoai_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGchu_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAsc_NCC = new System.Windows.Forms.Button();
-            this.btnDes_NCC = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,7 +71,7 @@
             // 
             // txtGhiChu_NCC
             // 
-            this.txtGhiChu_NCC.Location = new System.Drawing.Point(459, 76);
+            this.txtGhiChu_NCC.Location = new System.Drawing.Point(394, 76);
             this.txtGhiChu_NCC.Multiline = true;
             this.txtGhiChu_NCC.Name = "txtGhiChu_NCC";
             this.txtGhiChu_NCC.Size = new System.Drawing.Size(190, 37);
@@ -80,7 +80,7 @@
             // lblGhichu_NCC
             // 
             this.lblGhichu_NCC.AutoSize = true;
-            this.lblGhichu_NCC.Location = new System.Drawing.Point(393, 79);
+            this.lblGhichu_NCC.Location = new System.Drawing.Point(328, 79);
             this.lblGhichu_NCC.Name = "lblGhichu_NCC";
             this.lblGhichu_NCC.Size = new System.Drawing.Size(47, 13);
             this.lblGhichu_NCC.TabIndex = 28;
@@ -111,7 +111,7 @@
             // 
             // txtDiachi_NCC
             // 
-            this.txtDiachi_NCC.Location = new System.Drawing.Point(459, 24);
+            this.txtDiachi_NCC.Location = new System.Drawing.Point(394, 24);
             this.txtDiachi_NCC.Multiline = true;
             this.txtDiachi_NCC.Name = "txtDiachi_NCC";
             this.txtDiachi_NCC.Size = new System.Drawing.Size(190, 39);
@@ -136,7 +136,7 @@
             // lblDiachi_NCC
             // 
             this.lblDiachi_NCC.AutoSize = true;
-            this.lblDiachi_NCC.Location = new System.Drawing.Point(393, 28);
+            this.lblDiachi_NCC.Location = new System.Drawing.Point(328, 28);
             this.lblDiachi_NCC.Name = "lblDiachi_NCC";
             this.lblDiachi_NCC.Size = new System.Drawing.Size(43, 13);
             this.lblDiachi_NCC.TabIndex = 21;
@@ -156,7 +156,7 @@
             this.groupBox2.Controls.Add(this.btnLuu_NCC);
             this.groupBox2.Controls.Add(this.btnXoa_NCC);
             this.groupBox2.Controls.Add(this.btnSua_NCC);
-            this.groupBox2.Location = new System.Drawing.Point(871, 68);
+            this.groupBox2.Location = new System.Drawing.Point(847, 67);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(117, 451);
             this.groupBox2.TabIndex = 83;
@@ -257,12 +257,21 @@
             this.groupBox1.Controls.Add(this.lblDienthoai_NCC);
             this.groupBox1.Controls.Add(this.lblDiachi_NCC);
             this.groupBox1.Controls.Add(this.lblTenNCC_NCC);
-            this.groupBox1.Location = new System.Drawing.Point(89, 68);
+            this.groupBox1.Location = new System.Drawing.Point(127, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 132);
+            this.groupBox1.Size = new System.Drawing.Size(714, 132);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp";
+            // 
+            // lblStatus_NCC
+            // 
+            this.lblStatus_NCC.AutoSize = true;
+            this.lblStatus_NCC.Location = new System.Drawing.Point(25, 75);
+            this.lblStatus_NCC.Name = "lblStatus_NCC";
+            this.lblStatus_NCC.Size = new System.Drawing.Size(10, 13);
+            this.lblStatus_NCC.TabIndex = 30;
+            this.lblStatus_NCC.Text = ".";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -302,12 +311,38 @@
             this.groupBox3.Controls.Add(this.btnAsc_NCC);
             this.groupBox3.Controls.Add(this.btnDes_NCC);
             this.groupBox3.Controls.Add(this.dgvNCC);
-            this.groupBox3.Location = new System.Drawing.Point(89, 206);
+            this.groupBox3.Location = new System.Drawing.Point(127, 205);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(776, 313);
+            this.groupBox3.Size = new System.Drawing.Size(714, 313);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhà cung cấp";
+            // 
+            // btnAsc_NCC
+            // 
+            this.btnAsc_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NCC.Image")));
+            this.btnAsc_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsc_NCC.Location = new System.Drawing.Point(607, 69);
+            this.btnAsc_NCC.Name = "btnAsc_NCC";
+            this.btnAsc_NCC.Size = new System.Drawing.Size(95, 45);
+            this.btnAsc_NCC.TabIndex = 20;
+            this.btnAsc_NCC.Text = "Trên xuống";
+            this.btnAsc_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAsc_NCC.UseVisualStyleBackColor = true;
+            this.btnAsc_NCC.Click += new System.EventHandler(this.btnAsc_NCC_Click);
+            // 
+            // btnDes_NCC
+            // 
+            this.btnDes_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NCC.Image")));
+            this.btnDes_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDes_NCC.Location = new System.Drawing.Point(607, 155);
+            this.btnDes_NCC.Name = "btnDes_NCC";
+            this.btnDes_NCC.Size = new System.Drawing.Size(95, 45);
+            this.btnDes_NCC.TabIndex = 21;
+            this.btnDes_NCC.Text = "Dưới lên";
+            this.btnDes_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDes_NCC.UseVisualStyleBackColor = true;
+            this.btnDes_NCC.Click += new System.EventHandler(this.btnDes_NCC_Click);
             // 
             // dgvNCC
             // 
@@ -318,20 +353,11 @@
             this.ColumnDchi_NCC,
             this.ColumnDthoai_NCC,
             this.ColumnGchu_NCC});
-            this.dgvNCC.Location = new System.Drawing.Point(28, 20);
+            this.dgvNCC.Location = new System.Drawing.Point(28, 19);
             this.dgvNCC.Name = "dgvNCC";
-            this.dgvNCC.Size = new System.Drawing.Size(621, 271);
+            this.dgvNCC.Size = new System.Drawing.Size(556, 271);
             this.dgvNCC.TabIndex = 0;
             this.dgvNCC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNCC_CellMouseClick);
-            // 
-            // lblStatus_NCC
-            // 
-            this.lblStatus_NCC.AutoSize = true;
-            this.lblStatus_NCC.Location = new System.Drawing.Point(25, 75);
-            this.lblStatus_NCC.Name = "lblStatus_NCC";
-            this.lblStatus_NCC.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_NCC.TabIndex = 30;
-            this.lblStatus_NCC.Text = ".";
             // 
             // ColumnMaNCC_NCC
             // 
@@ -357,32 +383,6 @@
             // 
             this.ColumnGchu_NCC.HeaderText = "Ghi chú";
             this.ColumnGchu_NCC.Name = "ColumnGchu_NCC";
-            // 
-            // btnAsc_NCC
-            // 
-            this.btnAsc_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NCC.Image")));
-            this.btnAsc_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_NCC.Location = new System.Drawing.Point(666, 82);
-            this.btnAsc_NCC.Name = "btnAsc_NCC";
-            this.btnAsc_NCC.Size = new System.Drawing.Size(95, 45);
-            this.btnAsc_NCC.TabIndex = 20;
-            this.btnAsc_NCC.Text = "Trên xuống";
-            this.btnAsc_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAsc_NCC.UseVisualStyleBackColor = true;
-            this.btnAsc_NCC.Click += new System.EventHandler(this.btnAsc_NCC_Click);
-            // 
-            // btnDes_NCC
-            // 
-            this.btnDes_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NCC.Image")));
-            this.btnDes_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_NCC.Location = new System.Drawing.Point(666, 165);
-            this.btnDes_NCC.Name = "btnDes_NCC";
-            this.btnDes_NCC.Size = new System.Drawing.Size(95, 45);
-            this.btnDes_NCC.TabIndex = 21;
-            this.btnDes_NCC.Text = "Dưới lên";
-            this.btnDes_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDes_NCC.UseVisualStyleBackColor = true;
-            this.btnDes_NCC.Click += new System.EventHandler(this.btnDes_NCC_Click);
             // 
             // frmNhaCungCap
             // 

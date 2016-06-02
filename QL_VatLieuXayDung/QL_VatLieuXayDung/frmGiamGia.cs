@@ -34,6 +34,10 @@ namespace QL_VatLieuXayDung
         {
             Refresh_GG();
             btnLuu_GG.Enabled = false;
+            dtpBatdau_GG.Format = DateTimePickerFormat.Custom;
+            dtpBatdau_GG.CustomFormat = "dd/MM/yyyy";
+            dtpKetthuc_GG.Format = DateTimePickerFormat.Custom;
+            dtpKetthuc_GG.CustomFormat = "dd/MM/yyyy";
         }
 
         private bool Kiem_tra_khoa_chinh()
@@ -53,18 +57,19 @@ namespace QL_VatLieuXayDung
             return tatkt;
         }
         
-           
         private void btnThem_GG_Click(object sender, EventArgs e)
         {
+            
+            
             if (this.txtMaGG_GG.TextLength == 0 || this.txtChietkhau_GG.TextLength == 0)
             {
                 this.lblStatus_GG.ForeColor = Color.Red;
                 this.lblStatus_GG.Text = "Bạn chưa nhập thông tin giảm giá !";
             }
             else
-            {
+            {         
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("Insert into T_GIAM_GIA values('" + txtMaGG_GG.Text + "','" + txtChietkhau_GG.Text + "', TO_DATE('" + dtpBatdau_GG.Value.Date.ToString("dd/MM/yyyy") + "','DD-MON-YY') , TO_DATE('" + dtpKetthuc_GG.Value.Date.ToString("dd/MM/yyyy") + "','DD-MON-YY'))", conn);
+                OleDbCommand cmd = new OleDbCommand("Insert into T_GIAM_GIA values('" + txtMaGG_GG.Text + "','" + txtChietkhau_GG.Text + "', TO_DATE('" + dtpBatdau_GG.Text + "','DD-MM-RR') , TO_DATE('" + dtpKetthuc_GG.Text + "','DD-MM-RR'))", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
                     this.lblStatus_GG.ForeColor = Color.Red;
@@ -124,7 +129,7 @@ namespace QL_VatLieuXayDung
         private void btnLuu_GG_Click(object sender, EventArgs e)
         {
             conn.Open();
-            OleDbCommand cmd = new OleDbCommand("Update T_GIAM_GIA set CHIETKHAU='" + txtChietkhau_GG.Text + "', NGAYBD='" + dtpBatdau_GG.Text + "', NGAYKT='" + dtpKetthuc_GG.Text + "' where MAGG='" + txtMaGG_GG.Text + "'", conn);
+            OleDbCommand cmd = new OleDbCommand("Update T_GIAM_GIA set CHIETKHAU='" + txtChietkhau_GG.Text + "', NGAYBD=TO_DATE('" + dtpBatdau_GG.Text + "','DD-MM-RR'), NGAYKT=TO_DATE('" + dtpKetthuc_GG.Text + "','DD-MM-RR') where MAGG='" + txtMaGG_GG.Text + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
             Refresh_GG();
@@ -139,5 +144,14 @@ namespace QL_VatLieuXayDung
             btnLuu_GG.Enabled = false;
         }
 
+        private void dtpKetthuc_GG_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpBatdau_GG.Value > dtpKetthuc_GG.Value)
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpBatdau_GG.Value = DateTime.Today;
+                dtpKetthuc_GG.Value = DateTime.Today;
+            }
+        }
     }
 }

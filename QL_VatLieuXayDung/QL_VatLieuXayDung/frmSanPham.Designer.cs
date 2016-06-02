@@ -38,6 +38,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -81,7 +82,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -146,6 +146,11 @@
             // 
             this.columnHeader9.Text = "Giá bán";
             this.columnHeader9.Width = 92;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Bảo Hành";
+            this.columnHeader10.Width = 80;
             // 
             // groupBox4
             // 
@@ -513,9 +518,9 @@
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(575, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 33);
+            this.label1.Size = new System.Drawing.Size(173, 33);
             this.label1.TabIndex = 83;
-            this.label1.Text = "Sản Phẩm";
+            this.label1.Text = "SẢN PHẨM";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -583,7 +588,7 @@
             this.groupBox1.Size = new System.Drawing.Size(908, 163);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin sách";
+            this.groupBox1.Text = "Thông tin sản phẩm";
             // 
             // label5
             // 
@@ -641,11 +646,6 @@
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách các sách";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Bảo Hành";
-            this.columnHeader10.Width = 80;
             // 
             // frmSanPham
             // 
