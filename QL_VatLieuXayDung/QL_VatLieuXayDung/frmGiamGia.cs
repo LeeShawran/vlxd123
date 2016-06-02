@@ -65,8 +65,7 @@ namespace QL_VatLieuXayDung
             
             if (this.txtMaGG_GG.TextLength == 0 || this.txtChietkhau_GG.TextLength == 0)
             {
-                this.lblStatus_GG.ForeColor = Color.Red;
-                this.lblStatus_GG.Text = "Bạn chưa nhập thông tin giảm giá !";
+                MessageBox.Show("Bạn chưa nhập thông tin giảm giá !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {         
@@ -74,8 +73,7 @@ namespace QL_VatLieuXayDung
                 OleDbCommand cmd = new OleDbCommand("Insert into T_GIAM_GIA values('" + txtMaGG_GG.Text + "','" + txtChietkhau_GG.Text + "', TO_DATE('" + dtpBatdau_GG.Text + "','DD-MM-RR') , TO_DATE('" + dtpKetthuc_GG.Text + "','DD-MM-RR'))", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
-                    this.lblStatus_GG.ForeColor = Color.Red;
-                    this.lblStatus_GG.Text = "Đã có mã giảm giá này !";
+                    MessageBox.Show("Đã có mã giảm giá này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

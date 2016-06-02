@@ -57,8 +57,7 @@ namespace QL_VatLieuXayDung
         {
             if (this.txtMaNCC_NCC.TextLength == 0 || this.txtTenNCC_NCC.TextLength == 0)
             {
-                this.lblStatus_NCC.ForeColor = Color.Red;
-                this.lblStatus_NCC.Text = "Bạn chưa nhập thông tin nhà cung cấp !";
+                MessageBox.Show("Bạn chưa nhập thông tin nhà cung cấp !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -66,8 +65,7 @@ namespace QL_VatLieuXayDung
                 OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_SAN_XUAT values('" + txtMaNCC_NCC.Text + "','" + txtTenNCC_NCC.Text + "','" + txtDiachi_NCC.Text + "','" + txtDienthoai_NCC.Text + "','" + txtGhiChu_NCC.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
-                    this.lblStatus_NCC.ForeColor = Color.Red;
-                    this.lblStatus_NCC.Text = "Đã có mã nhả cung cấp này !";
+                    MessageBox.Show("Đã có mã nhả cung cấp này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -151,9 +149,5 @@ namespace QL_VatLieuXayDung
         {
             dgvNCC.Sort(dgvNCC.Columns[0], System.ComponentModel.ListSortDirection.Descending);
         }
-
-       
-
-
     }
 }

@@ -70,6 +70,7 @@
             this.btnSua_CTDDHNCC = new System.Windows.Forms.Button();
             this.btnLuu_CTDDHNCC = new System.Windows.Forms.Button();
             this.btnThem_CTDDHNCC = new System.Windows.Forms.Button();
+            this.btnTaophieunhap_DDHNCC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDDHNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDDHNCC)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -305,6 +306,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnTaophieunhap_DDHNCC);
             this.groupBox2.Controls.Add(this.txtMaNV_DDHNCC);
             this.groupBox2.Controls.Add(this.lblMaNV_DDHNCC);
             this.groupBox2.Controls.Add(this.label10);
@@ -467,6 +469,15 @@
             this.btnThem_CTDDHNCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem_CTDDHNCC.UseVisualStyleBackColor = true;
             // 
+            // btnTaophieunhap_DDHNCC
+            // 
+            this.btnTaophieunhap_DDHNCC.Location = new System.Drawing.Point(612, 184);
+            this.btnTaophieunhap_DDHNCC.Name = "btnTaophieunhap_DDHNCC";
+            this.btnTaophieunhap_DDHNCC.Size = new System.Drawing.Size(118, 23);
+            this.btnTaophieunhap_DDHNCC.TabIndex = 26;
+            this.btnTaophieunhap_DDHNCC.Text = "Tạo phiếu nhập";
+            this.btnTaophieunhap_DDHNCC.UseVisualStyleBackColor = true;
+            // 
             // frmDonDatHangNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,5 +543,6 @@
         private System.Windows.Forms.Button btnSua_CTDDHNCC;
         private System.Windows.Forms.Button btnLuu_CTDDHNCC;
         private System.Windows.Forms.Button btnThem_CTDDHNCC;
+        private System.Windows.Forms.Button btnTaophieunhap_DDHNCC;
     }
 }

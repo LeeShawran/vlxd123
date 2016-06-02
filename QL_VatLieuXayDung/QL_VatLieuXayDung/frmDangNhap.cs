@@ -26,8 +26,7 @@ namespace QL_VatLieuXayDung
         {
             if (this.txtMaNhanVien_DangNhap.TextLength == 0 || this.txtMatKhau_DangNhap.TextLength == 0)
             {
-                this.lblStatus_DangNhap.ForeColor = Color.Red;
-                this.lblStatus_DangNhap.Text = "Bạn chưa nhập tài khoản hoặc mật khẩu";
+                MessageBox.Show("Bạn chưa nhập gì cả !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -36,7 +35,7 @@ namespace QL_VatLieuXayDung
 
                 if (kq == 1 || kq == 2)
                 {
-                    MessageBox.Show("Chuỗi cấu hình không tồn tại hoặc không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chuỗi cấu hình không tồn tại hoặc không đúng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     this.Hide();
                     frmCauHinh f = new frmCauHinh();
@@ -66,8 +65,7 @@ namespace QL_VatLieuXayDung
                     }
                     else
                     {
-                        this.lblStatus_DangNhap.ForeColor = Color.Red;
-                        this.lblStatus_DangNhap.Text = "Tài khoản không tồn tại";
+                        MessageBox.Show("Tài khoản không tồn tại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.txtMaNhanVien_DangNhap.Clear();
                         this.txtMaNhanVien_DangNhap.Focus();
                         this.txtMatKhau_DangNhap.Clear();
@@ -94,7 +92,6 @@ namespace QL_VatLieuXayDung
             this.txtMaNhanVien_DangNhap.Clear();
             this.txtMatKhau_DangNhap.Clear();
             this.txtMaNhanVien_DangNhap.Focus();
-            this.lblStatus_DangNhap.ResetText();
         }
     }
 }

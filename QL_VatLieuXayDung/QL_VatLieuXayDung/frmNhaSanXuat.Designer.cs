@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaSanXuat));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnAsc_NSX = new System.Windows.Forms.Button();
+            this.btnDes_NSX = new System.Windows.Forms.Button();
+            this.dgvNSX = new System.Windows.Forms.DataGridView();
+            this.ColumnMaNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTenNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDthoai_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEmail_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDchi_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,19 +62,10 @@
             this.lblDiachi_NSX = new System.Windows.Forms.Label();
             this.lblTenNSX_NSX = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblStatus_NSX = new System.Windows.Forms.Label();
-            this.dgvNSX = new System.Windows.Forms.DataGridView();
-            this.ColumnMaNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTenNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDthoai_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEmail_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDchi_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAsc_NSX = new System.Windows.Forms.Button();
-            this.btnDes_NSX = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNSX)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNSX)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -80,6 +79,78 @@
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhà xuất bản";
+            // 
+            // btnAsc_NSX
+            // 
+            this.btnAsc_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NSX.Image")));
+            this.btnAsc_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsc_NSX.Location = new System.Drawing.Point(592, 73);
+            this.btnAsc_NSX.Name = "btnAsc_NSX";
+            this.btnAsc_NSX.Size = new System.Drawing.Size(99, 44);
+            this.btnAsc_NSX.TabIndex = 21;
+            this.btnAsc_NSX.Text = "Trên xuống";
+            this.btnAsc_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAsc_NSX.UseVisualStyleBackColor = true;
+            this.btnAsc_NSX.Click += new System.EventHandler(this.btnAsc_NSX_Click);
+            // 
+            // btnDes_NSX
+            // 
+            this.btnDes_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NSX.Image")));
+            this.btnDes_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDes_NSX.Location = new System.Drawing.Point(592, 163);
+            this.btnDes_NSX.Name = "btnDes_NSX";
+            this.btnDes_NSX.Size = new System.Drawing.Size(99, 44);
+            this.btnDes_NSX.TabIndex = 22;
+            this.btnDes_NSX.Text = "Dưới lên";
+            this.btnDes_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDes_NSX.UseVisualStyleBackColor = true;
+            this.btnDes_NSX.Click += new System.EventHandler(this.btnDes_NSX_Click);
+            // 
+            // dgvNSX
+            // 
+            this.dgvNSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnMaNSX_NSX,
+            this.ColumnTenNSX_NSX,
+            this.ColumnDthoai_NSX,
+            this.ColumnEmail_NSX,
+            this.ColumnDchi_NSX});
+            this.dgvNSX.Location = new System.Drawing.Point(18, 25);
+            this.dgvNSX.Name = "dgvNSX";
+            this.dgvNSX.Size = new System.Drawing.Size(544, 233);
+            this.dgvNSX.TabIndex = 0;
+            this.dgvNSX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNSX_CellMouseClick);
+            // 
+            // ColumnMaNSX_NSX
+            // 
+            this.ColumnMaNSX_NSX.DataPropertyName = "MANSX";
+            this.ColumnMaNSX_NSX.HeaderText = "Mã sản xuất";
+            this.ColumnMaNSX_NSX.Name = "ColumnMaNSX_NSX";
+            // 
+            // ColumnTenNSX_NSX
+            // 
+            this.ColumnTenNSX_NSX.DataPropertyName = "TENNSX";
+            this.ColumnTenNSX_NSX.HeaderText = "Tên nhà sản xuất";
+            this.ColumnTenNSX_NSX.Name = "ColumnTenNSX_NSX";
+            // 
+            // ColumnDthoai_NSX
+            // 
+            this.ColumnDthoai_NSX.DataPropertyName = "DTHOAINSX";
+            this.ColumnDthoai_NSX.HeaderText = "Điện thoại";
+            this.ColumnDthoai_NSX.Name = "ColumnDthoai_NSX";
+            // 
+            // ColumnEmail_NSX
+            // 
+            this.ColumnEmail_NSX.DataPropertyName = "EMAILNSX";
+            this.ColumnEmail_NSX.HeaderText = "Email";
+            this.ColumnEmail_NSX.Name = "ColumnEmail_NSX";
+            // 
+            // ColumnDchi_NSX
+            // 
+            this.ColumnDchi_NSX.DataPropertyName = "DCHINSX";
+            this.ColumnDchi_NSX.HeaderText = "Địa chỉ";
+            this.ColumnDchi_NSX.Name = "ColumnDchi_NSX";
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -202,7 +273,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblStatus_NSX);
             this.groupBox1.Controls.Add(this.txtEmail_NSX);
             this.groupBox1.Controls.Add(this.lblEmail_NSX);
             this.groupBox1.Controls.Add(this.txtMaNSX_NSX);
@@ -308,86 +378,6 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 200;
             // 
-            // lblStatus_NSX
-            // 
-            this.lblStatus_NSX.AutoSize = true;
-            this.lblStatus_NSX.Location = new System.Drawing.Point(37, 86);
-            this.lblStatus_NSX.Name = "lblStatus_NSX";
-            this.lblStatus_NSX.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_NSX.TabIndex = 30;
-            this.lblStatus_NSX.Text = ".";
-            // 
-            // dgvNSX
-            // 
-            this.dgvNSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnMaNSX_NSX,
-            this.ColumnTenNSX_NSX,
-            this.ColumnDthoai_NSX,
-            this.ColumnEmail_NSX,
-            this.ColumnDchi_NSX});
-            this.dgvNSX.Location = new System.Drawing.Point(18, 25);
-            this.dgvNSX.Name = "dgvNSX";
-            this.dgvNSX.Size = new System.Drawing.Size(544, 233);
-            this.dgvNSX.TabIndex = 0;
-            this.dgvNSX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNSX_CellMouseClick);
-            // 
-            // ColumnMaNSX_NSX
-            // 
-            this.ColumnMaNSX_NSX.DataPropertyName = "MANSX";
-            this.ColumnMaNSX_NSX.HeaderText = "Mã sản xuất";
-            this.ColumnMaNSX_NSX.Name = "ColumnMaNSX_NSX";
-            // 
-            // ColumnTenNSX_NSX
-            // 
-            this.ColumnTenNSX_NSX.DataPropertyName = "TENNSX";
-            this.ColumnTenNSX_NSX.HeaderText = "Tên nhà sản xuất";
-            this.ColumnTenNSX_NSX.Name = "ColumnTenNSX_NSX";
-            // 
-            // ColumnDthoai_NSX
-            // 
-            this.ColumnDthoai_NSX.DataPropertyName = "DTHOAINSX";
-            this.ColumnDthoai_NSX.HeaderText = "Điện thoại";
-            this.ColumnDthoai_NSX.Name = "ColumnDthoai_NSX";
-            // 
-            // ColumnEmail_NSX
-            // 
-            this.ColumnEmail_NSX.DataPropertyName = "EMAILNSX";
-            this.ColumnEmail_NSX.HeaderText = "Email";
-            this.ColumnEmail_NSX.Name = "ColumnEmail_NSX";
-            // 
-            // ColumnDchi_NSX
-            // 
-            this.ColumnDchi_NSX.DataPropertyName = "DCHINSX";
-            this.ColumnDchi_NSX.HeaderText = "Địa chỉ";
-            this.ColumnDchi_NSX.Name = "ColumnDchi_NSX";
-            // 
-            // btnAsc_NSX
-            // 
-            this.btnAsc_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NSX.Image")));
-            this.btnAsc_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_NSX.Location = new System.Drawing.Point(592, 73);
-            this.btnAsc_NSX.Name = "btnAsc_NSX";
-            this.btnAsc_NSX.Size = new System.Drawing.Size(99, 44);
-            this.btnAsc_NSX.TabIndex = 21;
-            this.btnAsc_NSX.Text = "Trên xuống";
-            this.btnAsc_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAsc_NSX.UseVisualStyleBackColor = true;
-            this.btnAsc_NSX.Click += new System.EventHandler(this.btnAsc_NSX_Click);
-            // 
-            // btnDes_NSX
-            // 
-            this.btnDes_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NSX.Image")));
-            this.btnDes_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_NSX.Location = new System.Drawing.Point(592, 163);
-            this.btnDes_NSX.Name = "btnDes_NSX";
-            this.btnDes_NSX.Size = new System.Drawing.Size(99, 44);
-            this.btnDes_NSX.TabIndex = 22;
-            this.btnDes_NSX.Text = "Dưới lên";
-            this.btnDes_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDes_NSX.UseVisualStyleBackColor = true;
-            this.btnDes_NSX.Click += new System.EventHandler(this.btnDes_NSX_Click);
-            // 
             // frmNhaSanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,10 +391,10 @@
             this.Text = "Nhà sản xuất";
             this.Load += new System.EventHandler(this.frmNhaSanXuat_Load);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNSX)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNSX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,7 +427,6 @@
         private System.Windows.Forms.Label lblDiachi_NSX;
         private System.Windows.Forms.Label lblTenNSX_NSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Label lblStatus_NSX;
         private System.Windows.Forms.DataGridView dgvNSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMaNSX_NSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenNSX_NSX;

@@ -32,14 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGG = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblGiamGia = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblStatus_GG = new System.Windows.Forms.Label();
             this.lblKetthuc_GG = new System.Windows.Forms.Label();
             this.dtpKetthuc_GG = new System.Windows.Forms.DateTimePicker();
             this.lblBatdau_GG = new System.Windows.Forms.Label();
@@ -60,7 +54,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGG)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +72,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvGG);
-            this.groupBox2.Location = new System.Drawing.Point(430, 239);
+            this.groupBox2.Location = new System.Drawing.Point(430, 225);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(525, 188);
             this.groupBox2.TabIndex = 2;
@@ -88,6 +81,7 @@
             // 
             // dgvGG
             // 
+            this.dgvGG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -99,67 +93,6 @@
             this.dgvGG.Size = new System.Drawing.Size(484, 150);
             this.dgvGG.TabIndex = 0;
             this.dgvGG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGG_CellMouseClick);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(775, 71);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(180, 148);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thao tác";
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(97, 81);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(66, 49);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Lưu";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(97, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 49);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Xóa";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(16, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 49);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sửa";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(16, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thêm";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblGiamGia
             // 
@@ -174,7 +107,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lblStatus_GG);
             this.groupBox4.Controls.Add(this.lblKetthuc_GG);
             this.groupBox4.Controls.Add(this.dtpKetthuc_GG);
             this.groupBox4.Controls.Add(this.lblBatdau_GG);
@@ -186,24 +118,15 @@
             this.groupBox4.Controls.Add(this.lblMaGG_GG);
             this.groupBox4.Location = new System.Drawing.Point(430, 71);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(328, 162);
+            this.groupBox4.Size = new System.Drawing.Size(328, 148);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin đợt giảm giá";
             // 
-            // lblStatus_GG
-            // 
-            this.lblStatus_GG.AutoSize = true;
-            this.lblStatus_GG.Location = new System.Drawing.Point(50, 84);
-            this.lblStatus_GG.Name = "lblStatus_GG";
-            this.lblStatus_GG.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_GG.TabIndex = 10;
-            this.lblStatus_GG.Text = ".";
-            // 
             // lblKetthuc_GG
             // 
             this.lblKetthuc_GG.AutoSize = true;
-            this.lblKetthuc_GG.Location = new System.Drawing.Point(48, 136);
+            this.lblKetthuc_GG.Location = new System.Drawing.Point(48, 112);
             this.lblKetthuc_GG.Name = "lblKetthuc_GG";
             this.lblKetthuc_GG.Size = new System.Drawing.Size(77, 13);
             this.lblKetthuc_GG.TabIndex = 9;
@@ -212,7 +135,7 @@
             // dtpKetthuc_GG
             // 
             this.dtpKetthuc_GG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpKetthuc_GG.Location = new System.Drawing.Point(131, 131);
+            this.dtpKetthuc_GG.Location = new System.Drawing.Point(131, 107);
             this.dtpKetthuc_GG.Name = "dtpKetthuc_GG";
             this.dtpKetthuc_GG.Size = new System.Drawing.Size(154, 20);
             this.dtpKetthuc_GG.TabIndex = 8;
@@ -221,7 +144,7 @@
             // lblBatdau_GG
             // 
             this.lblBatdau_GG.AutoSize = true;
-            this.lblBatdau_GG.Location = new System.Drawing.Point(48, 110);
+            this.lblBatdau_GG.Location = new System.Drawing.Point(48, 86);
             this.lblBatdau_GG.Name = "lblBatdau_GG";
             this.lblBatdau_GG.Size = new System.Drawing.Size(75, 13);
             this.lblBatdau_GG.TabIndex = 7;
@@ -230,7 +153,7 @@
             // dtpBatdau_GG
             // 
             this.dtpBatdau_GG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBatdau_GG.Location = new System.Drawing.Point(131, 105);
+            this.dtpBatdau_GG.Location = new System.Drawing.Point(131, 81);
             this.dtpBatdau_GG.Name = "dtpBatdau_GG";
             this.dtpBatdau_GG.Size = new System.Drawing.Size(154, 20);
             this.dtpBatdau_GG.TabIndex = 5;
@@ -284,7 +207,7 @@
             this.groupBox6.Controls.Add(this.btnThem_GG);
             this.groupBox6.Location = new System.Drawing.Point(775, 71);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(180, 162);
+            this.groupBox6.Size = new System.Drawing.Size(180, 148);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thao tác";
@@ -293,7 +216,7 @@
             // 
             this.btnLuu_GG.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_GG.Image")));
             this.btnLuu_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_GG.Location = new System.Drawing.Point(97, 93);
+            this.btnLuu_GG.Location = new System.Drawing.Point(97, 81);
             this.btnLuu_GG.Name = "btnLuu_GG";
             this.btnLuu_GG.Size = new System.Drawing.Size(66, 49);
             this.btnLuu_GG.TabIndex = 6;
@@ -306,7 +229,7 @@
             // 
             this.btnXoa_GG.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_GG.Image")));
             this.btnXoa_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_GG.Location = new System.Drawing.Point(97, 34);
+            this.btnXoa_GG.Location = new System.Drawing.Point(97, 22);
             this.btnXoa_GG.Name = "btnXoa_GG";
             this.btnXoa_GG.Size = new System.Drawing.Size(66, 49);
             this.btnXoa_GG.TabIndex = 5;
@@ -319,7 +242,7 @@
             // 
             this.btnSua_GG.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_GG.Image")));
             this.btnSua_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_GG.Location = new System.Drawing.Point(16, 93);
+            this.btnSua_GG.Location = new System.Drawing.Point(16, 81);
             this.btnSua_GG.Name = "btnSua_GG";
             this.btnSua_GG.Size = new System.Drawing.Size(65, 49);
             this.btnSua_GG.TabIndex = 4;
@@ -332,7 +255,7 @@
             // 
             this.btnThem_GG.Image = ((System.Drawing.Image)(resources.GetObject("btnThem_GG.Image")));
             this.btnThem_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_GG.Location = new System.Drawing.Point(16, 34);
+            this.btnThem_GG.Location = new System.Drawing.Point(16, 22);
             this.btnThem_GG.Name = "btnThem_GG";
             this.btnThem_GG.Size = new System.Drawing.Size(65, 49);
             this.btnThem_GG.TabIndex = 0;
@@ -355,13 +278,13 @@
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "NGAYBATDAU";
+            this.Column3.DataPropertyName = "NGAYBD";
             this.Column3.HeaderText = "Ngày bắt đầu";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "NGAYKETTHUC";
+            this.Column4.DataPropertyName = "NGAYKT";
             this.Column4.HeaderText = "Ngày kết thúc";
             this.Column4.Name = "Column4";
             // 
@@ -371,7 +294,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 542);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.lblGiamGia);
@@ -381,7 +303,6 @@
             this.Load += new System.EventHandler(this.frmGiamGia_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGG)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -395,11 +316,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvGG;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblGiamGia;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblKetthuc_GG;
@@ -416,7 +332,6 @@
         private System.Windows.Forms.Button btnXoa_GG;
         private System.Windows.Forms.Button btnSua_GG;
         private System.Windows.Forms.Button btnThem_GG;
-        private System.Windows.Forms.Label lblStatus_GG;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

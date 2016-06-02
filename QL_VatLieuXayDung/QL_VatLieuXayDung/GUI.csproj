@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connect.cs" />
+    <Compile Include="fmPhieuNhapNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmPhieuNhapNCC.Designer.cs">
+      <DependentUpon>fmPhieuNhapNCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fmPhieuNhapNCC.resx">
+      <DependentUpon>fmPhieuNhapNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

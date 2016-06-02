@@ -36,16 +36,17 @@
             this.txtMatKhau_DangNhap = new System.Windows.Forms.TextBox();
             this.txtMaNhanVien_DangNhap = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblStatus_DangNhap = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(232, 118);
+            this.btnClose.Location = new System.Drawing.Point(223, 83);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(69, 28);
             this.btnClose.TabIndex = 13;
@@ -58,7 +59,7 @@
             // 
             this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangNhap.Location = new System.Drawing.Point(11, 118);
+            this.btnDangNhap.Location = new System.Drawing.Point(6, 83);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(96, 28);
             this.btnDangNhap.TabIndex = 12;
@@ -102,32 +103,25 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblStatus_DangNhap);
             this.groupBox1.Controls.Add(this.txtMaNhanVien_DangNhap);
+            this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.txtMatKhau_DangNhap);
             this.groupBox1.Controls.Add(this.lblMaNhanVien_DangNhap);
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnDangNhap);
             this.groupBox1.Controls.Add(this.lblMatKhau_DangNhap);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(144, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(289, 100);
+            this.groupBox1.Size = new System.Drawing.Size(298, 117);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đăng nhập";
-            // 
-            // lblStatus_DangNhap
-            // 
-            this.lblStatus_DangNhap.AutoSize = true;
-            this.lblStatus_DangNhap.Location = new System.Drawing.Point(29, 74);
-            this.lblStatus_DangNhap.Name = "lblStatus_DangNhap";
-            this.lblStatus_DangNhap.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_DangNhap.TabIndex = 12;
-            this.lblStatus_DangNhap.Text = ".";
             // 
             // btnReset
             // 
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(136, 118);
+            this.btnReset.Location = new System.Drawing.Point(125, 83);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(73, 28);
             this.btnReset.TabIndex = 17;
@@ -136,20 +130,30 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(17, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 159);
-            this.Controls.Add(this.btnReset);
+            this.ClientSize = new System.Drawing.Size(454, 144);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnDangNhap);
             this.Name = "frmDangNhap";
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,6 +168,6 @@
         private System.Windows.Forms.TextBox txtMaNhanVien_DangNhap;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Label lblStatus_DangNhap;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

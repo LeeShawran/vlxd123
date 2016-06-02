@@ -115,11 +115,12 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(1115, 27);
+            this.btnLuu.Location = new System.Drawing.Point(1172, 46);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(91, 39);
+            this.btnLuu.Size = new System.Drawing.Size(65, 39);
             this.btnLuu.TabIndex = 16;
-            this.btnLuu.Text = "    Lưu";
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 

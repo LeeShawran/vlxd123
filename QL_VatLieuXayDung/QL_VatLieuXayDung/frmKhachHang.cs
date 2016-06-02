@@ -58,8 +58,7 @@ namespace QL_VatLieuXayDung
         {
             if (this.txtMaKH_KH.TextLength == 0 || this.txtTenKH_KH.TextLength == 0)
             {
-                this.lblStatus_KH.ForeColor = Color.Red;
-                this.lblStatus_KH.Text = "Bạn chưa nhập thông tin khách hàng !";
+                MessageBox.Show("Bạn chưa nhập thông tin khách hàng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -68,8 +67,7 @@ namespace QL_VatLieuXayDung
                 OleDbCommand cmd = new OleDbCommand("Insert into T_KHACH_HANG values('" + txtMaKH_KH.Text + "','" + txtTenKH_KH.Text + "','" + phai + "','" + txtCMND_KH.Text + "','" + txtDiachi_KH.Text + "','" + txtDienthoai_KH.Text + "','" + txtGhichu_KH.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
-                    this.lblStatus_KH.ForeColor = Color.Red;
-                    this.lblStatus_KH.Text = "Đã có mã khách hàng này !";
+                    MessageBox.Show("Đã có mã khách hàng này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -155,9 +153,5 @@ namespace QL_VatLieuXayDung
             btnSua_KH.Enabled = true;
             btnLuu_KH.Enabled = false;
         }
-
-        
-
-
     }
 }

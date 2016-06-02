@@ -48,7 +48,6 @@
             this.lblTenNCC_NCC = new System.Windows.Forms.Label();
             this.lblNCC = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblStatus_NCC = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,10 +70,10 @@
             // 
             // txtGhiChu_NCC
             // 
-            this.txtGhiChu_NCC.Location = new System.Drawing.Point(394, 76);
+            this.txtGhiChu_NCC.Location = new System.Drawing.Point(394, 72);
             this.txtGhiChu_NCC.Multiline = true;
             this.txtGhiChu_NCC.Name = "txtGhiChu_NCC";
-            this.txtGhiChu_NCC.Size = new System.Drawing.Size(190, 37);
+            this.txtGhiChu_NCC.Size = new System.Drawing.Size(190, 41);
             this.txtGhiChu_NCC.TabIndex = 29;
             // 
             // lblGhichu_NCC
@@ -104,7 +103,7 @@
             // 
             // txtDienthoai_NCC
             // 
-            this.txtDienthoai_NCC.Location = new System.Drawing.Point(125, 93);
+            this.txtDienthoai_NCC.Location = new System.Drawing.Point(125, 72);
             this.txtDienthoai_NCC.Name = "txtDienthoai_NCC";
             this.txtDienthoai_NCC.Size = new System.Drawing.Size(190, 20);
             this.txtDienthoai_NCC.TabIndex = 25;
@@ -127,7 +126,7 @@
             // lblDienthoai_NCC
             // 
             this.lblDienthoai_NCC.AutoSize = true;
-            this.lblDienthoai_NCC.Location = new System.Drawing.Point(59, 97);
+            this.lblDienthoai_NCC.Location = new System.Drawing.Point(61, 75);
             this.lblDienthoai_NCC.Name = "lblDienthoai_NCC";
             this.lblDienthoai_NCC.Size = new System.Drawing.Size(58, 13);
             this.lblDienthoai_NCC.TabIndex = 22;
@@ -246,7 +245,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblStatus_NCC);
             this.groupBox1.Controls.Add(this.txtGhiChu_NCC);
             this.groupBox1.Controls.Add(this.lblGhichu_NCC);
             this.groupBox1.Controls.Add(this.txtMaNCC_NCC);
@@ -263,15 +261,6 @@
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp";
-            // 
-            // lblStatus_NCC
-            // 
-            this.lblStatus_NCC.AutoSize = true;
-            this.lblStatus_NCC.Location = new System.Drawing.Point(25, 75);
-            this.lblStatus_NCC.Name = "lblStatus_NCC";
-            this.lblStatus_NCC.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_NCC.TabIndex = 30;
-            this.lblStatus_NCC.Text = ".";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -346,6 +335,7 @@
             // 
             // dgvNCC
             // 
+            this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnMaNCC_NCC,
@@ -361,26 +351,31 @@
             // 
             // ColumnMaNCC_NCC
             // 
+            this.ColumnMaNCC_NCC.DataPropertyName = "MANCC";
             this.ColumnMaNCC_NCC.HeaderText = "Mã nhà cung cấp";
             this.ColumnMaNCC_NCC.Name = "ColumnMaNCC_NCC";
             // 
             // ColumnTenNCC_NCC
             // 
+            this.ColumnTenNCC_NCC.DataPropertyName = "TENNCC";
             this.ColumnTenNCC_NCC.HeaderText = "Tên nhà cung cấp";
             this.ColumnTenNCC_NCC.Name = "ColumnTenNCC_NCC";
             // 
             // ColumnDchi_NCC
             // 
+            this.ColumnDchi_NCC.DataPropertyName = "DCHINCC";
             this.ColumnDchi_NCC.HeaderText = "Địa chỉ";
             this.ColumnDchi_NCC.Name = "ColumnDchi_NCC";
             // 
             // ColumnDthoai_NCC
             // 
+            this.ColumnDthoai_NCC.DataPropertyName = "DTHOAINCC";
             this.ColumnDthoai_NCC.HeaderText = "Điện thoại";
             this.ColumnDthoai_NCC.Name = "ColumnDthoai_NCC";
             // 
             // ColumnGchu_NCC
             // 
+            this.ColumnGchu_NCC.DataPropertyName = "GCHUNCC";
             this.ColumnGchu_NCC.HeaderText = "Ghi chú";
             this.ColumnGchu_NCC.Name = "ColumnGchu_NCC";
             // 
@@ -434,13 +429,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvNCC;
-        private System.Windows.Forms.Label lblStatus_NCC;
+        private System.Windows.Forms.Button btnAsc_NCC;
+        private System.Windows.Forms.Button btnDes_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMaNCC_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenNCC_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDchi_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDthoai_NCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGchu_NCC;
-        private System.Windows.Forms.Button btnAsc_NCC;
-        private System.Windows.Forms.Button btnDes_NCC;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiSanPham));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblLoaiSP = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnDes_LoaiSP = new System.Windows.Forms.Button();
             this.btnAsc_LoaiSP = new System.Windows.Forms.Button();
@@ -48,32 +48,31 @@
             this.lblTenLoai_LoaiSP = new System.Windows.Forms.Label();
             this.txtMaLoai_LoaiSP = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblStatus_LoaiSP = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiSP)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblLoaiSP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(538, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 33);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "LOẠI SẢN PHẨM";
+            this.lblLoaiSP.AutoSize = true;
+            this.lblLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiSP.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblLoaiSP.Location = new System.Drawing.Point(538, 11);
+            this.lblLoaiSP.Name = "lblLoaiSP";
+            this.lblLoaiSP.Size = new System.Drawing.Size(252, 33);
+            this.lblLoaiSP.TabIndex = 81;
+            this.lblLoaiSP.Text = "LOẠI SẢN PHẨM";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnDes_LoaiSP);
             this.groupBox3.Controls.Add(this.btnAsc_LoaiSP);
             this.groupBox3.Controls.Add(this.dgvLoaiSP);
-            this.groupBox3.Location = new System.Drawing.Point(379, 189);
+            this.groupBox3.Location = new System.Drawing.Point(404, 153);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(608, 310);
+            this.groupBox3.Size = new System.Drawing.Size(509, 310);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách loại sản phẩm";
@@ -82,7 +81,7 @@
             // 
             this.btnDes_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_LoaiSP.Image")));
             this.btnDes_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_LoaiSP.Location = new System.Drawing.Point(501, 193);
+            this.btnDes_LoaiSP.Location = new System.Drawing.Point(375, 179);
             this.btnDes_LoaiSP.Name = "btnDes_LoaiSP";
             this.btnDes_LoaiSP.Size = new System.Drawing.Size(101, 47);
             this.btnDes_LoaiSP.TabIndex = 39;
@@ -95,7 +94,7 @@
             // 
             this.btnAsc_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_LoaiSP.Image")));
             this.btnAsc_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_LoaiSP.Location = new System.Drawing.Point(501, 75);
+            this.btnAsc_LoaiSP.Location = new System.Drawing.Point(375, 65);
             this.btnAsc_LoaiSP.Name = "btnAsc_LoaiSP";
             this.btnAsc_LoaiSP.Size = new System.Drawing.Size(101, 47);
             this.btnAsc_LoaiSP.TabIndex = 38;
@@ -106,13 +105,14 @@
             // 
             // dgvLoaiSP
             // 
+            this.dgvLoaiSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnMaLoai_LoaiSP,
             this.ColumnTenLoai_LoaiSP});
             this.dgvLoaiSP.Location = new System.Drawing.Point(29, 33);
             this.dgvLoaiSP.Name = "dgvLoaiSP";
-            this.dgvLoaiSP.Size = new System.Drawing.Size(456, 259);
+            this.dgvLoaiSP.Size = new System.Drawing.Size(316, 259);
             this.dgvLoaiSP.TabIndex = 37;
             this.dgvLoaiSP.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLoaiSP_CellMouseClick);
             // 
@@ -132,7 +132,7 @@
             // 
             this.btnThem_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnThem_LoaiSP.Image")));
             this.btnThem_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_LoaiSP.Location = new System.Drawing.Point(18, 21);
+            this.btnThem_LoaiSP.Location = new System.Drawing.Point(18, 16);
             this.btnThem_LoaiSP.Name = "btnThem_LoaiSP";
             this.btnThem_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnThem_LoaiSP.TabIndex = 12;
@@ -144,7 +144,7 @@
             // 
             this.btnLuu_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_LoaiSP.Image")));
             this.btnLuu_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_LoaiSP.Location = new System.Drawing.Point(121, 60);
+            this.btnLuu_LoaiSP.Location = new System.Drawing.Point(121, 55);
             this.btnLuu_LoaiSP.Name = "btnLuu_LoaiSP";
             this.btnLuu_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnLuu_LoaiSP.TabIndex = 16;
@@ -164,7 +164,7 @@
             // 
             this.btnXoa_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_LoaiSP.Image")));
             this.btnXoa_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_LoaiSP.Location = new System.Drawing.Point(18, 60);
+            this.btnXoa_LoaiSP.Location = new System.Drawing.Point(18, 55);
             this.btnXoa_LoaiSP.Name = "btnXoa_LoaiSP";
             this.btnXoa_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnXoa_LoaiSP.TabIndex = 13;
@@ -178,9 +178,9 @@
             this.groupBox2.Controls.Add(this.btnLuu_LoaiSP);
             this.groupBox2.Controls.Add(this.btnXoa_LoaiSP);
             this.groupBox2.Controls.Add(this.btnSua_LoaiSP);
-            this.groupBox2.Location = new System.Drawing.Point(766, 66);
+            this.groupBox2.Location = new System.Drawing.Point(692, 57);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 117);
+            this.groupBox2.Size = new System.Drawing.Size(221, 90);
             this.groupBox2.TabIndex = 78;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -189,7 +189,7 @@
             // 
             this.btnSua_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_LoaiSP.Image")));
             this.btnSua_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_LoaiSP.Location = new System.Drawing.Point(121, 21);
+            this.btnSua_LoaiSP.Location = new System.Drawing.Point(121, 16);
             this.btnSua_LoaiSP.Name = "btnSua_LoaiSP";
             this.btnSua_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnSua_LoaiSP.TabIndex = 14;
@@ -207,7 +207,7 @@
             // lblMaLoai_LoaiSP
             // 
             this.lblMaLoai_LoaiSP.AutoSize = true;
-            this.lblMaLoai_LoaiSP.Location = new System.Drawing.Point(55, 35);
+            this.lblMaLoai_LoaiSP.Location = new System.Drawing.Point(18, 29);
             this.lblMaLoai_LoaiSP.Name = "lblMaLoai_LoaiSP";
             this.lblMaLoai_LoaiSP.Size = new System.Drawing.Size(47, 13);
             this.lblMaLoai_LoaiSP.TabIndex = 6;
@@ -215,7 +215,7 @@
             // 
             // txtTenLoai_LoaiSP
             // 
-            this.txtTenLoai_LoaiSP.Location = new System.Drawing.Point(112, 57);
+            this.txtTenLoai_LoaiSP.Location = new System.Drawing.Point(75, 52);
             this.txtTenLoai_LoaiSP.Name = "txtTenLoai_LoaiSP";
             this.txtTenLoai_LoaiSP.Size = new System.Drawing.Size(192, 20);
             this.txtTenLoai_LoaiSP.TabIndex = 9;
@@ -223,7 +223,7 @@
             // lblTenLoai_LoaiSP
             // 
             this.lblTenLoai_LoaiSP.AutoSize = true;
-            this.lblTenLoai_LoaiSP.Location = new System.Drawing.Point(55, 60);
+            this.lblTenLoai_LoaiSP.Location = new System.Drawing.Point(18, 55);
             this.lblTenLoai_LoaiSP.Name = "lblTenLoai_LoaiSP";
             this.lblTenLoai_LoaiSP.Size = new System.Drawing.Size(51, 13);
             this.lblTenLoai_LoaiSP.TabIndex = 0;
@@ -231,40 +231,30 @@
             // 
             // txtMaLoai_LoaiSP
             // 
-            this.txtMaLoai_LoaiSP.Location = new System.Drawing.Point(112, 31);
+            this.txtMaLoai_LoaiSP.Location = new System.Drawing.Point(75, 26);
             this.txtMaLoai_LoaiSP.Name = "txtMaLoai_LoaiSP";
             this.txtMaLoai_LoaiSP.Size = new System.Drawing.Size(192, 20);
             this.txtMaLoai_LoaiSP.TabIndex = 7;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblStatus_LoaiSP);
+            this.groupBox1.Controls.Add(this.lblTenLoai_LoaiSP);
             this.groupBox1.Controls.Add(this.lblMaLoai_LoaiSP);
             this.groupBox1.Controls.Add(this.txtTenLoai_LoaiSP);
-            this.groupBox1.Controls.Add(this.lblTenLoai_LoaiSP);
             this.groupBox1.Controls.Add(this.txtMaLoai_LoaiSP);
-            this.groupBox1.Location = new System.Drawing.Point(379, 66);
+            this.groupBox1.Location = new System.Drawing.Point(404, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 117);
+            this.groupBox1.Size = new System.Drawing.Size(282, 90);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại sản phẩm";
-            // 
-            // lblStatus_LoaiSP
-            // 
-            this.lblStatus_LoaiSP.AutoSize = true;
-            this.lblStatus_LoaiSP.Location = new System.Drawing.Point(55, 86);
-            this.lblStatus_LoaiSP.Name = "lblStatus_LoaiSP";
-            this.lblStatus_LoaiSP.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_LoaiSP.TabIndex = 10;
-            this.lblStatus_LoaiSP.Text = ".";
             // 
             // frmLoaiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 542);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLoaiSP);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -283,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLoaiSP;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnThem_LoaiSP;
         private System.Windows.Forms.Button btnLuu_LoaiSP;
@@ -302,6 +292,5 @@
         private System.Windows.Forms.Button btnAsc_LoaiSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMaLoai_LoaiSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenLoai_LoaiSP;
-        private System.Windows.Forms.Label lblStatus_LoaiSP;
     }
 }

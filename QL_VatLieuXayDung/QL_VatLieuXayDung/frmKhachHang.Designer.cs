@@ -50,8 +50,11 @@
             this.btnSua_KH = new System.Windows.Forms.Button();
             this.lblDiachi_KH = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvKH = new System.Windows.Forms.DataGridView();
             this.lblTenKH_KH = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGhichu_KH = new System.Windows.Forms.TextBox();
+            this.lblGhichu_KH = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +62,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblKhachhang = new System.Windows.Forms.Label();
-            this.dgvKH = new System.Windows.Forms.DataGridView();
-            this.txtGhichu_KH = new System.Windows.Forms.TextBox();
-            this.lblGhichu_KH = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,16 +69,15 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblStatus_KH = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCMND_KH
             // 
-            this.txtCMND_KH.Location = new System.Drawing.Point(140, 124);
+            this.txtCMND_KH.Location = new System.Drawing.Point(140, 101);
             this.txtCMND_KH.Name = "txtCMND_KH";
             this.txtCMND_KH.Size = new System.Drawing.Size(197, 20);
             this.txtCMND_KH.TabIndex = 47;
@@ -86,7 +85,7 @@
             // lblCMND_KH
             // 
             this.lblCMND_KH.AutoSize = true;
-            this.lblCMND_KH.Location = new System.Drawing.Point(32, 127);
+            this.lblCMND_KH.Location = new System.Drawing.Point(32, 104);
             this.lblCMND_KH.Name = "lblCMND_KH";
             this.lblCMND_KH.Size = new System.Drawing.Size(58, 13);
             this.lblCMND_KH.TabIndex = 46;
@@ -95,7 +94,7 @@
             // rdcNu_KH
             // 
             this.rdcNu_KH.AutoSize = true;
-            this.rdcNu_KH.Location = new System.Drawing.Point(217, 101);
+            this.rdcNu_KH.Location = new System.Drawing.Point(190, 78);
             this.rdcNu_KH.Name = "rdcNu_KH";
             this.rdcNu_KH.Size = new System.Drawing.Size(39, 17);
             this.rdcNu_KH.TabIndex = 45;
@@ -106,7 +105,7 @@
             // 
             this.rdcNam_KH.AutoSize = true;
             this.rdcNam_KH.Checked = true;
-            this.rdcNam_KH.Location = new System.Drawing.Point(140, 101);
+            this.rdcNam_KH.Location = new System.Drawing.Point(140, 78);
             this.rdcNam_KH.Name = "rdcNam_KH";
             this.rdcNam_KH.Size = new System.Drawing.Size(47, 17);
             this.rdcNam_KH.TabIndex = 44;
@@ -152,7 +151,7 @@
             // lblPhai_KH
             // 
             this.lblPhai_KH.AutoSize = true;
-            this.lblPhai_KH.Location = new System.Drawing.Point(32, 103);
+            this.lblPhai_KH.Location = new System.Drawing.Point(32, 80);
             this.lblPhai_KH.Name = "lblPhai_KH";
             this.lblPhai_KH.Size = new System.Drawing.Size(31, 13);
             this.lblPhai_KH.TabIndex = 37;
@@ -184,9 +183,9 @@
             this.groupBox2.Controls.Add(this.bntLammoi);
             this.groupBox2.Controls.Add(this.btnXoa_KH);
             this.groupBox2.Controls.Add(this.btnSua_KH);
-            this.groupBox2.Location = new System.Drawing.Point(776, 68);
+            this.groupBox2.Location = new System.Drawing.Point(827, 68);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(123, 455);
+            this.groupBox2.Size = new System.Drawing.Size(123, 446);
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -273,12 +272,30 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgvKH);
-            this.groupBox3.Location = new System.Drawing.Point(98, 226);
+            this.groupBox3.Location = new System.Drawing.Point(148, 210);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(672, 304);
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách khách hàng";
+            // 
+            // dgvKH
+            // 
+            this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column6,
+            this.Column5,
+            this.Column7});
+            this.dgvKH.Location = new System.Drawing.Point(6, 28);
+            this.dgvKH.Name = "dgvKH";
+            this.dgvKH.Size = new System.Drawing.Size(650, 256);
+            this.dgvKH.TabIndex = 0;
+            this.dgvKH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKH_CellMouseClick);
             // 
             // lblTenKH_KH
             // 
@@ -291,7 +308,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblStatus_KH);
             this.groupBox1.Controls.Add(this.txtGhichu_KH);
             this.groupBox1.Controls.Add(this.lblGhichu_KH);
             this.groupBox1.Controls.Add(this.txtCMND_KH);
@@ -307,12 +323,29 @@
             this.groupBox1.Controls.Add(this.lblMaKH_KH);
             this.groupBox1.Controls.Add(this.lblDiachi_KH);
             this.groupBox1.Controls.Add(this.lblTenKH_KH);
-            this.groupBox1.Location = new System.Drawing.Point(97, 68);
+            this.groupBox1.Location = new System.Drawing.Point(148, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(673, 154);
+            this.groupBox1.Size = new System.Drawing.Size(673, 136);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // txtGhichu_KH
+            // 
+            this.txtGhichu_KH.Location = new System.Drawing.Point(428, 77);
+            this.txtGhichu_KH.Multiline = true;
+            this.txtGhichu_KH.Name = "txtGhichu_KH";
+            this.txtGhichu_KH.Size = new System.Drawing.Size(229, 46);
+            this.txtGhichu_KH.TabIndex = 49;
+            // 
+            // lblGhichu_KH
+            // 
+            this.lblGhichu_KH.AutoSize = true;
+            this.lblGhichu_KH.Location = new System.Drawing.Point(358, 80);
+            this.lblGhichu_KH.Name = "lblGhichu_KH";
+            this.lblGhichu_KH.Size = new System.Drawing.Size(47, 13);
+            this.lblGhichu_KH.TabIndex = 48;
+            this.lblGhichu_KH.Text = "Ghi chú:";
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -361,89 +394,53 @@
             this.lblKhachhang.AutoSize = true;
             this.lblKhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachhang.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblKhachhang.Location = new System.Drawing.Point(443, 20);
+            this.lblKhachhang.Location = new System.Drawing.Point(435, 20);
             this.lblKhachhang.Name = "lblKhachhang";
-            this.lblKhachhang.Size = new System.Drawing.Size(218, 33);
+            this.lblKhachhang.Size = new System.Drawing.Size(397, 33);
             this.lblKhachhang.TabIndex = 83;
-            this.lblKhachhang.Text = "KHÁCH HÀNG";
-            // 
-            // dgvKH
-            // 
-            this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column6,
-            this.Column5,
-            this.Column7});
-            this.dgvKH.Location = new System.Drawing.Point(34, 28);
-            this.dgvKH.Name = "dgvKH";
-            this.dgvKH.Size = new System.Drawing.Size(622, 247);
-            this.dgvKH.TabIndex = 0;
-            this.dgvKH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKH_CellMouseClick);
-            // 
-            // txtGhichu_KH
-            // 
-            this.txtGhichu_KH.Location = new System.Drawing.Point(428, 77);
-            this.txtGhichu_KH.Multiline = true;
-            this.txtGhichu_KH.Name = "txtGhichu_KH";
-            this.txtGhichu_KH.Size = new System.Drawing.Size(229, 46);
-            this.txtGhichu_KH.TabIndex = 49;
-            // 
-            // lblGhichu_KH
-            // 
-            this.lblGhichu_KH.AutoSize = true;
-            this.lblGhichu_KH.Location = new System.Drawing.Point(358, 80);
-            this.lblGhichu_KH.Name = "lblGhichu_KH";
-            this.lblGhichu_KH.Size = new System.Drawing.Size(47, 13);
-            this.lblGhichu_KH.TabIndex = 48;
-            this.lblGhichu_KH.Text = "Ghi chú:";
+            this.lblKhachhang.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "MAKH";
             this.Column1.HeaderText = "Mã khách hàng";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "TENKH";
             this.Column2.HeaderText = "Họ tên";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "PHAIKH";
             this.Column3.HeaderText = "Phái";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "CMNDKH";
             this.Column4.HeaderText = "Số CMND";
             this.Column4.Name = "Column4";
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "DIACHIKH";
             this.Column6.HeaderText = "Địa chỉ";
             this.Column6.Name = "Column6";
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "DTHOAIKH";
             this.Column5.HeaderText = "Điện thoại";
             this.Column5.Name = "Column5";
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "GHICHUKH";
             this.Column7.HeaderText = "Ghi chú";
             this.Column7.Name = "Column7";
-            // 
-            // lblStatus_KH
-            // 
-            this.lblStatus_KH.AutoSize = true;
-            this.lblStatus_KH.Location = new System.Drawing.Point(32, 80);
-            this.lblStatus_KH.Name = "lblStatus_KH";
-            this.lblStatus_KH.Size = new System.Drawing.Size(10, 13);
-            this.lblStatus_KH.TabIndex = 50;
-            this.lblStatus_KH.Text = ".";
             // 
             // frmKhachHang
             // 
@@ -459,9 +456,9 @@
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,6 +506,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Label lblStatus_KH;
     }
 }

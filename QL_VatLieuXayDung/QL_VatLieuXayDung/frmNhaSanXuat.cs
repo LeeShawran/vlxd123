@@ -57,8 +57,7 @@ namespace QL_VatLieuXayDung
         {
             if (this.txtMaNSX_NSX.TextLength == 0 || this.txtTenNSX_NSX.TextLength == 0)
             {
-                this.lblStatus_NSX.ForeColor = Color.Red;
-                this.lblStatus_NSX.Text = "Bạn chưa nhập thông tin nhà sản xuất !";
+                MessageBox.Show("Bạn chưa nhập thông tin nhà sản xuất !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -66,8 +65,7 @@ namespace QL_VatLieuXayDung
                 OleDbCommand cmd = new OleDbCommand("Insert into T_NHA_SAN_XUAT values('" + txtMaNSX_NSX.Text + "','" + txtTenNSX_NSX.Text + "','" + txtDienthoai_NSX.Text + "','" + txtEmail_NSX.Text + "','" + txtDiachi_NSX.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
-                    this.lblStatus_NSX.ForeColor = Color.Red;
-                    this.lblStatus_NSX.Text = "Đã có mã nhả sản xuất này !";
+                    MessageBox.Show("Đã có mã nhả sản xuất này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

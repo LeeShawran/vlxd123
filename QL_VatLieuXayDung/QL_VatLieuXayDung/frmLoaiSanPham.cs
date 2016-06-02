@@ -58,8 +58,7 @@ namespace QL_VatLieuXayDung
         {
             if (this.txtMaLoai_LoaiSP.TextLength == 0 || this.txtTenLoai_LoaiSP.TextLength == 0)
             {
-                this.lblStatus_LoaiSP.ForeColor = Color.Red;
-                this.lblStatus_LoaiSP.Text = "Bạn chưa nhập thông tin loại sản phẩm !";
+                MessageBox.Show("Bạn chưa nhập thông tin loại sản phẩm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -67,8 +66,7 @@ namespace QL_VatLieuXayDung
                 OleDbCommand cmd = new OleDbCommand("Insert into T_LOAI_SP values('" + txtMaLoai_LoaiSP.Text + "','" + txtTenLoai_LoaiSP.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
-                    this.lblStatus_LoaiSP.ForeColor = Color.Red;
-                    this.lblStatus_LoaiSP.Text = "Đã có mã loại sản phẩm này !";
+                    MessageBox.Show("Đã có mã loại sản phẩm này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
