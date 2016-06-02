@@ -475,6 +475,7 @@
             this.Controls.Add(this.lblNhanvien);
             this.Name = "frmNhanVien";
             this.Text = "Nhân viên";
+            this.Load += new System.EventHandler(this.frmNhanVien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

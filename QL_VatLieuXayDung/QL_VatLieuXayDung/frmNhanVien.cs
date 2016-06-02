@@ -34,5 +34,10 @@ namespace QL_VatLieuXayDung
         {
             
         }
+
+        private void frmNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
