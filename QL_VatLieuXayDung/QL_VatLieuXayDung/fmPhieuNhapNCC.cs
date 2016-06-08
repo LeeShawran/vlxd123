@@ -37,36 +37,27 @@ namespace QL_VatLieuXayDung
 
         public void loadLai()
         {
-            //dgvDonDatHang.Columns["Column4"].DefaultCellStyle.Format = @"dd/MM/yyyy";
-            //adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_NCC", conn);
-            //dt = new DataTable();
-            //adapter.Fill(dt);
-            //dgvDonDatHang.DataSource = dt;
-            //groupBoxCT_DDH.Enabled = false;
+            dgvNhapHang.Columns["ngaylapcol"].DefaultCellStyle.Format = @"dd/MM/yyyy";
+            adapter = new OleDbDataAdapter("select * from T_PHIEU_NHAP", conn);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dgvNhapHang.DataSource = dt;       
 
+            if (dt.Rows.Count < 100)
+                txtMaPN.Text = "PNNCC000" + (dt.Rows.Count + 1);
+            else if (dt.Rows.Count < 10)
+                txtMaPN.Text = "PNNCC00" + (dt.Rows.Count + 1);
+            else txtMaPN.Text = "PNNCC0" + (dt.Rows.Count + 1);
 
-            //luu = 0;
-            //groupBoxThongTinDH.Enabled = false;
-
-
-            //loadNCC();
-
-            //btnThemDDH.Enabled = true;
-            //btnLuuDDH.Enabled = false;
-            //btnSuaDDH.Enabled = false;
-            //btnXoaDDH.Enabled = false;
-            //btnPhieuNhap.Enabled = false;
-
-            //dgvDonDatHang.Enabled = true;
-
-            //txtMaPhieu.Clear();
-            //txtTongTien.Clear();
-            //cbTinhTRrang.DisplayMember = cbTinhTRrang.Items[0].ToString();
-            //cbNCC.DisplayMember = cbNCC.Items[0].ToString();
+            btnThem.Enabled = true;
         }
         private void fmPhieuNhapNCC_Load(object sender, EventArgs e)
         {
-
+            conn.Open();
+            loadLai();
+            txtNgayLap.Format = DateTimePickerFormat.Custom;
+            txtNgayLap.CustomFormat = "dd/MM/yyyy";
+            conn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,6 +65,45 @@ namespace QL_VatLieuXayDung
             conn.Open();
             loadCT_DonDatHang();
             conn.Close();
+        }
+
+        private bool Kiem_tra_khoa_chinh()
+        {
+            bool a = false;
+            string s = txtMaPN.Text;
+            cmd = new OleDbCommand("select * from T_PHIEU_NHAP", conn);
+            OleDbDataReader PK = cmd.ExecuteReader();
+            while (PK.Read())
+            {
+                if (s == PK.GetString(0))
+                {
+                    a = true;
+                    break;
+                }
+            }
+            return a;
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            //conn.Open();
+            //adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_NCC", conn);
+            //dt = new DataTable();
+            //adapter.Fill(dt);
+
+            //if (dt.Rows.Count < 100)
+            //    txtMaPhieu.Text = "DHNCC000" + (dt.Rows.Count + 1);
+            //else if (dt.Rows.Count < 10)
+            //    txtMaPhieu.Text = "DHNCC00" + (dt.Rows.Count + 1);
+            //else txtMaPhieu.Text = "DHNCC0" + (dt.Rows.Count + 1);
+            //conn.Close();
+
+            //groupBoxThongTinDH.Enabled = true;
+            //btnThemDDH.Enabled = false;
+            //btnXoaDDH.Enabled = false;
+            //btnSuaDDH.Enabled = false;
+            //btnLuuDDH.Enabled = true;
+            //dgvDonDatHang.Enabled = false;
+
         }
     }
 }

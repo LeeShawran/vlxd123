@@ -70,7 +70,7 @@ namespace QL_VatLieuXayDung
             //MessageBox.Show(""+b);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                MessageBox.Show("" + dt.Rows[i].Field<string>(0));
+                //MessageBox.Show("" + dt.Rows[i].Field<string>(0));
                 OleDbCommand cm8 = new OleDbCommand("insert into T_PHAN_QUYEN(MANHOM,MAMH,COQUYEN) values ('" + txtMaNTK_NTK.Text + "','" + dt.Rows[i].Field<string>(0) + "'," + 0 + ")", conn);
 
                 cm8.ExecuteNonQuery();
