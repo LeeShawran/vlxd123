@@ -18,6 +18,7 @@ namespace QL_VatLieuXayDung
         OleDbCommand cmd;
         DataTable dt;
         int luu = 0;
+        float tong = 0;
         public frmDonDatHangNCC()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace QL_VatLieuXayDung
             dt= new DataTable();
             adapter.Fill(dt);
             dgvDonDatHang.DataSource = dt;
-            groupBoxCT_DDH.Enabled = false;
+            groupBoxSanPham.Enabled = false;
            
 
             luu = 0;
@@ -51,6 +52,11 @@ namespace QL_VatLieuXayDung
             txtTongTien.Clear();
             cbTinhTRrang.DisplayMember = cbTinhTRrang.Items[0].ToString();
             cbNCC.DisplayMember = cbNCC.Items[0].ToString();
+
+            //
+            dtpNgayLap.Format = DateTimePickerFormat.Custom;
+            dtpNgayLap.CustomFormat = "dd/MM/yyyy";
+
         }
 
         public void loadNCC()
@@ -76,10 +82,6 @@ namespace QL_VatLieuXayDung
         {
             conn.Open();
             loadLai();
-            dtpNgayLap.Format = DateTimePickerFormat.Custom;
-            dtpNgayLap.CustomFormat = "dd/MM/yyyy";
-
-            btnLuuDDH.Enabled = false;
             conn.Close();
         }
 
@@ -122,6 +124,7 @@ namespace QL_VatLieuXayDung
             btnSuaDDH.Enabled = false;
             btnLuuDDH.Enabled = true;
             dgvDonDatHang.Enabled = false;
+            cbNCC.Enabled = true;
 
             txtTongTien.Text = "0";
         }
@@ -135,6 +138,7 @@ namespace QL_VatLieuXayDung
             btnSuaDDH.Enabled = false;
             btnLuuDDH.Enabled = true;
             dgvDonDatHang.Enabled = false;
+            cbNCC.Enabled = false;
         }
 
         private void btnLuuDDH_Click(object sender, EventArgs e)
@@ -191,12 +195,22 @@ namespace QL_VatLieuXayDung
 
         private void btnXoaDDH_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            cmd = new OleDbCommand("Delete from T_DON_DAT_HANG_NCC where MADATNCC='" + txtMaPhieu.Text + "'", conn);
-            cmd.ExecuteNonQuery();
-
-            loadLai();
-            conn.Close();
+           
+            if (dgvDonDatHang.CurrentRow.Cells[5].Value.ToString() == "Yes")
+            {
+                MessageBox.Show("Đơn đặt hàng đã thanh toán, không thể xóa");
+                return;
+            }
+            else 
+            {
+                conn.Open();
+                cmd = new OleDbCommand("Delete from T_DON_DAT_HANG_NCC where MADATNCC='" + txtMaPhieu.Text + "'", conn);
+                cmd.ExecuteNonQuery();
+                loadLai();
+                conn.Close();
+            }
+            
+          
         }
 
         private void dgvSanPHam_Click(object sender, EventArgs e)
@@ -246,83 +260,62 @@ namespace QL_VatLieuXayDung
             conn.Close();
         }
 
-        private void btnThemCT_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            DataGridViewRow row = new DataGridViewRow();
-            row = dgvSanPHam.CurrentRow;
-            if (this.txtDonGiaDat.TextLength == 0 || this.txtSLDat.TextLength ==0)
-            {
-                MessageBox.Show("Chưa nhập thông tin đơn giá, số lượng");
-                return;
-            }
-            else if(Kiem_tra_ma_sanpham(row.Cells[0].Value.ToString()))
-            {
-                    MessageBox.Show("Đã có mã sản phẩm này");
-                    return;
-            }
-            else
-            {
-                
-
-                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_NCC values('" + txtMaPhieu.Text + "','"+ row.Cells[0].Value.ToString() +"'," + int.Parse(txtSLDat.Text) + "," + float.Parse(txtDonGiaDat.Text) + ")", conn);
-                    cmd.ExecuteNonQuery();
-                    loadLai();
-
-               
-            }
-            conn.Close();
-        }
+     
 
         private void dgvDonDatHang_Click(object sender, EventArgs e)
         {
             conn.Open();
             btnXoaDDH.Enabled = true;
             btnSuaDDH.Enabled = true;
-            groupBoxCT_DDH.Enabled = true;
+           
 
             DataGridViewRow row = new DataGridViewRow();
             row = dgvDonDatHang.CurrentRow;
 
-
+            //lay ten NCC tu ma NCC de hien thi len comboboc
             cmd = new OleDbCommand("select TENNCC from T_NHA_CUNG_CAP where MANCC='" + row.Cells[2].Value.ToString() + "'", conn);
             string tenNCC = (string)cmd.ExecuteScalar();
 
-
+            //bam dong hien thi len dgv dat hang
             txtMaPhieu.Text = row.Cells[0].Value.ToString();
             dtpNgayLap.Value = DateTime.Parse(row.Cells[1].Value.ToString());
             cbNCC.Text = tenNCC;
             txtMaNV.Text = row.Cells[3].Value.ToString();
             txtTongTien.Text = row.Cells[4].Value.ToString();
             cbTinhTRrang.Text = row.Cells[5].Value.ToString();
-
-            if (row.Cells[5].Value.ToString() == "YES")
+            //kt tinhtrang thanh toan de hien thi nut nhap hang và khong cho them,xoa, sua san pham
+            if (row.Cells[5].Value.ToString() == "Yes")
             {
                 btnPhieuNhap.Enabled = true;
+                groupBoxSanPham.Enabled = false;
             }
-
-          
-
-            ///kt tinhtrang thanh toan
+            else 
+            {
+                btnPhieuNhap.Enabled = false;
+                groupBoxSanPham.Enabled = true;
+            }
+                
+   
            
             loadCT_DonDatHang();
 
+            ////bam dong hien thi len datagirdview sanpham
+            string st = "select MASP,TENSP,SOLUONG from T_SAN_PHAM where MANCC='" + row.Cells[2].Value.ToString() + "'";
+            adapter = new OleDbDataAdapter(st, conn);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dgvSanPHam.DataSource = dt;
+            ////bam dong hien thi len datagirdview chi tiet dat hang
+
+            string s = "select MASP,SOLUONG,DONGIANHAP from T_CT_DAT_HANG_NCC where MADATNCC='" + row.Cells[0].Value.ToString() + "'";
+            OleDbDataAdapter adapter2 = new OleDbDataAdapter(s, conn);
+            DataTable dt2 = new DataTable();
+            adapter2.Fill(dt2);
+            dgvCTDonDatHang.DataSource = dt2;
             conn.Close();
         }
 
-        private void btnXoaCT_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            DataGridViewRow row = new DataGridViewRow();
-            row = dgvSanPHam.CurrentRow;
-
-            cmd = new OleDbCommand("Delete from T_CT_DAT_HANG_NCC where MASP='" + row.Cells[0].Value.ToString() + "'", conn);
-            cmd.ExecuteNonQuery();
-
-            loadLai();
-            conn.Close();
-        }
-
+     
         private void btnSuaCT_Click(object sender, EventArgs e)
         {
 
@@ -335,6 +328,69 @@ namespace QL_VatLieuXayDung
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.Show();
             
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            loadLai();
+            conn.Close();
+        }
+
+        private void btnThemCT_Click_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgvSanPHam.CurrentRow;
+            if (this.txtDonGiaDat.TextLength == 0 || this.txtSLDat.TextLength == 0)
+            {
+                MessageBox.Show("Chưa nhập thông tin đơn giá, số lượng");
+                return;
+            }
+            else if (Kiem_tra_ma_sanpham(row.Cells[0].Value.ToString()))
+            {
+                MessageBox.Show("Đã có mã sản phẩm này");
+                return;
+            }
+            else
+            {
+                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_NCC values('" + txtMaPhieu.Text + "','" + row.Cells[0].Value.ToString() + "'," + int.Parse(txtSLDat.Text) + "," + float.Parse(txtDonGiaDat.Text) + ")", conn);
+                cmd.ExecuteNonQuery();
+                tong = tong + (float.Parse(txtSLDat.Text) * float.Parse(txtDonGiaDat.Text));
+                //update tong tien
+                string lenh= "update T_DON_DAT_HANG_NCC set TONGTIEN=" + tong + " where MADATNCC='" + txtMaPhieu.Text + "'";
+                OleDbCommand cmd3 = new OleDbCommand(lenh, conn);
+                cmd3.ExecuteNonQuery();
+                loadLai();
+
+                
+
+            }
+            conn.Close();
+        }
+
+        private void btnSuaCT_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaCT_Click_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgvSanPHam.CurrentRow;
+
+            cmd = new OleDbCommand("Delete from T_CT_DAT_HANG_NCC where MASP='" + row.Cells[0].Value.ToString() + "'", conn);
+            cmd.ExecuteNonQuery();
+
+            tong = tong - (float.Parse(txtSLDat.Text) * float.Parse(txtDonGiaDat.Text));
+            string lenh = "update T_DON_DAT_HANG_NCC set TONGTIEN=" + tong + " where MADATNCC='" + txtMaPhieu.Text + "'";
+            OleDbCommand cmd3 = new OleDbCommand(lenh, conn);
+            cmd3.ExecuteNonQuery();
+
+            loadLai();
+           
+            conn.Close();
         }
     }
 }

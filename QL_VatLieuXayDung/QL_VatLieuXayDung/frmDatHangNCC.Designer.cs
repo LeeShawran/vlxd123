@@ -42,6 +42,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnPhieuNhap = new System.Windows.Forms.Button();
             this.groupBoxThongTinDH = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,6 +58,9 @@
             this.btnThemDDH = new System.Windows.Forms.Button();
             this.lblDDH_NCC = new System.Windows.Forms.Label();
             this.groupBoxSanPham = new System.Windows.Forms.GroupBox();
+            this.btnXoaCT = new System.Windows.Forms.Button();
+            this.btnSuaCT = new System.Windows.Forms.Button();
+            this.btnThemCT = new System.Windows.Forms.Button();
             this.txtDonGiaDat = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvSanPHam = new System.Windows.Forms.DataGridView();
@@ -70,9 +74,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXoaCT = new System.Windows.Forms.Button();
-            this.btnSuaCT = new System.Windows.Forms.Button();
-            this.btnThemCT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDatHang)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBoxThongTinDH.SuspendLayout();
@@ -111,6 +112,7 @@
             // 
             // txtMaPhieu
             // 
+            this.txtMaPhieu.Enabled = false;
             this.txtMaPhieu.Location = new System.Drawing.Point(125, 20);
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(174, 20);
@@ -181,6 +183,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnPhieuNhap);
             this.groupBox2.Controls.Add(this.groupBoxThongTinDH);
             this.groupBox2.Controls.Add(this.btnXoaDDH);
@@ -195,11 +198,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách đơn đặt hàng";
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Location = new System.Drawing.Point(467, 182);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(81, 44);
+            this.btnLamMoi.TabIndex = 102;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // btnPhieuNhap
             // 
             this.btnPhieuNhap.Location = new System.Drawing.Point(467, 33);
             this.btnPhieuNhap.Name = "btnPhieuNhap";
-            this.btnPhieuNhap.Size = new System.Drawing.Size(81, 193);
+            this.btnPhieuNhap.Size = new System.Drawing.Size(81, 143);
             this.btnPhieuNhap.TabIndex = 101;
             this.btnPhieuNhap.Text = "Tạo phiếu nhập";
             this.btnPhieuNhap.UseVisualStyleBackColor = true;
@@ -353,6 +366,9 @@
             // 
             // groupBoxSanPham
             // 
+            this.groupBoxSanPham.Controls.Add(this.btnXoaCT);
+            this.groupBoxSanPham.Controls.Add(this.btnSuaCT);
+            this.groupBoxSanPham.Controls.Add(this.btnThemCT);
             this.groupBoxSanPham.Controls.Add(this.txtDonGiaDat);
             this.groupBoxSanPham.Controls.Add(this.label9);
             this.groupBoxSanPham.Controls.Add(this.dgvSanPHam);
@@ -360,10 +376,49 @@
             this.groupBoxSanPham.Controls.Add(this.label7);
             this.groupBoxSanPham.Location = new System.Drawing.Point(29, 19);
             this.groupBoxSanPham.Name = "groupBoxSanPham";
-            this.groupBoxSanPham.Size = new System.Drawing.Size(405, 225);
+            this.groupBoxSanPham.Size = new System.Drawing.Size(519, 225);
             this.groupBoxSanPham.TabIndex = 94;
             this.groupBoxSanPham.TabStop = false;
             this.groupBoxSanPham.Text = "Sản phẩm trong kho";
+            // 
+            // btnXoaCT
+            // 
+            this.btnXoaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCT.Image")));
+            this.btnXoaCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaCT.Location = new System.Drawing.Point(414, 89);
+            this.btnXoaCT.Name = "btnXoaCT";
+            this.btnXoaCT.Size = new System.Drawing.Size(76, 43);
+            this.btnXoaCT.TabIndex = 105;
+            this.btnXoaCT.Text = "Xóa";
+            this.btnXoaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaCT.UseVisualStyleBackColor = true;
+            this.btnXoaCT.Click += new System.EventHandler(this.btnXoaCT_Click_1);
+            // 
+            // btnSuaCT
+            // 
+            this.btnSuaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaCT.Image")));
+            this.btnSuaCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaCT.Location = new System.Drawing.Point(414, 138);
+            this.btnSuaCT.Name = "btnSuaCT";
+            this.btnSuaCT.Size = new System.Drawing.Size(76, 43);
+            this.btnSuaCT.TabIndex = 106;
+            this.btnSuaCT.Text = "Sửa";
+            this.btnSuaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaCT.UseVisualStyleBackColor = true;
+            this.btnSuaCT.Click += new System.EventHandler(this.btnSuaCT_Click_1);
+            // 
+            // btnThemCT
+            // 
+            this.btnThemCT.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCT.Image")));
+            this.btnThemCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemCT.Location = new System.Drawing.Point(414, 40);
+            this.btnThemCT.Name = "btnThemCT";
+            this.btnThemCT.Size = new System.Drawing.Size(76, 43);
+            this.btnThemCT.TabIndex = 104;
+            this.btnThemCT.Text = "Thêm";
+            this.btnThemCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemCT.UseVisualStyleBackColor = true;
+            this.btnThemCT.Click += new System.EventHandler(this.btnThemCT_Click_1);
             // 
             // txtDonGiaDat
             // 
@@ -434,10 +489,7 @@
             // groupBoxCT_DDH
             // 
             this.groupBoxCT_DDH.Controls.Add(this.dgvCTDonDatHang);
-            this.groupBoxCT_DDH.Controls.Add(this.btnXoaCT);
             this.groupBoxCT_DDH.Controls.Add(this.groupBoxSanPham);
-            this.groupBoxCT_DDH.Controls.Add(this.btnSuaCT);
-            this.groupBoxCT_DDH.Controls.Add(this.btnThemCT);
             this.groupBoxCT_DDH.Location = new System.Drawing.Point(667, 45);
             this.groupBoxCT_DDH.Name = "groupBoxCT_DDH";
             this.groupBoxCT_DDH.Size = new System.Drawing.Size(587, 485);
@@ -475,45 +527,6 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "DONGIANHAP";
             this.dataGridViewTextBoxColumn6.HeaderText = "Đơn giá nhập";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // btnXoaCT
-            // 
-            this.btnXoaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCT.Image")));
-            this.btnXoaCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaCT.Location = new System.Drawing.Point(472, 84);
-            this.btnXoaCT.Name = "btnXoaCT";
-            this.btnXoaCT.Size = new System.Drawing.Size(76, 43);
-            this.btnXoaCT.TabIndex = 101;
-            this.btnXoaCT.Text = "Xóa";
-            this.btnXoaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaCT.UseVisualStyleBackColor = true;
-            this.btnXoaCT.Click += new System.EventHandler(this.btnXoaCT_Click);
-            // 
-            // btnSuaCT
-            // 
-            this.btnSuaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaCT.Image")));
-            this.btnSuaCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaCT.Location = new System.Drawing.Point(472, 133);
-            this.btnSuaCT.Name = "btnSuaCT";
-            this.btnSuaCT.Size = new System.Drawing.Size(76, 43);
-            this.btnSuaCT.TabIndex = 103;
-            this.btnSuaCT.Text = "Sửa";
-            this.btnSuaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaCT.UseVisualStyleBackColor = true;
-            this.btnSuaCT.Click += new System.EventHandler(this.btnSuaCT_Click);
-            // 
-            // btnThemCT
-            // 
-            this.btnThemCT.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCT.Image")));
-            this.btnThemCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCT.Location = new System.Drawing.Point(472, 35);
-            this.btnThemCT.Name = "btnThemCT";
-            this.btnThemCT.Size = new System.Drawing.Size(76, 43);
-            this.btnThemCT.TabIndex = 100;
-            this.btnThemCT.Text = "Thêm";
-            this.btnThemCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemCT.UseVisualStyleBackColor = true;
-            this.btnThemCT.Click += new System.EventHandler(this.btnThemCT_Click);
             // 
             // frmDonDatHangNCC
             // 
@@ -568,9 +581,6 @@
         protected System.Windows.Forms.ComboBox cbTinhTRrang;
         protected System.Windows.Forms.TextBox txtTongTien;
         protected System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnXoaCT;
-        private System.Windows.Forms.Button btnSuaCT;
-        private System.Windows.Forms.Button btnThemCT;
         private System.Windows.Forms.DataGridView dgvCTDonDatHang;
         private System.Windows.Forms.GroupBox groupBoxThongTinDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn masp;
@@ -586,5 +596,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button btnPhieuNhap;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnXoaCT;
+        private System.Windows.Forms.Button btnSuaCT;
+        private System.Windows.Forms.Button btnThemCT;
     }
 }
