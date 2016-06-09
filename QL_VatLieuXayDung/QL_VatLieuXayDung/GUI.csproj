@@ -66,11 +66,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThanhToanNCC.cs">
+    <Compile Include="frmThanhToanHD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThanhToanNCC.Designer.cs">
-      <DependentUpon>frmThanhToanNCC.cs</DependentUpon>
+    <Compile Include="frmThanhToanHD.Designer.cs">
+      <DependentUpon>frmThanhToanHD.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCauHinh.cs">
       <SubType>Form</SubType>
@@ -90,11 +90,11 @@
     <Compile Include="frmDatHangNCC.Designer.cs">
       <DependentUpon>frmDatHangNCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDatHangNCC_2.cs">
+    <Compile Include="frmBanHangKH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDatHangNCC_2.Designer.cs">
-      <DependentUpon>frmDatHangNCC_2.cs</DependentUpon>
+    <Compile Include="frmBanHangKH.Designer.cs">
+      <DependentUpon>frmBanHangKH.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGiamGia.cs">
       <SubType>Form</SubType>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="frmCauHinh.resx">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThanhToanNCC.resx">
-      <DependentUpon>frmThanhToanNCC.cs</DependentUpon>
+    <EmbeddedResource Include="frmThanhToanHD.resx">
+      <DependentUpon>frmThanhToanHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -182,8 +182,8 @@
     <EmbeddedResource Include="frmDatHangNCC.resx">
       <DependentUpon>frmDatHangNCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDatHangNCC_2.resx">
-      <DependentUpon>frmDatHangNCC_2.cs</DependentUpon>
+    <EmbeddedResource Include="frmBanHangKH.resx">
+      <DependentUpon>frmBanHangKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiamGia.resx">
       <DependentUpon>frmGiamGia.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL_VatLieuXayDung
 {
-    public partial class frmThanhToanNCC : Form
+    public partial class frmThanhToanHD : Form
     {
-        public frmThanhToanNCC()
+        public frmThanhToanHD()
         {
             InitializeComponent();
         }

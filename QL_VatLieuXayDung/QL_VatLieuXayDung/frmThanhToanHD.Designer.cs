@@ -1,6 +1,6 @@
 ﻿namespace QL_VatLieuXayDung
 {
-    partial class frmThanhToanNCC
+    partial class frmThanhToanHD
     {
         /// <summary>
         /// Required designer variable.
