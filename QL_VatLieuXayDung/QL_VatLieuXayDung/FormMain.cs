@@ -227,14 +227,14 @@ namespace QL_VatLieuXayDung
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.KT_TonTai(typeof(frmDonDatHangNCC));
+            Form frm = this.KT_TonTai(typeof(frmDinhGia));
             if (frm != null)
             {
                 frm.Activate();
             }
             else
             {
-                frmDonDatHangNCC f = new frmDonDatHangNCC();
+                frmDinhGia f = new frmDinhGia();
                 f.MdiParent = this;
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.Show();

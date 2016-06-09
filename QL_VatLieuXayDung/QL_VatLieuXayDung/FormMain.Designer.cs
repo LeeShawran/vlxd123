@@ -66,7 +66,7 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiamGia = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThanhtoan_NCC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDinhGia = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -222,7 +222,7 @@
             this.barButtonItem29,
             this.barButtonItem30,
             this.btnGiamGia,
-            this.btnThanhtoan_NCC});
+            this.btnDinhGia});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 43;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -392,12 +392,12 @@
             this.btnGiamGia.Name = "btnGiamGia";
             this.btnGiamGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiamGia_ItemClick);
             // 
-            // btnThanhtoan_NCC
+            // btnDinhGia
             // 
-            this.btnThanhtoan_NCC.Caption = "Thanh toán nhà cung cấp";
-            this.btnThanhtoan_NCC.Id = 42;
-            this.btnThanhtoan_NCC.Name = "btnThanhtoan_NCC";
-            this.btnThanhtoan_NCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.btnDinhGia.Caption = "Định giá";
+            this.btnDinhGia.Id = 42;
+            this.btnDinhGia.Name = "btnDinhGia";
+            this.btnDinhGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPage2
             // 
@@ -487,7 +487,7 @@
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnThanhtoan_NCC);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnDinhGia);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Thanh toán nhà cung cấp";
             // 
@@ -627,7 +627,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem btnGiamGia;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
-        private DevExpress.XtraBars.BarButtonItem btnThanhtoan_NCC;
+        private DevExpress.XtraBars.BarButtonItem btnDinhGia;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
 
     }
