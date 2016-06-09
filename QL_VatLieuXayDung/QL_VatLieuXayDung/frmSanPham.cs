@@ -133,6 +133,8 @@ namespace QL_VatLieuXayDung
             else txtMaSP.Text = "SP0" + (dt.Rows.Count + 1);
             conn.Close();
 
+
+
             groupBox1.Enabled = true;
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
@@ -249,17 +251,26 @@ namespace QL_VatLieuXayDung
 
                 cmd = new OleDbCommand("select TENNCC from T_NHA_CUNG_CAP where MANCC='" + row.Cells[4].Value.ToString() + "'", conn);
                 string tenNCC = (string)cmd.ExecuteScalar();
-                
+
 
                 txtMaSP.Text = row.Cells[0].Value.ToString();
                 txtTenSP.Text = row.Cells[1].Value.ToString();
                 cbLoai.Text = tenloai;
                 cbNhaSX.Text = tenNSX;
                 cbNhaCC.Text = tenNCC;
-                txtDongianhap.Text = row.Cells[5].Value.ToString();
-                txtSoluong.Text = row.Cells[6].Value.ToString();
+                txtSoluong.Text = row.Cells[5].Value.ToString();
+
+                string lenh1 = "select DONGIANHAP from T_GIA_NHAP where MASP='SP0001' ORDER BY NGAYAPDUNG desc";
+                OleDbCommand cmd1 = new OleDbCommand(lenh1, conn);
+                int a = Convert.ToInt32(cmd1.ExecuteScalar().ToString());
+                txtDongianhap.Text = "" + a;
                 conn.Close();
         
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }

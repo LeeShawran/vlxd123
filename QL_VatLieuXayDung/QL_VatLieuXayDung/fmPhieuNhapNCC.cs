@@ -139,16 +139,16 @@ namespace QL_VatLieuXayDung
                 DataTable dt2 = new DataTable();
                 adapter2.Fill(dt2);
 
-                string gia;
-                if (dt2.Rows.Count < 100)
-                   gia = "GIAN000" + (dt2.Rows.Count + 1);
-                else if (dt2.Rows.Count < 10)
-                    gia = "GIANC00" + (dt2.Rows.Count + 1);
-                else gia= "GIAN0" + (dt2.Rows.Count + 1);
-                MessageBox.Show(gia);
+                //string gia;
+                //if (dt2.Rows.Count < 100)
+                //   gia = "GIAN000" + (dt2.Rows.Count + 1);
+                //else if (dt2.Rows.Count < 10)
+                //    gia = "GIANC00" + (dt2.Rows.Count + 1);
+                //else gia= "GIAN0" + (dt2.Rows.Count + 1);
+                //MessageBox.Show(gia);
 
 
-                string lenh4 = "Insert into T_GIA_NHAP values('"+ gia +"','" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells[2].Value.ToString()) + ")";
+                string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells[2].Value.ToString()) + ")";
                 OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
                 cmd4.ExecuteNonQuery();
 
