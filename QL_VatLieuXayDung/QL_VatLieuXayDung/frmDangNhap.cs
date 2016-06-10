@@ -14,6 +14,7 @@ namespace QL_VatLieuXayDung
     public partial class frmDangNhap : Form
     {
         int kq;
+        string manv;
         OleDbConnection conn;
         public frmDangNhap()
         {
@@ -26,7 +27,7 @@ namespace QL_VatLieuXayDung
         {
             if (this.txtMaNhanVien_DangNhap.TextLength == 0 || this.txtMatKhau_DangNhap.TextLength == 0)
             {
-                MessageBox.Show("Bạn chưa nhập gì cả !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Nhập thiếu thông tin !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -55,13 +56,39 @@ namespace QL_VatLieuXayDung
                         if (dt.Rows[i].Field<string>(0) == txtMaNhanVien_DangNhap.Text && dt.Rows[i].Field<string>(6) == txtMatKhau_DangNhap.Text)// (0) la cot tai khoan
                         {
                             q = true;
+                            manv = dt.Rows[i].Field<string>(0);
                         }
                     }
                     if (q == true)
                     {
                         this.Hide();
-                        FormMain f = new FormMain();
-                        f.Show();
+                        if (Program.mainForm == null || Program.mainForm.IsDisposed)
+                        {
+                            Program.mainForm = new FormMain();
+                  
+                        }
+                        Program.mainForm.ma = manv;
+                        //phan quyen
+                        DataTable phanquyen = new DataTable();
+                        OleDbCommand c = new OleDbCommand("select T_PHAN_QUYEN.* from T_NHOM_TAI_KHOAN,T_PHAN_QUYEN,T_NHAN_VIEN where T_NHOM_TAI_KHOAN.MANHOM=T_PHAN_QUYEN.MANHOM and T_NHOM_TAI_KHOAN.MANHOM=T_NHAN_VIEN.MANHOM and T_NHAN_VIEN.MANV='" + txtMaNhanVien_DangNhap.Text + "'", conn);
+                        OleDbDataAdapter da = new OleDbDataAdapter(c);
+                        da.Fill(phanquyen);
+                        //////////
+
+                        foreach (DataRow row in phanquyen.Rows)
+                        {
+                            if (row.Field<String>(1) == "MH01" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH01 = false;
+                            if (row.Field<String>(1) == "MH02" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH02 = false;
+                            if (row.Field<String>(1) == "MH03" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH03 = false;
+                            if (row.Field<String>(1) == "MH04" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH04 = false;
+
+                        }
+                        Program.mainForm.Show();
+
                     }
                     else
                     {

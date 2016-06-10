@@ -11,10 +11,16 @@ namespace QL_VatLieuXayDung
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        static public Label lbTen;
+      
         public FormMain()
         {
             InitializeComponent();
+           
         }
+        
+      
+       
 
         private Form KT_TonTai(Type frm_type)
         {
@@ -238,6 +244,30 @@ namespace QL_VatLieuXayDung
                 f.MdiParent = this;
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.Show();
+            }
+        }
+
+        public string ma;
+        public bool MH01 = true, MH02 = true, MH03 = true, MH04 = true;
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            //lbTen = labelTen;
+            MessageBox.Show("" + ma);
+            if (MH01 == false)
+            {
+                ribbonPageLienHe.Enabled = false;
+            }
+            if (MH02 == false)
+            {
+                ribbonPageNhomtk.Enabled = false;
+            }
+            if (MH03 == false)
+            {
+                ribbonPagePhanQuyen.Enabled = false;
+            }
+            if (MH04 == false)
+            {
+                ribbonPageNhanVien.Enabled = false;
             }
         }
     }

@@ -7,6 +7,7 @@ namespace QL_VatLieuXayDung
 {
     static class Program
     {
+        public static FormMain mainForm = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

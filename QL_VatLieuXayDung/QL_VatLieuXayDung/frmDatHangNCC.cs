@@ -26,6 +26,8 @@ namespace QL_VatLieuXayDung
         }
         public void loadLai()
         {
+            txtMaNV.Text = Program.mainForm.ma;
+
             dgvDonDatHang.Columns["Column4"].DefaultCellStyle.Format = @"dd/MM/yyyy";
             adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_NCC", conn);
             dt= new DataTable();
