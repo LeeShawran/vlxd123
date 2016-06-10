@@ -375,7 +375,11 @@ namespace QL_VatLieuXayDung
         {
 
         }
-
+        private void dgvCTDonDatHang_Click(object sender, EventArgs e)
+        {
+            txtSLDat.Text = dgvCTDonDatHang.CurrentRow.Cells[1].Value.ToString();
+            txtDonGiaDat.Text = dgvCTDonDatHang.CurrentRow.Cells[2].Value.ToString();
+        }
         private void btnXoaCT_Click_1(object sender, EventArgs e)
         {
             conn.Open();
@@ -394,5 +398,7 @@ namespace QL_VatLieuXayDung
            
             conn.Close();
         }
+
+       
     }
 }

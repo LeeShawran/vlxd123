@@ -60,6 +60,8 @@
             this.lblMaNV = new System.Windows.Forms.Label();
             this.lblMaHDBH = new System.Windows.Forms.Label();
             this.lblBanHangKhachHang = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -76,7 +78,7 @@
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Location = new System.Drawing.Point(729, 56);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(463, 475);
+            this.groupBox4.Size = new System.Drawing.Size(541, 475);
             this.groupBox4.TabIndex = 105;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chi tiết hóa đơn";
@@ -91,6 +93,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.btnSuaSP);
             this.groupBox5.Controls.Add(this.dgvSP);
             this.groupBox5.Controls.Add(this.btnXoaSP);
@@ -101,7 +105,7 @@
             this.groupBox5.Controls.Add(this.lblSoluongmua);
             this.groupBox5.Location = new System.Drawing.Point(6, 19);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(438, 213);
+            this.groupBox5.Size = new System.Drawing.Size(517, 213);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sản phẩm trong kho";
@@ -110,7 +114,7 @@
             // 
             this.btnSuaSP.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaSP.Image")));
             this.btnSuaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaSP.Location = new System.Drawing.Point(351, 158);
+            this.btnSuaSP.Location = new System.Drawing.Point(383, 130);
             this.btnSuaSP.Name = "btnSuaSP";
             this.btnSuaSP.Size = new System.Drawing.Size(66, 42);
             this.btnSuaSP.TabIndex = 5;
@@ -130,7 +134,7 @@
             // 
             this.btnXoaSP.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaSP.Image")));
             this.btnXoaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaSP.Location = new System.Drawing.Point(351, 89);
+            this.btnXoaSP.Location = new System.Drawing.Point(434, 66);
             this.btnXoaSP.Name = "btnXoaSP";
             this.btnXoaSP.Size = new System.Drawing.Size(66, 42);
             this.btnXoaSP.TabIndex = 4;
@@ -140,7 +144,7 @@
             // 
             // txtGiaban
             // 
-            this.txtGiaban.Location = new System.Drawing.Point(228, 24);
+            this.txtGiaban.Location = new System.Drawing.Point(189, 24);
             this.txtGiaban.Name = "txtGiaban";
             this.txtGiaban.Size = new System.Drawing.Size(94, 20);
             this.txtGiaban.TabIndex = 3;
@@ -149,7 +153,7 @@
             // 
             this.btnThemSP.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSP.Image")));
             this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSP.Location = new System.Drawing.Point(351, 24);
+            this.btnThemSP.Location = new System.Drawing.Point(342, 66);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(66, 42);
             this.btnThemSP.TabIndex = 3;
@@ -160,7 +164,7 @@
             // lblGiaban
             // 
             this.lblGiaban.AutoSize = true;
-            this.lblGiaban.Location = new System.Drawing.Point(175, 27);
+            this.lblGiaban.Location = new System.Drawing.Point(136, 27);
             this.lblGiaban.Name = "lblGiaban";
             this.lblGiaban.Size = new System.Drawing.Size(47, 13);
             this.lblGiaban.TabIndex = 2;
@@ -170,7 +174,7 @@
             // 
             this.txtSoluongmua.Location = new System.Drawing.Point(96, 24);
             this.txtSoluongmua.Name = "txtSoluongmua";
-            this.txtSoluongmua.Size = new System.Drawing.Size(53, 20);
+            this.txtSoluongmua.Size = new System.Drawing.Size(34, 20);
             this.txtSoluongmua.TabIndex = 1;
             // 
             // lblSoluongmua
@@ -383,6 +387,24 @@
             this.lblBanHangKhachHang.TabIndex = 103;
             this.lblBanHangKhachHang.Text = "BÁN HÀNG KHÁCH HÀNG";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(307, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Khuyến mãi:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(383, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(45, 21);
+            this.comboBox1.TabIndex = 106;
+            // 
             // frmBanHangKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +463,8 @@
         private System.Windows.Forms.Label lblMaNV;
         private System.Windows.Forms.Label lblMaHDBH;
         protected System.Windows.Forms.Label lblBanHangKhachHang;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
 
 
     }

@@ -509,6 +509,7 @@
             this.dgvCTDonDatHang.Name = "dgvCTDonDatHang";
             this.dgvCTDonDatHang.Size = new System.Drawing.Size(519, 206);
             this.dgvCTDonDatHang.TabIndex = 104;
+            this.dgvCTDonDatHang.Click += new System.EventHandler(this.dgvCTDonDatHang_Click);
             // 
             // dataGridViewTextBoxColumn4
             // 
