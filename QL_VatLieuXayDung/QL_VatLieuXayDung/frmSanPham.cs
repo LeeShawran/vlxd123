@@ -132,9 +132,6 @@ namespace QL_VatLieuXayDung
                 txtMaSP.Text = "SP00" + (dt.Rows.Count + 1);
             else txtMaSP.Text = "SP0" + (dt.Rows.Count + 1);
             conn.Close();
-
-
-
             groupBox1.Enabled = true;
             btnThem.Enabled = false;
             btnXoa.Enabled = false;

@@ -59,7 +59,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvNV = new System.Windows.Forms.DataGridView();
-            this.lblNhanvien = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +66,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblNhanvien = new System.Windows.Forms.Label();
+            this.btnLammoi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,7 +126,7 @@
             // lblChucvu_NV
             // 
             this.lblChucvu_NV.AutoSize = true;
-            this.lblChucvu_NV.Location = new System.Drawing.Point(330, 53);
+            this.lblChucvu_NV.Location = new System.Drawing.Point(325, 53);
             this.lblChucvu_NV.Name = "lblChucvu_NV";
             this.lblChucvu_NV.Size = new System.Drawing.Size(50, 13);
             this.lblChucvu_NV.TabIndex = 84;
@@ -204,7 +204,7 @@
             // lblDienthoai_NV
             // 
             this.lblDienthoai_NV.AutoSize = true;
-            this.lblDienthoai_NV.Location = new System.Drawing.Point(312, 22);
+            this.lblDienthoai_NV.Location = new System.Drawing.Point(325, 22);
             this.lblDienthoai_NV.Name = "lblDienthoai_NV";
             this.lblDienthoai_NV.Size = new System.Drawing.Size(58, 13);
             this.lblDienthoai_NV.TabIndex = 36;
@@ -260,25 +260,27 @@
             // 
             this.btnXoa_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NV.Image")));
             this.btnXoa_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NV.Location = new System.Drawing.Point(124, 53);
+            this.btnXoa_NV.Location = new System.Drawing.Point(124, 24);
             this.btnXoa_NV.Name = "btnXoa_NV";
             this.btnXoa_NV.Size = new System.Drawing.Size(67, 46);
             this.btnXoa_NV.TabIndex = 13;
             this.btnXoa_NV.Text = "Xóa";
             this.btnXoa_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa_NV.UseVisualStyleBackColor = true;
+            this.btnXoa_NV.Click += new System.EventHandler(this.btnXoa_NV_Click);
             // 
             // btnSua_NV
             // 
             this.btnSua_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NV.Image")));
             this.btnSua_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NV.Location = new System.Drawing.Point(124, 108);
+            this.btnSua_NV.Location = new System.Drawing.Point(124, 81);
             this.btnSua_NV.Name = "btnSua_NV";
             this.btnSua_NV.Size = new System.Drawing.Size(67, 46);
             this.btnSua_NV.TabIndex = 14;
             this.btnSua_NV.Text = "Sửa";
             this.btnSua_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua_NV.UseVisualStyleBackColor = true;
+            this.btnSua_NV.Click += new System.EventHandler(this.btnSua_NV_Click);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -291,16 +293,18 @@
             // 
             this.btnThem_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnThem_NV.Image")));
             this.btnThem_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_NV.Location = new System.Drawing.Point(18, 53);
+            this.btnThem_NV.Location = new System.Drawing.Point(18, 24);
             this.btnThem_NV.Name = "btnThem_NV";
             this.btnThem_NV.Size = new System.Drawing.Size(67, 46);
             this.btnThem_NV.TabIndex = 12;
             this.btnThem_NV.Text = "Thêm";
             this.btnThem_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem_NV.UseVisualStyleBackColor = true;
+            this.btnThem_NV.Click += new System.EventHandler(this.btnThem_NV_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLammoi);
             this.groupBox2.Controls.Add(this.btnThem_NV);
             this.groupBox2.Controls.Add(this.btnLuu_NV);
             this.groupBox2.Controls.Add(this.btnXoa_NV);
@@ -316,13 +320,14 @@
             // 
             this.btnLuu_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NV.Image")));
             this.btnLuu_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NV.Location = new System.Drawing.Point(18, 107);
+            this.btnLuu_NV.Location = new System.Drawing.Point(18, 81);
             this.btnLuu_NV.Name = "btnLuu_NV";
             this.btnLuu_NV.Size = new System.Drawing.Size(67, 46);
             this.btnLuu_NV.TabIndex = 16;
             this.btnLuu_NV.Text = "Lưu";
             this.btnLuu_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu_NV.UseVisualStyleBackColor = true;
+            this.btnLuu_NV.Click += new System.EventHandler(this.btnLuu_NV_Click);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -367,17 +372,6 @@
             this.dgvNV.TabIndex = 0;
             this.dgvNV.Click += new System.EventHandler(this.dgvNV_Click);
             // 
-            // lblNhanvien
-            // 
-            this.lblNhanvien.AutoSize = true;
-            this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblNhanvien.Location = new System.Drawing.Point(592, 8);
-            this.lblNhanvien.Name = "lblNhanvien";
-            this.lblNhanvien.Size = new System.Drawing.Size(181, 33);
-            this.lblNhanvien.TabIndex = 85;
-            this.lblNhanvien.Text = "NHÂN VIÊN";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "MANV";
@@ -420,21 +414,32 @@
             this.Column8.HeaderText = "Mật khẩu";
             this.Column8.Name = "Column8";
             // 
-            // textBox1
+            // lblNhanvien
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(43, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 13);
-            this.textBox1.TabIndex = 88;
+            this.lblNhanvien.AutoSize = true;
+            this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblNhanvien.Location = new System.Drawing.Point(592, 8);
+            this.lblNhanvien.Name = "lblNhanvien";
+            this.lblNhanvien.Size = new System.Drawing.Size(181, 33);
+            this.lblNhanvien.TabIndex = 85;
+            this.lblNhanvien.Text = "NHÂN VIÊN";
+            // 
+            // btnLammoi
+            // 
+            this.btnLammoi.Location = new System.Drawing.Point(18, 145);
+            this.btnLammoi.Name = "btnLammoi";
+            this.btnLammoi.Size = new System.Drawing.Size(173, 23);
+            this.btnLammoi.TabIndex = 17;
+            this.btnLammoi.Text = "Làm mới";
+            this.btnLammoi.UseVisualStyleBackColor = true;
+            this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
             // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 542);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -492,6 +497,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnLammoi;
     }
 }
