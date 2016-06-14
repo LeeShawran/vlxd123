@@ -32,22 +32,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMatkhau_NV = new System.Windows.Forms.TextBox();
             this.lblMatkhau_NV = new System.Windows.Forms.Label();
-            this.cmbChucvu_NV = new System.Windows.Forms.ComboBox();
+            this.cmbChucvu = new System.Windows.Forms.ComboBox();
             this.lblChucvu_NV = new System.Windows.Forms.Label();
-            this.txtEmail_NV = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail_NV = new System.Windows.Forms.Label();
-            this.rdcNu_NV = new System.Windows.Forms.RadioButton();
-            this.rdcNam_NV = new System.Windows.Forms.RadioButton();
-            this.txtGhichu_NV = new System.Windows.Forms.TextBox();
-            this.txtDienthoai_NV = new System.Windows.Forms.TextBox();
-            this.txtDiachi_NV = new System.Windows.Forms.TextBox();
-            this.txtTenNV_NV = new System.Windows.Forms.TextBox();
-            this.txtMaNV_NV = new System.Windows.Forms.TextBox();
-            this.lblGhichu_NV = new System.Windows.Forms.Label();
+            this.rdcNu = new System.Windows.Forms.RadioButton();
+            this.rdcNam = new System.Windows.Forms.RadioButton();
+            this.txtDienthoai = new System.Windows.Forms.TextBox();
+            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.lblPhai_NV = new System.Windows.Forms.Label();
             this.lblDienthoai_NV = new System.Windows.Forms.Label();
             this.lblMaNV_NV = new System.Windows.Forms.Label();
-            this.lblDiachi_NV = new System.Windows.Forms.Label();
             this.lblHoten_NV = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,16 +59,15 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvNV = new System.Windows.Forms.DataGridView();
+            this.lblNhanvien = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblNhanvien = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,22 +78,18 @@
             // 
             this.groupBox1.Controls.Add(this.txtMatkhau_NV);
             this.groupBox1.Controls.Add(this.lblMatkhau_NV);
-            this.groupBox1.Controls.Add(this.cmbChucvu_NV);
+            this.groupBox1.Controls.Add(this.cmbChucvu);
             this.groupBox1.Controls.Add(this.lblChucvu_NV);
-            this.groupBox1.Controls.Add(this.txtEmail_NV);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.lblEmail_NV);
-            this.groupBox1.Controls.Add(this.rdcNu_NV);
-            this.groupBox1.Controls.Add(this.rdcNam_NV);
-            this.groupBox1.Controls.Add(this.txtGhichu_NV);
-            this.groupBox1.Controls.Add(this.txtDienthoai_NV);
-            this.groupBox1.Controls.Add(this.txtDiachi_NV);
-            this.groupBox1.Controls.Add(this.txtTenNV_NV);
-            this.groupBox1.Controls.Add(this.txtMaNV_NV);
-            this.groupBox1.Controls.Add(this.lblGhichu_NV);
+            this.groupBox1.Controls.Add(this.rdcNu);
+            this.groupBox1.Controls.Add(this.rdcNam);
+            this.groupBox1.Controls.Add(this.txtDienthoai);
+            this.groupBox1.Controls.Add(this.txtTenNV);
+            this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.lblPhai_NV);
             this.groupBox1.Controls.Add(this.lblDienthoai_NV);
             this.groupBox1.Controls.Add(this.lblMaNV_NV);
-            this.groupBox1.Controls.Add(this.lblDiachi_NV);
             this.groupBox1.Controls.Add(this.lblHoten_NV);
             this.groupBox1.Location = new System.Drawing.Point(165, 44);
             this.groupBox1.Name = "groupBox1";
@@ -109,7 +100,7 @@
             // 
             // txtMatkhau_NV
             // 
-            this.txtMatkhau_NV.Location = new System.Drawing.Point(387, 44);
+            this.txtMatkhau_NV.Location = new System.Drawing.Point(386, 75);
             this.txtMatkhau_NV.Name = "txtMatkhau_NV";
             this.txtMatkhau_NV.Size = new System.Drawing.Size(205, 20);
             this.txtMatkhau_NV.TabIndex = 87;
@@ -117,36 +108,36 @@
             // lblMatkhau_NV
             // 
             this.lblMatkhau_NV.AutoSize = true;
-            this.lblMatkhau_NV.Location = new System.Drawing.Point(326, 49);
+            this.lblMatkhau_NV.Location = new System.Drawing.Point(325, 80);
             this.lblMatkhau_NV.Name = "lblMatkhau_NV";
             this.lblMatkhau_NV.Size = new System.Drawing.Size(55, 13);
             this.lblMatkhau_NV.TabIndex = 86;
             this.lblMatkhau_NV.Text = "Mật khẩu:";
             // 
-            // cmbChucvu_NV
+            // cmbChucvu
             // 
-            this.cmbChucvu_NV.FormattingEnabled = true;
-            this.cmbChucvu_NV.Location = new System.Drawing.Point(387, 18);
-            this.cmbChucvu_NV.Name = "cmbChucvu_NV";
-            this.cmbChucvu_NV.Size = new System.Drawing.Size(205, 21);
-            this.cmbChucvu_NV.TabIndex = 85;
-            this.cmbChucvu_NV.SelectedIndexChanged += new System.EventHandler(this.cmbChucvu_NV_SelectedIndexChanged);
+            this.cmbChucvu.FormattingEnabled = true;
+            this.cmbChucvu.Location = new System.Drawing.Point(386, 49);
+            this.cmbChucvu.Name = "cmbChucvu";
+            this.cmbChucvu.Size = new System.Drawing.Size(205, 21);
+            this.cmbChucvu.TabIndex = 85;
+            this.cmbChucvu.SelectedIndexChanged += new System.EventHandler(this.cmbChucvu_NV_SelectedIndexChanged);
             // 
             // lblChucvu_NV
             // 
             this.lblChucvu_NV.AutoSize = true;
-            this.lblChucvu_NV.Location = new System.Drawing.Point(326, 22);
+            this.lblChucvu_NV.Location = new System.Drawing.Point(330, 53);
             this.lblChucvu_NV.Name = "lblChucvu_NV";
             this.lblChucvu_NV.Size = new System.Drawing.Size(50, 13);
             this.lblChucvu_NV.TabIndex = 84;
             this.lblChucvu_NV.Text = "Chức vụ:";
             // 
-            // txtEmail_NV
+            // txtEmail
             // 
-            this.txtEmail_NV.Location = new System.Drawing.Point(98, 95);
-            this.txtEmail_NV.Name = "txtEmail_NV";
-            this.txtEmail_NV.Size = new System.Drawing.Size(208, 20);
-            this.txtEmail_NV.TabIndex = 47;
+            this.txtEmail.Location = new System.Drawing.Point(98, 95);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(208, 20);
+            this.txtEmail.TabIndex = 47;
             // 
             // lblEmail_NV
             // 
@@ -157,73 +148,49 @@
             this.lblEmail_NV.TabIndex = 46;
             this.lblEmail_NV.Text = "Email:";
             // 
-            // rdcNu_NV
+            // rdcNu
             // 
-            this.rdcNu_NV.AutoSize = true;
-            this.rdcNu_NV.Location = new System.Drawing.Point(166, 72);
-            this.rdcNu_NV.Name = "rdcNu_NV";
-            this.rdcNu_NV.Size = new System.Drawing.Size(39, 17);
-            this.rdcNu_NV.TabIndex = 45;
-            this.rdcNu_NV.Text = "Nữ";
-            this.rdcNu_NV.UseVisualStyleBackColor = true;
+            this.rdcNu.AutoSize = true;
+            this.rdcNu.Location = new System.Drawing.Point(166, 72);
+            this.rdcNu.Name = "rdcNu";
+            this.rdcNu.Size = new System.Drawing.Size(39, 17);
+            this.rdcNu.TabIndex = 45;
+            this.rdcNu.Text = "Nữ";
+            this.rdcNu.UseVisualStyleBackColor = true;
             // 
-            // rdcNam_NV
+            // rdcNam
             // 
-            this.rdcNam_NV.AutoSize = true;
-            this.rdcNam_NV.Checked = true;
-            this.rdcNam_NV.Location = new System.Drawing.Point(98, 72);
-            this.rdcNam_NV.Name = "rdcNam_NV";
-            this.rdcNam_NV.Size = new System.Drawing.Size(47, 17);
-            this.rdcNam_NV.TabIndex = 44;
-            this.rdcNam_NV.TabStop = true;
-            this.rdcNam_NV.Text = "Nam";
-            this.rdcNam_NV.UseVisualStyleBackColor = true;
+            this.rdcNam.AutoSize = true;
+            this.rdcNam.Checked = true;
+            this.rdcNam.Location = new System.Drawing.Point(98, 72);
+            this.rdcNam.Name = "rdcNam";
+            this.rdcNam.Size = new System.Drawing.Size(47, 17);
+            this.rdcNam.TabIndex = 44;
+            this.rdcNam.TabStop = true;
+            this.rdcNam.Text = "Nam";
+            this.rdcNam.UseVisualStyleBackColor = true;
             // 
-            // txtGhichu_NV
+            // txtDienthoai
             // 
-            this.txtGhichu_NV.Location = new System.Drawing.Point(387, 74);
-            this.txtGhichu_NV.Multiline = true;
-            this.txtGhichu_NV.Name = "txtGhichu_NV";
-            this.txtGhichu_NV.Size = new System.Drawing.Size(205, 104);
-            this.txtGhichu_NV.TabIndex = 43;
+            this.txtDienthoai.Location = new System.Drawing.Point(387, 19);
+            this.txtDienthoai.Name = "txtDienthoai";
+            this.txtDienthoai.Size = new System.Drawing.Size(208, 20);
+            this.txtDienthoai.TabIndex = 42;
             // 
-            // txtDienthoai_NV
+            // txtTenNV
             // 
-            this.txtDienthoai_NV.Location = new System.Drawing.Point(98, 121);
-            this.txtDienthoai_NV.Name = "txtDienthoai_NV";
-            this.txtDienthoai_NV.Size = new System.Drawing.Size(208, 20);
-            this.txtDienthoai_NV.TabIndex = 42;
+            this.txtTenNV.Location = new System.Drawing.Point(98, 44);
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.Size = new System.Drawing.Size(208, 20);
+            this.txtTenNV.TabIndex = 40;
             // 
-            // txtDiachi_NV
+            // txtMaNV
             // 
-            this.txtDiachi_NV.Location = new System.Drawing.Point(98, 147);
-            this.txtDiachi_NV.Name = "txtDiachi_NV";
-            this.txtDiachi_NV.Size = new System.Drawing.Size(208, 20);
-            this.txtDiachi_NV.TabIndex = 41;
-            // 
-            // txtTenNV_NV
-            // 
-            this.txtTenNV_NV.Location = new System.Drawing.Point(98, 44);
-            this.txtTenNV_NV.Name = "txtTenNV_NV";
-            this.txtTenNV_NV.Size = new System.Drawing.Size(208, 20);
-            this.txtTenNV_NV.TabIndex = 40;
-            // 
-            // txtMaNV_NV
-            // 
-            this.txtMaNV_NV.Enabled = false;
-            this.txtMaNV_NV.Location = new System.Drawing.Point(98, 19);
-            this.txtMaNV_NV.Name = "txtMaNV_NV";
-            this.txtMaNV_NV.Size = new System.Drawing.Size(208, 20);
-            this.txtMaNV_NV.TabIndex = 39;
-            // 
-            // lblGhichu_NV
-            // 
-            this.lblGhichu_NV.AutoSize = true;
-            this.lblGhichu_NV.Location = new System.Drawing.Point(326, 77);
-            this.lblGhichu_NV.Name = "lblGhichu_NV";
-            this.lblGhichu_NV.Size = new System.Drawing.Size(47, 13);
-            this.lblGhichu_NV.TabIndex = 38;
-            this.lblGhichu_NV.Text = "Ghi chú:";
+            this.txtMaNV.Enabled = false;
+            this.txtMaNV.Location = new System.Drawing.Point(98, 19);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(208, 20);
+            this.txtMaNV.TabIndex = 39;
             // 
             // lblPhai_NV
             // 
@@ -237,7 +204,7 @@
             // lblDienthoai_NV
             // 
             this.lblDienthoai_NV.AutoSize = true;
-            this.lblDienthoai_NV.Location = new System.Drawing.Point(23, 124);
+            this.lblDienthoai_NV.Location = new System.Drawing.Point(312, 22);
             this.lblDienthoai_NV.Name = "lblDienthoai_NV";
             this.lblDienthoai_NV.Size = new System.Drawing.Size(58, 13);
             this.lblDienthoai_NV.TabIndex = 36;
@@ -251,15 +218,6 @@
             this.lblMaNV_NV.Size = new System.Drawing.Size(75, 13);
             this.lblMaNV_NV.TabIndex = 35;
             this.lblMaNV_NV.Text = "Mã nhân viên:";
-            // 
-            // lblDiachi_NV
-            // 
-            this.lblDiachi_NV.AutoSize = true;
-            this.lblDiachi_NV.Location = new System.Drawing.Point(23, 150);
-            this.lblDiachi_NV.Name = "lblDiachi_NV";
-            this.lblDiachi_NV.Size = new System.Drawing.Size(43, 13);
-            this.lblDiachi_NV.TabIndex = 34;
-            this.lblDiachi_NV.Text = "Địa chỉ:";
             // 
             // lblHoten_NV
             // 
@@ -392,66 +350,22 @@
             // 
             // dgvNV
             // 
+            this.dgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
             this.Column4,
+            this.Column3,
             this.Column5,
             this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
+            this.Column8});
             this.dgvNV.Location = new System.Drawing.Point(26, 19);
             this.dgvNV.Name = "dgvNV";
+            this.dgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNV.Size = new System.Drawing.Size(946, 150);
             this.dgvNV.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã nhân viên";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Phái";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Email";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Điện thoại";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Địa chỉ";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Chức vụ";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Mật khẩu";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Ghi chú";
-            this.Column9.Name = "Column9";
+            this.dgvNV.Click += new System.EventHandler(this.dgvNV_Click);
             // 
             // lblNhanvien
             // 
@@ -464,11 +378,63 @@
             this.lblNhanvien.TabIndex = 85;
             this.lblNhanvien.Text = "NHÂN VIÊN";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MANV";
+            this.Column1.HeaderText = "Mã nhân viên";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENNV";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "EMAILNV";
+            this.Column4.HeaderText = "Email";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PHAI";
+            this.Column3.HeaderText = "Phái";
+            this.Column3.Name = "Column3";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DIENTHOAINV";
+            this.Column5.HeaderText = "Điện thoại";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "MANHOM";
+            this.Column6.HeaderText = "Nhóm";
+            this.Column6.Name = "Column6";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MATKHAU";
+            this.Column8.HeaderText = "Mật khẩu";
+            this.Column8.Name = "Column8";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox1.Location = new System.Drawing.Point(43, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(208, 13);
+            this.textBox1.TabIndex = 88;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 542);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -491,22 +457,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMatkhau_NV;
         private System.Windows.Forms.Label lblMatkhau_NV;
-        private System.Windows.Forms.ComboBox cmbChucvu_NV;
+        private System.Windows.Forms.ComboBox cmbChucvu;
         private System.Windows.Forms.Label lblChucvu_NV;
-        private System.Windows.Forms.TextBox txtEmail_NV;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail_NV;
-        private System.Windows.Forms.RadioButton rdcNu_NV;
-        private System.Windows.Forms.RadioButton rdcNam_NV;
-        private System.Windows.Forms.TextBox txtGhichu_NV;
-        private System.Windows.Forms.TextBox txtDienthoai_NV;
-        private System.Windows.Forms.TextBox txtDiachi_NV;
-        private System.Windows.Forms.TextBox txtTenNV_NV;
-        private System.Windows.Forms.TextBox txtMaNV_NV;
-        private System.Windows.Forms.Label lblGhichu_NV;
+        private System.Windows.Forms.RadioButton rdcNu;
+        private System.Windows.Forms.RadioButton rdcNam;
+        private System.Windows.Forms.TextBox txtDienthoai;
+        private System.Windows.Forms.TextBox txtTenNV;
+        private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label lblPhai_NV;
         private System.Windows.Forms.Label lblDienthoai_NV;
         private System.Windows.Forms.Label lblMaNV_NV;
-        private System.Windows.Forms.Label lblDiachi_NV;
         private System.Windows.Forms.Label lblHoten_NV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -525,12 +487,11 @@
         private System.Windows.Forms.DataGridView dgvNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

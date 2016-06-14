@@ -17,9 +17,10 @@ namespace QL_VatLieuXayDung
         OleDbDataAdapter adapter;
         OleDbCommand cmd;
         DataTable dt;
-        int luu = 0;
+     
         float tong = 0;
         bool q=false;
+
         public fmPhieuNhapNCC(string a)
         {
             InitializeComponent();
@@ -72,6 +73,7 @@ namespace QL_VatLieuXayDung
 
             btnThem.Enabled = true;
             load_PhieuNhap();
+        
         }
         private void fmPhieuNhapNCC_Load(object sender, EventArgs e)
         {
@@ -163,42 +165,15 @@ namespace QL_VatLieuXayDung
                 string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells[2].Value.ToString()) + ")";
                 OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
                 cmd4.ExecuteNonQuery();
-                //    ////them vap bang gia nhap
-                //    OleDbDataAdapter adapter2 = new OleDbDataAdapter("select * from T_GIA_NHAP", conn);
-                //    DataTable dt2 = new DataTable();
-                //    adapter2.Fill(dt2);
 
-                //    //string gia;
-                //    //if (dt2.Rows.Count < 100)
-                //    //   gia = "GIAN000" + (dt2.Rows.Count + 1);
-                //    //else if (dt2.Rows.Count < 10)
-                //    //    gia = "GIANC00" + (dt2.Rows.Count + 1);
-                //    //else gia= "GIAN0" + (dt2.Rows.Count + 1);
-                //    //MessageBox.Show(gia);
-
-
-               
             }
+            string lenh5 = "update T_DON_DAT_HANG_NCC set TINHTRANGNHAP='Co' where MADATNCC='" + txtMaDonDat.Text + "'";
+            OleDbCommand cmd5 = new OleDbCommand(lenh5, conn);
+            cmd5.ExecuteNonQuery();
 
-
-            
-
-            //for (int i = 0; i < dt.Rows.Count; i++)
-            //{
-            //    ////them vao chi tiet phieu nhap
-
-            //    OleDbCommand cm8 = new OleDbCommand("insert into T_CT_PHIEU_NHAP values ('" + txtMaPN.Text + "','" + dt.Rows[i].Field<string>(1) + "'," + float.Parse(dgvCT_DatHang.Rows[i].Cells[2].Value.ToString()) + "," + int.Parse(dgvCT_DatHang.Rows[i].Cells[1].Value.ToString()) + ")", conn);
-            //    cm8.ExecuteNonQuery();
-
-            ////cap nhat so luong trong bang san pham
+            loadLai();
            
-            //    ////MessageBox.Show("" + dt.Rows[i].Field<string>(1));
-            //    ////MessageBox.Show("" + a + "," + b);
-
-          
          
-
-            //}
           conn.Close();
           btnThem.Enabled = false;
 
@@ -208,6 +183,7 @@ namespace QL_VatLieuXayDung
         {
             conn.Open();
             loadCT_PhieuNhap(dgvNhapHang.CurrentRow.Cells[0].Value.ToString());
+            
             conn.Close();
         }
 

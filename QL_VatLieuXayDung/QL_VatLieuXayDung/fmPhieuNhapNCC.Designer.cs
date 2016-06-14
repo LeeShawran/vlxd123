@@ -32,6 +32,9 @@
             this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCT_DatHang = new System.Windows.Forms.DataGridView();
+            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaDonDat = new System.Windows.Forms.TextBox();
             this.txtNgayLap = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,9 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvCT_NhapHang = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -59,9 +59,9 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.bntLammoi = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_DatHang)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -102,6 +102,25 @@
             this.dgvCT_DatHang.Name = "dgvCT_DatHang";
             this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 183);
             this.dgvCT_DatHang.TabIndex = 27;
+            // 
+            // masp
+            // 
+            this.masp.DataPropertyName = "MASP";
+            this.masp.HeaderText = "Mã sản phẩm";
+            this.masp.Name = "masp";
+            this.masp.ReadOnly = true;
+            // 
+            // soluong
+            // 
+            this.soluong.DataPropertyName = "SOLUONG";
+            this.soluong.HeaderText = "Số lượng";
+            this.soluong.Name = "soluong";
+            this.soluong.ReadOnly = true;
+            // 
+            // dongianhap
+            // 
+            this.dongianhap.HeaderText = "Đơn giá nhập";
+            this.dongianhap.Name = "dongianhap";
             // 
             // txtMaDonDat
             // 
@@ -177,24 +196,6 @@
             this.dgvCT_NhapHang.Name = "dgvCT_NhapHang";
             this.dgvCT_NhapHang.Size = new System.Drawing.Size(447, 434);
             this.dgvCT_NhapHang.TabIndex = 29;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MASP";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Mã sản phẩm";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "DONGIANHAP";
-            this.Column2.HeaderText = "Đơn giá nhập";
-            this.Column2.Name = "Column2";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SOLUONGNHAP";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Số lượng nhập";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // label2
             // 
@@ -352,24 +353,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
             // 
-            // masp
+            // dataGridViewTextBoxColumn4
             // 
-            this.masp.DataPropertyName = "MASP";
-            this.masp.HeaderText = "Mã sản phẩm";
-            this.masp.Name = "masp";
-            this.masp.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MASP";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Mã sản phẩm";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // soluong
+            // Column2
             // 
-            this.soluong.DataPropertyName = "SOLUONG";
-            this.soluong.HeaderText = "Số lượng";
-            this.soluong.Name = "soluong";
-            this.soluong.ReadOnly = true;
+            this.Column2.DataPropertyName = "DONGIANHAP";
+            this.Column2.HeaderText = "Đơn giá nhập";
+            this.Column2.Name = "Column2";
             // 
-            // dongianhap
+            // dataGridViewTextBoxColumn6
             // 
-            this.dongianhap.HeaderText = "Đơn giá nhập";
-            this.dongianhap.Name = "dongianhap";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Số lượng nhập";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // fmPhieuNhapNCC
             // 
@@ -421,9 +421,6 @@
         protected System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvCT_NhapHang;
         private System.Windows.Forms.DataGridView dgvNhapHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         protected System.Windows.Forms.TextBox txtTongtien;
         protected System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -434,5 +431,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn masp;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongianhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

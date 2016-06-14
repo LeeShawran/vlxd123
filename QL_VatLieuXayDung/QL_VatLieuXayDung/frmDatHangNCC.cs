@@ -171,7 +171,7 @@ namespace QL_VatLieuXayDung
             else
             {
            
-                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_NCC values('" + txtMaPhieu.Text + "',TO_DATE('" + dtpNgayLap.Text + "','DD-MM-RR'),'" + cbNCC.SelectedValue.ToString() + "','" + txtMaNV.Text + "','No')", conn);
+                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_NCC values('" + txtMaPhieu.Text + "',TO_DATE('" + dtpNgayLap.Text + "','DD-MM-RR'),'" + cbNCC.SelectedValue.ToString() + "','" + txtMaNV.Text + "','Chua')", conn);
             
                     cmd.ExecuteNonQuery();
                     loadLai();
@@ -284,15 +284,15 @@ namespace QL_VatLieuXayDung
             txtMaNV.Text = row.Cells[3].Value.ToString();
             cbTinhTRrang.Text = row.Cells[4].Value.ToString();
             //kt tinhtrang thanh toan de hien thi nut nhap hang và khong cho them,xoa, sua san pham
-            if (row.Cells[4].Value.ToString() == "No")
+            if (row.Cells[4].Value.ToString() == "Chua")
             {
                 btnPhieuNhap.Enabled = true;
-                groupBoxSanPham.Enabled = false;
+                groupBoxSanPham.Enabled = true;
             }
             else 
             {
                 btnPhieuNhap.Enabled = false;
-                groupBoxSanPham.Enabled = true;
+                groupBoxSanPham.Enabled = false;
             }
                 
    
@@ -327,6 +327,11 @@ namespace QL_VatLieuXayDung
                 fmPhieuNhapNCC f = new fmPhieuNhapNCC(txtMaPhieu.Text);
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.Show();
+                btnPhieuNhap.Enabled = false;
+                btnThemDDH.Enabled = false;
+                btnXoaDDH.Enabled = false;
+                btnSuaDDH.Enabled = false;
+                btnLuuDDH.Enabled = false;
             
         }
 

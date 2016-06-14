@@ -20,7 +20,7 @@ namespace QL_VatLieuXayDung
         }
        static public void setConnect(String sv,String user,String pass)
         {
-            Properties.Settings.Default.ConnectionString = "Provider=MSDAORA;Data Source=" + sv + ";Persist Security Info=True;User ID=" + user + ";Password=" + pass + ";Unicode=True";
+            Properties.Settings.Default.ConnectionString = "Provider=MSDAORA;Data Source=" + sv + ";Persist Security Info=True;User ID=" + user + ";Password=" + pass + ";Unicode=True;Charset=utf8";
             Properties.Settings.Default.Save();
        
        }
@@ -45,7 +45,7 @@ namespace QL_VatLieuXayDung
        {
            try
            {
-                string cnn = "Provider=MSDAORA;Data Source=" + sv + ";Persist Security Info=True;User ID=" + user + ";Password=" + pass + ";Unicode=True";
+               string cnn = "Provider=MSDAORA;Data Source=" + sv + ";Persist Security Info=True;User ID=" + user + ";Password=" + pass + ";Unicode=True;Charset=utf8";
                OleDbConnection conn = new OleDbConnection(cnn);
                if (conn.State == System.Data.ConnectionState.Closed)
                    conn.Open();
