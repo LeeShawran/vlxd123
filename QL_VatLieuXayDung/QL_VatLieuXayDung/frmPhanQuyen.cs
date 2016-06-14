@@ -75,5 +75,10 @@ namespace QL_VatLieuXayDung
             loadTable();
             conn.Close();
         }
+
+        private void dgvNhomTK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

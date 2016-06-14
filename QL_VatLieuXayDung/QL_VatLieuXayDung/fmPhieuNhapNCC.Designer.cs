@@ -32,9 +32,6 @@
             this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCT_DatHang = new System.Windows.Forms.DataGridView();
-            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaDonDat = new System.Windows.Forms.TextBox();
             this.txtNgayLap = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,11 +51,17 @@
             this.ngaylapcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTongtien = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.bntLammoi = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_DatHang)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -71,7 +74,8 @@
             // 
             // txtNhanVien
             // 
-            this.txtNhanVien.Location = new System.Drawing.Point(90, 112);
+            this.txtNhanVien.Enabled = false;
+            this.txtNhanVien.Location = new System.Drawing.Point(99, 109);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.Size = new System.Drawing.Size(193, 20);
             this.txtNhanVien.TabIndex = 24;
@@ -96,32 +100,13 @@
             this.dongianhap});
             this.dgvCT_DatHang.Location = new System.Drawing.Point(16, 24);
             this.dgvCT_DatHang.Name = "dgvCT_DatHang";
-            this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 185);
+            this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 183);
             this.dgvCT_DatHang.TabIndex = 27;
-            // 
-            // masp
-            // 
-            this.masp.DataPropertyName = "MASP";
-            this.masp.HeaderText = "Mã sản phẩm";
-            this.masp.Name = "masp";
-            // 
-            // soluong
-            // 
-            this.soluong.DataPropertyName = "SOLUONG";
-            this.soluong.HeaderText = "Số lượng";
-            this.soluong.Name = "soluong";
-            // 
-            // dongianhap
-            // 
-            this.dongianhap.DataPropertyName = "DONGIANHAP";
-            this.dongianhap.HeaderText = "Đơn giá nhập";
-            this.dongianhap.Name = "dongianhap";
-            this.dongianhap.ReadOnly = true;
             // 
             // txtMaDonDat
             // 
             this.txtMaDonDat.Enabled = false;
-            this.txtMaDonDat.Location = new System.Drawing.Point(90, 151);
+            this.txtMaDonDat.Location = new System.Drawing.Point(99, 48);
             this.txtMaDonDat.Name = "txtMaDonDat";
             this.txtMaDonDat.Size = new System.Drawing.Size(193, 20);
             this.txtMaDonDat.TabIndex = 23;
@@ -130,7 +115,7 @@
             // 
             this.txtNgayLap.CustomFormat = "dd/MM/yyyy";
             this.txtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayLap.Location = new System.Drawing.Point(90, 77);
+            this.txtNgayLap.Location = new System.Drawing.Point(99, 74);
             this.txtNgayLap.Name = "txtNgayLap";
             this.txtNgayLap.Size = new System.Drawing.Size(194, 20);
             this.txtNgayLap.TabIndex = 22;
@@ -138,16 +123,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 154);
+            this.label5.Location = new System.Drawing.Point(21, 51);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 19;
-            this.label5.Text = "mã đơn đặt";
+            this.label5.Text = "Mã đơn đặt";
             // 
             // txtMaPN
             // 
             this.txtMaPN.Enabled = false;
-            this.txtMaPN.Location = new System.Drawing.Point(90, 45);
+            this.txtMaPN.Location = new System.Drawing.Point(99, 21);
             this.txtMaPN.Name = "txtMaPN";
             this.txtMaPN.Size = new System.Drawing.Size(193, 20);
             this.txtMaPN.TabIndex = 15;
@@ -155,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 83);
+            this.label4.Location = new System.Drawing.Point(21, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 18;
@@ -164,7 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Location = new System.Drawing.Point(15, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 14;
@@ -214,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 115);
+            this.label2.Location = new System.Drawing.Point(18, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 16;
@@ -249,7 +234,8 @@
             this.dataGridViewTextBoxColumn1,
             this.ngaylapcol,
             this.Column1,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.Column3});
             this.dgvNhapHang.Location = new System.Drawing.Point(16, 29);
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.Size = new System.Drawing.Size(455, 195);
@@ -280,8 +266,16 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Mã phiếu đặt";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TONGTIEN";
+            this.Column3.HeaderText = "Tổng tiền";
+            this.Column3.Name = "Column3";
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTongtien);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNhanVien);
             this.groupBox1.Controls.Add(this.txtMaDonDat);
             this.groupBox1.Controls.Add(this.txtNgayLap);
@@ -297,6 +291,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtTongtien
+            // 
+            this.txtTongtien.Enabled = false;
+            this.txtTongtien.Location = new System.Drawing.Point(99, 144);
+            this.txtTongtien.Name = "txtTongtien";
+            this.txtTongtien.Size = new System.Drawing.Size(193, 20);
+            this.txtTongtien.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Tổng tiền";
             // 
             // button3
             // 
@@ -340,6 +351,25 @@
             this.groupBox2.TabIndex = 94;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
+            // 
+            // masp
+            // 
+            this.masp.DataPropertyName = "MASP";
+            this.masp.HeaderText = "Mã sản phẩm";
+            this.masp.Name = "masp";
+            this.masp.ReadOnly = true;
+            // 
+            // soluong
+            // 
+            this.soluong.DataPropertyName = "SOLUONG";
+            this.soluong.HeaderText = "Số lượng";
+            this.soluong.Name = "soluong";
+            this.soluong.ReadOnly = true;
+            // 
+            // dongianhap
+            // 
+            this.dongianhap.HeaderText = "Đơn giá nhập";
+            this.dongianhap.Name = "dongianhap";
             // 
             // fmPhieuNhapNCC
             // 
@@ -391,15 +421,18 @@
         protected System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvCT_NhapHang;
         private System.Windows.Forms.DataGridView dgvNhapHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dongianhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        protected System.Windows.Forms.TextBox txtTongtien;
+        protected System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaylapcol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongianhap;
     }
 }

@@ -270,5 +270,19 @@ namespace QL_VatLieuXayDung
                 ribbonPageNhanVien.Enabled = false;
             }
         }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (dong)
+                Application.Exit();
+        }
+        bool dong = true;
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDangNhap dn = new frmDangNhap();
+            dn.Show();
+            dong = false;
+            this.Close();
+        }
     }
 }

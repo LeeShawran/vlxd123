@@ -26,6 +26,7 @@ namespace QL_VatLieuXayDung
         }
         public void loadLai()
         {
+            
             txtMaNV.Text = Program.mainForm.ma;
 
             dgvDonDatHang.Columns["Column4"].DefaultCellStyle.Format = @"dd/MM/yyyy";
@@ -51,7 +52,6 @@ namespace QL_VatLieuXayDung
             dgvDonDatHang.Enabled = true;
 
             txtMaPhieu.Clear();
-            txtTongTien.Clear();
             cbTinhTRrang.DisplayMember = cbTinhTRrang.Items[0].ToString();
             cbNCC.DisplayMember = cbNCC.Items[0].ToString();
 
@@ -73,7 +73,7 @@ namespace QL_VatLieuXayDung
         }
         public void loadCT_DonDatHang()
         {
-            string st = "select MASP,SOLUONG,DONGIANHAP from T_CT_DAT_HANG_NCC";
+            string st = "select MASP,SOLUONG from T_CT_DAT_HANG_NCC";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
             adapter.Fill(dt);
@@ -128,7 +128,7 @@ namespace QL_VatLieuXayDung
             dgvDonDatHang.Enabled = false;
             cbNCC.Enabled = true;
 
-            txtTongTien.Text = "0";
+          
         }
 
         private void btnSuaDDH_Click(object sender, EventArgs e)
@@ -171,7 +171,7 @@ namespace QL_VatLieuXayDung
             else
             {
            
-                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_NCC values('" + txtMaPhieu.Text + "',TO_DATE('" + dtpNgayLap.Text + "','DD-MM-RR'),'" + cbNCC.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + float.Parse(txtTongTien.Text) + ",'"+ cbTinhTRrang.Text +"')", conn);
+                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_NCC values('" + txtMaPhieu.Text + "',TO_DATE('" + dtpNgayLap.Text + "','DD-MM-RR'),'" + cbNCC.SelectedValue.ToString() + "','" + txtMaNV.Text + "','No')", conn);
             
                     cmd.ExecuteNonQuery();
                     loadLai();
@@ -188,7 +188,7 @@ namespace QL_VatLieuXayDung
             }
             else
             {
-                OleDbCommand cmd = new OleDbCommand("Update T_DON_DAT_HANG_NCC set NGAYDATNCC=TO_DATE('" + dtpNgayLap.Text + "','DD-MM-RR'), MANCC ='" + cbNCC.SelectedValue.ToString() + "', MANV='" + txtMaNV.Text + "', TONGTIEN='" + float.Parse(txtTongTien.Text) + "', TINHTRANG='" + cbTinhTRrang.Text + "' where MADATNCC='" + txtMaPhieu.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("Update T_DON_DAT_HANG_NCC set NGAYDATNCC=TO_DATE('" + dtpNgayLap.Text + "','DD-MM-RR'), MANCC ='" + cbNCC.SelectedValue.ToString() + "', MANV='" + txtMaNV.Text + "', TINHTRANGNHAP='" + cbTinhTRrang.Text + "' where MADATNCC='" + txtMaPhieu.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 loadLai();
             }
@@ -223,7 +223,7 @@ namespace QL_VatLieuXayDung
         private void cbNCC_SelectedIndexChanged(object sender, EventArgs e)
         {
          
-            string st = "select MASP,TENSP,SOLUONG from T_SAN_PHAM where MANCC='" + cbNCC.SelectedValue.ToString() + "'";
+            string st = "select MASP,TENSP from T_SAN_PHAM where MANCC='" + cbNCC.SelectedValue.ToString() + "'";
 
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
@@ -270,7 +270,6 @@ namespace QL_VatLieuXayDung
             btnXoaDDH.Enabled = true;
             btnSuaDDH.Enabled = true;
            
-
             DataGridViewRow row = new DataGridViewRow();
             row = dgvDonDatHang.CurrentRow;
 
@@ -283,10 +282,9 @@ namespace QL_VatLieuXayDung
             dtpNgayLap.Value = DateTime.Parse(row.Cells[1].Value.ToString());
             cbNCC.Text = tenNCC;
             txtMaNV.Text = row.Cells[3].Value.ToString();
-            txtTongTien.Text = row.Cells[4].Value.ToString();
-            cbTinhTRrang.Text = row.Cells[5].Value.ToString();
+            cbTinhTRrang.Text = row.Cells[4].Value.ToString();
             //kt tinhtrang thanh toan de hien thi nut nhap hang và khong cho them,xoa, sua san pham
-            if (row.Cells[5].Value.ToString() == "Yes")
+            if (row.Cells[4].Value.ToString() == "No")
             {
                 btnPhieuNhap.Enabled = true;
                 groupBoxSanPham.Enabled = false;
@@ -302,14 +300,14 @@ namespace QL_VatLieuXayDung
             loadCT_DonDatHang();
 
             ////bam dong hien thi len datagirdview sanpham
-            string st = "select MASP,TENSP,SOLUONG from T_SAN_PHAM where MANCC='" + row.Cells[2].Value.ToString() + "'";
+            string st = "select MASP,TENSP from T_SAN_PHAM where MANCC='" + row.Cells[2].Value.ToString() + "'";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
             adapter.Fill(dt);
             dgvSanPHam.DataSource = dt;
             ////bam dong hien thi len datagirdview chi tiet dat hang
 
-            string s = "select MASP,SOLUONG,DONGIANHAP from T_CT_DAT_HANG_NCC where MADATNCC='" + row.Cells[0].Value.ToString() + "'";
+            string s = "select MASP,SOLUONG from T_CT_DAT_HANG_NCC where MADATNCC='" + row.Cells[0].Value.ToString() + "'";
             OleDbDataAdapter adapter2 = new OleDbDataAdapter(s, conn);
             DataTable dt2 = new DataTable();
             adapter2.Fill(dt2);
@@ -344,9 +342,9 @@ namespace QL_VatLieuXayDung
             conn.Open();
             DataGridViewRow row = new DataGridViewRow();
             row = dgvSanPHam.CurrentRow;
-            if (this.txtDonGiaDat.TextLength == 0 || this.txtSLDat.TextLength == 0)
+            if (this.txtSLDat.TextLength == 0)
             {
-                MessageBox.Show("Chưa nhập thông tin đơn giá, số lượng");
+                MessageBox.Show("Chưa nhập thông tin số lượng đặt");
                 return;
             }
             else if (Kiem_tra_ma_sanpham(row.Cells[0].Value.ToString()))
@@ -356,13 +354,13 @@ namespace QL_VatLieuXayDung
             }
             else
             {
-                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_NCC values('" + txtMaPhieu.Text + "','" + row.Cells[0].Value.ToString() + "'," + int.Parse(txtSLDat.Text) + "," + float.Parse(txtDonGiaDat.Text) + ")", conn);
+                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_NCC values('" + txtMaPhieu.Text + "','" + row.Cells[0].Value.ToString() + "'," + int.Parse(txtSLDat.Text) + ")", conn);
                 cmd.ExecuteNonQuery();
-                tong = tong + (float.Parse(txtSLDat.Text) * float.Parse(txtDonGiaDat.Text));
+                //tong = tong + (float.Parse(txtSLDat.Text) * float.Parse(txtDonGiaDat.Text));
                 //update tong tien
-                string lenh= "update T_DON_DAT_HANG_NCC set TONGTIEN=" + tong + " where MADATNCC='" + txtMaPhieu.Text + "'";
-                OleDbCommand cmd3 = new OleDbCommand(lenh, conn);
-                cmd3.ExecuteNonQuery();
+                //string lenh= "update T_DON_DAT_HANG_NCC set TONGTIEN=" + tong + " where MADATNCC='" + txtMaPhieu.Text + "'";
+                //OleDbCommand cmd3 = new OleDbCommand(lenh, conn);
+                //cmd3.ExecuteNonQuery();
                 loadLai();
 
                 
@@ -378,7 +376,7 @@ namespace QL_VatLieuXayDung
         private void dgvCTDonDatHang_Click(object sender, EventArgs e)
         {
             txtSLDat.Text = dgvCTDonDatHang.CurrentRow.Cells[1].Value.ToString();
-            txtDonGiaDat.Text = dgvCTDonDatHang.CurrentRow.Cells[2].Value.ToString();
+            
         }
         private void btnXoaCT_Click_1(object sender, EventArgs e)
         {
@@ -389,14 +387,19 @@ namespace QL_VatLieuXayDung
             cmd = new OleDbCommand("Delete from T_CT_DAT_HANG_NCC where MASP='" + row.Cells[0].Value.ToString() + "'", conn);
             cmd.ExecuteNonQuery();
 
-            tong = tong - (float.Parse(txtSLDat.Text) * float.Parse(txtDonGiaDat.Text));
-            string lenh = "update T_DON_DAT_HANG_NCC set TONGTIEN=" + tong + " where MADATNCC='" + txtMaPhieu.Text + "'";
-            OleDbCommand cmd3 = new OleDbCommand(lenh, conn);
-            cmd3.ExecuteNonQuery();
+            //tong = tong - (float.Parse(txtSLDat.Text) * float.Parse(txtDonGiaDat.Text));
+            //string lenh = "update T_DON_DAT_HANG_NCC set TONGTIEN=" + tong + " where MADATNCC='" + txtMaPhieu.Text + "'";
+            //OleDbCommand cmd3 = new OleDbCommand(lenh, conn);
+            //cmd3.ExecuteNonQuery();
 
             loadLai();
            
             conn.Close();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
 
        
