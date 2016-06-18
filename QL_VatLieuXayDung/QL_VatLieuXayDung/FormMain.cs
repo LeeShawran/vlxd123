@@ -284,5 +284,21 @@ namespace QL_VatLieuXayDung
             dong = false;
             this.Close();
         }
+
+        private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmDatHangKH));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmDatHangKH f = new frmDatHangKH();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
     }
 }

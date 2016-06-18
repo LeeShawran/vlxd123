@@ -96,11 +96,11 @@
     <Compile Include="frmDatHangNCC.Designer.cs">
       <DependentUpon>frmDatHangNCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBanHangKH.cs">
+    <Compile Include="frmDatHangKH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBanHangKH.Designer.cs">
-      <DependentUpon>frmBanHangKH.cs</DependentUpon>
+    <Compile Include="frmDatHangKH.Designer.cs">
+      <DependentUpon>frmDatHangKH.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGiamGia.cs">
       <SubType>Form</SubType>
@@ -191,8 +191,8 @@
     <EmbeddedResource Include="frmDatHangNCC.resx">
       <DependentUpon>frmDatHangNCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBanHangKH.resx">
-      <DependentUpon>frmBanHangKH.cs</DependentUpon>
+    <EmbeddedResource Include="frmDatHangKH.resx">
+      <DependentUpon>frmDatHangKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiamGia.resx">
       <DependentUpon>frmGiamGia.cs</DependentUpon>

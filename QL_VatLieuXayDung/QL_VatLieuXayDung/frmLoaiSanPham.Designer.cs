@@ -70,9 +70,9 @@
             this.groupBox3.Controls.Add(this.btnDes_LoaiSP);
             this.groupBox3.Controls.Add(this.btnAsc_LoaiSP);
             this.groupBox3.Controls.Add(this.dgvLoaiSP);
-            this.groupBox3.Location = new System.Drawing.Point(435, 148);
+            this.groupBox3.Location = new System.Drawing.Point(404, 153);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(462, 310);
+            this.groupBox3.Size = new System.Drawing.Size(509, 310);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách loại sản phẩm";
@@ -81,7 +81,7 @@
             // 
             this.btnDes_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_LoaiSP.Image")));
             this.btnDes_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_LoaiSP.Location = new System.Drawing.Point(343, 192);
+            this.btnDes_LoaiSP.Location = new System.Drawing.Point(375, 179);
             this.btnDes_LoaiSP.Name = "btnDes_LoaiSP";
             this.btnDes_LoaiSP.Size = new System.Drawing.Size(101, 47);
             this.btnDes_LoaiSP.TabIndex = 39;
@@ -94,7 +94,7 @@
             // 
             this.btnAsc_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_LoaiSP.Image")));
             this.btnAsc_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_LoaiSP.Location = new System.Drawing.Point(343, 74);
+            this.btnAsc_LoaiSP.Location = new System.Drawing.Point(375, 65);
             this.btnAsc_LoaiSP.Name = "btnAsc_LoaiSP";
             this.btnAsc_LoaiSP.Size = new System.Drawing.Size(101, 47);
             this.btnAsc_LoaiSP.TabIndex = 38;
@@ -112,7 +112,7 @@
             this.ColumnTenLoai_LoaiSP});
             this.dgvLoaiSP.Location = new System.Drawing.Point(29, 33);
             this.dgvLoaiSP.Name = "dgvLoaiSP";
-            this.dgvLoaiSP.Size = new System.Drawing.Size(295, 259);
+            this.dgvLoaiSP.Size = new System.Drawing.Size(316, 259);
             this.dgvLoaiSP.TabIndex = 37;
             this.dgvLoaiSP.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLoaiSP_CellMouseClick);
             // 
@@ -134,10 +134,9 @@
             this.btnThem_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem_LoaiSP.Location = new System.Drawing.Point(18, 16);
             this.btnThem_LoaiSP.Name = "btnThem_LoaiSP";
-            this.btnThem_LoaiSP.Size = new System.Drawing.Size(68, 30);
+            this.btnThem_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnThem_LoaiSP.TabIndex = 12;
-            this.btnThem_LoaiSP.Text = "Thêm";
-            this.btnThem_LoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem_LoaiSP.Text = "   Thêm";
             this.btnThem_LoaiSP.UseVisualStyleBackColor = true;
             this.btnThem_LoaiSP.Click += new System.EventHandler(this.btnThem_LoaiSP_Click);
             // 
@@ -147,10 +146,9 @@
             this.btnLuu_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu_LoaiSP.Location = new System.Drawing.Point(121, 55);
             this.btnLuu_LoaiSP.Name = "btnLuu_LoaiSP";
-            this.btnLuu_LoaiSP.Size = new System.Drawing.Size(68, 30);
+            this.btnLuu_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnLuu_LoaiSP.TabIndex = 16;
-            this.btnLuu_LoaiSP.Text = "Lưu";
-            this.btnLuu_LoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu_LoaiSP.Text = "    Lưu";
             this.btnLuu_LoaiSP.UseVisualStyleBackColor = true;
             this.btnLuu_LoaiSP.Click += new System.EventHandler(this.btnLuu_LoaiSP_Click);
             // 
@@ -168,10 +166,9 @@
             this.btnXoa_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa_LoaiSP.Location = new System.Drawing.Point(18, 55);
             this.btnXoa_LoaiSP.Name = "btnXoa_LoaiSP";
-            this.btnXoa_LoaiSP.Size = new System.Drawing.Size(68, 30);
+            this.btnXoa_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnXoa_LoaiSP.TabIndex = 13;
             this.btnXoa_LoaiSP.Text = "Xóa";
-            this.btnXoa_LoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa_LoaiSP.UseVisualStyleBackColor = true;
             this.btnXoa_LoaiSP.Click += new System.EventHandler(this.btnXoa_LoaiSP_Click);
             // 
@@ -181,9 +178,9 @@
             this.groupBox2.Controls.Add(this.btnLuu_LoaiSP);
             this.groupBox2.Controls.Add(this.btnXoa_LoaiSP);
             this.groupBox2.Controls.Add(this.btnSua_LoaiSP);
-            this.groupBox2.Location = new System.Drawing.Point(690, 52);
+            this.groupBox2.Location = new System.Drawing.Point(692, 57);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(207, 90);
+            this.groupBox2.Size = new System.Drawing.Size(221, 90);
             this.groupBox2.TabIndex = 78;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -194,10 +191,9 @@
             this.btnSua_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua_LoaiSP.Location = new System.Drawing.Point(121, 16);
             this.btnSua_LoaiSP.Name = "btnSua_LoaiSP";
-            this.btnSua_LoaiSP.Size = new System.Drawing.Size(68, 30);
+            this.btnSua_LoaiSP.Size = new System.Drawing.Size(80, 30);
             this.btnSua_LoaiSP.TabIndex = 14;
-            this.btnSua_LoaiSP.Text = "Sửa";
-            this.btnSua_LoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua_LoaiSP.Text = "    Sửa";
             this.btnSua_LoaiSP.UseVisualStyleBackColor = true;
             this.btnSua_LoaiSP.Click += new System.EventHandler(this.btnSua_LoaiSP_Click);
             // 
@@ -221,7 +217,7 @@
             // 
             this.txtTenLoai_LoaiSP.Location = new System.Drawing.Point(75, 52);
             this.txtTenLoai_LoaiSP.Name = "txtTenLoai_LoaiSP";
-            this.txtTenLoai_LoaiSP.Size = new System.Drawing.Size(154, 20);
+            this.txtTenLoai_LoaiSP.Size = new System.Drawing.Size(192, 20);
             this.txtTenLoai_LoaiSP.TabIndex = 9;
             // 
             // lblTenLoai_LoaiSP
@@ -237,7 +233,7 @@
             // 
             this.txtMaLoai_LoaiSP.Location = new System.Drawing.Point(75, 26);
             this.txtMaLoai_LoaiSP.Name = "txtMaLoai_LoaiSP";
-            this.txtMaLoai_LoaiSP.Size = new System.Drawing.Size(154, 20);
+            this.txtMaLoai_LoaiSP.Size = new System.Drawing.Size(192, 20);
             this.txtMaLoai_LoaiSP.TabIndex = 7;
             // 
             // groupBox1
@@ -246,9 +242,9 @@
             this.groupBox1.Controls.Add(this.lblMaLoai_LoaiSP);
             this.groupBox1.Controls.Add(this.txtTenLoai_LoaiSP);
             this.groupBox1.Controls.Add(this.txtMaLoai_LoaiSP);
-            this.groupBox1.Location = new System.Drawing.Point(435, 52);
+            this.groupBox1.Location = new System.Drawing.Point(404, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 90);
+            this.groupBox1.Size = new System.Drawing.Size(282, 90);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại sản phẩm";

@@ -92,7 +92,7 @@
             this.txtDiachi_NCC.Location = new System.Drawing.Point(394, 24);
             this.txtDiachi_NCC.Multiline = true;
             this.txtDiachi_NCC.Name = "txtDiachi_NCC";
-            this.txtDiachi_NCC.Size = new System.Drawing.Size(229, 68);
+            this.txtDiachi_NCC.Size = new System.Drawing.Size(190, 68);
             this.txtDiachi_NCC.TabIndex = 24;
             // 
             // txtTenNCC_NCC
@@ -105,7 +105,7 @@
             // lblDienthoai_NCC
             // 
             this.lblDienthoai_NCC.AutoSize = true;
-            this.lblDienthoai_NCC.Location = new System.Drawing.Point(25, 75);
+            this.lblDienthoai_NCC.Location = new System.Drawing.Point(61, 75);
             this.lblDienthoai_NCC.Name = "lblDienthoai_NCC";
             this.lblDienthoai_NCC.Size = new System.Drawing.Size(58, 13);
             this.lblDienthoai_NCC.TabIndex = 22;
@@ -114,7 +114,7 @@
             // lblDiachi_NCC
             // 
             this.lblDiachi_NCC.AutoSize = true;
-            this.lblDiachi_NCC.Location = new System.Drawing.Point(345, 28);
+            this.lblDiachi_NCC.Location = new System.Drawing.Point(328, 28);
             this.lblDiachi_NCC.Name = "lblDiachi_NCC";
             this.lblDiachi_NCC.Size = new System.Drawing.Size(43, 13);
             this.lblDiachi_NCC.TabIndex = 21;
@@ -133,9 +133,9 @@
             this.groupBox2.Controls.Add(this.btnLuu_NCC);
             this.groupBox2.Controls.Add(this.btnXoa_NCC);
             this.groupBox2.Controls.Add(this.btnSua_NCC);
-            this.groupBox2.Location = new System.Drawing.Point(847, 53);
+            this.groupBox2.Location = new System.Drawing.Point(847, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(117, 389);
+            this.groupBox2.Size = new System.Drawing.Size(117, 451);
             this.groupBox2.TabIndex = 83;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -157,7 +157,7 @@
             // 
             this.btnLuu_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NCC.Image")));
             this.btnLuu_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NCC.Location = new System.Drawing.Point(25, 263);
+            this.btnLuu_NCC.Location = new System.Drawing.Point(25, 293);
             this.btnLuu_NCC.Name = "btnLuu_NCC";
             this.btnLuu_NCC.Size = new System.Drawing.Size(65, 54);
             this.btnLuu_NCC.TabIndex = 21;
@@ -170,7 +170,7 @@
             // 
             this.btnXoa_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NCC.Image")));
             this.btnXoa_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NCC.Location = new System.Drawing.Point(25, 105);
+            this.btnXoa_NCC.Location = new System.Drawing.Point(25, 117);
             this.btnXoa_NCC.Name = "btnXoa_NCC";
             this.btnXoa_NCC.Size = new System.Drawing.Size(65, 54);
             this.btnXoa_NCC.TabIndex = 19;
@@ -183,7 +183,7 @@
             // 
             this.btnSua_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NCC.Image")));
             this.btnSua_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NCC.Location = new System.Drawing.Point(25, 181);
+            this.btnSua_NCC.Location = new System.Drawing.Point(25, 202);
             this.btnSua_NCC.Name = "btnSua_NCC";
             this.btnSua_NCC.Size = new System.Drawing.Size(65, 54);
             this.btnSua_NCC.TabIndex = 20;
@@ -222,9 +222,9 @@
             this.groupBox1.Controls.Add(this.lblDienthoai_NCC);
             this.groupBox1.Controls.Add(this.lblDiachi_NCC);
             this.groupBox1.Controls.Add(this.lblTenNCC_NCC);
-            this.groupBox1.Location = new System.Drawing.Point(127, 53);
+            this.groupBox1.Location = new System.Drawing.Point(127, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(714, 107);
+            this.groupBox1.Size = new System.Drawing.Size(714, 132);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp";
@@ -267,9 +267,9 @@
             this.groupBox3.Controls.Add(this.btnAsc_NCC);
             this.groupBox3.Controls.Add(this.btnDes_NCC);
             this.groupBox3.Controls.Add(this.dgvNCC);
-            this.groupBox3.Location = new System.Drawing.Point(127, 170);
+            this.groupBox3.Location = new System.Drawing.Point(127, 205);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(714, 272);
+            this.groupBox3.Size = new System.Drawing.Size(714, 313);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhà cung cấp";
@@ -311,7 +311,7 @@
             this.ColumnDthoai_NCC});
             this.dgvNCC.Location = new System.Drawing.Point(28, 19);
             this.dgvNCC.Name = "dgvNCC";
-            this.dgvNCC.Size = new System.Drawing.Size(556, 239);
+            this.dgvNCC.Size = new System.Drawing.Size(556, 271);
             this.dgvNCC.TabIndex = 0;
             this.dgvNCC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNCC_CellMouseClick);
             // 
