@@ -51,6 +51,13 @@
             this.lblDiachi_KH = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTenKH_KH = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtGhichu_KH = new System.Windows.Forms.TextBox();
@@ -62,13 +69,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblKhachhang = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
@@ -205,7 +205,7 @@
             this.btnThem_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem_KH.Location = new System.Drawing.Point(25, 34);
             this.btnThem_KH.Name = "btnThem_KH";
-            this.btnThem_KH.Size = new System.Drawing.Size(67, 54);
+            this.btnThem_KH.Size = new System.Drawing.Size(80, 54);
             this.btnThem_KH.TabIndex = 18;
             this.btnThem_KH.Text = "Thêm";
             this.btnThem_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,7 +218,7 @@
             this.btnLuu_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu_KH.Location = new System.Drawing.Point(25, 236);
             this.btnLuu_KH.Name = "btnLuu_KH";
-            this.btnLuu_KH.Size = new System.Drawing.Size(67, 54);
+            this.btnLuu_KH.Size = new System.Drawing.Size(80, 54);
             this.btnLuu_KH.TabIndex = 21;
             this.btnLuu_KH.Text = " Lưu";
             this.btnLuu_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -227,11 +227,14 @@
             // 
             // bntLammoi
             // 
+            this.bntLammoi.Image = ((System.Drawing.Image)(resources.GetObject("bntLammoi.Image")));
+            this.bntLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntLammoi.Location = new System.Drawing.Point(25, 301);
             this.bntLammoi.Name = "bntLammoi";
             this.bntLammoi.Size = new System.Drawing.Size(80, 54);
             this.bntLammoi.TabIndex = 22;
             this.bntLammoi.Text = "Làm mới";
+            this.bntLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bntLammoi.UseVisualStyleBackColor = true;
             // 
             // btnXoa_KH
@@ -240,7 +243,7 @@
             this.btnXoa_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa_KH.Location = new System.Drawing.Point(25, 100);
             this.btnXoa_KH.Name = "btnXoa_KH";
-            this.btnXoa_KH.Size = new System.Drawing.Size(67, 54);
+            this.btnXoa_KH.Size = new System.Drawing.Size(80, 54);
             this.btnXoa_KH.TabIndex = 19;
             this.btnXoa_KH.Text = "Xóa";
             this.btnXoa_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -253,7 +256,7 @@
             this.btnSua_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua_KH.Location = new System.Drawing.Point(25, 169);
             this.btnSua_KH.Name = "btnSua_KH";
-            this.btnSua_KH.Size = new System.Drawing.Size(67, 54);
+            this.btnSua_KH.Size = new System.Drawing.Size(80, 54);
             this.btnSua_KH.TabIndex = 20;
             this.btnSua_KH.Text = "Sửa";
             this.btnSua_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -291,11 +294,53 @@
             this.Column6,
             this.Column5,
             this.Column7});
-            this.dgvKH.Location = new System.Drawing.Point(6, 28);
+            this.dgvKH.Location = new System.Drawing.Point(6, 19);
             this.dgvKH.Name = "dgvKH";
-            this.dgvKH.Size = new System.Drawing.Size(650, 256);
+            this.dgvKH.Size = new System.Drawing.Size(650, 279);
             this.dgvKH.TabIndex = 0;
             this.dgvKH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKH_CellMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAKH";
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENKH";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PHAIKH";
+            this.Column3.HeaderText = "Phái";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CMNDKH";
+            this.Column4.HeaderText = "Số CMND";
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "DIACHIKH";
+            this.Column6.HeaderText = "Địa chỉ";
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DTHOAIKH";
+            this.Column5.HeaderText = "Điện thoại";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "GHICHUKH";
+            this.Column7.HeaderText = "Ghi chú";
+            this.Column7.Name = "Column7";
             // 
             // lblTenKH_KH
             // 
@@ -400,48 +445,6 @@
             this.lblKhachhang.TabIndex = 83;
             this.lblKhachhang.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MAKH";
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TENKH";
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PHAIKH";
-            this.Column3.HeaderText = "Phái";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CMNDKH";
-            this.Column4.HeaderText = "Số CMND";
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "DIACHIKH";
-            this.Column6.HeaderText = "Địa chỉ";
-            this.Column6.Name = "Column6";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "DTHOAIKH";
-            this.Column5.HeaderText = "Điện thoại";
-            this.Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "GHICHUKH";
-            this.Column7.HeaderText = "Ghi chú";
-            this.Column7.Name = "Column7";
-            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,7 +455,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblKhachhang);
             this.Name = "frmKhachHang";
-            this.Text = "Khách hàng";
+            this.Text = "Thông tin khách hàng";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

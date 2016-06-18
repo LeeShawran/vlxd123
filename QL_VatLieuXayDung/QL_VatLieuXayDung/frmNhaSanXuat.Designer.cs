@@ -33,6 +33,8 @@
             this.btnAsc_NSX = new System.Windows.Forms.Button();
             this.btnDes_NSX = new System.Windows.Forms.Button();
             this.dgvNSX = new System.Windows.Forms.DataGridView();
+            this.ColumnMaNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTenNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +52,6 @@
             this.txtTenNSX_NSX = new System.Windows.Forms.TextBox();
             this.lblTenNSX_NSX = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnMaNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTenNSX_NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNSX)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -63,9 +63,9 @@
             this.groupBox3.Controls.Add(this.btnAsc_NSX);
             this.groupBox3.Controls.Add(this.btnDes_NSX);
             this.groupBox3.Controls.Add(this.dgvNSX);
-            this.groupBox3.Location = new System.Drawing.Point(216, 243);
+            this.groupBox3.Location = new System.Drawing.Point(415, 178);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(715, 281);
+            this.groupBox3.Size = new System.Drawing.Size(540, 281);
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhà xuất bản";
@@ -74,7 +74,7 @@
             // 
             this.btnAsc_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NSX.Image")));
             this.btnAsc_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_NSX.Location = new System.Drawing.Point(592, 73);
+            this.btnAsc_NSX.Location = new System.Drawing.Point(391, 66);
             this.btnAsc_NSX.Name = "btnAsc_NSX";
             this.btnAsc_NSX.Size = new System.Drawing.Size(99, 44);
             this.btnAsc_NSX.TabIndex = 21;
@@ -87,7 +87,7 @@
             // 
             this.btnDes_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NSX.Image")));
             this.btnDes_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_NSX.Location = new System.Drawing.Point(592, 163);
+            this.btnDes_NSX.Location = new System.Drawing.Point(391, 158);
             this.btnDes_NSX.Name = "btnDes_NSX";
             this.btnDes_NSX.Size = new System.Drawing.Size(99, 44);
             this.btnDes_NSX.TabIndex = 22;
@@ -105,9 +105,21 @@
             this.ColumnTenNSX_NSX});
             this.dgvNSX.Location = new System.Drawing.Point(18, 25);
             this.dgvNSX.Name = "dgvNSX";
-            this.dgvNSX.Size = new System.Drawing.Size(544, 233);
+            this.dgvNSX.Size = new System.Drawing.Size(347, 233);
             this.dgvNSX.TabIndex = 0;
             this.dgvNSX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNSX_CellMouseClick);
+            // 
+            // ColumnMaNSX_NSX
+            // 
+            this.ColumnMaNSX_NSX.DataPropertyName = "MANSX";
+            this.ColumnMaNSX_NSX.HeaderText = "Mã sản xuất";
+            this.ColumnMaNSX_NSX.Name = "ColumnMaNSX_NSX";
+            // 
+            // ColumnTenNSX_NSX
+            // 
+            this.ColumnTenNSX_NSX.DataPropertyName = "TENNSX";
+            this.ColumnTenNSX_NSX.HeaderText = "Tên nhà sản xuất";
+            this.ColumnTenNSX_NSX.Name = "ColumnTenNSX_NSX";
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -141,9 +153,9 @@
             this.groupBox2.Controls.Add(this.btnLuu_NSX);
             this.groupBox2.Controls.Add(this.btnXoa_NSX);
             this.groupBox2.Controls.Add(this.btnSua_NSX);
-            this.groupBox2.Location = new System.Drawing.Point(937, 75);
+            this.groupBox2.Location = new System.Drawing.Point(763, 65);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(131, 449);
+            this.groupBox2.Size = new System.Drawing.Size(192, 107);
             this.groupBox2.TabIndex = 85;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -152,9 +164,9 @@
             // 
             this.btnThem_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnThem_NSX.Image")));
             this.btnThem_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_NSX.Location = new System.Drawing.Point(25, 34);
+            this.btnThem_NSX.Location = new System.Drawing.Point(25, 22);
             this.btnThem_NSX.Name = "btnThem_NSX";
-            this.btnThem_NSX.Size = new System.Drawing.Size(67, 54);
+            this.btnThem_NSX.Size = new System.Drawing.Size(67, 31);
             this.btnThem_NSX.TabIndex = 18;
             this.btnThem_NSX.Text = "Thêm";
             this.btnThem_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,9 +177,9 @@
             // 
             this.btnLuu_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NSX.Image")));
             this.btnLuu_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NSX.Location = new System.Drawing.Point(25, 281);
+            this.btnLuu_NSX.Location = new System.Drawing.Point(98, 59);
             this.btnLuu_NSX.Name = "btnLuu_NSX";
-            this.btnLuu_NSX.Size = new System.Drawing.Size(67, 54);
+            this.btnLuu_NSX.Size = new System.Drawing.Size(67, 31);
             this.btnLuu_NSX.TabIndex = 21;
             this.btnLuu_NSX.Text = "Lưu";
             this.btnLuu_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -178,9 +190,9 @@
             // 
             this.btnXoa_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NSX.Image")));
             this.btnXoa_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NSX.Location = new System.Drawing.Point(25, 113);
+            this.btnXoa_NSX.Location = new System.Drawing.Point(98, 22);
             this.btnXoa_NSX.Name = "btnXoa_NSX";
-            this.btnXoa_NSX.Size = new System.Drawing.Size(67, 54);
+            this.btnXoa_NSX.Size = new System.Drawing.Size(67, 31);
             this.btnXoa_NSX.TabIndex = 19;
             this.btnXoa_NSX.Text = "Xóa";
             this.btnXoa_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,9 +203,9 @@
             // 
             this.btnSua_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NSX.Image")));
             this.btnSua_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NSX.Location = new System.Drawing.Point(25, 193);
+            this.btnSua_NSX.Location = new System.Drawing.Point(25, 59);
             this.btnSua_NSX.Name = "btnSua_NSX";
-            this.btnSua_NSX.Size = new System.Drawing.Size(67, 54);
+            this.btnSua_NSX.Size = new System.Drawing.Size(67, 31);
             this.btnSua_NSX.TabIndex = 20;
             this.btnSua_NSX.Text = "Sửa";
             this.btnSua_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -224,16 +236,16 @@
             this.groupBox1.Controls.Add(this.lblMaNSX_NSX);
             this.groupBox1.Controls.Add(this.txtTenNSX_NSX);
             this.groupBox1.Controls.Add(this.lblTenNSX_NSX);
-            this.groupBox1.Location = new System.Drawing.Point(216, 75);
+            this.groupBox1.Location = new System.Drawing.Point(415, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(715, 156);
+            this.groupBox1.Size = new System.Drawing.Size(342, 107);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
+            this.groupBox1.Text = "Thông tin nhà sản xuất";
             // 
             // txtMaNSX_NSX
             // 
-            this.txtMaNSX_NSX.Location = new System.Drawing.Point(149, 61);
+            this.txtMaNSX_NSX.Location = new System.Drawing.Point(126, 33);
             this.txtMaNSX_NSX.Name = "txtMaNSX_NSX";
             this.txtMaNSX_NSX.Size = new System.Drawing.Size(190, 20);
             this.txtMaNSX_NSX.TabIndex = 27;
@@ -241,7 +253,7 @@
             // lblMaNSX_NSX
             // 
             this.lblMaNSX_NSX.AutoSize = true;
-            this.lblMaNSX_NSX.Location = new System.Drawing.Point(50, 64);
+            this.lblMaNSX_NSX.Location = new System.Drawing.Point(27, 36);
             this.lblMaNSX_NSX.Name = "lblMaNSX_NSX";
             this.lblMaNSX_NSX.Size = new System.Drawing.Size(89, 13);
             this.lblMaNSX_NSX.TabIndex = 26;
@@ -249,7 +261,7 @@
             // 
             // txtTenNSX_NSX
             // 
-            this.txtTenNSX_NSX.Location = new System.Drawing.Point(149, 87);
+            this.txtTenNSX_NSX.Location = new System.Drawing.Point(126, 59);
             this.txtTenNSX_NSX.Name = "txtTenNSX_NSX";
             this.txtTenNSX_NSX.Size = new System.Drawing.Size(190, 20);
             this.txtTenNSX_NSX.TabIndex = 23;
@@ -257,7 +269,7 @@
             // lblTenNSX_NSX
             // 
             this.lblTenNSX_NSX.AutoSize = true;
-            this.lblTenNSX_NSX.Location = new System.Drawing.Point(50, 90);
+            this.lblTenNSX_NSX.Location = new System.Drawing.Point(27, 62);
             this.lblTenNSX_NSX.Name = "lblTenNSX_NSX";
             this.lblTenNSX_NSX.Size = new System.Drawing.Size(93, 13);
             this.lblTenNSX_NSX.TabIndex = 20;
@@ -269,18 +281,6 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Ghi chú";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 200;
-            // 
-            // ColumnMaNSX_NSX
-            // 
-            this.ColumnMaNSX_NSX.DataPropertyName = "MANSX";
-            this.ColumnMaNSX_NSX.HeaderText = "Mã sản xuất";
-            this.ColumnMaNSX_NSX.Name = "ColumnMaNSX_NSX";
-            // 
-            // ColumnTenNSX_NSX
-            // 
-            this.ColumnTenNSX_NSX.DataPropertyName = "TENNSX";
-            this.ColumnTenNSX_NSX.HeaderText = "Tên nhà sản xuất";
-            this.ColumnTenNSX_NSX.Name = "ColumnTenNSX_NSX";
             // 
             // frmNhaSanXuat
             // 

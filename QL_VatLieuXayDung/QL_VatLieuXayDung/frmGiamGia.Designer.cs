@@ -32,6 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGG = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGiamGia = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblKetthuc_GG = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.btnXoa_GG = new System.Windows.Forms.Button();
             this.btnSua_GG = new System.Windows.Forms.Button();
             this.btnThem_GG = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGG)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -93,6 +93,30 @@
             this.dgvGG.Size = new System.Drawing.Size(484, 150);
             this.dgvGG.TabIndex = 0;
             this.dgvGG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGG_CellMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAGG";
+            this.Column1.HeaderText = "Mã giảm giá";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CHIETKHAU";
+            this.Column2.HeaderText = "Chiết khấu";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NGAYBD";
+            this.Column3.HeaderText = "Ngày bắt đầu";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NGAYKT";
+            this.Column4.HeaderText = "Ngày kết thúc";
+            this.Column4.Name = "Column4";
             // 
             // lblGiamGia
             // 
@@ -161,17 +185,17 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(184, 58);
+            this.label10.Location = new System.Drawing.Point(264, 58);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(15, 13);
+            this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 4;
-            this.label10.Text = "%";
+            this.label10.Text = "(%)";
             // 
             // txtChietkhau_GG
             // 
             this.txtChietkhau_GG.Location = new System.Drawing.Point(129, 55);
             this.txtChietkhau_GG.Name = "txtChietkhau_GG";
-            this.txtChietkhau_GG.Size = new System.Drawing.Size(49, 20);
+            this.txtChietkhau_GG.Size = new System.Drawing.Size(129, 20);
             this.txtChietkhau_GG.TabIndex = 3;
             // 
             // lblChietkhau_GG
@@ -263,30 +287,6 @@
             this.btnThem_GG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem_GG.UseVisualStyleBackColor = true;
             this.btnThem_GG.Click += new System.EventHandler(this.btnThem_GG_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MAGG";
-            this.Column1.HeaderText = "Mã giảm giá";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CHIETKHAU";
-            this.Column2.HeaderText = "Chiết khấu";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "NGAYBD";
-            this.Column3.HeaderText = "Ngày bắt đầu";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NGAYKT";
-            this.Column4.HeaderText = "Ngày kết thúc";
-            this.Column4.Name = "Column4";
             // 
             // frmGiamGia
             // 
