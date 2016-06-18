@@ -63,14 +63,14 @@
             // 
             // txtTenNTK_NTK
             // 
-            this.txtTenNTK_NTK.Location = new System.Drawing.Point(130, 45);
+            this.txtTenNTK_NTK.Location = new System.Drawing.Point(134, 64);
             this.txtTenNTK_NTK.Name = "txtTenNTK_NTK";
             this.txtTenNTK_NTK.Size = new System.Drawing.Size(137, 20);
             this.txtTenNTK_NTK.TabIndex = 52;
             // 
             // txtMaNTK_NTK
             // 
-            this.txtMaNTK_NTK.Location = new System.Drawing.Point(130, 22);
+            this.txtMaNTK_NTK.Location = new System.Drawing.Point(134, 41);
             this.txtMaNTK_NTK.Name = "txtMaNTK_NTK";
             this.txtMaNTK_NTK.Size = new System.Drawing.Size(137, 20);
             this.txtMaNTK_NTK.TabIndex = 51;
@@ -78,7 +78,7 @@
             // lblMaNTK
             // 
             this.lblMaNTK.AutoSize = true;
-            this.lblMaNTK.Location = new System.Drawing.Point(17, 25);
+            this.lblMaNTK.Location = new System.Drawing.Point(21, 44);
             this.lblMaNTK.Name = "lblMaNTK";
             this.lblMaNTK.Size = new System.Drawing.Size(101, 13);
             this.lblMaNTK.TabIndex = 50;
@@ -102,7 +102,7 @@
             // lblTenNTK
             // 
             this.lblTenNTK.AutoSize = true;
-            this.lblTenNTK.Location = new System.Drawing.Point(17, 48);
+            this.lblTenNTK.Location = new System.Drawing.Point(21, 67);
             this.lblTenNTK.Name = "lblTenNTK";
             this.lblTenNTK.Size = new System.Drawing.Size(105, 13);
             this.lblTenNTK.TabIndex = 46;
@@ -173,7 +173,7 @@
             this.groupBox2.Size = new System.Drawing.Size(203, 119);
             this.groupBox2.TabIndex = 80;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thao Tác";
+            this.groupBox2.Text = "Thao tác";
             // 
             // gbDSKH
             // 
@@ -182,10 +182,10 @@
             this.gbDSKH.Controls.Add(this.dgvNTK);
             this.gbDSKH.Location = new System.Drawing.Point(465, 184);
             this.gbDSKH.Name = "gbDSKH";
-            this.gbDSKH.Size = new System.Drawing.Size(500, 301);
+            this.gbDSKH.Size = new System.Drawing.Size(500, 207);
             this.gbDSKH.TabIndex = 81;
             this.gbDSKH.TabStop = false;
-            this.gbDSKH.Text = "Danh sách tài khoản";
+            this.gbDSKH.Text = "Danh sách nhóm tài khoản";
             // 
             // dgvNTK
             // 
@@ -197,7 +197,7 @@
             this.dgvNTK.Location = new System.Drawing.Point(20, 19);
             this.dgvNTK.Name = "dgvNTK";
             this.dgvNTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNTK.Size = new System.Drawing.Size(405, 202);
+            this.dgvNTK.Size = new System.Drawing.Size(458, 166);
             this.dgvNTK.TabIndex = 48;
             this.dgvNTK.Click += new System.EventHandler(this.dgvNhomTK_Click);
             // 
