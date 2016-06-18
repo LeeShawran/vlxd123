@@ -48,14 +48,16 @@
             // 
             this.groupBox3.Controls.Add(this.dgvNhomTK);
             this.groupBox3.Controls.Add(this.dgvPhanQuyen);
-            this.groupBox3.Location = new System.Drawing.Point(162, 91);
+            this.groupBox3.Location = new System.Drawing.Point(255, 57);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1075, 407);
+            this.groupBox3.Size = new System.Drawing.Size(952, 301);
             this.groupBox3.TabIndex = 90;
             this.groupBox3.TabStop = false;
             // 
             // dgvNhomTK
             // 
+            this.dgvNhomTK.AllowUserToAddRows = false;
+            this.dgvNhomTK.AllowUserToDeleteRows = false;
             this.dgvNhomTK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhomTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhomTK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -63,8 +65,9 @@
             this.dataGridViewTextBoxColumn2});
             this.dgvNhomTK.Location = new System.Drawing.Point(29, 19);
             this.dgvNhomTK.Name = "dgvNhomTK";
+            this.dgvNhomTK.ReadOnly = true;
             this.dgvNhomTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhomTK.Size = new System.Drawing.Size(378, 371);
+            this.dgvNhomTK.Size = new System.Drawing.Size(312, 266);
             this.dgvNhomTK.TabIndex = 47;
             this.dgvNhomTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhomTK_CellContentClick);
             this.dgvNhomTK.SelectionChanged += new System.EventHandler(this.dgvNhomTK_SelectionChanged);
@@ -74,12 +77,14 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
             this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dgvPhanQuyen
             // 
@@ -89,9 +94,9 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgvPhanQuyen.Location = new System.Drawing.Point(457, 19);
+            this.dgvPhanQuyen.Location = new System.Drawing.Point(368, 19);
             this.dgvPhanQuyen.Name = "dgvPhanQuyen";
-            this.dgvPhanQuyen.Size = new System.Drawing.Size(561, 371);
+            this.dgvPhanQuyen.Size = new System.Drawing.Size(561, 266);
             this.dgvPhanQuyen.TabIndex = 46;
             // 
             // Column1
@@ -116,7 +121,7 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(1172, 46);
+            this.btnLuu.Location = new System.Drawing.Point(1142, 12);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(65, 39);
             this.btnLuu.TabIndex = 16;
@@ -130,11 +135,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label6.Location = new System.Drawing.Point(556, 44);
+            this.label6.Location = new System.Drawing.Point(555, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(217, 33);
+            this.label6.Size = new System.Drawing.Size(367, 33);
             this.label6.TabIndex = 91;
-            this.label6.Text = "PHÂN QUYỀN";
+            this.label6.Text = "PHÂN QUYỀN SỬ DỤNG";
             // 
             // frmPhanQuyen
             // 
@@ -145,7 +150,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnLuu);
             this.Name = "frmPhanQuyen";
-            this.Text = "frmPhanQuyen";
+            this.Text = "Phân quyền sử dụng";
             this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomTK)).EndInit();

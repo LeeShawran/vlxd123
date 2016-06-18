@@ -133,9 +133,9 @@
             this.groupBox2.Controls.Add(this.btnLuu_NCC);
             this.groupBox2.Controls.Add(this.btnXoa_NCC);
             this.groupBox2.Controls.Add(this.btnSua_NCC);
-            this.groupBox2.Location = new System.Drawing.Point(847, 67);
+            this.groupBox2.Location = new System.Drawing.Point(773, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(117, 451);
+            this.groupBox2.Size = new System.Drawing.Size(117, 379);
             this.groupBox2.TabIndex = 83;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -222,9 +222,9 @@
             this.groupBox1.Controls.Add(this.lblDienthoai_NCC);
             this.groupBox1.Controls.Add(this.lblDiachi_NCC);
             this.groupBox1.Controls.Add(this.lblTenNCC_NCC);
-            this.groupBox1.Location = new System.Drawing.Point(127, 67);
+            this.groupBox1.Location = new System.Drawing.Point(172, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(714, 132);
+            this.groupBox1.Size = new System.Drawing.Size(595, 108);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp";
@@ -267,9 +267,9 @@
             this.groupBox3.Controls.Add(this.btnAsc_NCC);
             this.groupBox3.Controls.Add(this.btnDes_NCC);
             this.groupBox3.Controls.Add(this.dgvNCC);
-            this.groupBox3.Location = new System.Drawing.Point(127, 205);
+            this.groupBox3.Location = new System.Drawing.Point(172, 167);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(714, 313);
+            this.groupBox3.Size = new System.Drawing.Size(595, 262);
             this.groupBox3.TabIndex = 80;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhà cung cấp";
@@ -278,7 +278,7 @@
             // 
             this.btnAsc_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NCC.Image")));
             this.btnAsc_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_NCC.Location = new System.Drawing.Point(607, 69);
+            this.btnAsc_NCC.Location = new System.Drawing.Point(489, 43);
             this.btnAsc_NCC.Name = "btnAsc_NCC";
             this.btnAsc_NCC.Size = new System.Drawing.Size(95, 45);
             this.btnAsc_NCC.TabIndex = 20;
@@ -291,7 +291,7 @@
             // 
             this.btnDes_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NCC.Image")));
             this.btnDes_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_NCC.Location = new System.Drawing.Point(607, 155);
+            this.btnDes_NCC.Location = new System.Drawing.Point(489, 158);
             this.btnDes_NCC.Name = "btnDes_NCC";
             this.btnDes_NCC.Size = new System.Drawing.Size(95, 45);
             this.btnDes_NCC.TabIndex = 21;
@@ -302,6 +302,8 @@
             // 
             // dgvNCC
             // 
+            this.dgvNCC.AllowUserToAddRows = false;
+            this.dgvNCC.AllowUserToDeleteRows = false;
             this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -309,9 +311,10 @@
             this.ColumnTenNCC_NCC,
             this.ColumnDchi_NCC,
             this.ColumnDthoai_NCC});
-            this.dgvNCC.Location = new System.Drawing.Point(28, 19);
+            this.dgvNCC.Location = new System.Drawing.Point(6, 19);
             this.dgvNCC.Name = "dgvNCC";
-            this.dgvNCC.Size = new System.Drawing.Size(556, 271);
+            this.dgvNCC.ReadOnly = true;
+            this.dgvNCC.Size = new System.Drawing.Size(477, 223);
             this.dgvNCC.TabIndex = 0;
             this.dgvNCC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNCC_CellMouseClick);
             // 
@@ -320,24 +323,28 @@
             this.ColumnMaNCC_NCC.DataPropertyName = "MANCC";
             this.ColumnMaNCC_NCC.HeaderText = "Mã nhà cung cấp";
             this.ColumnMaNCC_NCC.Name = "ColumnMaNCC_NCC";
+            this.ColumnMaNCC_NCC.ReadOnly = true;
             // 
             // ColumnTenNCC_NCC
             // 
             this.ColumnTenNCC_NCC.DataPropertyName = "TENNCC";
             this.ColumnTenNCC_NCC.HeaderText = "Tên nhà cung cấp";
             this.ColumnTenNCC_NCC.Name = "ColumnTenNCC_NCC";
+            this.ColumnTenNCC_NCC.ReadOnly = true;
             // 
             // ColumnDchi_NCC
             // 
             this.ColumnDchi_NCC.DataPropertyName = "DIACHI";
             this.ColumnDchi_NCC.HeaderText = "Địa chỉ";
             this.ColumnDchi_NCC.Name = "ColumnDchi_NCC";
+            this.ColumnDchi_NCC.ReadOnly = true;
             // 
             // ColumnDthoai_NCC
             // 
             this.ColumnDthoai_NCC.DataPropertyName = "DIENTHOAI";
             this.ColumnDthoai_NCC.HeaderText = "Điện thoại";
             this.ColumnDthoai_NCC.Name = "ColumnDthoai_NCC";
+            this.ColumnDthoai_NCC.ReadOnly = true;
             // 
             // frmNhaCungCap
             // 

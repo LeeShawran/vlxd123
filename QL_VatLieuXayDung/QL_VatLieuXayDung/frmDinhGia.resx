@@ -123,13 +123,23 @@
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAqNJREFUSEu9lttL
+        VFEUxv0DeurP8CH1vbdKvEI3jejyEKWOEkqKoWmaFRk5oTNj9mCIpiYFEd20aNTJW5ZKoiZqgo6Qjjij
+        5ozjXOxrf1sPam4oT+WBH2fN3t9a3z4ze68zISG7eUXEWQ6Ex5rT9RIWa8oOizVnsM62dYdHm6IPZ7zD
+        ksePv7mYzzr74iz7t5gI50LnwgpIMPhDEtghrkUfNPgkvxpkjEwsgKz4VndIUOiDGJ1cxJh9DaVB52cH
+        iMcb0EVX/yw0lAYvbHaQRbdfFy/f26GxzSA8xpRa9WwUZPN3uZO4+vkYNLYbiO1ZUj0AMuta0YWxZgAa
+        SoOcsk8g03PLusg19UBDaXDhWjuSitox5fDoIvl6BzSUBoeSG3FEHJKJb25dHMu04uglK1hHaXAwqRH/
+        ij8y4EoiU5oQZWhCdOobxKStwZhjnKNGtSilQZRIjL/4VvaS4+JxT2Q34+TlFpzKacXp3FacybVJGHOM
+        c9RQyxzmsgYNlQZMOJtng+imiIj7PdQZbnbIjXGuoE3msgYNlQYUp9/uksU3Gt0q/IENfCL2+degjsVI
+        QpYViVnN0vB8YZvagGeg4F6fTPR4g7hi7pE9yb28lSXxeckTkLoUsTUNN9YRxVkjs6RbbXDrQT/uPhyU
+        ifPffdKAdxdZb8VOcZeItk5dnqVH0Iv88l5cFbBGYUWf2qC84Qsqn47IRIfLKw0cTi9mNOZELNBOOnWl
+        tYOSsrohmOqHwBpG0W4Uv4HFwEbX0DQuDXia+0ecmJrxwK4x7cbkJqirffUVdevUvx6XzbLi8TBrpGx5
+        4YRGGvcmpj1x5hhbkF9qQ5GlDcX3O3CnshOlVR9grulGee1HCWOOcY4aapnD3MxiK+KTH82HJlj27Ob/
+        if/n9RMhmC73tZmEBQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

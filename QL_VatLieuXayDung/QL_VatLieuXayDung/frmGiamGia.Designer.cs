@@ -32,6 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGG = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGiamGia = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblKetthuc_GG = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.btnXoa_GG = new System.Windows.Forms.Button();
             this.btnSua_GG = new System.Windows.Forms.Button();
             this.btnThem_GG = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGG)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -72,15 +72,17 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvGG);
-            this.groupBox2.Location = new System.Drawing.Point(430, 225);
+            this.groupBox2.Location = new System.Drawing.Point(456, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(525, 188);
+            this.groupBox2.Size = new System.Drawing.Size(457, 188);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách các đợt giảm giá";
             // 
             // dgvGG
             // 
+            this.dgvGG.AllowUserToAddRows = false;
+            this.dgvGG.AllowUserToDeleteRows = false;
             this.dgvGG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -90,9 +92,38 @@
             this.Column4});
             this.dgvGG.Location = new System.Drawing.Point(24, 19);
             this.dgvGG.Name = "dgvGG";
-            this.dgvGG.Size = new System.Drawing.Size(484, 150);
+            this.dgvGG.ReadOnly = true;
+            this.dgvGG.Size = new System.Drawing.Size(416, 150);
             this.dgvGG.TabIndex = 0;
             this.dgvGG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGG_CellMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAGG";
+            this.Column1.HeaderText = "Mã giảm giá";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CHIETKHAU";
+            this.Column2.HeaderText = "Chiết khấu";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NGAYBD";
+            this.Column3.HeaderText = "Ngày bắt đầu";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NGAYKT";
+            this.Column4.HeaderText = "Ngày kết thúc";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // lblGiamGia
             // 
@@ -116,9 +147,9 @@
             this.groupBox4.Controls.Add(this.lblChietkhau_GG);
             this.groupBox4.Controls.Add(this.txtMaGG_GG);
             this.groupBox4.Controls.Add(this.lblMaGG_GG);
-            this.groupBox4.Location = new System.Drawing.Point(430, 71);
+            this.groupBox4.Location = new System.Drawing.Point(456, 60);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(328, 148);
+            this.groupBox4.Size = new System.Drawing.Size(271, 130);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin đợt giảm giá";
@@ -126,7 +157,7 @@
             // lblKetthuc_GG
             // 
             this.lblKetthuc_GG.AutoSize = true;
-            this.lblKetthuc_GG.Location = new System.Drawing.Point(48, 112);
+            this.lblKetthuc_GG.Location = new System.Drawing.Point(16, 105);
             this.lblKetthuc_GG.Name = "lblKetthuc_GG";
             this.lblKetthuc_GG.Size = new System.Drawing.Size(77, 13);
             this.lblKetthuc_GG.TabIndex = 9;
@@ -135,7 +166,7 @@
             // dtpKetthuc_GG
             // 
             this.dtpKetthuc_GG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpKetthuc_GG.Location = new System.Drawing.Point(131, 107);
+            this.dtpKetthuc_GG.Location = new System.Drawing.Point(99, 100);
             this.dtpKetthuc_GG.Name = "dtpKetthuc_GG";
             this.dtpKetthuc_GG.Size = new System.Drawing.Size(154, 20);
             this.dtpKetthuc_GG.TabIndex = 8;
@@ -144,7 +175,7 @@
             // lblBatdau_GG
             // 
             this.lblBatdau_GG.AutoSize = true;
-            this.lblBatdau_GG.Location = new System.Drawing.Point(48, 86);
+            this.lblBatdau_GG.Location = new System.Drawing.Point(16, 79);
             this.lblBatdau_GG.Name = "lblBatdau_GG";
             this.lblBatdau_GG.Size = new System.Drawing.Size(75, 13);
             this.lblBatdau_GG.TabIndex = 7;
@@ -153,7 +184,7 @@
             // dtpBatdau_GG
             // 
             this.dtpBatdau_GG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBatdau_GG.Location = new System.Drawing.Point(131, 81);
+            this.dtpBatdau_GG.Location = new System.Drawing.Point(99, 74);
             this.dtpBatdau_GG.Name = "dtpBatdau_GG";
             this.dtpBatdau_GG.Size = new System.Drawing.Size(154, 20);
             this.dtpBatdau_GG.TabIndex = 5;
@@ -161,7 +192,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(184, 58);
+            this.label10.Location = new System.Drawing.Point(152, 51);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 13);
             this.label10.TabIndex = 4;
@@ -169,7 +200,7 @@
             // 
             // txtChietkhau_GG
             // 
-            this.txtChietkhau_GG.Location = new System.Drawing.Point(129, 55);
+            this.txtChietkhau_GG.Location = new System.Drawing.Point(97, 48);
             this.txtChietkhau_GG.Name = "txtChietkhau_GG";
             this.txtChietkhau_GG.Size = new System.Drawing.Size(49, 20);
             this.txtChietkhau_GG.TabIndex = 3;
@@ -177,7 +208,7 @@
             // lblChietkhau_GG
             // 
             this.lblChietkhau_GG.AutoSize = true;
-            this.lblChietkhau_GG.Location = new System.Drawing.Point(50, 58);
+            this.lblChietkhau_GG.Location = new System.Drawing.Point(18, 51);
             this.lblChietkhau_GG.Name = "lblChietkhau_GG";
             this.lblChietkhau_GG.Size = new System.Drawing.Size(61, 13);
             this.lblChietkhau_GG.TabIndex = 2;
@@ -185,7 +216,7 @@
             // 
             // txtMaGG_GG
             // 
-            this.txtMaGG_GG.Location = new System.Drawing.Point(129, 29);
+            this.txtMaGG_GG.Location = new System.Drawing.Point(97, 22);
             this.txtMaGG_GG.Name = "txtMaGG_GG";
             this.txtMaGG_GG.Size = new System.Drawing.Size(156, 20);
             this.txtMaGG_GG.TabIndex = 1;
@@ -193,7 +224,7 @@
             // lblMaGG_GG
             // 
             this.lblMaGG_GG.AutoSize = true;
-            this.lblMaGG_GG.Location = new System.Drawing.Point(50, 32);
+            this.lblMaGG_GG.Location = new System.Drawing.Point(18, 25);
             this.lblMaGG_GG.Name = "lblMaGG_GG";
             this.lblMaGG_GG.Size = new System.Drawing.Size(67, 13);
             this.lblMaGG_GG.TabIndex = 0;
@@ -205,9 +236,9 @@
             this.groupBox6.Controls.Add(this.btnXoa_GG);
             this.groupBox6.Controls.Add(this.btnSua_GG);
             this.groupBox6.Controls.Add(this.btnThem_GG);
-            this.groupBox6.Location = new System.Drawing.Point(775, 71);
+            this.groupBox6.Location = new System.Drawing.Point(733, 60);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(180, 148);
+            this.groupBox6.Size = new System.Drawing.Size(180, 130);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thao tác";
@@ -216,9 +247,9 @@
             // 
             this.btnLuu_GG.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_GG.Image")));
             this.btnLuu_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_GG.Location = new System.Drawing.Point(97, 81);
+            this.btnLuu_GG.Location = new System.Drawing.Point(97, 74);
             this.btnLuu_GG.Name = "btnLuu_GG";
-            this.btnLuu_GG.Size = new System.Drawing.Size(66, 49);
+            this.btnLuu_GG.Size = new System.Drawing.Size(66, 39);
             this.btnLuu_GG.TabIndex = 6;
             this.btnLuu_GG.Text = "Lưu";
             this.btnLuu_GG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -231,7 +262,7 @@
             this.btnXoa_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa_GG.Location = new System.Drawing.Point(97, 22);
             this.btnXoa_GG.Name = "btnXoa_GG";
-            this.btnXoa_GG.Size = new System.Drawing.Size(66, 49);
+            this.btnXoa_GG.Size = new System.Drawing.Size(66, 42);
             this.btnXoa_GG.TabIndex = 5;
             this.btnXoa_GG.Text = "Xóa";
             this.btnXoa_GG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -242,9 +273,9 @@
             // 
             this.btnSua_GG.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_GG.Image")));
             this.btnSua_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_GG.Location = new System.Drawing.Point(16, 81);
+            this.btnSua_GG.Location = new System.Drawing.Point(16, 74);
             this.btnSua_GG.Name = "btnSua_GG";
-            this.btnSua_GG.Size = new System.Drawing.Size(65, 49);
+            this.btnSua_GG.Size = new System.Drawing.Size(65, 39);
             this.btnSua_GG.TabIndex = 4;
             this.btnSua_GG.Text = "Sửa";
             this.btnSua_GG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -257,36 +288,12 @@
             this.btnThem_GG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem_GG.Location = new System.Drawing.Point(16, 22);
             this.btnThem_GG.Name = "btnThem_GG";
-            this.btnThem_GG.Size = new System.Drawing.Size(65, 49);
+            this.btnThem_GG.Size = new System.Drawing.Size(65, 42);
             this.btnThem_GG.TabIndex = 0;
             this.btnThem_GG.Text = "Thêm";
             this.btnThem_GG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem_GG.UseVisualStyleBackColor = true;
             this.btnThem_GG.Click += new System.EventHandler(this.btnThem_GG_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MAGG";
-            this.Column1.HeaderText = "Mã giảm giá";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CHIETKHAU";
-            this.Column2.HeaderText = "Chiết khấu";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "NGAYBD";
-            this.Column3.HeaderText = "Ngày bắt đầu";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NGAYKT";
-            this.Column4.HeaderText = "Ngày kết thúc";
-            this.Column4.Name = "Column4";
             // 
             // frmGiamGia
             // 

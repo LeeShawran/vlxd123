@@ -110,7 +110,7 @@
             this.dgvLoaiSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnMaLoai_LoaiSP,
             this.ColumnTenLoai_LoaiSP});
-            this.dgvLoaiSP.Location = new System.Drawing.Point(29, 33);
+            this.dgvLoaiSP.Location = new System.Drawing.Point(21, 30);
             this.dgvLoaiSP.Name = "dgvLoaiSP";
             this.dgvLoaiSP.Size = new System.Drawing.Size(316, 259);
             this.dgvLoaiSP.TabIndex = 37;

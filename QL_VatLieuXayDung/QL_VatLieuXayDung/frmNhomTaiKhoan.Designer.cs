@@ -63,14 +63,14 @@
             // 
             // txtTenNTK_NTK
             // 
-            this.txtTenNTK_NTK.Location = new System.Drawing.Point(130, 45);
+            this.txtTenNTK_NTK.Location = new System.Drawing.Point(131, 64);
             this.txtTenNTK_NTK.Name = "txtTenNTK_NTK";
             this.txtTenNTK_NTK.Size = new System.Drawing.Size(137, 20);
             this.txtTenNTK_NTK.TabIndex = 52;
             // 
             // txtMaNTK_NTK
             // 
-            this.txtMaNTK_NTK.Location = new System.Drawing.Point(130, 22);
+            this.txtMaNTK_NTK.Location = new System.Drawing.Point(131, 41);
             this.txtMaNTK_NTK.Name = "txtMaNTK_NTK";
             this.txtMaNTK_NTK.Size = new System.Drawing.Size(137, 20);
             this.txtMaNTK_NTK.TabIndex = 51;
@@ -78,7 +78,7 @@
             // lblMaNTK
             // 
             this.lblMaNTK.AutoSize = true;
-            this.lblMaNTK.Location = new System.Drawing.Point(17, 25);
+            this.lblMaNTK.Location = new System.Drawing.Point(18, 44);
             this.lblMaNTK.Name = "lblMaNTK";
             this.lblMaNTK.Size = new System.Drawing.Size(101, 13);
             this.lblMaNTK.TabIndex = 50;
@@ -92,7 +92,7 @@
             this.groupBox1.Controls.Add(this.txtMaNTK_NTK);
             this.groupBox1.Controls.Add(this.lblMaNTK);
             this.groupBox1.Controls.Add(this.lblTenNTK);
-            this.groupBox1.Location = new System.Drawing.Point(465, 59);
+            this.groupBox1.Location = new System.Drawing.Point(493, 59);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(291, 119);
             this.groupBox1.TabIndex = 79;
@@ -102,7 +102,7 @@
             // lblTenNTK
             // 
             this.lblTenNTK.AutoSize = true;
-            this.lblTenNTK.Location = new System.Drawing.Point(17, 48);
+            this.lblTenNTK.Location = new System.Drawing.Point(18, 67);
             this.lblTenNTK.Name = "lblTenNTK";
             this.lblTenNTK.Size = new System.Drawing.Size(105, 13);
             this.lblTenNTK.TabIndex = 46;
@@ -112,7 +112,7 @@
             // 
             this.btnLuu_NTK.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NTK.Image")));
             this.btnLuu_NTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NTK.Location = new System.Drawing.Point(105, 64);
+            this.btnLuu_NTK.Location = new System.Drawing.Point(93, 64);
             this.btnLuu_NTK.Name = "btnLuu_NTK";
             this.btnLuu_NTK.Size = new System.Drawing.Size(67, 40);
             this.btnLuu_NTK.TabIndex = 16;
@@ -138,7 +138,7 @@
             // 
             this.btnXoa_NTK.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NTK.Image")));
             this.btnXoa_NTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NTK.Location = new System.Drawing.Point(105, 20);
+            this.btnXoa_NTK.Location = new System.Drawing.Point(93, 18);
             this.btnXoa_NTK.Name = "btnXoa_NTK";
             this.btnXoa_NTK.Size = new System.Drawing.Size(67, 39);
             this.btnXoa_NTK.TabIndex = 13;
@@ -153,7 +153,7 @@
             this.btnThem_NTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem_NTK.Location = new System.Drawing.Point(20, 19);
             this.btnThem_NTK.Name = "btnThem_NTK";
-            this.btnThem_NTK.Size = new System.Drawing.Size(67, 40);
+            this.btnThem_NTK.Size = new System.Drawing.Size(67, 38);
             this.btnThem_NTK.TabIndex = 12;
             this.btnThem_NTK.Text = "Thêm";
             this.btnThem_NTK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -168,27 +168,29 @@
             this.groupBox2.Controls.Add(this.btnSua_NTK);
             this.groupBox2.Controls.Add(this.btnXoa_NTK);
             this.groupBox2.Controls.Add(this.btnThem_NTK);
-            this.groupBox2.Location = new System.Drawing.Point(762, 59);
+            this.groupBox2.Location = new System.Drawing.Point(790, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(203, 119);
+            this.groupBox2.Size = new System.Drawing.Size(172, 119);
             this.groupBox2.TabIndex = 80;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thao Tác";
+            this.groupBox2.Text = "Thao tác";
             // 
             // gbDSKH
             // 
             this.gbDSKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDSKH.Controls.Add(this.dgvNTK);
-            this.gbDSKH.Location = new System.Drawing.Point(465, 184);
+            this.gbDSKH.Location = new System.Drawing.Point(493, 184);
             this.gbDSKH.Name = "gbDSKH";
-            this.gbDSKH.Size = new System.Drawing.Size(500, 301);
+            this.gbDSKH.Size = new System.Drawing.Size(469, 243);
             this.gbDSKH.TabIndex = 81;
             this.gbDSKH.TabStop = false;
             this.gbDSKH.Text = "Danh sách tài khoản";
             // 
             // dgvNTK
             // 
+            this.dgvNTK.AllowUserToAddRows = false;
+            this.dgvNTK.AllowUserToDeleteRows = false;
             this.dgvNTK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNTK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -196,6 +198,7 @@
             this.dataGridViewTextBoxColumn2});
             this.dgvNTK.Location = new System.Drawing.Point(20, 19);
             this.dgvNTK.Name = "dgvNTK";
+            this.dgvNTK.ReadOnly = true;
             this.dgvNTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNTK.Size = new System.Drawing.Size(405, 202);
             this.dgvNTK.TabIndex = 48;
@@ -206,12 +209,14 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
             this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // frmNhomTaiKhoan
             // 
