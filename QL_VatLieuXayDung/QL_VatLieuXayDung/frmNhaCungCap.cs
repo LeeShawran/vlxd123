@@ -35,6 +35,21 @@ namespace QL_VatLieuXayDung
             conn.Open();
             Refresh_Nha_CC();
             btnLuu_NCC.Enabled = false;
+
+            string lenh = "select MANCC from T_NHA_CUNG_CAP order by MANCC desc";
+            OleDbCommand cmd = new OleDbCommand(lenh, conn);
+            string macuoi = (string)cmd.ExecuteScalar();
+            int somacuoi = int.Parse(macuoi.Replace("NCC", ""));
+
+            if (somacuoi < 10)
+                txtMaNCC_NCC.Text = "NCC000" + (somacuoi + 1);
+            else if (somacuoi >= 10 && somacuoi < 100)
+                txtMaNCC_NCC.Text = "NCC00" + (somacuoi + 1);
+            else if (somacuoi >= 100 && somacuoi < 1000)
+                txtMaNCC_NCC.Text = "NCC0" + (somacuoi + 1);
+            else
+                txtMaNCC_NCC.Text = "SV" + (somacuoi + 1);
+
             conn.Close();
         }
 
