@@ -109,15 +109,31 @@ namespace QL_VatLieuXayDung
         {
             luu = 1;
             conn.Open();
-            adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_NCC", conn);
-            dt = new DataTable();
-            adapter.Fill(dt);
+            /// MA TU DONG
+            string lenh = "select MADATNCC from T_DON_DAT_HANG_NCC order by MADATNCC desc";
+            cmd = new OleDbCommand(lenh, conn);
+            string macuoi = (string)cmd.ExecuteScalar();
 
-            if (dt.Rows.Count < 100)
-                txtMaPhieu.Text = "DHNCC000" + (dt.Rows.Count + 1);
-            else if (dt.Rows.Count < 10)
-                txtMaPhieu.Text = "DHNCC00" + (dt.Rows.Count + 1);
-            else txtMaPhieu.Text = "DHNCC0" + (dt.Rows.Count + 1);
+
+            if (macuoi == null)
+            {
+                txtMaPhieu.Text = "DHNCC0001";
+            }
+            else
+            {
+                int somacuoi = int.Parse(macuoi.Replace("DHNCC", ""));
+                if (somacuoi < 10)
+                    txtMaPhieu.Text = "DHNCC000" + (somacuoi + 1);
+                else if (somacuoi >= 10 && somacuoi < 100)
+                    txtMaPhieu.Text = "DHNCC00" + (somacuoi + 1);
+                else if (somacuoi >= 100 && somacuoi < 1000)
+                    txtMaPhieu.Text = "DHNCC0" + (somacuoi + 1);
+                else
+                    txtMaPhieu.Text = "DHNCC" + (somacuoi + 1);
+            }
+
+            ////
+         
             conn.Close();
 
             groupBoxThongTinDH.Enabled = true;
@@ -198,7 +214,7 @@ namespace QL_VatLieuXayDung
         private void btnXoaDDH_Click(object sender, EventArgs e)
         {
            
-            if (dgvDonDatHang.CurrentRow.Cells[5].Value.ToString() == "Yes")
+            if (dgvDonDatHang.CurrentRow.Cells["ttnhap"].Value.ToString() == "Co")
             {
                 MessageBox.Show("Đơn đặt hàng đã thanh toán, không thể xóa");
                 return;

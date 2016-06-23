@@ -39,6 +39,9 @@
     <Reference Include="DevExpress.XtraBars.v13.1" />
     <Reference Include="DevExpress.Sparkline.v13.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v13.1" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -71,6 +74,12 @@
     </Compile>
     <Compile Include="frmDinhGia.Designer.cs">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGiaoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiaoHang.Designer.cs">
+      <DependentUpon>frmGiaoHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThanhToanHD.cs">
       <SubType>Form</SubType>
@@ -168,6 +177,12 @@
     <Compile Include="frmThongTinNguoiDung.Designer.cs">
       <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXuatHang.Designer.cs">
+      <DependentUpon>frmXuatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fmPhieuNhapNCC.resx">
@@ -181,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDinhGia.resx">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiaoHang.resx">
+      <DependentUpon>frmGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToanHD.resx">
       <DependentUpon>frmThanhToanHD.cs</DependentUpon>
@@ -226,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinNguoiDung.resx">
       <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXuatHang.resx">
+      <DependentUpon>frmXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

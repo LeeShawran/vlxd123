@@ -66,7 +66,7 @@ namespace QL_VatLieuXayDung
             else
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand("Insert into T_LOAI_SP values('" + txtMaLoai_LoaiSP.Text + "','" + txtTenLoai_LoaiSP.Text + "')", conn);
+                OleDbCommand cmd = new OleDbCommand("Insert into T_LOAI_SP values('" + txtMaLoai_LoaiSP.Text + "',N'" + txtTenLoai_LoaiSP.Text + "')", conn);
                 if (Kiem_tra_khoa_chinh())
                 {
                     MessageBox.Show("Đã có mã loại sản phẩm này !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

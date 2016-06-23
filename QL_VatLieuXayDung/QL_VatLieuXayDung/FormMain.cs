@@ -252,7 +252,7 @@ namespace QL_VatLieuXayDung
         private void FormMain_Load(object sender, EventArgs e)
         {
             //lbTen = labelTen;
-            MessageBox.Show("" + ma);
+         
             if (MH01 == false)
             {
                 ribbonPageLienHe.Enabled = false;

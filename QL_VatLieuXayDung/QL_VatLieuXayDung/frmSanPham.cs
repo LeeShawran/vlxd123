@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace QL_VatLieuXayDung
 {
@@ -15,7 +17,7 @@ namespace QL_VatLieuXayDung
     {
         OleDbConnection conn;
         OleDbDataAdapter adapter;
-        DataTable dt;
+        System.Data.DataTable dt;
         OleDbCommand cmd;
 
         int luu = 0;
@@ -29,7 +31,7 @@ namespace QL_VatLieuXayDung
         {
             string st = "select * from T_NHA_CUNG_CAP";
             adapter = new OleDbDataAdapter(st, conn);
-            dt = new DataTable();
+            dt = new System.Data.DataTable();
             adapter.Fill(dt);
             cbNhaCC.DataSource = dt;
             cbNhaCC.DisplayMember = "TENNCC";
@@ -39,7 +41,7 @@ namespace QL_VatLieuXayDung
         {
             string st = "select * from T_LOAI_SP";
             adapter = new OleDbDataAdapter(st, conn);
-            dt = new DataTable();
+            dt = new System.Data.DataTable();
             adapter.Fill(dt);
             cbLoai.DataSource = dt;
             cbLoai.DisplayMember = "TENLOAI";
@@ -49,28 +51,29 @@ namespace QL_VatLieuXayDung
         {
             string st = "select * from T_NHA_SAN_XUAT";
             adapter = new OleDbDataAdapter(st, conn);
-            dt = new DataTable();
+            dt = new System.Data.DataTable();
             adapter.Fill(dt);
             cbNhaSX.DataSource = dt;
             cbNhaSX.DisplayMember = "TENNSX";
             cbNhaSX.ValueMember = "MANSX";
         }
 
+       
         public void loadTable()
         {
-            adapter = new OleDbDataAdapter("select * from T_SAN_PHAM", conn);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvSanPham.DataSource = dt;
 
-            if (dt.Rows.Count < 100)
-                txtMaSP.Text = "SP000" + (dt.Rows.Count + 1);
-            else if (dt.Rows.Count < 10)
-                txtMaSP.Text = "SP00" + (dt.Rows.Count + 1);
-            else txtMaSP.Text = "SP0" + (dt.Rows.Count + 1);
             loadLoai();
             loadNCC();
             loadNSX();
+   
+            adapter = new OleDbDataAdapter("select * from T_SAN_PHAM", conn);
+            dt = new System.Data.DataTable();
+            adapter.Fill(dt);
+            dgvSanPham.DataSource = dt;
+            var source = new AutoCompleteStringCollection();
+            foreach (DataRow i in dt.Rows)
+                source.Add(i.Field<string>(1));
+            txttimkiem.AutoCompleteCustomSource = source;
 
             luu = 0;
             groupBox1.Enabled = false;
@@ -85,7 +88,9 @@ namespace QL_VatLieuXayDung
             txtMaSP.Clear();
             txtTenSP.Clear();
             txtSoluong.Clear();
-            txtDongianhap.Clear(); 
+            txtDongianhap.Clear();
+            txtDonGiaBan.Clear();
+            txttimkiem.Clear();
             cbLoai.DisplayMember = cbLoai.Items[0].ToString();
             cbNhaCC.DisplayMember = cbNhaCC.Items[0].ToString();
             cbNhaSX.DisplayMember = cbNhaSX.Items[0].ToString();
@@ -122,15 +127,27 @@ namespace QL_VatLieuXayDung
         {
             luu = 1;
             conn.Open();
-            adapter = new OleDbDataAdapter("select * from T_SAN_PHAM", conn);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-
-            if (dt.Rows.Count < 100)
-                txtMaSP.Text = "SP000" + (dt.Rows.Count + 1);
-            else if (dt.Rows.Count < 10)
-                txtMaSP.Text = "SP00" + (dt.Rows.Count + 1);
-            else txtMaSP.Text = "SP0" + (dt.Rows.Count + 1);
+            /// MA TU DONG
+            string lenh = "select MASP from T_SAN_PHAM order by MASP desc";
+            cmd = new OleDbCommand(lenh, conn);
+            string macuoi = (string)cmd.ExecuteScalar();
+            int somacuoi = int.Parse(macuoi.Replace("SP", ""));
+            if (macuoi == null)
+            {
+                txtMaSP.Text = "SP0001";
+            }
+            else
+            {
+                if (somacuoi < 9)
+                    txtMaSP.Text = "SP000" + (somacuoi + 1);
+                else if (somacuoi >= 9 && somacuoi < 99)
+                    txtMaSP.Text = "SP00" + (somacuoi + 1);
+                else if (somacuoi >= 99 && somacuoi < 999)
+                    txtMaSP.Text = "SP0" + (somacuoi + 1);
+                else
+                    txtMaSP.Text = "SP" + (somacuoi + 1);
+            }
+            ////   
             conn.Close();
             groupBox1.Enabled = true;
             btnThem.Enabled = false;
@@ -138,13 +155,22 @@ namespace QL_VatLieuXayDung
             btnSua.Enabled = false;
             btnLuu.Enabled = true;
             dgvSanPham.Enabled = false;
-            
+            txtTenSP.Clear();
+            txtSoluong.Clear();
+            txtDongianhap.Clear();
+            txtDonGiaBan.Clear();
+            txttimkiem.Clear();
+
+            cbLoai.DisplayMember = cbLoai.Items[0].ToString();
+            cbNhaCC.DisplayMember = cbNhaCC.Items[0].ToString();
+            cbNhaSX.DisplayMember = cbNhaSX.Items[0].ToString();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             luu = 2;
             groupBox1.Enabled = true;
+            txtTenSP.Focus();
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
@@ -154,8 +180,6 @@ namespace QL_VatLieuXayDung
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-           
-            conn.Open();
             if (luu == 1)
             {
                 them();
@@ -166,46 +190,40 @@ namespace QL_VatLieuXayDung
                 sua();
                 dgvSanPham.Enabled = true;
             }
-  
-           
-            conn.Close();
         }
 
         public void them()
         {
-            if (this.txtMaSP.TextLength == 0 || this.txtMaSP.TextLength == 0)
+            if (this.txtTenSP.TextLength == 0)
             {
-                MessageBox.Show("Chưa nhập thông tin sản phẩm");
+                MessageBox.Show("Chưa nhập tên sản phẩm");
                 return;
             }
             else
             {
-                cmd = new OleDbCommand("Insert into T_SAN_PHAM values('" + txtMaSP.Text + "','" + txtTenSP.Text + "','" + cbLoai.SelectedValue.ToString() + "','" + cbNhaSX.SelectedValue.ToString() + "','" + cbNhaCC.SelectedValue.ToString() + "'," + 0 + "," + 0 + ")", conn);
-                if (Kiem_tra_khoa_chinh())
-                {
-                    MessageBox.Show("Đã có mã sản phẩm này");
-                    return;
-                }
-                else
-                {
-                    cmd.ExecuteNonQuery();
-                    loadTable();
-        
-                }
+                conn.Open();
+                cmd = new OleDbCommand("Insert into T_SAN_PHAM values('" + txtMaSP.Text + "','" + txtTenSP.Text + "','" + cbLoai.SelectedValue.ToString() + "','" + cbNhaSX.SelectedValue.ToString() + "','" + cbNhaCC.SelectedValue.ToString() + "'," + 0 + ")", conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadTable();
+                conn.Close();
             }
         }
         public void sua()
         {
-            if (this.txtMaSP.TextLength == 0)
+            if (this.txtTenSP.TextLength == 0)
             {
-                MessageBox.Show("Chưa nhập thông tin sản phẩm");
+                MessageBox.Show("Chưa nhập tên sản phẩm");
                 return;
             }
             else
             {
+                conn.Open();
                 OleDbCommand cmd = new OleDbCommand("Update T_SAN_PHAM set TENSP='" + txtTenSP.Text + "', MALOAI ='" + cbLoai.SelectedValue.ToString() + "', MANSX='" + cbNhaSX.SelectedValue.ToString() + "', MANCC='" + cbNhaCC.SelectedValue.ToString() + "' where MASP='" + txtMaSP.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 loadTable();
+                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conn.Close();
             }
            
         }
@@ -216,12 +234,21 @@ namespace QL_VatLieuXayDung
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            cmd = new OleDbCommand("Delete from T_SAN_PHAM where MASP='" + txtMaSP.Text + "'", conn);
-            cmd.ExecuteNonQuery();
-
-            loadTable();
-            conn.Close();
+            try
+            {
+                conn.Open();
+                cmd = new OleDbCommand("Delete from T_SAN_PHAM where MASP='" + txtMaSP.Text + "'", conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadTable();
+                conn.Close();
+            }
+            catch 
+            {
+                MessageBox.Show("Không thể xóa sản phẩm này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conn.Close();
+            }
+         
         }
 
         private void bntLammoi_Click(object sender, EventArgs e)
@@ -231,15 +258,12 @@ namespace QL_VatLieuXayDung
             conn.Close();
         }
 
-        private void dgvSanPham_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
-     
-                DataGridViewRow row = new DataGridViewRow();
-                row = dgvSanPham.CurrentRow;
-
+        public void loadThongtinkhichon(DataGridViewRow row)
+        {       
+            try
+            {
+                conn.Open();
+               
                 cmd = new OleDbCommand("select TENLOAI from T_LOAI_SP where MALOAI='" + row.Cells[2].Value.ToString() + "'", conn);
                 string tenloai = (string)cmd.ExecuteScalar();
 
@@ -249,7 +273,6 @@ namespace QL_VatLieuXayDung
                 cmd = new OleDbCommand("select TENNCC from T_NHA_CUNG_CAP where MANCC='" + row.Cells[4].Value.ToString() + "'", conn);
                 string tenNCC = (string)cmd.ExecuteScalar();
 
-
                 txtMaSP.Text = row.Cells[0].Value.ToString();
                 txtTenSP.Text = row.Cells[1].Value.ToString();
                 cbLoai.Text = tenloai;
@@ -257,17 +280,124 @@ namespace QL_VatLieuXayDung
                 cbNhaCC.Text = tenNCC;
                 txtSoluong.Text = row.Cells[5].Value.ToString();
 
-                string lenh1 = "select DONGIANHAP from T_GIA_NHAP where MASP='SP0001' ORDER BY NGAYAPDUNG desc";
-                OleDbCommand cmd1 = new OleDbCommand(lenh1, conn);
-                int a = Convert.ToInt32(cmd1.ExecuteScalar().ToString());
-                txtDongianhap.Text = "" + a;
+                try
+                {
+                    string lenh1 = "select DONGIANHAP from T_GIA_NHAP where MASP='" + dgvSanPham.CurrentRow.Cells[0].Value.ToString() + "' ORDER BY NGAYAPDUNG desc";
+                    OleDbCommand cmd1 = new OleDbCommand(lenh1, conn);
+                    int a = Convert.ToInt32(cmd1.ExecuteScalar().ToString());
+                    txtDongianhap.Text = "" + a;
+                }
+                catch
+                {
+                    txtDongianhap.Text = "" + 0;
+                }
+
+                try
+                {
+                    string lenh2 = "select DONGIABAN from T_GIA_BAN where MASP='" + dgvSanPham.CurrentRow.Cells[0].Value.ToString() + "' ORDER BY NGAYHIEULUC desc";
+                    OleDbCommand cmd2 = new OleDbCommand(lenh2, conn);
+                    int b = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
+                    txtDonGiaBan.Text = "" + b;
+                }
+                catch
+                {
+                    txtDonGiaBan.Text = "" + 0;
+                }
+               
+                conn.Close(); 
+ 
+            }
+            catch
+            {
                 conn.Close();
-        
+            }
+        }
+        private void dgvSanPham_Click(object sender, EventArgs e)
+        {
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+            loadThongtinkhichon(dgvSanPham.CurrentRow);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
         {
+            dgvSanPham.CurrentRow.Selected = false;
+            DataGridViewRow rowchon;
+            adapter = new OleDbDataAdapter("select * from T_SAN_PHAM", conn);
+            dt = new System.Data.DataTable();
+            adapter.Fill(dt);
+            Boolean kq=false;
+            dgvSanPham.ClearSelection();
 
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                for (int i = 0; i < dgvSanPham.Rows.Count; i++)
+                {
+                    if (dgvSanPham.Rows[i].Cells[1].Value.ToString().ToLower() == txttimkiem.Text.ToLower())
+                    {
+                        dgvSanPham.FirstDisplayedScrollingRowIndex = i;
+                        kq = true;
+                        dgvSanPham.Rows[i].Selected = true;
+                        rowchon = new DataGridViewRow();
+                        rowchon = dgvSanPham.Rows[i];
+                        loadThongtinkhichon(rowchon);
+                        break;
+                    }
+                }
+               
+
+                if (kq == false)
+                    MessageBox.Show("Không tìm thấy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             }
+        }
+
+        private void btnAsc_LoaiSP_Click(object sender, EventArgs e)
+        {
+            dgvSanPham.Sort(dgvSanPham.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
+        }
+
+        private void btnDes_LoaiSP_Click(object sender, EventArgs e)
+        {
+            dgvSanPham.Sort(dgvSanPham.Columns[0], System.ComponentModel.ListSortDirection.Descending);
+        }
+
+        private void xuatExcel(DataGridView g, string duongDan)
+        {
+            app obj = new app();
+            obj.Application.Workbooks.Add(Type.Missing);
+            obj.Columns.ColumnWidth = 25;
+            for (int i = 1; i < g.Columns.Count + 1; i++)
+            {
+                obj.Cells[1, i] = g.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < g.Rows.Count; i++)
+            {
+                for (int j = 0; j < g.Columns.Count; j++)
+                {
+                    if (g.Rows[i].Cells[j].Value != null)
+                    {
+                        obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+            }
+            obj.ActiveWorkbook.SaveCopyAs(duongDan);
+            obj.ActiveWorkbook.Saved = true;
+        }
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog s = new SaveFileDialog();
+            s.Title = "Chọn đường dẫn lưu tệp excel";
+            s.InitialDirectory = @"c:\";
+            s.FileName = "sanpham.xlsx";
+            s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            s.FilterIndex = 2;
+            s.RestoreDirectory = true;
+            if (s.ShowDialog() == DialogResult.OK)
+            {
+                xuatExcel(dgvSanPham, s.FileName);
+                MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
     }

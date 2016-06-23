@@ -151,7 +151,7 @@ namespace QL_VatLieuXayDung
                 cm8.ExecuteNonQuery();
 
                 string lenh1 = "select SOLUONG from T_SAN_PHAM where MASP='" + dt.Rows[i].Field<string>(1) + "'";
-                string lenh2 = "select SOLUONG from T_CT_DAT_HANG_NCC where MASP='" + dt.Rows[i].Field<string>(1) + "'";
+                string lenh2 = "select SOLUONG from T_CT_DAT_HANG_NCC where MASP='" + dt.Rows[i].Field<string>(1) + "' AND MADATNCC='"+ txtMaDonDat.Text +"'";
                 OleDbCommand cmd1 = new OleDbCommand(lenh1, conn);
                 int a = Convert.ToInt32(cmd1.ExecuteScalar().ToString());
                 OleDbCommand cmd2 = new OleDbCommand(lenh2, conn);
@@ -161,10 +161,16 @@ namespace QL_VatLieuXayDung
                 string lenh3 = "update T_SAN_PHAM set SOLUONG=" + c + " where MASP='" + dt.Rows[i].Field<string>(1) + "'";
                 OleDbCommand cmd3 = new OleDbCommand(lenh3, conn);
                 cmd3.ExecuteNonQuery();
-
-                string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells[2].Value.ToString()) + ")";
-                OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
-                cmd4.ExecuteNonQuery();
+                try
+                {
+                    string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString()) + ")";
+                    OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
+                    cmd4.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("sản phẩm này đã nhập trong ngày hôm nay rồi ");
+                }
 
             }
             string lenh5 = "update T_DON_DAT_HANG_NCC set TINHTRANGNHAP='Co' where MADATNCC='" + txtMaDonDat.Text + "'";

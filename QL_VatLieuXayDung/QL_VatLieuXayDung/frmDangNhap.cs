@@ -109,7 +109,7 @@ namespace QL_VatLieuXayDung
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-            //Properties.Settings.Default.Reset();
+            
             if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn thoát hay không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 Application.Exit();
         }
@@ -119,6 +119,11 @@ namespace QL_VatLieuXayDung
             this.txtMaNhanVien_DangNhap.Clear();
             this.txtMatKhau_DangNhap.Clear();
             this.txtMaNhanVien_DangNhap.Focus();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Reset();
         }
     }
 }
