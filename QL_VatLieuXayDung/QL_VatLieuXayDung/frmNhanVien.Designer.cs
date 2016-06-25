@@ -54,11 +54,14 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem_NV = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.btnLammoi = new System.Windows.Forms.Button();
             this.btnLuu_NV = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txttimkiem = new System.Windows.Forms.TextBox();
             this.dgvNV = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +71,8 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNhanvien = new System.Windows.Forms.Label();
+            this.btnDes = new System.Windows.Forms.Button();
+            this.btnAsc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,6 +121,7 @@
             // 
             // cmbChucvu
             // 
+            this.cmbChucvu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChucvu.FormattingEnabled = true;
             this.cmbChucvu.Location = new System.Drawing.Point(387, 44);
             this.cmbChucvu.Name = "cmbChucvu";
@@ -304,6 +310,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnExcel);
             this.groupBox2.Controls.Add(this.btnLammoi);
             this.groupBox2.Controls.Add(this.btnThem_NV);
             this.groupBox2.Controls.Add(this.btnLuu_NV);
@@ -311,10 +318,23 @@
             this.groupBox2.Controls.Add(this.btnSua_NV);
             this.groupBox2.Location = new System.Drawing.Point(887, 44);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(182, 157);
+            this.groupBox2.Size = new System.Drawing.Size(299, 157);
             this.groupBox2.TabIndex = 86;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(173, 24);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(101, 78);
+            this.btnExcel.TabIndex = 90;
+            this.btnExcel.Text = "Xuất excel";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnLammoi
             // 
@@ -358,13 +378,35 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnDes);
+            this.groupBox3.Controls.Add(this.btnAsc);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.txttimkiem);
             this.groupBox3.Controls.Add(this.dgvNV);
             this.groupBox3.Location = new System.Drawing.Point(273, 207);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(796, 274);
+            this.groupBox3.Size = new System.Drawing.Size(913, 313);
             this.groupBox3.TabIndex = 84;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhân viên";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Tìm theo tên nhân viên:";
+            // 
+            // txttimkiem
+            // 
+            this.txttimkiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txttimkiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txttimkiem.Location = new System.Drawing.Point(147, 19);
+            this.txttimkiem.Name = "txttimkiem";
+            this.txttimkiem.Size = new System.Drawing.Size(184, 20);
+            this.txttimkiem.TabIndex = 92;
             // 
             // dgvNV
             // 
@@ -380,11 +422,11 @@
             this.Column5,
             this.Column6,
             this.Column8});
-            this.dgvNV.Location = new System.Drawing.Point(6, 19);
+            this.dgvNV.Location = new System.Drawing.Point(17, 45);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.ReadOnly = true;
             this.dgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNV.Size = new System.Drawing.Size(773, 241);
+            this.dgvNV.Size = new System.Drawing.Size(773, 249);
             this.dgvNV.TabIndex = 0;
             this.dgvNV.Click += new System.EventHandler(this.dgvNV_Click);
             // 
@@ -444,9 +486,31 @@
             this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblNhanvien.Location = new System.Drawing.Point(592, 8);
             this.lblNhanvien.Name = "lblNhanvien";
-            this.lblNhanvien.Size = new System.Drawing.Size(181, 33);
+            this.lblNhanvien.Size = new System.Drawing.Size(325, 33);
             this.lblNhanvien.TabIndex = 85;
-            this.lblNhanvien.Text = "NHÂN VIÊN";
+            this.lblNhanvien.Text = "QUẢN LÝ NHÂN VIÊN";
+            // 
+            // btnDes
+            // 
+            this.btnDes.Image = ((System.Drawing.Image)(resources.GetObject("btnDes.Image")));
+            this.btnDes.Location = new System.Drawing.Point(830, 174);
+            this.btnDes.Name = "btnDes";
+            this.btnDes.Size = new System.Drawing.Size(46, 47);
+            this.btnDes.TabIndex = 94;
+            this.btnDes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDes.UseVisualStyleBackColor = true;
+            this.btnDes.Click += new System.EventHandler(this.btnDes_Click);
+            // 
+            // btnAsc
+            // 
+            this.btnAsc.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc.Image")));
+            this.btnAsc.Location = new System.Drawing.Point(830, 99);
+            this.btnAsc.Name = "btnAsc";
+            this.btnAsc.Size = new System.Drawing.Size(46, 47);
+            this.btnAsc.TabIndex = 93;
+            this.btnAsc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAsc.UseVisualStyleBackColor = true;
+            this.btnAsc.Click += new System.EventHandler(this.btnAsc_Click);
             // 
             // frmNhanVien
             // 
@@ -464,6 +528,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -511,5 +576,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Button btnLammoi;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txttimkiem;
+        private System.Windows.Forms.Button btnDes;
+        private System.Windows.Forms.Button btnAsc;
     }
 }

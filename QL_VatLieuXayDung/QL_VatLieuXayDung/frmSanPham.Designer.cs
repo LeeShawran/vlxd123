@@ -33,6 +33,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.bntLammoi = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.txtDonGiaBan = new System.Windows.Forms.TextBox();
             this.lblDongiaBan = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDes_LoaiSP = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
@@ -112,10 +112,23 @@
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Location = new System.Drawing.Point(1076, 45);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(114, 455);
+            this.groupBox2.Size = new System.Drawing.Size(140, 455);
             this.groupBox2.TabIndex = 88;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(19, 362);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(100, 58);
+            this.btnExcel.TabIndex = 89;
+            this.btnExcel.Text = "Xuất excel";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnThem
             // 
@@ -533,19 +546,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách các sách";
             // 
-            // btnExcel
-            // 
-            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(19, 362);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(80, 69);
-            this.btnExcel.TabIndex = 89;
-            this.btnExcel.Text = "Xuất excel";
-            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -558,10 +558,9 @@
             // btnDes_LoaiSP
             // 
             this.btnDes_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_LoaiSP.Image")));
-            this.btnDes_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDes_LoaiSP.Location = new System.Drawing.Point(824, 180);
             this.btnDes_LoaiSP.Name = "btnDes_LoaiSP";
-            this.btnDes_LoaiSP.Size = new System.Drawing.Size(58, 47);
+            this.btnDes_LoaiSP.Size = new System.Drawing.Size(45, 47);
             this.btnDes_LoaiSP.TabIndex = 92;
             this.btnDes_LoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDes_LoaiSP.UseVisualStyleBackColor = true;
@@ -573,17 +572,16 @@
             this.txttimkiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txttimkiem.Location = new System.Drawing.Point(172, 19);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(623, 20);
+            this.txttimkiem.Size = new System.Drawing.Size(205, 20);
             this.txttimkiem.TabIndex = 90;
             this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown);
             // 
             // btnAsc_LoaiSP
             // 
             this.btnAsc_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_LoaiSP.Image")));
-            this.btnAsc_LoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAsc_LoaiSP.Location = new System.Drawing.Point(824, 105);
             this.btnAsc_LoaiSP.Name = "btnAsc_LoaiSP";
-            this.btnAsc_LoaiSP.Size = new System.Drawing.Size(58, 47);
+            this.btnAsc_LoaiSP.Size = new System.Drawing.Size(45, 47);
             this.btnAsc_LoaiSP.TabIndex = 91;
             this.btnAsc_LoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAsc_LoaiSP.UseVisualStyleBackColor = true;

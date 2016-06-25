@@ -47,9 +47,9 @@
             // 
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(223, 83);
+            this.btnClose.Location = new System.Drawing.Point(131, 71);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(69, 28);
+            this.btnClose.Size = new System.Drawing.Size(69, 40);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Đóng";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -60,9 +60,9 @@
             // 
             this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangNhap.Location = new System.Drawing.Point(6, 83);
+            this.btnDangNhap.Location = new System.Drawing.Point(6, 71);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(96, 28);
+            this.btnDangNhap.Size = new System.Drawing.Size(96, 40);
             this.btnDangNhap.TabIndex = 12;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -72,7 +72,7 @@
             // lblMatKhau_DangNhap
             // 
             this.lblMatKhau_DangNhap.AutoSize = true;
-            this.lblMatKhau_DangNhap.Location = new System.Drawing.Point(29, 48);
+            this.lblMatKhau_DangNhap.Location = new System.Drawing.Point(13, 48);
             this.lblMatKhau_DangNhap.Name = "lblMatKhau_DangNhap";
             this.lblMatKhau_DangNhap.Size = new System.Drawing.Size(55, 13);
             this.lblMatKhau_DangNhap.TabIndex = 11;
@@ -81,7 +81,7 @@
             // lblMaNhanVien_DangNhap
             // 
             this.lblMaNhanVien_DangNhap.AutoSize = true;
-            this.lblMaNhanVien_DangNhap.Location = new System.Drawing.Point(29, 22);
+            this.lblMaNhanVien_DangNhap.Location = new System.Drawing.Point(13, 22);
             this.lblMaNhanVien_DangNhap.Name = "lblMaNhanVien_DangNhap";
             this.lblMaNhanVien_DangNhap.Size = new System.Drawing.Size(75, 13);
             this.lblMaNhanVien_DangNhap.TabIndex = 10;
@@ -89,7 +89,7 @@
             // 
             // txtMatKhau_DangNhap
             // 
-            this.txtMatKhau_DangNhap.Location = new System.Drawing.Point(110, 45);
+            this.txtMatKhau_DangNhap.Location = new System.Drawing.Point(94, 45);
             this.txtMatKhau_DangNhap.Name = "txtMatKhau_DangNhap";
             this.txtMatKhau_DangNhap.PasswordChar = '*';
             this.txtMatKhau_DangNhap.Size = new System.Drawing.Size(160, 20);
@@ -97,13 +97,14 @@
             // 
             // txtMaNhanVien_DangNhap
             // 
-            this.txtMaNhanVien_DangNhap.Location = new System.Drawing.Point(110, 19);
+            this.txtMaNhanVien_DangNhap.Location = new System.Drawing.Point(94, 19);
             this.txtMaNhanVien_DangNhap.Name = "txtMaNhanVien_DangNhap";
             this.txtMaNhanVien_DangNhap.Size = new System.Drawing.Size(160, 20);
             this.txtMaNhanVien_DangNhap.TabIndex = 8;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtMaNhanVien_DangNhap);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.txtMatKhau_DangNhap);
@@ -113,7 +114,7 @@
             this.groupBox1.Controls.Add(this.lblMatKhau_DangNhap);
             this.groupBox1.Location = new System.Drawing.Point(144, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 117);
+            this.groupBox1.Size = new System.Drawing.Size(347, 117);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đăng nhập";
@@ -122,7 +123,7 @@
             // 
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(125, 83);
+            this.btnReset.Location = new System.Drawing.Point(260, 14);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(73, 28);
             this.btnReset.TabIndex = 17;
@@ -146,11 +147,11 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(463, 52);
+            this.button1.Location = new System.Drawing.Point(227, 71);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 28);
+            this.button1.Size = new System.Drawing.Size(100, 40);
             this.button1.TabIndex = 18;
-            this.button1.Text = "Đóng";
+            this.button1.Text = "Ngắt kết nối";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -159,8 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 144);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(503, 144);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDangNhap";

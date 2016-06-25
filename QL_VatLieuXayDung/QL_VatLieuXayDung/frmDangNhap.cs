@@ -122,7 +122,8 @@ namespace QL_VatLieuXayDung
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {         
+            if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn ngắt kết nối hệ thống", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
             Properties.Settings.Default.Reset();
         }
     }
