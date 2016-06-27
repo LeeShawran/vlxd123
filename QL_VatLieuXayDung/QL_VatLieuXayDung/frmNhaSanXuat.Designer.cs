@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaSanXuat));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblTimten = new System.Windows.Forms.Label();
+            this.txttimkiem = new System.Windows.Forms.TextBox();
             this.btnAsc_NSX = new System.Windows.Forms.Button();
             this.btnDes_NSX = new System.Windows.Forms.Button();
             this.dgvNSX = new System.Windows.Forms.DataGridView();
@@ -40,6 +42,8 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnThem_NSX = new System.Windows.Forms.Button();
             this.btnLuu_NSX = new System.Windows.Forms.Button();
             this.btnXoa_NSX = new System.Windows.Forms.Button();
@@ -60,25 +64,44 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblTimten);
+            this.groupBox3.Controls.Add(this.txttimkiem);
             this.groupBox3.Controls.Add(this.btnAsc_NSX);
             this.groupBox3.Controls.Add(this.btnDes_NSX);
             this.groupBox3.Controls.Add(this.dgvNSX);
-            this.groupBox3.Location = new System.Drawing.Point(400, 167);
+            this.groupBox3.Location = new System.Drawing.Point(412, 172);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(532, 281);
+            this.groupBox3.Size = new System.Drawing.Size(532, 358);
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhà xuất bản";
             // 
+            // lblTimten
+            // 
+            this.lblTimten.AutoSize = true;
+            this.lblTimten.Location = new System.Drawing.Point(24, 22);
+            this.lblTimten.Name = "lblTimten";
+            this.lblTimten.Size = new System.Drawing.Size(133, 13);
+            this.lblTimten.TabIndex = 91;
+            this.lblTimten.Text = "Tìm theo tên nhà sản xuất:";
+            // 
+            // txttimkiem
+            // 
+            this.txttimkiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txttimkiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txttimkiem.Location = new System.Drawing.Point(163, 19);
+            this.txttimkiem.Name = "txttimkiem";
+            this.txttimkiem.Size = new System.Drawing.Size(186, 20);
+            this.txttimkiem.TabIndex = 92;
+            this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown);
+            // 
             // btnAsc_NSX
             // 
             this.btnAsc_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_NSX.Image")));
-            this.btnAsc_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsc_NSX.Location = new System.Drawing.Point(419, 73);
+            this.btnAsc_NSX.Location = new System.Drawing.Point(451, 121);
             this.btnAsc_NSX.Name = "btnAsc_NSX";
-            this.btnAsc_NSX.Size = new System.Drawing.Size(99, 44);
+            this.btnAsc_NSX.Size = new System.Drawing.Size(50, 44);
             this.btnAsc_NSX.TabIndex = 21;
-            this.btnAsc_NSX.Text = "Trên xuống";
             this.btnAsc_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAsc_NSX.UseVisualStyleBackColor = true;
             this.btnAsc_NSX.Click += new System.EventHandler(this.btnAsc_NSX_Click);
@@ -86,12 +109,10 @@
             // btnDes_NSX
             // 
             this.btnDes_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_NSX.Image")));
-            this.btnDes_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDes_NSX.Location = new System.Drawing.Point(419, 149);
+            this.btnDes_NSX.Location = new System.Drawing.Point(451, 251);
             this.btnDes_NSX.Name = "btnDes_NSX";
-            this.btnDes_NSX.Size = new System.Drawing.Size(99, 44);
+            this.btnDes_NSX.Size = new System.Drawing.Size(50, 44);
             this.btnDes_NSX.TabIndex = 22;
-            this.btnDes_NSX.Text = "Dưới lên";
             this.btnDes_NSX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDes_NSX.UseVisualStyleBackColor = true;
             this.btnDes_NSX.Click += new System.EventHandler(this.btnDes_NSX_Click);
@@ -105,12 +126,12 @@
             this.dgvNSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnMaNSX_NSX,
             this.ColumnTenNSX_NSX});
-            this.dgvNSX.Location = new System.Drawing.Point(18, 25);
+            this.dgvNSX.Location = new System.Drawing.Point(22, 45);
             this.dgvNSX.Name = "dgvNSX";
             this.dgvNSX.ReadOnly = true;
-            this.dgvNSX.Size = new System.Drawing.Size(378, 233);
+            this.dgvNSX.Size = new System.Drawing.Size(409, 296);
             this.dgvNSX.TabIndex = 0;
-            this.dgvNSX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNSX_CellMouseClick);
+            this.dgvNSX.Click += new System.EventHandler(this.dgvNSX_Click);
             // 
             // ColumnMaNSX_NSX
             // 
@@ -154,22 +175,50 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnXuatExcel);
+            this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnThem_NSX);
             this.groupBox2.Controls.Add(this.btnLuu_NSX);
             this.groupBox2.Controls.Add(this.btnXoa_NSX);
             this.groupBox2.Controls.Add(this.btnSua_NSX);
-            this.groupBox2.Location = new System.Drawing.Point(753, 54);
+            this.groupBox2.Location = new System.Drawing.Point(679, 54);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(179, 107);
+            this.groupBox2.Size = new System.Drawing.Size(265, 112);
             this.groupBox2.TabIndex = 85;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
+            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel.Location = new System.Drawing.Point(161, 65);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(94, 32);
+            this.btnXuatExcel.TabIndex = 23;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.Location = new System.Drawing.Point(161, 28);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(94, 31);
+            this.btnLamMoi.TabIndex = 22;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnThem_NSX
             // 
             this.btnThem_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnThem_NSX.Image")));
             this.btnThem_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_NSX.Location = new System.Drawing.Point(25, 22);
+            this.btnThem_NSX.Location = new System.Drawing.Point(15, 27);
             this.btnThem_NSX.Name = "btnThem_NSX";
             this.btnThem_NSX.Size = new System.Drawing.Size(67, 32);
             this.btnThem_NSX.TabIndex = 18;
@@ -182,7 +231,7 @@
             // 
             this.btnLuu_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NSX.Image")));
             this.btnLuu_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NSX.Location = new System.Drawing.Point(98, 60);
+            this.btnLuu_NSX.Location = new System.Drawing.Point(88, 65);
             this.btnLuu_NSX.Name = "btnLuu_NSX";
             this.btnLuu_NSX.Size = new System.Drawing.Size(67, 32);
             this.btnLuu_NSX.TabIndex = 21;
@@ -195,7 +244,7 @@
             // 
             this.btnXoa_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NSX.Image")));
             this.btnXoa_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NSX.Location = new System.Drawing.Point(98, 22);
+            this.btnXoa_NSX.Location = new System.Drawing.Point(88, 27);
             this.btnXoa_NSX.Name = "btnXoa_NSX";
             this.btnXoa_NSX.Size = new System.Drawing.Size(67, 32);
             this.btnXoa_NSX.TabIndex = 19;
@@ -208,7 +257,7 @@
             // 
             this.btnSua_NSX.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NSX.Image")));
             this.btnSua_NSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NSX.Location = new System.Drawing.Point(25, 60);
+            this.btnSua_NSX.Location = new System.Drawing.Point(15, 65);
             this.btnSua_NSX.Name = "btnSua_NSX";
             this.btnSua_NSX.Size = new System.Drawing.Size(67, 32);
             this.btnSua_NSX.TabIndex = 20;
@@ -222,11 +271,11 @@
             this.lblFrmNSX.AutoSize = true;
             this.lblFrmNSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrmNSX.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblFrmNSX.Location = new System.Drawing.Point(550, 18);
+            this.lblFrmNSX.Location = new System.Drawing.Point(473, 18);
             this.lblFrmNSX.Name = "lblFrmNSX";
-            this.lblFrmNSX.Size = new System.Drawing.Size(240, 33);
+            this.lblFrmNSX.Size = new System.Drawing.Size(428, 33);
             this.lblFrmNSX.TabIndex = 84;
-            this.lblFrmNSX.Text = "NHÀ SẢN XUẤT";
+            this.lblFrmNSX.Text = "DANH SÁCH NHÀ SẢN XUẤT";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -241,24 +290,25 @@
             this.groupBox1.Controls.Add(this.lblMaNSX_NSX);
             this.groupBox1.Controls.Add(this.txtTenNSX_NSX);
             this.groupBox1.Controls.Add(this.lblTenNSX_NSX);
-            this.groupBox1.Location = new System.Drawing.Point(400, 54);
+            this.groupBox1.Location = new System.Drawing.Point(412, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 107);
+            this.groupBox1.Size = new System.Drawing.Size(261, 112);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà sản xuất";
             // 
             // txtMaNSX_NSX
             // 
-            this.txtMaNSX_NSX.Location = new System.Drawing.Point(125, 34);
+            this.txtMaNSX_NSX.Enabled = false;
+            this.txtMaNSX_NSX.Location = new System.Drawing.Point(113, 34);
             this.txtMaNSX_NSX.Name = "txtMaNSX_NSX";
-            this.txtMaNSX_NSX.Size = new System.Drawing.Size(190, 20);
+            this.txtMaNSX_NSX.Size = new System.Drawing.Size(127, 20);
             this.txtMaNSX_NSX.TabIndex = 27;
             // 
             // lblMaNSX_NSX
             // 
             this.lblMaNSX_NSX.AutoSize = true;
-            this.lblMaNSX_NSX.Location = new System.Drawing.Point(26, 37);
+            this.lblMaNSX_NSX.Location = new System.Drawing.Point(14, 37);
             this.lblMaNSX_NSX.Name = "lblMaNSX_NSX";
             this.lblMaNSX_NSX.Size = new System.Drawing.Size(89, 13);
             this.lblMaNSX_NSX.TabIndex = 26;
@@ -266,15 +316,15 @@
             // 
             // txtTenNSX_NSX
             // 
-            this.txtTenNSX_NSX.Location = new System.Drawing.Point(125, 60);
+            this.txtTenNSX_NSX.Location = new System.Drawing.Point(113, 60);
             this.txtTenNSX_NSX.Name = "txtTenNSX_NSX";
-            this.txtTenNSX_NSX.Size = new System.Drawing.Size(190, 20);
+            this.txtTenNSX_NSX.Size = new System.Drawing.Size(127, 20);
             this.txtTenNSX_NSX.TabIndex = 23;
             // 
             // lblTenNSX_NSX
             // 
             this.lblTenNSX_NSX.AutoSize = true;
-            this.lblTenNSX_NSX.Location = new System.Drawing.Point(26, 63);
+            this.lblTenNSX_NSX.Location = new System.Drawing.Point(14, 63);
             this.lblTenNSX_NSX.Name = "lblTenNSX_NSX";
             this.lblTenNSX_NSX.Size = new System.Drawing.Size(93, 13);
             this.lblTenNSX_NSX.TabIndex = 20;
@@ -300,6 +350,7 @@
             this.Text = "Nhà sản xuất";
             this.Load += new System.EventHandler(this.frmNhaSanXuat_Load);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNSX)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -334,5 +385,9 @@
         private System.Windows.Forms.Button btnDes_NSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMaNSX_NSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenNSX_NSX;
+        private System.Windows.Forms.Button btnXuatExcel;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Label lblTimten;
+        private System.Windows.Forms.TextBox txttimkiem;
     }
 }

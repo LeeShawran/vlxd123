@@ -70,7 +70,7 @@
             this.txtDonGiaBan = new System.Windows.Forms.TextBox();
             this.lblDongiaBan = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTimtheoten = new System.Windows.Forms.Label();
             this.btnDes_LoaiSP = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.btnAsc_LoaiSP = new System.Windows.Forms.Button();
@@ -110,7 +110,7 @@
             this.groupBox2.Controls.Add(this.bntLammoi);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Location = new System.Drawing.Point(1076, 45);
+            this.groupBox2.Location = new System.Drawing.Point(1039, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(140, 455);
             this.groupBox2.TabIndex = 88;
@@ -123,7 +123,7 @@
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcel.Location = new System.Drawing.Point(19, 362);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(100, 58);
+            this.btnExcel.Size = new System.Drawing.Size(91, 58);
             this.btnExcel.TabIndex = 89;
             this.btnExcel.Text = "Xuất excel";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,7 +136,7 @@
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(19, 25);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(80, 54);
+            this.btnThem.Size = new System.Drawing.Size(91, 54);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -149,7 +149,7 @@
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(19, 93);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(80, 54);
+            this.btnLuu.Size = new System.Drawing.Size(91, 54);
             this.btnLuu.TabIndex = 21;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -162,7 +162,7 @@
             this.bntLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntLammoi.Location = new System.Drawing.Point(19, 292);
             this.bntLammoi.Name = "bntLammoi";
-            this.bntLammoi.Size = new System.Drawing.Size(80, 54);
+            this.bntLammoi.Size = new System.Drawing.Size(91, 54);
             this.bntLammoi.TabIndex = 22;
             this.bntLammoi.Text = "Làm mới";
             this.bntLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -175,7 +175,7 @@
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(19, 159);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 54);
+            this.btnXoa.Size = new System.Drawing.Size(91, 54);
             this.btnXoa.TabIndex = 19;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,7 +188,7 @@
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(19, 224);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(80, 54);
+            this.btnSua.Size = new System.Drawing.Size(91, 54);
             this.btnSua.TabIndex = 20;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -249,11 +249,11 @@
             this.Column4,
             this.Column5,
             this.Column7});
-            this.dgvSanPham.Location = new System.Drawing.Point(30, 45);
+            this.dgvSanPham.Location = new System.Drawing.Point(18, 45);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.ReadOnly = true;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(766, 267);
+            this.dgvSanPham.Size = new System.Drawing.Size(761, 315);
             this.dgvSanPham.TabIndex = 0;
             this.dgvSanPham.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSanPham_CellMouseClick);
             this.dgvSanPham.Click += new System.EventHandler(this.dgvSanPham_Click);
@@ -312,11 +312,11 @@
             this.lblSanpham.AutoSize = true;
             this.lblSanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSanpham.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblSanpham.Location = new System.Drawing.Point(564, 9);
+            this.lblSanpham.Location = new System.Drawing.Point(491, 9);
             this.lblSanpham.Name = "lblSanpham";
-            this.lblSanpham.Size = new System.Drawing.Size(352, 33);
+            this.lblSanpham.Size = new System.Drawing.Size(361, 33);
             this.lblSanpham.TabIndex = 87;
-            this.lblSanpham.Text = "THÔNG TIN SẢN PHẨM";
+            this.lblSanpham.Text = "DANH SÁCH SẢN PHẨM";
             // 
             // cbNhaSX
             // 
@@ -490,9 +490,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(121, 45);
+            this.groupBox1.Location = new System.Drawing.Point(154, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(913, 113);
+            this.groupBox1.Size = new System.Drawing.Size(879, 113);
             this.groupBox1.TabIndex = 86;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
@@ -534,31 +534,31 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.lblTimtheoten);
             this.groupBox3.Controls.Add(this.btnDes_LoaiSP);
             this.groupBox3.Controls.Add(this.txttimkiem);
             this.groupBox3.Controls.Add(this.btnAsc_LoaiSP);
             this.groupBox3.Controls.Add(this.dgvSanPham);
-            this.groupBox3.Location = new System.Drawing.Point(121, 164);
+            this.groupBox3.Location = new System.Drawing.Point(154, 164);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(913, 336);
+            this.groupBox3.Size = new System.Drawing.Size(879, 366);
             this.groupBox3.TabIndex = 85;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách các sách";
             // 
-            // label1
+            // lblTimtheoten
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
-            this.label1.TabIndex = 89;
-            this.label1.Text = "Tìm theo tên sản phẩm";
+            this.lblTimtheoten.AutoSize = true;
+            this.lblTimtheoten.Location = new System.Drawing.Point(38, 22);
+            this.lblTimtheoten.Name = "lblTimtheoten";
+            this.lblTimtheoten.Size = new System.Drawing.Size(118, 13);
+            this.lblTimtheoten.TabIndex = 89;
+            this.lblTimtheoten.Text = "Tìm theo tên sản phẩm:";
             // 
             // btnDes_LoaiSP
             // 
             this.btnDes_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnDes_LoaiSP.Image")));
-            this.btnDes_LoaiSP.Location = new System.Drawing.Point(824, 180);
+            this.btnDes_LoaiSP.Location = new System.Drawing.Point(802, 254);
             this.btnDes_LoaiSP.Name = "btnDes_LoaiSP";
             this.btnDes_LoaiSP.Size = new System.Drawing.Size(45, 47);
             this.btnDes_LoaiSP.TabIndex = 92;
@@ -572,14 +572,14 @@
             this.txttimkiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txttimkiem.Location = new System.Drawing.Point(172, 19);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(205, 20);
+            this.txttimkiem.Size = new System.Drawing.Size(176, 20);
             this.txttimkiem.TabIndex = 90;
             this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown);
             // 
             // btnAsc_LoaiSP
             // 
             this.btnAsc_LoaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc_LoaiSP.Image")));
-            this.btnAsc_LoaiSP.Location = new System.Drawing.Point(824, 105);
+            this.btnAsc_LoaiSP.Location = new System.Drawing.Point(802, 105);
             this.btnAsc_LoaiSP.Name = "btnAsc_LoaiSP";
             this.btnAsc_LoaiSP.Size = new System.Drawing.Size(45, 47);
             this.btnAsc_LoaiSP.TabIndex = 91;
@@ -662,7 +662,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button btnAsc_LoaiSP;
         private System.Windows.Forms.Button btnDes_LoaiSP;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTimtheoten;
         private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.Button btnExcel;
 

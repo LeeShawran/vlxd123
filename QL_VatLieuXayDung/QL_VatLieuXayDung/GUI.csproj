@@ -75,6 +75,12 @@
     <Compile Include="frmDinhGia.Designer.cs">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSHoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSHoadon.Designer.cs">
+      <DependentUpon>frmDSHoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGiaoHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDinhGia.resx">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSHoadon.resx">
+      <DependentUpon>frmDSHoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoHang.resx">
       <DependentUpon>frmGiaoHang.cs</DependentUpon>

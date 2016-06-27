@@ -276,13 +276,18 @@ namespace QL_VatLieuXayDung
             if (dong)
                 Application.Exit();
         }
+
         bool dong = true;
+
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDangNhap dn = new frmDangNhap();
-            dn.Show();
-            dong = false;
-            this.Close();
+            if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn đăng xuất không", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
+            {
+                frmDangNhap dn = new frmDangNhap();
+                dn.Show();
+                dong = false;
+                this.Close();
+            }
         }
 
         private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

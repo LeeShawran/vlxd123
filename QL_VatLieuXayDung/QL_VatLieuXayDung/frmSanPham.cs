@@ -131,13 +131,14 @@ namespace QL_VatLieuXayDung
             string lenh = "select MASP from T_SAN_PHAM order by MASP desc";
             cmd = new OleDbCommand(lenh, conn);
             string macuoi = (string)cmd.ExecuteScalar();
-            int somacuoi = int.Parse(macuoi.Replace("SP", ""));
+            
             if (macuoi == null)
             {
                 txtMaSP.Text = "SP0001";
             }
             else
             {
+                int somacuoi = int.Parse(macuoi.Replace("SP", ""));
                 if (somacuoi < 9)
                     txtMaSP.Text = "SP000" + (somacuoi + 1);
                 else if (somacuoi >= 9 && somacuoi < 99)
