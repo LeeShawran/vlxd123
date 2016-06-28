@@ -28,9 +28,9 @@ namespace QL_VatLieuXayDung
             txtMaDonDat.Text = a;
         }
 
-        public void loadCT_DonDatHang()
+        public void loadCT_DonDatHang() 
         {
-            string st = "select MASP,SOLUONG from T_CT_DAT_HANG_NCC where MADATNCC='"+txtMaDonDat.Text+"'";
+            string st = "select MASP,SOLUONG from T_CT_DAT_HANG_NCC where MADATNCC='"+txtMaDonDat.Text+"' order by MASP";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
             adapter.Fill(dt);
@@ -39,7 +39,7 @@ namespace QL_VatLieuXayDung
 
         public void load_PhieuNhap()
         {
-            string st = "select * from T_PHIEU_NHAP";
+            string st = "select * from T_PHIEU_NHAP where MAPN='"+ txtMaPN.Text+"'";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
             adapter.Fill(dt);
@@ -55,34 +55,61 @@ namespace QL_VatLieuXayDung
             dgvCT_NhapHang.DataSource = dt;
         }
 
-
-        public void loadLai()
+        int ktngaynhap()
         {
-            dgvNhapHang.Columns["ngaylapcol"].DefaultCellStyle.Format = @"dd/MM/yyyy";
-            adapter = new OleDbDataAdapter("select * from T_PHIEU_NHAP", conn);
-            dt = new DataTable();
+            conn.Close();
+            conn.Open();
+            int a=0;
+            OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_CT_DAT_HANG_NCC where MADATNCC='" + txtMaDonDat.Text + "'", conn);
+            DataTable dt = new DataTable();
             adapter.Fill(dt);
-            dgvNhapHang.DataSource = dt;
-            txtNhanVien.Text = Program.mainForm.ma;
-
-            if (dt.Rows.Count < 100)
-                txtMaPN.Text = "PNNCC000" + (dt.Rows.Count + 1);
-            else if (dt.Rows.Count < 10)
-                txtMaPN.Text = "PNNCC00" + (dt.Rows.Count + 1);
-            else txtMaPN.Text = "PNNCC0" + (dt.Rows.Count + 1);
-
-            btnThem.Enabled = true;
-            load_PhieuNhap();
-        
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string s = "select count(*) from T_GIA_NHAP where MASP=('" + dt.Rows[i].Field<string>(1) + "') and NGAYAPDUNG=TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')";
+                OleDbCommand cmd = new OleDbCommand(s, conn);
+                string o = cmd.ExecuteScalar().ToString();
+                a = int.Parse(o);
+                if (a >= 1)
+                    break;
+            }
+           
+            return a;
+            conn.Close();
         }
         private void fmPhieuNhapNCC_Load(object sender, EventArgs e)
         {
-            conn.Open();
-
-            loadLai();
-            loadCT_DonDatHang();
+            dgvNhapHang.Columns["ngaylapcol"].DefaultCellStyle.Format = @"dd/MM/yyyy";
             txtNgayLap.Format = DateTimePickerFormat.Custom;
             txtNgayLap.CustomFormat = "dd/MM/yyyy";
+            btnThem.Enabled = true;
+            txtNhanVien.Text = Program.mainForm.ma;
+            conn.Open();
+            /// MA TU DONG
+            
+            string lenh = "select MAPN from T_PHIEU_NHAP order by MAPN desc";
+            cmd = new OleDbCommand(lenh, conn);
+            string macuoi = (string)cmd.ExecuteScalar();
+
+            if (macuoi == null)
+            {
+                txtMaPN.Text = "PNNCC0001";
+            }
+            else
+            {
+                int somacuoi = int.Parse(macuoi.Replace("PNNCC", ""));
+                if (somacuoi < 9)
+                    txtMaPN.Text = "PNNCC000" + (somacuoi + 1);
+                else if (somacuoi >= 9 && somacuoi < 99)
+                    txtMaPN.Text = "PNNCC00" + (somacuoi + 1);
+                else if (somacuoi >= 99 && somacuoi < 999)
+                    txtMaPN.Text = "PNNCC0" + (somacuoi + 1);
+                else
+                    txtMaPN.Text = "PNNCC" + (somacuoi + 1);
+            }
+            ////
+            load_PhieuNhap();
+            loadCT_DonDatHang();
+            
             conn.Close();
         }
 
@@ -91,32 +118,14 @@ namespace QL_VatLieuXayDung
             
         }
 
-        private bool Kiem_tra_khoa_chinh()
-        {
-            bool a = false;
-            string s = txtMaPN.Text;
-            cmd = new OleDbCommand("select * from T_PHIEU_NHAP", conn);
-            OleDbDataReader PK = cmd.ExecuteReader();
-            while (PK.Read())
-            {
-                if (s == PK.GetString(0))
-                {
-                    a = true;
-                    break;
-                }
-            }
-            return a;
-        }
         private void btnThem_Click(object sender, EventArgs e)
-        {
-
-          
-            for (int i = 0; i < dgvCT_DatHang.RowCount - 1; i++)
+        {   
+            for (int i = 0; i < dgvCT_DatHang.Rows.Count; i++)
             {
-            
-                if (dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value == null)
+
+                if (dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value == null || dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString() == "0")
                 {
-                    MessageBox.Show("chua nhap đơn gia cho san pham " + dgvCT_DatHang.Rows[i].Cells["masp"].Value.ToString() +"");
+                    MessageBox.Show("Chưa nhập đơn giá cho sản phẩm " + dgvCT_DatHang.Rows[i].Cells["masp"].Value.ToString() + "", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     q = false;
                     return;
                    
@@ -129,7 +138,7 @@ namespace QL_VatLieuXayDung
 
             if (q == true)
             {
-                for (int i = 0; i < dgvCT_DatHang.RowCount - 1; i++)
+                for (int i = 0; i < dgvCT_DatHang.Rows.Count; i++)
                 {
                     float a= float.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString());
                     float b = float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString());
@@ -138,51 +147,52 @@ namespace QL_VatLieuXayDung
             }
             conn.Open();
                 // them vao phieu nhap
-            cmd = new OleDbCommand("Insert into T_PHIEU_NHAP values('" + txtMaPN.Text + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR'),'" + txtNhanVien.Text + "','" + txtMaDonDat.Text + "',"+ tong +")", conn);
-            cmd.ExecuteNonQuery();
-            //them vao chi tiet phieu nhap
-
-            OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_CT_DAT_HANG_NCC where MADATNCC='" + txtMaDonDat.Text + "'", conn);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (ktngaynhap() >= 1)
             {
-                OleDbCommand cm8 = new OleDbCommand("insert into T_CT_PHIEU_NHAP values ('" + txtMaPN.Text + "','" + dt.Rows[i].Field<string>(1) + "'," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString()) + "," + int.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString()) + ")", conn);
-                cm8.ExecuteNonQuery();
-
-                string lenh1 = "select SOLUONG from T_SAN_PHAM where MASP='" + dt.Rows[i].Field<string>(1) + "'";
-                string lenh2 = "select SOLUONG from T_CT_DAT_HANG_NCC where MASP='" + dt.Rows[i].Field<string>(1) + "' AND MADATNCC='"+ txtMaDonDat.Text +"'";
-                OleDbCommand cmd1 = new OleDbCommand(lenh1, conn);
-                int a = Convert.ToInt32(cmd1.ExecuteScalar().ToString());
-                OleDbCommand cmd2 = new OleDbCommand(lenh2, conn);
-                int b = Convert.ToInt32(cmd2.ExecuteScalar().ToString()); ;
-                int c = a + b;
-
-                string lenh3 = "update T_SAN_PHAM set SOLUONG=" + c + " where MASP='" + dt.Rows[i].Field<string>(1) + "'";
-                OleDbCommand cmd3 = new OleDbCommand(lenh3, conn);
-                cmd3.ExecuteNonQuery();
-                try
-                {
-                    string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString()) + ")";
-                    OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
-                    cmd4.ExecuteNonQuery();
-                }
-                catch
-                {
-                    MessageBox.Show("sản phẩm này đã nhập trong ngày hôm nay rồi ");
-                }
-
+                MessageBox.Show("Trong phiếu nhập có sản phẩm đã nhập trong ngày hôm nay, không thể tạo phiếu nhập này. Vui lòng tạo phiếu nhập này vào ngày khác");
+                btnThem.Enabled = false;
+                return;
             }
-            string lenh5 = "update T_DON_DAT_HANG_NCC set TINHTRANGNHAP='Co' where MADATNCC='" + txtMaDonDat.Text + "'";
-            OleDbCommand cmd5 = new OleDbCommand(lenh5, conn);
-            cmd5.ExecuteNonQuery();
+            else 
+            {
+                cmd = new OleDbCommand("Insert into T_PHIEU_NHAP values('" + txtMaPN.Text + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR'),'" + txtNhanVien.Text + "','" + txtMaDonDat.Text + "'," + tong + ")", conn);
+                cmd.ExecuteNonQuery();
+                //them vao chi tiet phieu nhap
 
-            loadLai();
-           
-         
-          conn.Close();
-          btnThem.Enabled = false;
+                OleDbDataAdapter adapter = new OleDbDataAdapter("select * from T_CT_DAT_HANG_NCC where MADATNCC='" + txtMaDonDat.Text + "'", conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {       
+                        OleDbCommand cm8 = new OleDbCommand("insert into T_CT_PHIEU_NHAP values ('" + txtMaPN.Text + "','" + dt.Rows[i].Field<string>(1) + "'," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString()) + "," + int.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString()) + ")", conn);
+                        cm8.ExecuteNonQuery();
 
+                        string lenh1 = "select SOLUONG from T_SAN_PHAM where MASP='" + dt.Rows[i].Field<string>(1) + "'";
+                        string lenh2 = "select SOLUONG from T_CT_DAT_HANG_NCC where MASP='" + dt.Rows[i].Field<string>(1) + "' AND MADATNCC='" + txtMaDonDat.Text + "'";
+                        OleDbCommand cmd1 = new OleDbCommand(lenh1, conn);
+                        int a = Convert.ToInt32(cmd1.ExecuteScalar().ToString());
+                        OleDbCommand cmd2 = new OleDbCommand(lenh2, conn);
+                        int b = Convert.ToInt32(cmd2.ExecuteScalar().ToString()); ;
+                        int c = a + b;
+
+                        string lenh3 = "update T_SAN_PHAM set SOLUONG=" + c + " where MASP='" + dt.Rows[i].Field<string>(1) + "'";
+                        OleDbCommand cmd3 = new OleDbCommand(lenh3, conn);
+
+                        string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString()) + ")";
+                        OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
+                        cmd4.ExecuteNonQuery();
+
+                }
+                string lenh5 = "update T_DON_DAT_HANG_NCC set TINHTRANGNHAP='Da nhap' where MADATNCC='" + txtMaDonDat.Text + "'";
+                OleDbCommand cmd5 = new OleDbCommand(lenh5, conn);
+                cmd5.ExecuteNonQuery();
+                MessageBox.Show("Tạo phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                load_PhieuNhap();
+                loadCT_PhieuNhap(dgvNhapHang.Rows[0].Cells[0].Value.ToString());
+                txtTongtien.Text = "" + tong;
+                conn.Close();
+                btnThem.Enabled = false;
+            }
         }
 
         private void dgvNhapHang_Click(object sender, EventArgs e)
@@ -193,27 +203,5 @@ namespace QL_VatLieuXayDung
             conn.Close();
         }
 
-        private void bntLammoi_Click(object sender, EventArgs e)
-        {
-            loadLai();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThemVaoCT_Click(object sender, EventArgs e)
-        {
-            //this.dgvCT_NhapHang.Rows.Add();
-            //this.dgvCT_NhapHang.Rows[0].Cells[0].Value = dgvCT_DatHang.CurrentRow.Cells[0].Value.ToString();
-            //this.dgvCT_NhapHang.Rows[0].Cells[1].Value = float.Parse(txtDonGiaNhap.Text);
-            //this.dgvCT_NhapHang.Rows[0].Cells[2].Value = dgvCT_DatHang.CurrentRow.Cells[1].Value.ToString();
-        }
-
-        private void btnXoaKhoiCT_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

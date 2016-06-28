@@ -151,3 +151,6 @@ D:\Khoaluan\vlxd\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLie
 D:\Khoaluan\vlxd\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\GUI.csproj.GenerateResource.Cache
 D:\Khoaluan\vlxd\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.exe.licenses
 D:\Khoaluan\vlxd\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDSHoadon.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDSHoadon.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmGiaoHangTraSAu.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongKeSanPham.resources

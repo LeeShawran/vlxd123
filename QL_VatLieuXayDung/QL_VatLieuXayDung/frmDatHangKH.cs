@@ -19,6 +19,8 @@ namespace QL_VatLieuXayDung
         DataTable dt;
         int luu = 0;
         float tong = 0;
+        bool dadatsanpham = false;
+        int sttdong = -1;
         public frmDatHangKH()
         {
             InitializeComponent();
@@ -38,17 +40,23 @@ namespace QL_VatLieuXayDung
 
         public void loadSP()
         {
-            string st = "select T_SAN_PHAM.MASP,TENSP,SOLUONG,DONGIABAN from T_SAN_PHAM, T_GIA_BAN where T_SAN_PHAM.MASP=T_GIA_BAN.MASP AND T_GIA_BAN.NGAYHIEULUC =(SELECT MAX(T_GIA_BAN.NGAYHIEULUC) FROM  T_GIA_BAN WHERE  T_GIA_BAN.NGAYHIEULUC <=TO_DATE ('"+ dtpNgaydat.Text +"', 'DD/MM/YYYY'))";
+            string st = "select T_SAN_PHAM.MASP,TENSP,SOLUONG,DONGIABAN from T_SAN_PHAM, T_GIA_BAN where T_SAN_PHAM.MASP=T_GIA_BAN.MASP AND T_GIA_BAN.NGAYHIEULUC =(SELECT MAX(T_GIA_BAN.NGAYHIEULUC) FROM  T_GIA_BAN WHERE T_GIA_BAN.NGAYHIEULUC <=TO_DATE ('" + dtpNgaydat.Text + "', 'DD/MM/YYYY')) order by T_SAN_PHAM.MASP ASC";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
             adapter.Fill(dt);
             dgvSanPHam.DataSource = dt;
 
         }
-
+        public void load_DatHang()
+        {
+            adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_KH order by MADDH ASC", conn);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dgvDonDatHang.DataSource = dt;
+        }
         public void load_ct_dathang(string madondat)
         {
-            string s = "select MASP,SOLUONG,DONGIABAN from T_CT_DAT_HANG_KH where MADDH='" + madondat + "'";
+            string s = "select MASP,SOLUONG,DONGIABAN from T_CT_DAT_HANG_KH where MADDH='" + madondat + "' order by MASP ASC";
             adapter = new OleDbDataAdapter(s, conn);
             DataTable dt2 = new DataTable();
             adapter.Fill(dt2);
@@ -56,23 +64,21 @@ namespace QL_VatLieuXayDung
         }
         public void loadLai()
         {
-            txtMaNV.Text = Program.mainForm.ma;
+            dadatsanpham = false;
+            luu = 0;
+
             loadKH();
             loadSP();
-            dgvDonDatHang.Columns["ngaydat"].DefaultCellStyle.Format = @"dd/MM/yyyy";
-            adapter = new OleDbDataAdapter("select * from T_DON_DAT_HANG_KH", conn);
-            dt = new DataTable();
-            adapter.Fill(dt);
-            dgvDonDatHang.DataSource = dt;
-            groupBoxsanpham.Enabled = false;
-            luu = 0;
-            groupBoxThongTinDH.Enabled = false;
+            load_DatHang();
 
+            groupBoxsanpham.Enabled = false;
+            groupBoxThongTinDH.Enabled = false;
             btnThemDH.Enabled = true;
             btnLuuDH.Enabled = false;
             btnXoaDH.Enabled = false;
             btnXoaCT.Enabled = false;
             btnThanhToan.Enabled = false;
+            btnGiaoHang.Enabled = false;
 
             dgvDonDatHang.Enabled = true;
 
@@ -81,28 +87,35 @@ namespace QL_VatLieuXayDung
             txtTongtien.Clear();
             txtTTGiao.Clear();
             txtTTThanhToan.Clear();
-            
+            txtConLai.Clear();
+            cbTongLanGiao.Text = cbTongLanGiao.Items[0].ToString();
 
             cbKH.DisplayMember = cbKH.Items[0].ToString();
 
             //
             dtpNgaydat.Format = DateTimePickerFormat.Custom;
             dtpNgaydat.CustomFormat = "dd/MM/yyyy";
+            //xoa chi tiet don dat hang
+            string s = "select MASP,SOLUONG,DONGIABAN from T_CT_DAT_HANG_KH where MADDH='aaaa'";
+            adapter = new OleDbDataAdapter(s, conn);
+            DataTable dt2 = new DataTable();
+            adapter.Fill(dt2);
+            dgvCT_DonDatHang.DataSource = dt2;
             //
+            //dgvSanPHam.Rows[0].Selected = false;
+            dgvDonDatHang.Rows[0].Selected = false;
 
-
-            dgvCT_DonDatHang.DataSource = null;
-           
         }
-
         private void frmDatHangKH_Load(object sender, EventArgs e)
         {
+            dgvDonDatHang.Columns["ngaydat"].DefaultCellStyle.Format = @"dd/MM/yyyy";
+            txtMaNV.Text = Program.mainForm.ma;
             dtpNgaydat.Format = DateTimePickerFormat.Custom;
             dtpNgaydat.CustomFormat = "dd/MM/yyyy";
             conn.Open();
             loadLai();
+            dgvDonDatHang.CurrentCell = null;
             conn.Close();
-
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -112,9 +125,18 @@ namespace QL_VatLieuXayDung
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            frmXuatHang f = new frmXuatHang(txtMaDH.Text);
-            f.StartPosition = FormStartPosition.CenterParent;
-            f.Show();
+            if (dadatsanpham == true)
+            {
+                frmXuatHang f = new frmXuatHang(txtMaDH.Text);
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+                btnThanhToan.Enabled = false;
+                btnThemDH.Enabled = false;
+                btnXoaDH.Enabled = false;
+                btnGiaoHang.Enabled = false;
+                btnLammoiHD.Enabled = true;
+            }
+            else MessageBox.Show("Chưa đặt sản phẩm nào cho đơn đặt hàng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
         }
 
@@ -126,7 +148,7 @@ namespace QL_VatLieuXayDung
             string lenh = "select MADDH from T_DON_DAT_HANG_KH order by MADDH desc";
             OleDbCommand cmd = new OleDbCommand(lenh, conn);
             string macuoi = (string)cmd.ExecuteScalar();
-          
+
             if (macuoi == null)
             {
                 txtMaDH.Text = "DHKH0001";
@@ -134,23 +156,23 @@ namespace QL_VatLieuXayDung
             else
             {
                 int somacuoi = int.Parse(macuoi.Replace("DHKH", ""));
-                if (somacuoi < 10)
+                if (somacuoi < 9)
                     txtMaDH.Text = "DHKH000" + (somacuoi + 1);
-                else if (somacuoi >= 10 && somacuoi < 100)
+                else if (somacuoi >= 9 && somacuoi < 99)
                     txtMaDH.Text = "DHKH00" + (somacuoi + 1);
-                else if (somacuoi >= 100 && somacuoi < 1000)
+                else if (somacuoi >= 99 && somacuoi < 999)
                     txtMaDH.Text = "DHKH0" + (somacuoi + 1);
                 else
                     txtMaDH.Text = "DHKH" + (somacuoi + 1);
             }
-            
+
             ////
             conn.Close();
 
             txtTongtien.Text = "" + 0;
-            txtTTGiao.Text = "Chua";
-            txtTTThanhToan.Text = "Chua";
-            cbKieuTra.Text = cbKieuTra.Items[0].ToString();
+            txtTTGiao.Text = "Chua giao";
+            txtTTThanhToan.Text = "Chua thanh toan";
+            //cbKieuTra.Text = cbKieuTra.Items[0].ToString();
             cbTongLanGiao.Text = cbTongLanGiao.Items[0].ToString();
             txtConLai.Text = "1";
 
@@ -161,7 +183,6 @@ namespace QL_VatLieuXayDung
             btnLuuDH.Enabled = true;
             dgvDonDatHang.Enabled = false;
             cbKH.Enabled = true;
-            cbKieuTra.Enabled = true;
         }
 
         public void them()
@@ -173,12 +194,14 @@ namespace QL_VatLieuXayDung
             }
             else
             {
-
-                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_KH values('" + txtMaDH.Text + "',TO_DATE('" + dtpNgaydat.Text + "','DD-MM-RR'),'" + cbKH.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + 0 + ",'Chua','" + cbKieuTra.Text + "','Chua',"+ cbTongLanGiao.Text +", "+ txtConLai.Text +")", conn);
+                string kieu;
+                if (radtratruoc.Checked == true)
+                    kieu = "Tra truoc";
+                else kieu = "Tra sau";
+                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_KH values('" + txtMaDH.Text + "',TO_DATE('" + dtpNgaydat.Text + "','DD-MM-RR'),'" + cbKH.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + 0 + ",'Chua thanh toan','" + kieu + "','Chua giao'," + int.Parse(cbTongLanGiao.Text) + ", " + int.Parse(txtConLai.Text) + ")", conn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadLai();
-
 
             }
         }
@@ -203,41 +226,97 @@ namespace QL_VatLieuXayDung
 
         private void dgvDonDatHang_Click(object sender, EventArgs e)
         {
+            conn.Close();
             conn.Open();
             btnXoaDH.Enabled = true;
-
-
+            sttdong = -1;
             DataGridViewRow row = new DataGridViewRow();
             row = dgvDonDatHang.CurrentRow;
 
-            //lay ten NCC tu ma NCC de hien thi len comboboc
+            //lay ten Khach hang tu ma NCC de hien thi len comboboc
             cmd = new OleDbCommand("select TENKH from T_KHACH_HANG where MAKH='" + row.Cells["kh"].Value.ToString() + "'", conn);
             string tenKH = (string)cmd.ExecuteScalar();
 
             //bam dong hien thi len dgv dat hang
             txtMaDH.Text = row.Cells["ma"].Value.ToString();
             dtpNgaydat.Value = DateTime.Parse(row.Cells["ngaydat"].Value.ToString());
-
             cbKH.Text = tenKH;
             txtMaNV.Text = row.Cells["nv"].Value.ToString();
             txtTongtien.Text = row.Cells["tongtien"].Value.ToString();
             tong = float.Parse(txtTongtien.Text);
             txtTTThanhToan.Text = row.Cells["tttt"].Value.ToString();
-            cbKieuTra.Text = row.Cells["kieutt"].Value.ToString();
-            txtTTGiao.Text = row.Cells["ttgiao"].Value.ToString();
-            //kt tinhtrang thanh toan de hien thi nut nhap hang và khong cho them,xoa, sua san pham
-            if (row.Cells["tttt"].Value.ToString() == "Chua")
+            if (row.Cells["kieutt"].Value.ToString() == "Tra truoc")
+                radtratruoc.Checked = true;
+            else radtrasau.Checked = true;
+
+            if (row.Cells["kieutt"].Value.ToString() == "Tra truoc" && row.Cells["tttt"].Value.ToString() == "Chua thanh toan")
             {
                 btnThanhToan.Enabled = true;
                 groupBoxsanpham.Enabled = true;
+                btnGiaoHang.Enabled = false;
             }
-            else
+            else if (row.Cells["kieutt"].Value.ToString() == "Tra truoc" && row.Cells["tttt"].Value.ToString() == "Da thanh toan" && (row.Cells["ttgiao"].Value.ToString() == "Chua giao" || row.Cells["ttgiao"].Value.ToString() == "Dang giao"))
             {
                 btnThanhToan.Enabled = false;
                 groupBoxsanpham.Enabled = false;
+                btnGiaoHang.Enabled = true;
             }
-            load_ct_dathang(row.Cells[0].Value.ToString());
+            else if (row.Cells["kieutt"].Value.ToString() == "Tra truoc" && row.Cells["tttt"].Value.ToString() == "Da thanh toan" && row.Cells["ttgiao"].Value.ToString() == "Da giao")
+            {
+                btnThanhToan.Enabled = false;
+                groupBoxsanpham.Enabled = false;
+                btnGiaoHang.Enabled = false;
+            }
+            else if (row.Cells["kieutt"].Value.ToString() == "Tra sau" && row.Cells["ttgiao"].Value.ToString() == "Chua giao")
+            {
+                btnGiaoHang.Enabled = true;
+                groupBoxsanpham.Enabled = true;
+                btnThanhToan.Enabled = false;
+            }
+            else if (row.Cells["kieutt"].Value.ToString() == "Tra sau" && (row.Cells["ttgiao"].Value.ToString() == "Dang giao" || row.Cells["ttgiao"].Value.ToString() == "Da giao") && row.Cells["tttt"].Value.ToString() == "Chua thanh toan")
+            {
+                btnGiaoHang.Enabled = false;
+                groupBoxsanpham.Enabled = false;
+                btnThanhToan.Enabled = true;
+            }
+            else if (row.Cells["kieutt"].Value.ToString() == "Tra sau" && (row.Cells["ttgiao"].Value.ToString() == "Dang giao" || row.Cells["ttgiao"].Value.ToString() == "Da giao") && row.Cells["tttt"].Value.ToString() == "Da thanh toan")
+            {
+                btnGiaoHang.Enabled = false;
+                groupBoxsanpham.Enabled = false;
+                btnThanhToan.Enabled = false;
+            }
+            txtTTGiao.Text = row.Cells["ttgiao"].Value.ToString();
+            cbTongLanGiao.Text = row.Cells["tonglangiao"].Value.ToString();
+            txtConLai.Text = row.Cells["conlai"].Value.ToString();
+            //kt tinhtrang thanh toan de hien thi nut nhap hang và khong cho them,xoa, sua san pham
+            //if (row.Cells["tttt"].Value.ToString() == "Chua thanh toan")
+            //{
 
+            //}
+            //else
+            //{
+
+            //}
+            //if (row.Cells["ttgiao"].Value.ToString() == "Chua giao")
+            //{
+            //    btnGiaoHang.Enabled = true;
+            //    groupBoxsanpham.Enabled = true;
+            //}
+            //else
+            //{
+            //    btnGiaoHang.Enabled = false;
+            //    groupBoxsanpham.Enabled = false;
+            //}
+            load_ct_dathang(row.Cells[0].Value.ToString());
+            if (dgvCT_DonDatHang.DataSource == null || dgvCT_DonDatHang.Rows.Count <= 0)
+            {
+                dadatsanpham = false;
+            }
+            else
+            {
+                dgvCT_DonDatHang.Rows[0].Selected = false;
+                dadatsanpham = true;
+            }
             conn.Close();
         }
 
@@ -248,64 +327,69 @@ namespace QL_VatLieuXayDung
             string s = "select count(*) from T_CT_DAT_HANG_KH where MADDH=('" + txtMaDH.Text + "') and MASP='" + dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString() + "'";
             OleDbCommand cmd = new OleDbCommand(s, conn);
             string o = cmd.ExecuteScalar().ToString();
-            MessageBox.Show(o);
             int a = int.Parse(o);
             return a;
             conn.Close();
 
         }
-
+        
         private void btnThemCT_Click(object sender, EventArgs e)
         {
-            //int slkho=int.Parse(dgvSanPham.CurrentRow.Cells["soluongkho"].Value.ToString());
-            if (this.txtSoluongmua.TextLength == 0)
+            
+            if (sttdong == -1)
             {
-                MessageBox.Show("Chưa nhập thông tin số lượng đặt");
+                sttdong = dgvDonDatHang.CurrentRow.Index;
+            }
+            //int slkho=int.Parse(dgvSanPham.CurrentRow.Cells["soluongkho"].Value.ToString());
+            if (txtSoluongmua.Text == "")
+            {
+                MessageBox.Show("Chưa nhập số lượng đặt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            else if (int.Parse(txtSoluongmua.Text) <= 0)
+            {
+                MessageBox.Show("Số lượng đặt phải > 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (ktma() >= 1)
+            {
+                MessageBox.Show("Sản phẩm này đã đặt rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             else
             {
-
                 float sldat = float.Parse(txtSoluongmua.Text);
                 float giaban = float.Parse(dgvSanPHam.CurrentRow.Cells["giaban"].Value.ToString());
                 tong = tong + sldat * giaban;
 
-                if (txtSoluongmua.Text == "")
+                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_KH values('" + txtMaDH.Text + "','" + dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString() + "'," + int.Parse(txtSoluongmua.Text) + "," + float.Parse(dgvSanPHam.CurrentRow.Cells["giaban"].Value.ToString()) + ")", conn);
+                cmd.ExecuteNonQuery();
+
+                cmd = new OleDbCommand("Update T_DON_DAT_HANG_KH set TONGTIEN=" + tong + " where MADDH='" + txtMaDH.Text + "'", conn);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //load lai ct don dat
+
+                load_DatHang();
+                dgvDonDatHang.Rows[0].Selected = false;
+                dgvDonDatHang.FirstDisplayedScrollingRowIndex = sttdong;
+                dgvDonDatHang.Rows[sttdong].Selected = true;
+                load_ct_dathang(dgvDonDatHang.Rows[sttdong].Cells[0].Value.ToString());
+                //
+                txtSoluongmua.Clear();
+                groupBoxsanpham.Enabled = true;
+                if (dgvCT_DonDatHang.Rows.Count <= 0)
                 {
-                    MessageBox.Show("Chưa nhập số lượng đặt");
-                    return;
-                }
-                else if (int.Parse(txtSoluongmua.Text) <= 0)
-                {
-                    MessageBox.Show("So luong dat phai > 0");
-                    return;
-                }
-                else if (ktma() >= 1)
-                {
-                    MessageBox.Show("san pham nay da duoc dat");
-                    return;
+                    dadatsanpham = false;
                 }
                 else
                 {
-
-                    cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_KH values('" + txtMaDH.Text + "','" + dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString() + "'," + int.Parse(txtSoluongmua.Text) + "," + float.Parse(dgvSanPHam.CurrentRow.Cells["giaban"].Value.ToString()) + ")", conn);
-                    cmd.ExecuteNonQuery();
-
-                    cmd = new OleDbCommand("Update T_DON_DAT_HANG_KH set TONGTIEN=" + tong + " where MADDH='"+ txtMaDH.Text +"'", conn);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Thêm thành công");
-
-                    //load lai ct don dat
-                    load_ct_dathang(dgvDonDatHang.CurrentRow.Cells[0].Value.ToString());
-                    //
-
-                    txtSoluongmua.Clear();
-
-                    conn.Close();
+                    dgvCT_DonDatHang.Rows[0].Selected = false;
+                    dadatsanpham = true;
                 }
-
+                conn.Close();
             }
         }
 
@@ -324,6 +408,10 @@ namespace QL_VatLieuXayDung
             {
                 conn.Close();
                 conn.Open();
+                if (sttdong == -1)
+                {
+                    sttdong = dgvDonDatHang.CurrentRow.Index;
+                }
                 cmd = new OleDbCommand("Delete from T_CT_DAT_HANG_KH where MASP='" + dgvCT_DonDatHang.CurrentRow.Cells[0].Value.ToString() + "' and MADDH='" + txtMaDH.Text + "'", conn);
                 cmd.ExecuteNonQuery();
 
@@ -333,14 +421,29 @@ namespace QL_VatLieuXayDung
 
                 cmd = new OleDbCommand("Update T_DON_DAT_HANG_KH set TONGTIEN=" + tong + " where MADDH='" + txtMaDH.Text + "'", conn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa thành công");
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //load lai ct don dat
-                load_ct_dathang(dgvDonDatHang.CurrentRow.Cells[0].Value.ToString());
+                
+                load_DatHang();
+                dgvDonDatHang.Rows[0].Selected = false;
+                dgvDonDatHang.FirstDisplayedScrollingRowIndex = sttdong;
+                dgvDonDatHang.Rows[sttdong].Selected = true;
+                load_ct_dathang(dgvDonDatHang.Rows[sttdong].Cells[0].Value.ToString());
                 //
-
                 txtSoluongmua.Clear();
+                groupBoxsanpham.Enabled = true;
+                if (dgvCT_DonDatHang.Rows.Count <= 0)
+                {
+                    dadatsanpham = false;
+                }
+                else
+                {
+                    dgvCT_DonDatHang.Rows[0].Selected = false;
+                    dadatsanpham = true;
+                }
                 conn.Close();
+                btnXoaCT.Enabled = false;
             }
         }
 
@@ -354,14 +457,14 @@ namespace QL_VatLieuXayDung
         {
             btnXoaCT.Enabled = true;
 
-            txtSoluongmua.Text = dgvCT_DonDatHang.CurrentRow.Cells[1].Value.ToString();
+            //txtSoluongmua.Text = dgvCT_DonDatHang.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void btnXoaDH_Click(object sender, EventArgs e)
         {
-            if (dgvDonDatHang.CurrentRow.Cells["tttt"].Value.ToString() == "Co")
+            if (dgvDonDatHang.CurrentRow.Cells["tttt"].Value.ToString() == "Da thanh toan")
             {
-                MessageBox.Show("Đơn đặt hàng đã thanh toán, không thể xóa");
+                MessageBox.Show("Đơn hàng đã thanh toán, không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -373,6 +476,7 @@ namespace QL_VatLieuXayDung
                     conn.Open();
                     cmd = new OleDbCommand("Delete from T_DON_DAT_HANG_KH where MADDH='" + txtMaDH.Text + "'", conn);
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadLai();
                     conn.Close();
                 }
@@ -380,16 +484,87 @@ namespace QL_VatLieuXayDung
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void radtratruoc_CheckedChanged(object sender, EventArgs e)
         {
-            frmGiaoHang f = new frmGiaoHang(txtMaDH.Text);
-            f.StartPosition = FormStartPosition.CenterParent;
-            f.Show();
-            button1.Enabled = false;
-            btnThemDH.Enabled = false;
-            btnXoaDH.Enabled = false;
-          
-            btnLuuDH.Enabled = false;
+            RadioButton rb = sender as RadioButton;
+            if (rb != null)
+            {
+                if (rb.Checked)
+                {
+                    cbTongLanGiao.Enabled = true;
+                    cbTongLanGiao.Text = cbTongLanGiao.Items[0].ToString();
+                    txtConLai.Text = "1";
+                }
+            }
+        }
+
+        private void radtrasau_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null)
+            {
+                if (rb.Checked)
+                {
+                    cbTongLanGiao.Enabled = false;
+                    cbTongLanGiao.Text = cbTongLanGiao.Items[0].ToString();
+                    txtConLai.Text = "1";
+                }
+            }
+        }
+
+        private void cbTongLanGiao_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbTongLanGiao.Text == "1")
+            {
+                txtConLai.Text = "1";
+            }
+            if (cbTongLanGiao.Text == "2")
+            {
+                txtConLai.Text = "2";
+            }
+            if (cbTongLanGiao.Text == "3")
+            {
+                txtConLai.Text = "3";
+            }
+        }
+
+        private void btnGiaoHang_Click(object sender, EventArgs e)
+        {
+            if (dadatsanpham == true)
+            {
+               
+                if (radtratruoc.Checked == true)
+                {
+                    
+                    frmGiaoHang f = new frmGiaoHang(txtMaDH.Text);
+                    f.StartPosition = FormStartPosition.CenterParent;
+                    f.Show();
+                    btnThanhToan.Enabled = false;
+                    btnThemDH.Enabled = false;
+                    btnXoaDH.Enabled = false;
+                    btnGiaoHang.Enabled = false;
+                    btnLammoiHD.Enabled = true;
+                }
+                else
+                {
+                    
+                    frmGiaoHangTraSAu f = new frmGiaoHangTraSAu(txtMaDH.Text);
+                    f.StartPosition = FormStartPosition.CenterParent;
+                    f.Show();
+                    btnThanhToan.Enabled = false;
+                    btnThemDH.Enabled = false;
+                    btnXoaDH.Enabled = false;
+                    btnGiaoHang.Enabled = false;
+                    btnLammoiHD.Enabled = true;
+     
+                }
+            }
+            else MessageBox.Show("Chưa đặt sản phẩm nào cho đơn hàng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgvDonDatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
