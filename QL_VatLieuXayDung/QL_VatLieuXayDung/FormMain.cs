@@ -305,5 +305,85 @@ namespace QL_VatLieuXayDung
                 f.Show();
             }
         }
+
+        private void btnThongkeSP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmThongKeSanPham));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThongKeSanPham f = new frmThongKeSanPham();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
+
+        private void btnThongKeTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmThongKeTonKho));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThongKeTonKho f = new frmThongKeTonKho();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
+
+        private void btnThongKeXuatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmThongKeXuatHang));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThongKeXuatHang f = new frmThongKeXuatHang();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
+
+        private void btnThongkeNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmThongKeNhapHang));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThongKeNhapHang f = new frmThongKeNhapHang();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
+
+        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmDoiMatKhau));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmDoiMatKhau f = new frmDoiMatKhau();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
     }
 }

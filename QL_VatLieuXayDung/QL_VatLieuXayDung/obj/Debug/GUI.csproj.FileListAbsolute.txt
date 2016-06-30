@@ -154,3 +154,7 @@ D:\Khoaluan\vlxd\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLie
 D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDSHoadon.resources
 D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmGiaoHangTraSAu.resources
 D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongKeSanPham.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongKeTonKho.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongKeXuatHang.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmThongKeNhapHang.resources
+D:\khoaluan\vlxd123\QL_VatLieuXayDung\QL_VatLieuXayDung\obj\Debug\QL_VatLieuXayDung.frmDoiMatKhau.resources

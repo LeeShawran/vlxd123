@@ -75,8 +75,7 @@ namespace QL_VatLieuXayDung
 
                 cm8.ExecuteNonQuery();
             }
-            //OleDbCommand cm2 = new OleDbCommand("insert into T_PHAN_QUYEN(MANHOM,TENNHOM) values ('" + txtmanhom.Text 
-            //cm.ExecuteNonQuery();
+
             conn.Close();
             Refresh_NTK();
 

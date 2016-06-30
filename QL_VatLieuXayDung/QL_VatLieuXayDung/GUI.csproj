@@ -46,6 +46,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="frmDinhGia.Designer.cs">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDSHoadon.cs">
       <SubType>Form</SubType>
@@ -183,11 +190,29 @@
     <Compile Include="frmLienHe.Designer.cs">
       <DependentUpon>frmLienHe.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongKeNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeNhapHang.Designer.cs">
+      <DependentUpon>frmThongKeNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKeSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThongKeSanPham.Designer.cs">
       <DependentUpon>frmThongKeSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongKeTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeTonKho.Designer.cs">
+      <DependentUpon>frmThongKeTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongKeXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeXuatHang.Designer.cs">
+      <DependentUpon>frmThongKeXuatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinNguoiDung.cs">
       <SubType>Form</SubType>
@@ -214,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDinhGia.resx">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSHoadon.resx">
       <DependentUpon>frmDSHoadon.cs</DependentUpon>
@@ -266,8 +294,17 @@
     <EmbeddedResource Include="frmLienHe.resx">
       <DependentUpon>frmLienHe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeNhapHang.resx">
+      <DependentUpon>frmThongKeNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeSanPham.resx">
       <DependentUpon>frmThongKeSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeTonKho.resx">
+      <DependentUpon>frmThongKeTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeXuatHang.resx">
+      <DependentUpon>frmThongKeXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinNguoiDung.resx">
       <DependentUpon>frmThongTinNguoiDung.cs</DependentUpon>
