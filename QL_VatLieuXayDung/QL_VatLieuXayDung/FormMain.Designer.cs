@@ -174,20 +174,13 @@
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnDoiMatKhau);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-<<<<<<< HEAD
-=======
-            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
->>>>>>> origin/master
             // 
             // btnDoiMatKhau
             // 
             this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
             this.btnDoiMatKhau.Id = 52;
-<<<<<<< HEAD
             this.btnDoiMatKhau.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeGlyph")));
             this.btnDoiMatKhau.LargeWidth = 90;
-=======
->>>>>>> origin/master
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
