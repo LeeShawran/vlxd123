@@ -66,7 +66,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label6.Location = new System.Drawing.Point(113, 267);
+            this.label6.Location = new System.Drawing.Point(151, 267);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 25);
             this.label6.TabIndex = 13;
@@ -89,9 +89,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(30, 267);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 25);
+            this.label4.Size = new System.Drawing.Size(115, 25);
             this.label4.TabIndex = 11;
-            this.label4.Text = "ĐT:";
+            this.label4.Text = "Điện thoại:";
             // 
             // label3
             // 
@@ -136,7 +136,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLienHe";
-            this.Text = "frmThongTin";
+            this.Text = "Thông tin phần mềm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

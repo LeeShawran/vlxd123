@@ -38,6 +38,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonThongTinNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnThongTinNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
@@ -103,8 +105,6 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.labelTen = new System.Windows.Forms.Label();
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -169,6 +169,20 @@
             this.btnThongTinNguoiDung.LargeWidth = 90;
             this.btnThongTinNguoiDung.Name = "btnThongTinNguoiDung";
             this.btnThongTinNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTinNguoiDung_ItemClick);
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnDoiMatKhau);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
+            this.btnDoiMatKhau.Id = 52;
+            this.btnDoiMatKhau.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeGlyph")));
+            this.btnDoiMatKhau.LargeWidth = 90;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // ribbonPageGroup17
             // 
@@ -465,8 +479,10 @@
             // 
             // btnThongkeSP
             // 
-            this.btnThongkeSP.Caption = "Thống kê sản phẩm nhập / xuất";
+            this.btnThongkeSP.Caption = "Thống kê số lượng nhập / xuất";
             this.btnThongkeSP.Id = 48;
+            this.btnThongkeSP.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThongkeSP.LargeGlyph")));
+            this.btnThongkeSP.LargeWidth = 100;
             this.btnThongkeSP.Name = "btnThongkeSP";
             this.btnThongkeSP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongkeSP_ItemClick);
             // 
@@ -474,6 +490,8 @@
             // 
             this.btnThongKeTonKho.Caption = "Thống kê tồn kho";
             this.btnThongKeTonKho.Id = 49;
+            this.btnThongKeTonKho.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThongKeTonKho.LargeGlyph")));
+            this.btnThongKeTonKho.LargeWidth = 90;
             this.btnThongKeTonKho.Name = "btnThongKeTonKho";
             this.btnThongKeTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeTonKho_ItemClick);
             // 
@@ -481,6 +499,8 @@
             // 
             this.btnThongkeNhapHang.Caption = "Thống kê nhập hàng";
             this.btnThongkeNhapHang.Id = 50;
+            this.btnThongkeNhapHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThongkeNhapHang.LargeGlyph")));
+            this.btnThongkeNhapHang.LargeWidth = 90;
             this.btnThongkeNhapHang.Name = "btnThongkeNhapHang";
             this.btnThongkeNhapHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongkeNhapHang_ItemClick);
             // 
@@ -488,6 +508,8 @@
             // 
             this.btnThongKeXuatHang.Caption = "Thống kê xuất hàng";
             this.btnThongKeXuatHang.Id = 51;
+            this.btnThongKeXuatHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThongKeXuatHang.LargeGlyph")));
+            this.btnThongKeXuatHang.LargeWidth = 90;
             this.btnThongKeXuatHang.Name = "btnThongKeXuatHang";
             this.btnThongKeXuatHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeXuatHang_ItemClick);
             // 
@@ -601,25 +623,21 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnThongkeSP);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Thống kê sản phẩm nhập xuất";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnThongKeTonKho);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Thống kê tồn kho";
             // 
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThongkeNhapHang);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Thống kê nhập hàng";
             // 
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnThongKeXuatHang);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "Thống kê xuất hàng";
             // 
             // ribbonPage6
             // 
@@ -676,19 +694,6 @@
             this.barButtonItem29.Id = 39;
             this.barButtonItem29.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.LargeGlyph")));
             this.barButtonItem29.Name = "barButtonItem29";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnDoiMatKhau);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
-            this.btnDoiMatKhau.Id = 52;
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // FormMain
             // 

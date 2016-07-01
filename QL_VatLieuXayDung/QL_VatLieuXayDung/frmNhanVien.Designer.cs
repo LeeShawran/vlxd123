@@ -103,24 +103,27 @@
             this.groupBox1.Controls.Add(this.lblHoten_NV);
             this.groupBox1.Location = new System.Drawing.Point(131, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(913, 196);
+            this.groupBox1.Size = new System.Drawing.Size(880, 203);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
             // bthinh
             // 
-            this.bthinh.Location = new System.Drawing.Point(808, 70);
+            this.bthinh.Image = ((System.Drawing.Image)(resources.GetObject("bthinh.Image")));
+            this.bthinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bthinh.Location = new System.Drawing.Point(268, 141);
             this.bthinh.Name = "bthinh";
-            this.bthinh.Size = new System.Drawing.Size(68, 51);
+            this.bthinh.Size = new System.Drawing.Size(92, 39);
             this.bthinh.TabIndex = 87;
-            this.bthinh.Text = "chọn hình";
+            this.bthinh.Text = "Chọn hình";
+            this.bthinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bthinh.UseVisualStyleBackColor = true;
             this.bthinh.Click += new System.EventHandler(this.bthinh_Click);
             // 
             // txtMatkhau_NV
             // 
-            this.txtMatkhau_NV.Location = new System.Drawing.Point(389, 144);
+            this.txtMatkhau_NV.Location = new System.Drawing.Point(460, 165);
             this.txtMatkhau_NV.MaxLength = 15;
             this.txtMatkhau_NV.Name = "txtMatkhau_NV";
             this.txtMatkhau_NV.Size = new System.Drawing.Size(209, 20);
@@ -130,7 +133,7 @@
             // lblMatkhau_NV
             // 
             this.lblMatkhau_NV.AutoSize = true;
-            this.lblMatkhau_NV.Location = new System.Drawing.Point(328, 147);
+            this.lblMatkhau_NV.Location = new System.Drawing.Point(401, 168);
             this.lblMatkhau_NV.Name = "lblMatkhau_NV";
             this.lblMatkhau_NV.Size = new System.Drawing.Size(55, 13);
             this.lblMatkhau_NV.TabIndex = 86;
@@ -140,14 +143,14 @@
             // 
             this.cmbChucvu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChucvu.FormattingEnabled = true;
-            this.cmbChucvu.Location = new System.Drawing.Point(390, 72);
+            this.cmbChucvu.Location = new System.Drawing.Point(460, 138);
             this.cmbChucvu.Name = "cmbChucvu";
             this.cmbChucvu.Size = new System.Drawing.Size(208, 21);
             this.cmbChucvu.TabIndex = 85;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(644, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(114, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(137, 161);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,7 +160,7 @@
             // lblChucvu_NV
             // 
             this.lblChucvu_NV.AutoSize = true;
-            this.lblChucvu_NV.Location = new System.Drawing.Point(328, 75);
+            this.lblChucvu_NV.Location = new System.Drawing.Point(404, 141);
             this.lblChucvu_NV.Name = "lblChucvu_NV";
             this.lblChucvu_NV.Size = new System.Drawing.Size(50, 13);
             this.lblChucvu_NV.TabIndex = 84;
@@ -165,7 +168,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(98, 144);
+            this.txtEmail.Location = new System.Drawing.Point(460, 86);
             this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(208, 20);
@@ -174,7 +177,7 @@
             // lblEmail_NV
             // 
             this.lblEmail_NV.AutoSize = true;
-            this.lblEmail_NV.Location = new System.Drawing.Point(23, 147);
+            this.lblEmail_NV.Location = new System.Drawing.Point(419, 89);
             this.lblEmail_NV.Name = "lblEmail_NV";
             this.lblEmail_NV.Size = new System.Drawing.Size(35, 13);
             this.lblEmail_NV.TabIndex = 46;
@@ -183,7 +186,7 @@
             // rdcNu
             // 
             this.rdcNu.AutoSize = true;
-            this.rdcNu.Location = new System.Drawing.Point(180, 108);
+            this.rdcNu.Location = new System.Drawing.Point(513, 65);
             this.rdcNu.Name = "rdcNu";
             this.rdcNu.Size = new System.Drawing.Size(39, 17);
             this.rdcNu.TabIndex = 45;
@@ -194,7 +197,7 @@
             // 
             this.rdcNam.AutoSize = true;
             this.rdcNam.Checked = true;
-            this.rdcNam.Location = new System.Drawing.Point(105, 108);
+            this.rdcNam.Location = new System.Drawing.Point(460, 65);
             this.rdcNam.Name = "rdcNam";
             this.rdcNam.Size = new System.Drawing.Size(47, 17);
             this.rdcNam.TabIndex = 44;
@@ -204,7 +207,7 @@
             // 
             // txtDienthoai
             // 
-            this.txtDienthoai.Location = new System.Drawing.Point(387, 33);
+            this.txtDienthoai.Location = new System.Drawing.Point(460, 112);
             this.txtDienthoai.MaxLength = 11;
             this.txtDienthoai.Name = "txtDienthoai";
             this.txtDienthoai.Size = new System.Drawing.Size(208, 20);
@@ -213,7 +216,7 @@
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(98, 72);
+            this.txtTenNV.Location = new System.Drawing.Point(460, 41);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(208, 20);
             this.txtTenNV.TabIndex = 40;
@@ -221,7 +224,7 @@
             // txtMaNV
             // 
             this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(98, 33);
+            this.txtMaNV.Location = new System.Drawing.Point(460, 15);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(208, 20);
             this.txtMaNV.TabIndex = 39;
@@ -229,7 +232,7 @@
             // lblPhai_NV
             // 
             this.lblPhai_NV.AutoSize = true;
-            this.lblPhai_NV.Location = new System.Drawing.Point(23, 108);
+            this.lblPhai_NV.Location = new System.Drawing.Point(424, 67);
             this.lblPhai_NV.Name = "lblPhai_NV";
             this.lblPhai_NV.Size = new System.Drawing.Size(31, 13);
             this.lblPhai_NV.TabIndex = 37;
@@ -238,7 +241,7 @@
             // lblDienthoai_NV
             // 
             this.lblDienthoai_NV.AutoSize = true;
-            this.lblDienthoai_NV.Location = new System.Drawing.Point(325, 36);
+            this.lblDienthoai_NV.Location = new System.Drawing.Point(399, 115);
             this.lblDienthoai_NV.Name = "lblDienthoai_NV";
             this.lblDienthoai_NV.Size = new System.Drawing.Size(58, 13);
             this.lblDienthoai_NV.TabIndex = 36;
@@ -247,7 +250,7 @@
             // lblMaNV_NV
             // 
             this.lblMaNV_NV.AutoSize = true;
-            this.lblMaNV_NV.Location = new System.Drawing.Point(23, 36);
+            this.lblMaNV_NV.Location = new System.Drawing.Point(379, 18);
             this.lblMaNV_NV.Name = "lblMaNV_NV";
             this.lblMaNV_NV.Size = new System.Drawing.Size(75, 13);
             this.lblMaNV_NV.TabIndex = 35;
@@ -256,7 +259,7 @@
             // lblHoten_NV
             // 
             this.lblHoten_NV.AutoSize = true;
-            this.lblHoten_NV.Location = new System.Drawing.Point(23, 75);
+            this.lblHoten_NV.Location = new System.Drawing.Point(413, 44);
             this.lblHoten_NV.Name = "lblHoten_NV";
             this.lblHoten_NV.Size = new System.Drawing.Size(42, 13);
             this.lblHoten_NV.TabIndex = 33;
@@ -294,9 +297,9 @@
             // 
             this.btnXoa_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NV.Image")));
             this.btnXoa_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NV.Location = new System.Drawing.Point(41, 97);
+            this.btnXoa_NV.Location = new System.Drawing.Point(16, 97);
             this.btnXoa_NV.Name = "btnXoa_NV";
-            this.btnXoa_NV.Size = new System.Drawing.Size(80, 44);
+            this.btnXoa_NV.Size = new System.Drawing.Size(93, 44);
             this.btnXoa_NV.TabIndex = 13;
             this.btnXoa_NV.Text = "Xóa";
             this.btnXoa_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -307,9 +310,9 @@
             // 
             this.btnSua_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NV.Image")));
             this.btnSua_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NV.Location = new System.Drawing.Point(41, 167);
+            this.btnSua_NV.Location = new System.Drawing.Point(16, 167);
             this.btnSua_NV.Name = "btnSua_NV";
-            this.btnSua_NV.Size = new System.Drawing.Size(80, 44);
+            this.btnSua_NV.Size = new System.Drawing.Size(93, 44);
             this.btnSua_NV.TabIndex = 14;
             this.btnSua_NV.Text = "Sửa";
             this.btnSua_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,9 +330,9 @@
             // 
             this.btnThem_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnThem_NV.Image")));
             this.btnThem_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_NV.Location = new System.Drawing.Point(41, 36);
+            this.btnThem_NV.Location = new System.Drawing.Point(16, 36);
             this.btnThem_NV.Name = "btnThem_NV";
-            this.btnThem_NV.Size = new System.Drawing.Size(80, 44);
+            this.btnThem_NV.Size = new System.Drawing.Size(93, 44);
             this.btnThem_NV.TabIndex = 12;
             this.btnThem_NV.Text = "Thêm";
             this.btnThem_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -344,9 +347,9 @@
             this.groupBox2.Controls.Add(this.btnLuu_NV);
             this.groupBox2.Controls.Add(this.btnXoa_NV);
             this.groupBox2.Controls.Add(this.btnSua_NV);
-            this.groupBox2.Location = new System.Drawing.Point(1064, 43);
+            this.groupBox2.Location = new System.Drawing.Point(1017, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(157, 480);
+            this.groupBox2.Size = new System.Drawing.Size(127, 480);
             this.groupBox2.TabIndex = 86;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -355,9 +358,9 @@
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(41, 379);
+            this.btnExcel.Location = new System.Drawing.Point(16, 379);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(80, 44);
+            this.btnExcel.Size = new System.Drawing.Size(93, 44);
             this.btnExcel.TabIndex = 90;
             this.btnExcel.Text = "Xuất excel";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -368,9 +371,9 @@
             // 
             this.btnLammoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLammoi.Image")));
             this.btnLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLammoi.Location = new System.Drawing.Point(41, 304);
+            this.btnLammoi.Location = new System.Drawing.Point(16, 304);
             this.btnLammoi.Name = "btnLammoi";
-            this.btnLammoi.Size = new System.Drawing.Size(80, 44);
+            this.btnLammoi.Size = new System.Drawing.Size(93, 44);
             this.btnLammoi.TabIndex = 17;
             this.btnLammoi.Text = "Làm mới";
             this.btnLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -381,9 +384,9 @@
             // 
             this.btnLuu_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NV.Image")));
             this.btnLuu_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NV.Location = new System.Drawing.Point(41, 233);
+            this.btnLuu_NV.Location = new System.Drawing.Point(16, 233);
             this.btnLuu_NV.Name = "btnLuu_NV";
-            this.btnLuu_NV.Size = new System.Drawing.Size(80, 44);
+            this.btnLuu_NV.Size = new System.Drawing.Size(93, 44);
             this.btnLuu_NV.TabIndex = 16;
             this.btnLuu_NV.Text = "Lưu";
             this.btnLuu_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -411,9 +414,9 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txttimkiem);
             this.groupBox3.Controls.Add(this.dgvNV);
-            this.groupBox3.Location = new System.Drawing.Point(131, 245);
+            this.groupBox3.Location = new System.Drawing.Point(131, 252);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(913, 285);
+            this.groupBox3.Size = new System.Drawing.Size(880, 278);
             this.groupBox3.TabIndex = 84;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhân viên";
@@ -421,7 +424,7 @@
             // btnDes
             // 
             this.btnDes.Image = ((System.Drawing.Image)(resources.GetObject("btnDes.Image")));
-            this.btnDes.Location = new System.Drawing.Point(830, 174);
+            this.btnDes.Location = new System.Drawing.Point(811, 170);
             this.btnDes.Name = "btnDes";
             this.btnDes.Size = new System.Drawing.Size(46, 47);
             this.btnDes.TabIndex = 94;
@@ -432,7 +435,7 @@
             // btnAsc
             // 
             this.btnAsc.Image = ((System.Drawing.Image)(resources.GetObject("btnAsc.Image")));
-            this.btnAsc.Location = new System.Drawing.Point(830, 99);
+            this.btnAsc.Location = new System.Drawing.Point(811, 95);
             this.btnAsc.Name = "btnAsc";
             this.btnAsc.Size = new System.Drawing.Size(46, 47);
             this.btnAsc.TabIndex = 93;
@@ -477,7 +480,7 @@
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.ReadOnly = true;
             this.dgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNV.Size = new System.Drawing.Size(773, 227);
+            this.dgvNV.Size = new System.Drawing.Size(773, 220);
             this.dgvNV.TabIndex = 0;
             this.dgvNV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNV_CellFormatting);
             this.dgvNV.Click += new System.EventHandler(this.dgvNV_Click);

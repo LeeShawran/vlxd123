@@ -224,7 +224,7 @@
             // 
             this.btnSua_NV.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NV.Image")));
             this.btnSua_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NV.Location = new System.Drawing.Point(656, 345);
+            this.btnSua_NV.Location = new System.Drawing.Point(668, 323);
             this.btnSua_NV.Name = "btnSua_NV";
             this.btnSua_NV.Size = new System.Drawing.Size(70, 35);
             this.btnSua_NV.TabIndex = 118;
@@ -256,7 +256,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmThongTinNguoiDung";
-            this.Text = "frmThongTinNguoiDung";
+            this.Text = "Thông tin người dùng";
             this.Load += new System.EventHandler(this.frmThongTinNguoiDung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

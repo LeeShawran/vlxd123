@@ -233,6 +233,16 @@ namespace QL_VatLieuXayDung
                 MessageBox.Show("Chưa nhập tên khách hàng");
                 return;
             }
+            else if (this.txtCMND_KH.TextLength != 11 && this.txtCMND_KH.TextLength != 9)
+            {
+                MessageBox.Show("Độ dài số CMND không đúng");
+                return;
+            }
+            else if (this.txtDienthoai_KH.TextLength != 11)
+            {
+                MessageBox.Show("Độ dài số điện thoại không đúng");
+                return;
+            }
             else
             {
                 conn.Open();
@@ -252,11 +262,21 @@ namespace QL_VatLieuXayDung
                 MessageBox.Show("Chưa nhập tên khách hàng");
                 return;
             }
+            else if (this.txtCMND_KH.TextLength != 11 && this.txtCMND_KH.TextLength != 9)
+            {
+                MessageBox.Show("Độ dài số CMND không đúng");
+                return;
+            }
+            else if (this.txtDienthoai_KH.TextLength != 11)
+            {
+                MessageBox.Show("Độ dài số điện thoại không đúng");
+                return;
+            }
             else
             {
                 conn.Open();
                 if (rdcNam_KH.Checked == true) phai = "Nam"; else phai = "Nữ";
-                OleDbCommand cmd = new OleDbCommand("Update T_KHACH_HANG set TENKH='" + txtTenKH_KH.Text + "', PHAIKH='" + phai + "', CMNDKH='" + txtCMND_KH.Text + "', DIACHIKH='" + txtDiachi_KH.Text + "' , DTHOAIKH='"+ txtDienthoai_KH.Text+ "', GHICHUKH='"+txtGhichu_KH.Text+ "' where MAKH='" + txtMaKH_KH.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("Update T_KHACH_HANG set TENKH='" + txtTenKH_KH.Text + "', PHAI='" + phai + "', CMND='" + txtCMND_KH.Text + "', DIACHI='" + txtDiachi_KH.Text + "' , DIENTHOAI='"+ txtDienthoai_KH.Text+ "', GHICHU='"+txtGhichu_KH.Text+ "' where MAKH='" + txtMaKH_KH.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 LoadTable();
                 MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -306,17 +326,24 @@ namespace QL_VatLieuXayDung
         
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Title = "Chọn đường dẫn lưu tệp excel";
-            s.InitialDirectory = @"c:\";
-            s.FileName = "Danh_sach_khach_hang.xlsx";
-            s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            s.FilterIndex = 2;
-            s.RestoreDirectory = true;
-            if (s.ShowDialog() == DialogResult.OK)
+            if (dgvKH.Rows.Count <= 0)
             {
-                xuatExcel(dgvKH, s.FileName);
-                MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SaveFileDialog s = new SaveFileDialog();
+                s.Title = "Chọn đường dẫn lưu tệp excel";
+                s.InitialDirectory = @"c:\";
+                s.FileName = "Danh_sach_khach_hang.xlsx";
+                s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                s.FilterIndex = 2;
+                s.RestoreDirectory = true;
+                if (s.ShowDialog() == DialogResult.OK)
+                {
+                    xuatExcel(dgvKH, s.FileName);
+                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -403,5 +430,18 @@ namespace QL_VatLieuXayDung
             {
             }
         }
+
+        private void txtCMND_KH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true; 
+        }
+
+        private void txtDienthoai_KH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true; 
+        }
+
     }
 }

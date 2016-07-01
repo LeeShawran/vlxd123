@@ -216,17 +216,24 @@ namespace QL_VatLieuXayDung
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Title = "Chọn đường dẫn lưu tệp excel";
-            s.InitialDirectory = @"c:\";
-            s.FileName = "Danh_sach_loai_san_pham.xlsx";
-            s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            s.FilterIndex = 2;
-            s.RestoreDirectory = true;
-            if (s.ShowDialog() == DialogResult.OK)
+            if (dgvLoaiSP.Rows.Count <= 0)
             {
-                xuatExcel(dgvLoaiSP, s.FileName);
-                MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SaveFileDialog s = new SaveFileDialog();
+                s.Title = "Chọn đường dẫn lưu tệp excel";
+                s.InitialDirectory = @"c:\";
+                s.FileName = "Danh_sach_loai_san_pham.xlsx";
+                s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                s.FilterIndex = 2;
+                s.RestoreDirectory = true;
+                if (s.ShowDialog() == DialogResult.OK)
+                {
+                    xuatExcel(dgvLoaiSP, s.FileName);
+                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

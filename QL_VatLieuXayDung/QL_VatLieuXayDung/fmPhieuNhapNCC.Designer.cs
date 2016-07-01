@@ -74,7 +74,7 @@
             // txtNhanVien
             // 
             this.txtNhanVien.Enabled = false;
-            this.txtNhanVien.Location = new System.Drawing.Point(99, 109);
+            this.txtNhanVien.Location = new System.Drawing.Point(99, 100);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.Size = new System.Drawing.Size(193, 20);
             this.txtNhanVien.TabIndex = 24;
@@ -141,11 +141,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 51);
+            this.label5.Location = new System.Drawing.Point(27, 51);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Mã đơn đặt";
+            this.label5.Text = "Mã đơn đặt:";
             // 
             // txtMaPN
             // 
@@ -158,20 +158,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 80);
+            this.label4.Location = new System.Drawing.Point(30, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Ngày nhập";
+            this.label4.Text = "Ngày nhập:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 24);
+            this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Mã phiếu nhập";
+            this.label1.Text = "Mã phiếu nhập:";
             // 
             // groupBox5
             // 
@@ -224,11 +224,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 112);
+            this.label2.Location = new System.Drawing.Point(33, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Nhân viên";
+            this.label2.Text = "Nhân viên:";
             // 
             // label6
             // 
@@ -237,9 +237,9 @@
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(496, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 33);
+            this.label6.Size = new System.Drawing.Size(298, 33);
             this.label6.TabIndex = 97;
-            this.label6.Text = "Phiếp nhập hàng";
+            this.label6.Text = "PHIẾU NHẬP HÀNG";
             // 
             // groupBox4
             // 
@@ -320,7 +320,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(6, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 225);
+            this.groupBox1.Size = new System.Drawing.Size(302, 159);
             this.groupBox1.TabIndex = 92;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu";
@@ -328,7 +328,7 @@
             // txtTongtien
             // 
             this.txtTongtien.Enabled = false;
-            this.txtTongtien.Location = new System.Drawing.Point(99, 144);
+            this.txtTongtien.Location = new System.Drawing.Point(99, 126);
             this.txtTongtien.Name = "txtTongtien";
             this.txtTongtien.Size = new System.Drawing.Size(193, 20);
             this.txtTongtien.TabIndex = 26;
@@ -336,30 +336,34 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 147);
+            this.label3.Location = new System.Drawing.Point(37, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Tổng tiền";
+            this.label3.Text = "Tổng tiền:";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(184, 40);
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(168, 33);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 55);
+            this.button3.Size = new System.Drawing.Size(97, 41);
             this.button3.TabIndex = 17;
             this.button3.Text = "Xuất Excel";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             // 
             // btnThem
             // 
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(49, 40);
+            this.btnThem.Location = new System.Drawing.Point(25, 33);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(80, 55);
+            this.btnThem.Size = new System.Drawing.Size(67, 41);
             this.btnThem.TabIndex = 12;
-            this.btnThem.Text = "   Thêm";
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -367,9 +371,9 @@
             // 
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Location = new System.Drawing.Point(6, 297);
+            this.groupBox2.Location = new System.Drawing.Point(6, 221);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 228);
+            this.groupBox2.Size = new System.Drawing.Size(302, 103);
             this.groupBox2.TabIndex = 94;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -386,7 +390,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "fmPhieuNhapNCC";
-            this.Text = "fmPhieuNhapNCC";
+            this.Text = "Phiến nhập hàng từ nhà cung cấp";
             this.Load += new System.EventHandler(this.fmPhieuNhapNCC_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_DatHang)).EndInit();

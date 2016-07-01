@@ -79,7 +79,7 @@
             // lblNCC_NCC
             // 
             this.lblNCC_NCC.AutoSize = true;
-            this.lblNCC_NCC.Location = new System.Drawing.Point(12, 28);
+            this.lblNCC_NCC.Location = new System.Drawing.Point(12, 27);
             this.lblNCC_NCC.Name = "lblNCC_NCC";
             this.lblNCC_NCC.Size = new System.Drawing.Size(94, 13);
             this.lblNCC_NCC.TabIndex = 26;
@@ -110,7 +110,7 @@
             // lblDienthoai_NCC
             // 
             this.lblDienthoai_NCC.AutoSize = true;
-            this.lblDienthoai_NCC.Location = new System.Drawing.Point(48, 75);
+            this.lblDienthoai_NCC.Location = new System.Drawing.Point(52, 75);
             this.lblDienthoai_NCC.Name = "lblDienthoai_NCC";
             this.lblDienthoai_NCC.Size = new System.Drawing.Size(58, 13);
             this.lblDienthoai_NCC.TabIndex = 22;
@@ -366,6 +366,7 @@
             this.dgvNCC.ReadOnly = true;
             this.dgvNCC.Size = new System.Drawing.Size(477, 312);
             this.dgvNCC.TabIndex = 0;
+            this.dgvNCC.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNCC_CellFormatting);
             this.dgvNCC.Click += new System.EventHandler(this.dgvNCC_Click);
             // 
             // ColumnMaNCC_NCC

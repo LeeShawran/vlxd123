@@ -117,6 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnThongke.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADgUlEQVRIS82Uf0jcZRzHnwYR
+        QwocFMXWwtXUmuFajXKVQWR46t26MfNXRs4aBFGrP8IKrY2ZXs3b/JXTZdM7b2luayMKKvq10Wr0T/8Y
+        ZLcZTsmv92NTdoV47tXn892sP+4IC4UO3jzPvT53z+v5PM/3zgBmKbOki+vG/x8CU/kNybKQo11QB+aJ
+        r6g5GaPhuxje0zE838dQtniCii8oDYTY0BJmU0eUyoEpjLDFE5R/TonfInd/VCQRnjkiAmGLJyj9lKrB
+        Ke70TpK9L0z1YREIU4H7uCFZ5uULu4OST+SIprinJcqm9ihVH4hA2Lzgy3ANJ6bqODXt4eT0G7bw3wmK
+        P6JKzj2jcYL7WiNs1w6E6SKPHTO8N1KO58xdNI3eTe94OcoSBGdeMiSL/WPZepxq2fX6vRE2NssdyHEp
+        swUfGrrPluEd34jnbDaByUqUJQiGdxhmTmzh0qltXDr9goxPo8wWbDlKse8CGZ4QD7SFKQ9cQJnWNh8x
+        9E6UsXs4i/pgFn6rAmUJgqHnDdO+XGLe64i3pjITyEWZLXAP4uqOkOkJs74pTHGvCIRpzXXY8O7YVup/
+        XYdnLJteqwxlCYIfnzNMHXyQeNtKZpquZW4gH2W2YHM/rgMRNuwJcUdjiOKe87L1/suCQenAKqV2KJ2G
+        c1kErG0oSxD88KxhLvAwFxtS+L0xhblDeSizBc4AJT1R1jVMsmaXZc+Vac05YPBZT7JzJJ3do7fTZ1Wh
+        LEHw7Xa5g4P3E/ekEG+6nrm+R1BmC4r8OPdHSHvdsuPsjKDMFvQb3hl18drPabw1ei+d426UJQi+rpYO
+        /Hmcr1sukhXSQRHKbEFBD+4uEdRZZL9p4WgeR5nWit43NAed1AynUTuyljaRKUsQfPaUCHwO4rukg/pU
+        kRWizBY4unF4fiJz5wQrdwxR1B5GmdYKDxm8wUJZPJOa4Bpaz7lQliD4uNIw257DH69ew2zjKuJduSiz
+        BfkHKJTHc/Urv3Fb7QT5e6UDYbagz9Ay5uLlYBovDt1sz5UlCI5VGC7uy2G2NYd4x0PyNOWgzBY82om7
+        I0xBS4jHu8L2XJnWCvyGt39xsCf4d5T9JTCXX1cNlhmSRWo3mLwOkkZqBT5Dssj3lum69uJX3lwtY4pk
+        heQmyS2SWyXpkox/yNorn1st442SVMlyia63bEH/pvPt/pdxyQV/Ag4b11pbGFylAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="masp.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -138,7 +160,6 @@
   <metadata name="thanhtien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bntLammoi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

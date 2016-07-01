@@ -344,17 +344,24 @@ namespace QL_VatLieuXayDung
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Title = "Chọn đường dẫn lưu tệp excel";
-            s.InitialDirectory = @"c:\";
-            s.FileName = "ds_nhanvien.xlsx";
-            s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            s.FilterIndex = 2;
-            s.RestoreDirectory = true;
-            if (s.ShowDialog() == DialogResult.OK)
+            if (dgvNV.Rows.Count <= 0)
             {
-                xuatExcel(dgvNV, s.FileName);
-                MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SaveFileDialog s = new SaveFileDialog();
+                s.Title = "Chọn đường dẫn lưu tệp excel";
+                s.InitialDirectory = @"c:\";
+                s.FileName = "ds_nhanvien.xlsx";
+                s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                s.FilterIndex = 2;
+                s.RestoreDirectory = true;
+                if (s.ShowDialog() == DialogResult.OK)
+                {
+                    xuatExcel(dgvNV, s.FileName);
+                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

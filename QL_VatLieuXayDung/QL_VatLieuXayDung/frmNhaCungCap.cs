@@ -223,17 +223,24 @@ namespace QL_VatLieuXayDung
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.Title = "Chọn đường dẫn lưu tệp excel";
-            s.InitialDirectory = @"c:\";
-            s.FileName = "Danh_sach_nha_cung_cap.xlsx";
-            s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            s.FilterIndex = 2;
-            s.RestoreDirectory = true;
-            if (s.ShowDialog() == DialogResult.OK)
+            if (dgvNCC.Rows.Count <= 0)
             {
-                xuatExcel(dgvNCC, s.FileName);
-                MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SaveFileDialog s = new SaveFileDialog();
+                s.Title = "Chọn đường dẫn lưu tệp excel";
+                s.InitialDirectory = @"c:\";
+                s.FileName = "Danh_sach_nha_cung_cap.xlsx";
+                s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                s.FilterIndex = 2;
+                s.RestoreDirectory = true;
+                if (s.ShowDialog() == DialogResult.OK)
+                {
+                    xuatExcel(dgvNCC, s.FileName);
+                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -244,6 +251,8 @@ namespace QL_VatLieuXayDung
                 conn.Open();
                 txtMaNCC_NCC.Text = row.Cells[0].Value.ToString();
                 txtTenNCC_NCC.Text = row.Cells[1].Value.ToString();
+                txtDiachi_NCC.Text = row.Cells[2].Value.ToString();
+                txtDienthoai_NCC.Text = row.Cells[3].Value.ToString();
                 conn.Close();
 
             }
@@ -296,6 +305,17 @@ namespace QL_VatLieuXayDung
             }
             catch
             {
+            }
+        }
+
+        private void dgvNCC_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvNCC.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvNCC.Rows[i].DefaultCellStyle = style1;
             }
         }
     }

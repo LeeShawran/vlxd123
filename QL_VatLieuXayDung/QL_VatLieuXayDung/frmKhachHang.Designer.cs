@@ -55,6 +55,13 @@
             this.btnDes_KH = new System.Windows.Forms.Button();
             this.btnAsc_KH = new System.Windows.Forms.Button();
             this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTenKH_KH = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtGhichu_KH = new System.Windows.Forms.TextBox();
@@ -66,13 +73,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblKhachhang = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
@@ -82,14 +82,16 @@
             // txtCMND_KH
             // 
             this.txtCMND_KH.Location = new System.Drawing.Point(140, 101);
+            this.txtCMND_KH.MaxLength = 11;
             this.txtCMND_KH.Name = "txtCMND_KH";
             this.txtCMND_KH.Size = new System.Drawing.Size(197, 20);
             this.txtCMND_KH.TabIndex = 47;
+            this.txtCMND_KH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KH_KeyPress);
             // 
             // lblCMND_KH
             // 
             this.lblCMND_KH.AutoSize = true;
-            this.lblCMND_KH.Location = new System.Drawing.Point(32, 104);
+            this.lblCMND_KH.Location = new System.Drawing.Point(76, 104);
             this.lblCMND_KH.Name = "lblCMND_KH";
             this.lblCMND_KH.Size = new System.Drawing.Size(58, 13);
             this.lblCMND_KH.TabIndex = 46;
@@ -119,10 +121,11 @@
             // 
             // txtDienthoai_KH
             // 
-            this.txtDienthoai_KH.Location = new System.Drawing.Point(428, 27);
+            this.txtDienthoai_KH.Location = new System.Drawing.Point(428, 51);
             this.txtDienthoai_KH.Name = "txtDienthoai_KH";
             this.txtDienthoai_KH.Size = new System.Drawing.Size(229, 20);
             this.txtDienthoai_KH.TabIndex = 42;
+            this.txtDienthoai_KH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KH_KeyPress);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -133,7 +136,8 @@
             // 
             // txtDiachi_KH
             // 
-            this.txtDiachi_KH.Location = new System.Drawing.Point(428, 52);
+            this.txtDiachi_KH.Location = new System.Drawing.Point(428, 27);
+            this.txtDiachi_KH.MaxLength = 11;
             this.txtDiachi_KH.Name = "txtDiachi_KH";
             this.txtDiachi_KH.Size = new System.Drawing.Size(229, 20);
             this.txtDiachi_KH.TabIndex = 41;
@@ -156,7 +160,7 @@
             // lblPhai_KH
             // 
             this.lblPhai_KH.AutoSize = true;
-            this.lblPhai_KH.Location = new System.Drawing.Point(32, 80);
+            this.lblPhai_KH.Location = new System.Drawing.Point(103, 80);
             this.lblPhai_KH.Name = "lblPhai_KH";
             this.lblPhai_KH.Size = new System.Drawing.Size(31, 13);
             this.lblPhai_KH.TabIndex = 37;
@@ -165,7 +169,7 @@
             // lbl_Dienthoai_KH
             // 
             this.lbl_Dienthoai_KH.AutoSize = true;
-            this.lbl_Dienthoai_KH.Location = new System.Drawing.Point(358, 55);
+            this.lbl_Dienthoai_KH.Location = new System.Drawing.Point(364, 54);
             this.lbl_Dienthoai_KH.Name = "lbl_Dienthoai_KH";
             this.lbl_Dienthoai_KH.Size = new System.Drawing.Size(58, 13);
             this.lbl_Dienthoai_KH.TabIndex = 36;
@@ -174,7 +178,7 @@
             // lblMaKH_KH
             // 
             this.lblMaKH_KH.AutoSize = true;
-            this.lblMaKH_KH.Location = new System.Drawing.Point(32, 30);
+            this.lblMaKH_KH.Location = new System.Drawing.Point(49, 30);
             this.lblMaKH_KH.Name = "lblMaKH_KH";
             this.lblMaKH_KH.Size = new System.Drawing.Size(85, 13);
             this.lblMaKH_KH.TabIndex = 35;
@@ -276,7 +280,7 @@
             // lblDiachi_KH
             // 
             this.lblDiachi_KH.AutoSize = true;
-            this.lblDiachi_KH.Location = new System.Drawing.Point(358, 32);
+            this.lblDiachi_KH.Location = new System.Drawing.Point(379, 30);
             this.lblDiachi_KH.Name = "lblDiachi_KH";
             this.lblDiachi_KH.Size = new System.Drawing.Size(43, 13);
             this.lblDiachi_KH.TabIndex = 34;
@@ -358,10 +362,59 @@
             this.dgvKH.TabIndex = 0;
             this.dgvKH.Click += new System.EventHandler(this.dgvKH_Click);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAKH";
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENKH";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PHAI";
+            this.Column3.HeaderText = "Phái";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CMND";
+            this.Column4.HeaderText = "Số CMND";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "DIACHI";
+            this.Column6.HeaderText = "Địa chỉ";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DIENTHOAI";
+            this.Column5.HeaderText = "Điện thoại";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "GHICHU";
+            this.Column7.HeaderText = "Ghi chú";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
             // lblTenKH_KH
             // 
             this.lblTenKH_KH.AutoSize = true;
-            this.lblTenKH_KH.Location = new System.Drawing.Point(32, 55);
+            this.lblTenKH_KH.Location = new System.Drawing.Point(32, 54);
             this.lblTenKH_KH.Name = "lblTenKH_KH";
             this.lblTenKH_KH.Size = new System.Drawing.Size(102, 13);
             this.lblTenKH_KH.TabIndex = 33;
@@ -373,10 +426,10 @@
             this.groupBox1.Controls.Add(this.lblGhichu_KH);
             this.groupBox1.Controls.Add(this.txtCMND_KH);
             this.groupBox1.Controls.Add(this.lblCMND_KH);
+            this.groupBox1.Controls.Add(this.txtDiachi_KH);
             this.groupBox1.Controls.Add(this.rdcNu_KH);
             this.groupBox1.Controls.Add(this.rdcNam_KH);
             this.groupBox1.Controls.Add(this.txtDienthoai_KH);
-            this.groupBox1.Controls.Add(this.txtDiachi_KH);
             this.groupBox1.Controls.Add(this.txtTenKH_KH);
             this.groupBox1.Controls.Add(this.txtMaKH_KH);
             this.groupBox1.Controls.Add(this.lblPhai_KH);
@@ -402,7 +455,7 @@
             // lblGhichu_KH
             // 
             this.lblGhichu_KH.AutoSize = true;
-            this.lblGhichu_KH.Location = new System.Drawing.Point(358, 80);
+            this.lblGhichu_KH.Location = new System.Drawing.Point(375, 80);
             this.lblGhichu_KH.Name = "lblGhichu_KH";
             this.lblGhichu_KH.Size = new System.Drawing.Size(47, 13);
             this.lblGhichu_KH.TabIndex = 48;
@@ -460,55 +513,6 @@
             this.lblKhachhang.Size = new System.Drawing.Size(397, 33);
             this.lblKhachhang.TabIndex = 83;
             this.lblKhachhang.Text = "THÔNG TIN KHÁCH HÀNG";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MAKH";
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TENKH";
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PHAI";
-            this.Column3.HeaderText = "Phái";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CMND";
-            this.Column4.HeaderText = "Số CMND";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "DIACHI";
-            this.Column6.HeaderText = "Địa chỉ";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "DIENTHOAI";
-            this.Column5.HeaderText = "Điện thoại";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "GHICHU";
-            this.Column7.HeaderText = "Ghi chú";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
             // 
             // frmKhachHang
             // 
