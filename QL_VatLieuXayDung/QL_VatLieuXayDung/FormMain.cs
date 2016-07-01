@@ -385,5 +385,21 @@ namespace QL_VatLieuXayDung
                 f.Show();
             }
         }
+
+        private void btnDSHoadon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.KT_TonTai(typeof(frmDSHoadon));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmDSHoadon f = new frmDSHoadon();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.Show();
+            }
+        }
     }
 }
