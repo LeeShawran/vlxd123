@@ -38,6 +38,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonThongTinNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnThongTinNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
@@ -103,8 +105,6 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.labelTen = new System.Windows.Forms.Label();
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -169,6 +169,19 @@
             this.btnThongTinNguoiDung.LargeWidth = 90;
             this.btnThongTinNguoiDung.Name = "btnThongTinNguoiDung";
             this.btnThongTinNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTinNguoiDung_ItemClick);
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnDoiMatKhau);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
+            this.btnDoiMatKhau.Id = 52;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // ribbonPageGroup17
             // 
@@ -445,6 +458,7 @@
             this.btnDSHoadon.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDSHoadon.LargeGlyph")));
             this.btnDSHoadon.LargeWidth = 90;
             this.btnDSHoadon.Name = "btnDSHoadon";
+            this.btnDSHoadon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSHoadon_ItemClick);
             // 
             // btnDSPhieugiao
             // 
@@ -676,19 +690,6 @@
             this.barButtonItem29.Id = 39;
             this.barButtonItem29.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.LargeGlyph")));
             this.barButtonItem29.Name = "barButtonItem29";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnDoiMatKhau);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
-            this.btnDoiMatKhau.Id = 52;
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // FormMain
             // 
