@@ -108,11 +108,11 @@
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.bntLammoi);
-            this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Location = new System.Drawing.Point(1039, 45);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(140, 455);
+            this.groupBox2.Size = new System.Drawing.Size(140, 485);
             this.groupBox2.TabIndex = 88;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -121,9 +121,9 @@
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(19, 362);
+            this.btnExcel.Location = new System.Drawing.Point(19, 361);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(91, 58);
+            this.btnExcel.Size = new System.Drawing.Size(91, 38);
             this.btnExcel.TabIndex = 89;
             this.btnExcel.Text = "Xuất excel";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,7 +136,7 @@
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(19, 25);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(91, 54);
+            this.btnThem.Size = new System.Drawing.Size(91, 39);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,9 +147,9 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(19, 93);
+            this.btnLuu.Location = new System.Drawing.Point(19, 91);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(91, 54);
+            this.btnLuu.Size = new System.Drawing.Size(91, 38);
             this.btnLuu.TabIndex = 21;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,9 +160,9 @@
             // 
             this.bntLammoi.Image = ((System.Drawing.Image)(resources.GetObject("bntLammoi.Image")));
             this.bntLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntLammoi.Location = new System.Drawing.Point(19, 292);
+            this.bntLammoi.Location = new System.Drawing.Point(19, 294);
             this.bntLammoi.Name = "bntLammoi";
-            this.bntLammoi.Size = new System.Drawing.Size(91, 54);
+            this.bntLammoi.Size = new System.Drawing.Size(91, 38);
             this.bntLammoi.TabIndex = 22;
             this.bntLammoi.Text = "Làm mới";
             this.bntLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -173,9 +173,9 @@
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(19, 159);
+            this.btnXoa.Location = new System.Drawing.Point(19, 153);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(91, 54);
+            this.btnXoa.Size = new System.Drawing.Size(91, 38);
             this.btnXoa.TabIndex = 19;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,7 +188,7 @@
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(19, 224);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(91, 54);
+            this.btnSua.Size = new System.Drawing.Size(91, 38);
             this.btnSua.TabIndex = 20;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -212,7 +212,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(332, 53);
+            this.label5.Location = new System.Drawing.Point(339, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 47;
@@ -221,7 +221,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 25);
+            this.label4.Location = new System.Drawing.Point(40, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 46;
@@ -230,7 +230,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 51);
+            this.label2.Location = new System.Drawing.Point(36, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 44;
@@ -405,7 +405,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(335, 83);
+            this.label7.Location = new System.Drawing.Point(360, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 52;
@@ -414,7 +414,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 77);
+            this.label6.Location = new System.Drawing.Point(35, 77);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 51;
@@ -526,7 +526,7 @@
             // lblDongiaBan
             // 
             this.lblDongiaBan.AutoSize = true;
-            this.lblDongiaBan.Location = new System.Drawing.Point(610, 51);
+            this.lblDongiaBan.Location = new System.Drawing.Point(616, 51);
             this.lblDongiaBan.Name = "lblDongiaBan";
             this.lblDongiaBan.Size = new System.Drawing.Size(68, 13);
             this.lblDongiaBan.TabIndex = 64;
@@ -570,7 +570,7 @@
             // 
             this.txttimkiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txttimkiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txttimkiem.Location = new System.Drawing.Point(172, 19);
+            this.txttimkiem.Location = new System.Drawing.Point(162, 19);
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(176, 20);
             this.txttimkiem.TabIndex = 90;

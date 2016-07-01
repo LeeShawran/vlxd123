@@ -190,8 +190,8 @@
             this.groupBox2.Controls.Add(this.btnThem_KH);
             this.groupBox2.Controls.Add(this.btnLuu_KH);
             this.groupBox2.Controls.Add(this.bntLammoi);
-            this.groupBox2.Controls.Add(this.btnXoa_KH);
             this.groupBox2.Controls.Add(this.btnSua_KH);
+            this.groupBox2.Controls.Add(this.btnXoa_KH);
             this.groupBox2.Location = new System.Drawing.Point(827, 68);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(150, 462);
@@ -203,9 +203,9 @@
             // 
             this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
             this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel.Location = new System.Drawing.Point(25, 372);
+            this.btnXuatExcel.Location = new System.Drawing.Point(25, 408);
             this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(98, 54);
+            this.btnXuatExcel.Size = new System.Drawing.Size(98, 38);
             this.btnXuatExcel.TabIndex = 23;
             this.btnXuatExcel.Text = "Xuất Excel";
             this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,7 +218,7 @@
             this.btnThem_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem_KH.Location = new System.Drawing.Point(25, 34);
             this.btnThem_KH.Name = "btnThem_KH";
-            this.btnThem_KH.Size = new System.Drawing.Size(98, 54);
+            this.btnThem_KH.Size = new System.Drawing.Size(98, 38);
             this.btnThem_KH.TabIndex = 18;
             this.btnThem_KH.Text = "Thêm";
             this.btnThem_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -229,9 +229,9 @@
             // 
             this.btnLuu_KH.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_KH.Image")));
             this.btnLuu_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_KH.Location = new System.Drawing.Point(25, 236);
+            this.btnLuu_KH.Location = new System.Drawing.Point(25, 257);
             this.btnLuu_KH.Name = "btnLuu_KH";
-            this.btnLuu_KH.Size = new System.Drawing.Size(98, 54);
+            this.btnLuu_KH.Size = new System.Drawing.Size(98, 38);
             this.btnLuu_KH.TabIndex = 21;
             this.btnLuu_KH.Text = " Lưu";
             this.btnLuu_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -242,9 +242,9 @@
             // 
             this.bntLammoi.Image = ((System.Drawing.Image)(resources.GetObject("bntLammoi.Image")));
             this.bntLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntLammoi.Location = new System.Drawing.Point(25, 301);
+            this.bntLammoi.Location = new System.Drawing.Point(25, 328);
             this.bntLammoi.Name = "bntLammoi";
-            this.bntLammoi.Size = new System.Drawing.Size(98, 54);
+            this.bntLammoi.Size = new System.Drawing.Size(98, 38);
             this.bntLammoi.TabIndex = 22;
             this.bntLammoi.Text = "Làm mới";
             this.bntLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -255,9 +255,9 @@
             // 
             this.btnXoa_KH.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_KH.Image")));
             this.btnXoa_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_KH.Location = new System.Drawing.Point(25, 100);
+            this.btnXoa_KH.Location = new System.Drawing.Point(25, 101);
             this.btnXoa_KH.Name = "btnXoa_KH";
-            this.btnXoa_KH.Size = new System.Drawing.Size(98, 54);
+            this.btnXoa_KH.Size = new System.Drawing.Size(98, 38);
             this.btnXoa_KH.TabIndex = 19;
             this.btnXoa_KH.Text = "Xóa";
             this.btnXoa_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -268,9 +268,9 @@
             // 
             this.btnSua_KH.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_KH.Image")));
             this.btnSua_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_KH.Location = new System.Drawing.Point(25, 169);
+            this.btnSua_KH.Location = new System.Drawing.Point(25, 176);
             this.btnSua_KH.Name = "btnSua_KH";
-            this.btnSua_KH.Size = new System.Drawing.Size(98, 54);
+            this.btnSua_KH.Size = new System.Drawing.Size(98, 38);
             this.btnSua_KH.TabIndex = 20;
             this.btnSua_KH.Text = "Sửa";
             this.btnSua_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

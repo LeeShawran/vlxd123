@@ -548,7 +548,7 @@ namespace QL_VatLieuXayDung
                 else
                 {
                     
-                    frmGiaoHangTraSAu f = new frmGiaoHangTraSAu(txtMaDH.Text);
+                    frmGiaoHangTraSau f = new frmGiaoHangTraSau(txtMaDH.Text);
                     f.StartPosition = FormStartPosition.CenterParent;
                     f.Show();
                     btnThanhToan.Enabled = false;

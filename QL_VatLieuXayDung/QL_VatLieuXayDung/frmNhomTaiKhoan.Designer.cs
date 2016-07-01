@@ -63,14 +63,14 @@
             // 
             // txtTenNTK_NTK
             // 
-            this.txtTenNTK_NTK.Location = new System.Drawing.Point(131, 64);
+            this.txtTenNTK_NTK.Location = new System.Drawing.Point(124, 64);
             this.txtTenNTK_NTK.Name = "txtTenNTK_NTK";
             this.txtTenNTK_NTK.Size = new System.Drawing.Size(137, 20);
             this.txtTenNTK_NTK.TabIndex = 52;
             // 
             // txtMaNTK_NTK
             // 
-            this.txtMaNTK_NTK.Location = new System.Drawing.Point(131, 41);
+            this.txtMaNTK_NTK.Location = new System.Drawing.Point(124, 41);
             this.txtMaNTK_NTK.Name = "txtMaNTK_NTK";
             this.txtMaNTK_NTK.Size = new System.Drawing.Size(137, 20);
             this.txtMaNTK_NTK.TabIndex = 51;
@@ -78,7 +78,7 @@
             // lblMaNTK
             // 
             this.lblMaNTK.AutoSize = true;
-            this.lblMaNTK.Location = new System.Drawing.Point(18, 44);
+            this.lblMaNTK.Location = new System.Drawing.Point(17, 44);
             this.lblMaNTK.Name = "lblMaNTK";
             this.lblMaNTK.Size = new System.Drawing.Size(101, 13);
             this.lblMaNTK.TabIndex = 50;
@@ -94,7 +94,7 @@
             this.groupBox1.Controls.Add(this.lblTenNTK);
             this.groupBox1.Location = new System.Drawing.Point(493, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 119);
+            this.groupBox1.Size = new System.Drawing.Size(277, 119);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
@@ -168,9 +168,9 @@
             this.groupBox2.Controls.Add(this.btnSua_NTK);
             this.groupBox2.Controls.Add(this.btnXoa_NTK);
             this.groupBox2.Controls.Add(this.btnThem_NTK);
-            this.groupBox2.Location = new System.Drawing.Point(790, 59);
+            this.groupBox2.Location = new System.Drawing.Point(776, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(172, 119);
+            this.groupBox2.Size = new System.Drawing.Size(186, 119);
             this.groupBox2.TabIndex = 80;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -182,7 +182,7 @@
             this.gbDSKH.Controls.Add(this.dgvNTK);
             this.gbDSKH.Location = new System.Drawing.Point(493, 184);
             this.gbDSKH.Name = "gbDSKH";
-            this.gbDSKH.Size = new System.Drawing.Size(469, 243);
+            this.gbDSKH.Size = new System.Drawing.Size(469, 240);
             this.gbDSKH.TabIndex = 81;
             this.gbDSKH.TabStop = false;
             this.gbDSKH.Text = "Danh sách tài khoản";

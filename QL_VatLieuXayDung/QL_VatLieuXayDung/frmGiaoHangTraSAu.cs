@@ -11,7 +11,7 @@ using System.Data.OleDb;
 
 namespace QL_VatLieuXayDung
 {
-    public partial class frmGiaoHangTraSAu : Form
+    public partial class frmGiaoHangTraSau : Form
     {
         OleDbConnection conn;
         OleDbDataAdapter adapter;
@@ -19,13 +19,13 @@ namespace QL_VatLieuXayDung
         DataTable dt;
         float tong = 0;
         bool q = false;
-        public frmGiaoHangTraSAu()
+        public frmGiaoHangTraSau()
         {
             InitializeComponent();
             conn = Connect.getConnect();
         }
 
-        public frmGiaoHangTraSAu(string madat)
+        public frmGiaoHangTraSau(string madat)
         {
             InitializeComponent();
             conn = Connect.getConnect();

@@ -42,7 +42,7 @@
             // txtNhapLaiMatKhau
             // 
             this.txtNhapLaiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(581, 255);
+            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(187, 125);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
             this.txtNhapLaiMatKhau.PasswordChar = '*';
             this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(300, 29);
@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(396, 260);
+            this.label1.Location = new System.Drawing.Point(16, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 24);
             this.label1.TabIndex = 50;
@@ -62,7 +62,7 @@
             // txtMatKhauCu
             // 
             this.txtMatKhauCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhauCu.Location = new System.Drawing.Point(581, 159);
+            this.txtMatKhauCu.Location = new System.Drawing.Point(187, 55);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.Size = new System.Drawing.Size(300, 29);
             this.txtMatKhauCu.TabIndex = 43;
@@ -72,9 +72,9 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(926, 182);
+            this.btnLuu.Location = new System.Drawing.Point(505, 55);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(66, 61);
+            this.btnLuu.Size = new System.Drawing.Size(66, 41);
             this.btnLuu.TabIndex = 48;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,7 +84,7 @@
             // txtMatKhauMoi
             // 
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(582, 205);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(187, 90);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(300, 29);
@@ -95,7 +95,7 @@
             // 
             this.lblMaNhanVien_DangNhap.AutoSize = true;
             this.lblMaNhanVien_DangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaNhanVien_DangNhap.Location = new System.Drawing.Point(432, 164);
+            this.lblMaNhanVien_DangNhap.Location = new System.Drawing.Point(64, 58);
             this.lblMaNhanVien_DangNhap.Name = "lblMaNhanVien_DangNhap";
             this.lblMaNhanVien_DangNhap.Size = new System.Drawing.Size(117, 24);
             this.lblMaNhanVien_DangNhap.TabIndex = 45;
@@ -105,7 +105,7 @@
             // 
             this.lblMatKhau_DangNhap.AutoSize = true;
             this.lblMatKhau_DangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatKhau_DangNhap.Location = new System.Drawing.Point(432, 208);
+            this.lblMatKhau_DangNhap.Location = new System.Drawing.Point(54, 93);
             this.lblMatKhau_DangNhap.Name = "lblMatKhau_DangNhap";
             this.lblMatKhau_DangNhap.Size = new System.Drawing.Size(127, 24);
             this.lblMatKhau_DangNhap.TabIndex = 46;
@@ -116,7 +116,7 @@
             this.lblNhanvien.AutoSize = true;
             this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblNhanvien.Location = new System.Drawing.Point(531, 61);
+            this.lblNhanvien.Location = new System.Drawing.Point(171, 19);
             this.lblNhanvien.Name = "lblNhanvien";
             this.lblNhanvien.Size = new System.Drawing.Size(236, 33);
             this.lblNhanvien.TabIndex = 86;
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 542);
+            this.ClientSize = new System.Drawing.Size(586, 170);
             this.Controls.Add(this.lblNhanvien);
             this.Controls.Add(this.txtNhapLaiMatKhau);
             this.Controls.Add(this.label1);
@@ -136,7 +136,7 @@
             this.Controls.Add(this.lblMaNhanVien_DangNhap);
             this.Controls.Add(this.lblMatKhau_DangNhap);
             this.Name = "frmDoiMatKhau";
-            this.Text = "frmDoiMatKhau";
+            this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -13,59 +13,58 @@ using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace QL_VatLieuXayDung
 {
-    public partial class frmDSHoadon : Form
+    public partial class frmDSPhieunhap : Form
     {
         OleDbConnection conn;
         OleDbDataAdapter adapter;
         System.Data.DataTable dt;
-        bool chon=false;
-        public frmDSHoadon()
+        bool chon = false;
+        public frmDSPhieunhap()
         {
             InitializeComponent();
             conn = Connect.getConnect();
         }
 
-        public void load_HoaDon()
+        public void load_PhieuNhap()
         {
-            string st = "select * from T_HOA_DON";
+            string st = "select * from T_PHIEU_NHAP";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new System.Data.DataTable();
             adapter.Fill(dt);
-            dgvHoaDon.DataSource = dt;
+            dgvPhieunhap.DataSource = dt;
         }
 
-        public void loadCT_HoaDon(string mahoadon)
+        public void loadCT_Phieunhap(string maphieunhap)
         {
-            string st = "select MASP,SOLUONGBAN,DONGIABAN from T_CT_HOA_DON where MAHD='" + mahoadon + "' order by MASP asc";
+            string st = "select MASP,DONGIANHAP,SOLUONG from T_CT_PHIEU_NHAP where MAPN='" + maphieunhap + "' order by MASP asc";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new System.Data.DataTable();
             adapter.Fill(dt);
-            dgvCT_HD.DataSource = dt;
-
+            dgvCT_NhapHang.DataSource = dt;
         }
+
         public void loadLai()
         {
-            
-            load_HoaDon();
+            load_PhieuNhap();
             ///xoa chi tiet hoa don
-            string st = "select MASP,SOLUONGBAN,DONGIABAN from T_CT_HOA_DON where MAHD='aaa' order by MASP asc";
+            string st = "select MASP,DONGIANHAP,SOLUONG from T_CT_PHIEU_NHAP where MAPN='aaa' order by MASP asc";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new System.Data.DataTable();
             adapter.Fill(dt);
-            dgvCT_HD.DataSource = dt;
-
+            dgvCT_NhapHang.DataSource = dt;
         }
-        private void frmDSHoadon_Load(object sender, EventArgs e)
+
+        private void frmDSPhieunhap_Load(object sender, EventArgs e)
         {
             conn.Open();
-            dgvHoaDon.Columns["ngaylap"].DefaultCellStyle.Format = @"dd/MM/yyyy";
+            dgvPhieunhap.Columns["ngaylapcol"].DefaultCellStyle.Format = @"dd/MM/yyyy";
             loadLai();
             conn.Close();
         }
 
-        private void dgvHoaDon_Click(object sender, EventArgs e)
+        private void dgvPhieunhap_Click(object sender, EventArgs e)
         {
-            loadCT_HoaDon(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
+            loadCT_Phieunhap(dgvPhieunhap.CurrentRow.Cells[0].Value.ToString());
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -93,22 +92,22 @@ namespace QL_VatLieuXayDung
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            string st = "select T_HOA_DON.* from T_HOA_DON,T_CT_HOA_DON where T_CT_HOA_DON.MAHD=T_HOA_DON.MAHD AND NGAYHD Between TO_DATE('" + dtpTG1.Text + "','DD-MM-RR') and TO_DATE('" + dtpTG2.Text + "','DD-MM-RR') order by T_HOA_DON.MAHD asc ";
+            string st = "select T_PHIEU_NHAP.* from T_PHIEU_NHAP,T_CT_PHIEU_NHAP where T_CT_PHIEU_NHAP.MAPN=T_PHIEU_NHAP.MAPN AND NGAYLAP Between TO_DATE('" + dtpTG1.Text + "','DD-MM-RR') and TO_DATE('" + dtpTG2.Text + "','DD-MM-RR') order by T_PHIEU_NHAP.MAPN asc ";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new System.Data.DataTable();
             adapter.Fill(dt);
-            dgvHoaDon.DataSource = dt;
-            if (dgvHoaDon.Rows.Count <= 0)
+            dgvPhieunhap.DataSource = dt;
+            if (dgvPhieunhap.Rows.Count <= 0)
             {
-                MessageBox.Show("Không có hóa đơn trong khoảng thời gian được chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không có phiếu nhập trong khoảng thời gian được chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //
             ///xoa chi tiet hoa don
-            string xoa = "select MASP,SOLUONGBAN,DONGIABAN from T_CT_HOA_DON where MAHD='aaa' order by MASP asc";
+            string xoa = "select MASP,DONGIANHAP,SOLUONG from T_CT_PHIEU_NHAP where MAPN='aaa' order by MASP asc";
             adapter = new OleDbDataAdapter(xoa, conn);
             dt = new System.Data.DataTable();
             adapter.Fill(dt);
-            dgvCT_HD.DataSource = dt;
+            dgvCT_NhapHang.DataSource = dt;
         }
 
         private void bntLammoi_Click(object sender, EventArgs e)
@@ -141,9 +140,9 @@ namespace QL_VatLieuXayDung
             obj.ActiveWorkbook.Saved = true;
         }
 
-        private void btnExcelHD_Click(object sender, EventArgs e)
+        private void btnExcelPN_Click(object sender, EventArgs e)
         {
-            if (dgvHoaDon.Rows.Count <= 0)
+            if (dgvPhieunhap.Rows.Count <= 0)
             {
                 MessageBox.Show("Chưa có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -152,21 +151,21 @@ namespace QL_VatLieuXayDung
                 SaveFileDialog s = new SaveFileDialog();
                 s.Title = "Chọn đường dẫn lưu tệp excel";
                 s.InitialDirectory = @"c:\";
-                s.FileName = "DanhSachHoaDon.xlsx";
+                s.FileName = "Danh_sach_phieu_nhap.xlsx";
                 s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
                 s.FilterIndex = 2;
                 s.RestoreDirectory = true;
                 if (s.ShowDialog() == DialogResult.OK)
                 {
-                    xuatExcel(dgvHoaDon, s.FileName);
+                    xuatExcel(dgvPhieunhap, s.FileName);
                     MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }         
+            }
         }
 
-        private void btnExcelCT_HD_Click(object sender, EventArgs e)
+        private void btnExcelCT_PN_Click(object sender, EventArgs e)
         {
-            if (dgvCT_HD.Rows.Count <= 0)
+            if (dgvCT_NhapHang.Rows.Count <= 0)
             {
                 MessageBox.Show("Chưa có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -175,16 +174,19 @@ namespace QL_VatLieuXayDung
                 SaveFileDialog s = new SaveFileDialog();
                 s.Title = "Chọn đường dẫn lưu tệp excel";
                 s.InitialDirectory = @"c:\";
-                s.FileName = "DanhSachChiTiet_HoaDon.xlsx";
+                s.FileName = "Danh_sach_chi_tiet_phieu_nhap.xlsx";
                 s.Filter = "Excel file (*.xlsx)|*.xlsx|All files (*.*)|*.*";
                 s.FilterIndex = 2;
                 s.RestoreDirectory = true;
                 if (s.ShowDialog() == DialogResult.OK)
                 {
-                    xuatExcel(dgvCT_HD, s.FileName);
+                    xuatExcel(dgvCT_NhapHang, s.FileName);
                     MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
+        
+
+
     }
 }

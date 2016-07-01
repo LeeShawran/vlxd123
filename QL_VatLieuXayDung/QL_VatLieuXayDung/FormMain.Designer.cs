@@ -89,7 +89,6 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageDatHangNcc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageDinhGia = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -451,6 +450,7 @@
             this.btnDSPhieunhap.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDSPhieunhap.LargeGlyph")));
             this.btnDSPhieunhap.LargeWidth = 90;
             this.btnDSPhieunhap.Name = "btnDSPhieunhap";
+            this.btnDSPhieunhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSPhieunhap_ItemClick);
             // 
             // btnDSHoadon
             // 
@@ -468,6 +468,7 @@
             this.btnDSPhieugiao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDSPhieugiao.LargeGlyph")));
             this.btnDSPhieugiao.LargeWidth = 90;
             this.btnDSPhieugiao.Name = "btnDSPhieugiao";
+            this.btnDSPhieugiao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSPhieugiao_ItemClick);
             // 
             // btnGiamGia
             // 
@@ -580,7 +581,6 @@
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageDatHangNcc,
             this.ribbonPageGroup4,
-            this.ribbonPageGroup12,
             this.ribbonPageDinhGia});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Nghiệp vụ";
@@ -599,11 +599,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnDSPhieugiao);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Xem danh sách";
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem28);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             // 
             // ribbonPageDinhGia
             // 
@@ -768,7 +763,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageNhaSX;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageDatHangNcc;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageLienHe;

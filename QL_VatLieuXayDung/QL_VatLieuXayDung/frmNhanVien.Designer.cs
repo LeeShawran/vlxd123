@@ -112,7 +112,7 @@
             // 
             this.bthinh.Image = ((System.Drawing.Image)(resources.GetObject("bthinh.Image")));
             this.bthinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bthinh.Location = new System.Drawing.Point(268, 141);
+            this.bthinh.Location = new System.Drawing.Point(109, 142);
             this.bthinh.Name = "bthinh";
             this.bthinh.Size = new System.Drawing.Size(92, 39);
             this.bthinh.TabIndex = 87;
@@ -150,7 +150,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(114, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(221, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(137, 161);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

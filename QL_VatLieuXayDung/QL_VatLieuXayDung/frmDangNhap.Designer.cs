@@ -72,7 +72,7 @@
             // lblMatKhau_DangNhap
             // 
             this.lblMatKhau_DangNhap.AutoSize = true;
-            this.lblMatKhau_DangNhap.Location = new System.Drawing.Point(14, 54);
+            this.lblMatKhau_DangNhap.Location = new System.Drawing.Point(34, 54);
             this.lblMatKhau_DangNhap.Name = "lblMatKhau_DangNhap";
             this.lblMatKhau_DangNhap.Size = new System.Drawing.Size(55, 13);
             this.lblMatKhau_DangNhap.TabIndex = 11;

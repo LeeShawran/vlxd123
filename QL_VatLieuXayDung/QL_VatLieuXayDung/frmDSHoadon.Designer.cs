@@ -87,11 +87,14 @@
             // btnLoc
             // 
             this.btnLoc.Enabled = false;
+            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
+            this.btnLoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoc.Location = new System.Drawing.Point(458, 25);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(72, 34);
+            this.btnLoc.Size = new System.Drawing.Size(57, 34);
             this.btnLoc.TabIndex = 124;
             this.btnLoc.Text = "Lọc";
+            this.btnLoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
@@ -252,9 +255,9 @@
             // 
             this.bntLammoi.Image = ((System.Drawing.Image)(resources.GetObject("bntLammoi.Image")));
             this.bntLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntLammoi.Location = new System.Drawing.Point(729, 96);
+            this.bntLammoi.Location = new System.Drawing.Point(730, 104);
             this.bntLammoi.Name = "bntLammoi";
-            this.bntLammoi.Size = new System.Drawing.Size(98, 44);
+            this.bntLammoi.Size = new System.Drawing.Size(83, 31);
             this.bntLammoi.TabIndex = 121;
             this.bntLammoi.Text = "Làm mới";
             this.bntLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -265,9 +268,9 @@
             // 
             this.btnExcelHD.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelHD.Image")));
             this.btnExcelHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelHD.Location = new System.Drawing.Point(870, 96);
+            this.btnExcelHD.Location = new System.Drawing.Point(857, 104);
             this.btnExcelHD.Name = "btnExcelHD";
-            this.btnExcelHD.Size = new System.Drawing.Size(150, 46);
+            this.btnExcelHD.Size = new System.Drawing.Size(150, 31);
             this.btnExcelHD.TabIndex = 120;
             this.btnExcelHD.Text = "Xuất excel hóa đơn";
             this.btnExcelHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -278,9 +281,9 @@
             // 
             this.btnExcelCT_HD.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelCT_HD.Image")));
             this.btnExcelCT_HD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelCT_HD.Location = new System.Drawing.Point(1058, 94);
+            this.btnExcelCT_HD.Location = new System.Drawing.Point(1048, 104);
             this.btnExcelCT_HD.Name = "btnExcelCT_HD";
-            this.btnExcelCT_HD.Size = new System.Drawing.Size(172, 46);
+            this.btnExcelCT_HD.Size = new System.Drawing.Size(172, 31);
             this.btnExcelCT_HD.TabIndex = 122;
             this.btnExcelCT_HD.Text = "Xuất excel Chi tiết hóa đơn";
             this.btnExcelCT_HD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,7 +302,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Name = "frmDSHoadon";
-            this.Text = "frmDSHoadon";
+            this.Text = "Danh sách hóa đơn";
             this.Load += new System.EventHandler(this.frmDSHoadon_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

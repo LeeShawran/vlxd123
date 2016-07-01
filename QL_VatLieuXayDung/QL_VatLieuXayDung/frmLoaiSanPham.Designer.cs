@@ -265,7 +265,7 @@
             // lblMaLoai_LoaiSP
             // 
             this.lblMaLoai_LoaiSP.AutoSize = true;
-            this.lblMaLoai_LoaiSP.Location = new System.Drawing.Point(18, 29);
+            this.lblMaLoai_LoaiSP.Location = new System.Drawing.Point(22, 29);
             this.lblMaLoai_LoaiSP.Name = "lblMaLoai_LoaiSP";
             this.lblMaLoai_LoaiSP.Size = new System.Drawing.Size(47, 13);
             this.lblMaLoai_LoaiSP.TabIndex = 6;

@@ -138,8 +138,8 @@
             this.groupBox2.Controls.Add(this.btnThem_NCC);
             this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnLuu_NCC);
-            this.groupBox2.Controls.Add(this.btnXoa_NCC);
             this.groupBox2.Controls.Add(this.btnSua_NCC);
+            this.groupBox2.Controls.Add(this.btnXoa_NCC);
             this.groupBox2.Location = new System.Drawing.Point(776, 50);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(128, 474);
@@ -151,9 +151,9 @@
             // 
             this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
             this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel.Location = new System.Drawing.Point(15, 401);
+            this.btnXuatExcel.Location = new System.Drawing.Point(15, 418);
             this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(94, 54);
+            this.btnXuatExcel.Size = new System.Drawing.Size(94, 39);
             this.btnXuatExcel.TabIndex = 85;
             this.btnXuatExcel.Text = "Xuất Excel";
             this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -166,7 +166,7 @@
             this.btnThem_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem_NCC.Location = new System.Drawing.Point(15, 24);
             this.btnThem_NCC.Name = "btnThem_NCC";
-            this.btnThem_NCC.Size = new System.Drawing.Size(94, 54);
+            this.btnThem_NCC.Size = new System.Drawing.Size(94, 39);
             this.btnThem_NCC.TabIndex = 18;
             this.btnThem_NCC.Text = "Thêm";
             this.btnThem_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -177,9 +177,9 @@
             // 
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.Location = new System.Drawing.Point(15, 328);
+            this.btnLamMoi.Location = new System.Drawing.Point(15, 335);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(94, 54);
+            this.btnLamMoi.Size = new System.Drawing.Size(94, 39);
             this.btnLamMoi.TabIndex = 84;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -190,9 +190,9 @@
             // 
             this.btnLuu_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu_NCC.Image")));
             this.btnLuu_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu_NCC.Location = new System.Drawing.Point(15, 251);
+            this.btnLuu_NCC.Location = new System.Drawing.Point(15, 256);
             this.btnLuu_NCC.Name = "btnLuu_NCC";
-            this.btnLuu_NCC.Size = new System.Drawing.Size(94, 54);
+            this.btnLuu_NCC.Size = new System.Drawing.Size(94, 39);
             this.btnLuu_NCC.TabIndex = 21;
             this.btnLuu_NCC.Text = "Lưu";
             this.btnLuu_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -203,9 +203,9 @@
             // 
             this.btnXoa_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NCC.Image")));
             this.btnXoa_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NCC.Location = new System.Drawing.Point(15, 98);
+            this.btnXoa_NCC.Location = new System.Drawing.Point(15, 95);
             this.btnXoa_NCC.Name = "btnXoa_NCC";
-            this.btnXoa_NCC.Size = new System.Drawing.Size(94, 54);
+            this.btnXoa_NCC.Size = new System.Drawing.Size(94, 39);
             this.btnXoa_NCC.TabIndex = 19;
             this.btnXoa_NCC.Text = "Xóa";
             this.btnXoa_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -216,9 +216,9 @@
             // 
             this.btnSua_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NCC.Image")));
             this.btnSua_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_NCC.Location = new System.Drawing.Point(15, 175);
+            this.btnSua_NCC.Location = new System.Drawing.Point(15, 173);
             this.btnSua_NCC.Name = "btnSua_NCC";
-            this.btnSua_NCC.Size = new System.Drawing.Size(94, 54);
+            this.btnSua_NCC.Size = new System.Drawing.Size(94, 39);
             this.btnSua_NCC.TabIndex = 20;
             this.btnSua_NCC.Text = "Sửa";
             this.btnSua_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -364,7 +364,7 @@
             this.dgvNCC.Location = new System.Drawing.Point(11, 45);
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.ReadOnly = true;
-            this.dgvNCC.Size = new System.Drawing.Size(477, 312);
+            this.dgvNCC.Size = new System.Drawing.Size(490, 312);
             this.dgvNCC.TabIndex = 0;
             this.dgvNCC.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNCC_CellFormatting);
             this.dgvNCC.Click += new System.EventHandler(this.dgvNCC_Click);
