@@ -185,6 +185,28 @@ namespace QL_VatLieuXayDung
                 }
             }
         }
+
+        private void dgvPhieunhap_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvPhieunhap.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvPhieunhap.Rows[i].DefaultCellStyle = style1;
+            }
+        }
+
+        private void dgvCT_NhapHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvCT_NhapHang.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvCT_NhapHang.Rows[i].DefaultCellStyle = style1;
+            }
+        }
         
 
 

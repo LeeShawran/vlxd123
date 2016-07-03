@@ -67,6 +67,7 @@
             this.dgvGia.Name = "dgvGia";
             this.dgvGia.Size = new System.Drawing.Size(284, 294);
             this.dgvGia.TabIndex = 0;
+            this.dgvGia.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGia_CellFormatting);
             this.dgvGia.Click += new System.EventHandler(this.dgvGia_Click);
             // 
             // Column1

@@ -80,5 +80,16 @@ namespace QL_VatLieuXayDung
         {
 
         }
+
+        private void dgvNhomTK_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvNhomTK.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvNhomTK.Rows[i].DefaultCellStyle = style1;
+            }
+        }
     }
 }

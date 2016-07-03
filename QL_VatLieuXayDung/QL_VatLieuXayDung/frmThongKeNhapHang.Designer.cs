@@ -313,6 +313,7 @@
             this.dgvNhapHang.ReadOnly = true;
             this.dgvNhapHang.Size = new System.Drawing.Size(1175, 271);
             this.dgvNhapHang.TabIndex = 101;
+            this.dgvNhapHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNhapHang_CellFormatting);
             // 
             // masp
             // 

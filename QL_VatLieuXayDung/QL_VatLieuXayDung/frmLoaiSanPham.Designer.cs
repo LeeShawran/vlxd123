@@ -138,6 +138,7 @@
             this.dgvLoaiSP.ReadOnly = true;
             this.dgvLoaiSP.Size = new System.Drawing.Size(369, 308);
             this.dgvLoaiSP.TabIndex = 37;
+            this.dgvLoaiSP.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLoaiSP_CellFormatting);
             this.dgvLoaiSP.Click += new System.EventHandler(this.dgvLoaiSP_Click);
             // 
             // ColumnMaLoai_LoaiSP

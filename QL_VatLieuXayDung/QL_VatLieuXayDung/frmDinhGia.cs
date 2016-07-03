@@ -107,5 +107,16 @@ namespace QL_VatLieuXayDung
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true; 
         }
+
+        private void dgvGia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvGia.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvGia.Rows[i].DefaultCellStyle = style1;
+            }
+        }
     }
 }

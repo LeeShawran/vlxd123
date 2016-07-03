@@ -46,8 +46,8 @@
             this.btnThem_KH = new System.Windows.Forms.Button();
             this.btnLuu_KH = new System.Windows.Forms.Button();
             this.bntLammoi = new System.Windows.Forms.Button();
-            this.btnXoa_KH = new System.Windows.Forms.Button();
             this.btnSua_KH = new System.Windows.Forms.Button();
+            this.btnXoa_KH = new System.Windows.Forms.Button();
             this.lblDiachi_KH = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTimten = new System.Windows.Forms.Label();
@@ -251,19 +251,6 @@
             this.bntLammoi.UseVisualStyleBackColor = true;
             this.bntLammoi.Click += new System.EventHandler(this.bntLammoi_Click);
             // 
-            // btnXoa_KH
-            // 
-            this.btnXoa_KH.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_KH.Image")));
-            this.btnXoa_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_KH.Location = new System.Drawing.Point(25, 101);
-            this.btnXoa_KH.Name = "btnXoa_KH";
-            this.btnXoa_KH.Size = new System.Drawing.Size(98, 38);
-            this.btnXoa_KH.TabIndex = 19;
-            this.btnXoa_KH.Text = "Xóa";
-            this.btnXoa_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa_KH.UseVisualStyleBackColor = true;
-            this.btnXoa_KH.Click += new System.EventHandler(this.btnXoa_KH_Click);
-            // 
             // btnSua_KH
             // 
             this.btnSua_KH.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_KH.Image")));
@@ -276,6 +263,19 @@
             this.btnSua_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua_KH.UseVisualStyleBackColor = true;
             this.btnSua_KH.Click += new System.EventHandler(this.btnSua_KH_Click);
+            // 
+            // btnXoa_KH
+            // 
+            this.btnXoa_KH.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_KH.Image")));
+            this.btnXoa_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa_KH.Location = new System.Drawing.Point(25, 101);
+            this.btnXoa_KH.Name = "btnXoa_KH";
+            this.btnXoa_KH.Size = new System.Drawing.Size(98, 38);
+            this.btnXoa_KH.TabIndex = 19;
+            this.btnXoa_KH.Text = "Xóa";
+            this.btnXoa_KH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa_KH.UseVisualStyleBackColor = true;
+            this.btnXoa_KH.Click += new System.EventHandler(this.btnXoa_KH_Click);
             // 
             // lblDiachi_KH
             // 
@@ -360,6 +360,7 @@
             this.dgvKH.ReadOnly = true;
             this.dgvKH.Size = new System.Drawing.Size(571, 248);
             this.dgvKH.TabIndex = 0;
+            this.dgvKH.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvKH_CellFormatting);
             this.dgvKH.Click += new System.EventHandler(this.dgvKH_Click);
             // 
             // Column1

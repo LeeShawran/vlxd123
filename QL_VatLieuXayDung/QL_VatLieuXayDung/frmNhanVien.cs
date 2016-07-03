@@ -396,6 +396,13 @@ namespace QL_VatLieuXayDung
 
         private void dgvNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvNV.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvNV.Rows[i].DefaultCellStyle = style1;
+            }
             if (dgvNV.Columns[e.ColumnIndex].Name == "matkhau" && e.Value != null)
             {
                 dgvNV.Rows[e.RowIndex].Tag = e.Value;

@@ -258,6 +258,7 @@
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(455, 195);
             this.dgvHoaDon.TabIndex = 28;
+            this.dgvHoaDon.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHoaDon_CellFormatting);
             this.dgvHoaDon.Click += new System.EventHandler(this.dgvHoaDon_Click);
             // 
             // mahd
@@ -340,6 +341,7 @@
             this.dgvCT_DatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 185);
             this.dgvCT_DatHang.TabIndex = 27;
+            this.dgvCT_DatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DatHang_CellFormatting);
             // 
             // masp
             // 
@@ -400,6 +402,7 @@
             this.dgvCT_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_HD.Size = new System.Drawing.Size(447, 434);
             this.dgvCT_HD.TabIndex = 29;
+            this.dgvCT_HD.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_HD_CellFormatting);
             // 
             // dataGridViewTextBoxColumn4
             // 

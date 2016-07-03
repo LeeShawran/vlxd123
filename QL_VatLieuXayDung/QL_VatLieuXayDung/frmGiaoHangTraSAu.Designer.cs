@@ -223,6 +223,7 @@
             this.dgvPhieu_Giao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieu_Giao.Size = new System.Drawing.Size(455, 195);
             this.dgvPhieu_Giao.TabIndex = 28;
+            this.dgvPhieu_Giao.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPhieu_Giao_CellFormatting);
             // 
             // magiao
             // 
@@ -273,6 +274,7 @@
             this.dgvCT_DATHANG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_DATHANG.Size = new System.Drawing.Size(455, 185);
             this.dgvCT_DATHANG.TabIndex = 27;
+            this.dgvCT_DATHANG.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DATHANG_CellFormatting);
             // 
             // masp
             // 
@@ -325,6 +327,7 @@
             this.dgvCT_PhieuGiao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_PhieuGiao.Size = new System.Drawing.Size(447, 434);
             this.dgvCT_PhieuGiao.TabIndex = 29;
+            this.dgvCT_PhieuGiao.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_PhieuGiao_CellFormatting);
             // 
             // dataGridViewTextBoxColumn4
             // 

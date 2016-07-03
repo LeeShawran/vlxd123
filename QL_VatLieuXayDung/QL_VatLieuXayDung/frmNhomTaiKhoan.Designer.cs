@@ -202,6 +202,7 @@
             this.dgvNTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNTK.Size = new System.Drawing.Size(405, 202);
             this.dgvNTK.TabIndex = 48;
+            this.dgvNTK.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNTK_CellFormatting);
             this.dgvNTK.Click += new System.EventHandler(this.dgvNhomTK_Click);
             // 
             // dataGridViewTextBoxColumn1

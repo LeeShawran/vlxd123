@@ -70,6 +70,7 @@
             this.dgvNhomTK.Size = new System.Drawing.Size(312, 266);
             this.dgvNhomTK.TabIndex = 47;
             this.dgvNhomTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhomTK_CellContentClick);
+            this.dgvNhomTK.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNhomTK_CellFormatting);
             this.dgvNhomTK.SelectionChanged += new System.EventHandler(this.dgvNhomTK_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1

@@ -137,6 +137,7 @@
             this.dgvDonDatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDonDatHang.Size = new System.Drawing.Size(507, 262);
             this.dgvDonDatHang.TabIndex = 12;
+            this.dgvDonDatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDonDatHang_CellFormatting);
             this.dgvDonDatHang.Click += new System.EventHandler(this.dgvDonDatHang_Click);
             // 
             // madondat
@@ -194,7 +195,7 @@
             // 
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.Location = new System.Drawing.Point(449, 152);
+            this.btnLamMoi.Location = new System.Drawing.Point(449, 149);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(81, 36);
             this.btnLamMoi.TabIndex = 102;
@@ -380,6 +381,7 @@
             this.dgvSanPHam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSanPHam.Size = new System.Drawing.Size(356, 150);
             this.dgvSanPHam.TabIndex = 27;
+            this.dgvSanPHam.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSanPHam_CellFormatting);
             this.dgvSanPHam.Click += new System.EventHandler(this.dgvSanPHam_Click);
             // 
             // masp
@@ -440,6 +442,7 @@
             this.dgvCTDonDatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCTDonDatHang.Size = new System.Drawing.Size(492, 218);
             this.dgvCTDonDatHang.TabIndex = 104;
+            this.dgvCTDonDatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCTDonDatHang_CellFormatting);
             this.dgvCTDonDatHang.Click += new System.EventHandler(this.dgvCTDonDatHang_Click);
             // 
             // dataGridViewTextBoxColumn4

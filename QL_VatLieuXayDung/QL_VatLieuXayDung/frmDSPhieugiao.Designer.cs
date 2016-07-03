@@ -34,6 +34,11 @@
             this.btnExcelPG = new System.Windows.Forms.Button();
             this.lblSanpham = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvPhieu_Giao = new System.Windows.Forms.DataGridView();
+            this.magiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaygiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maphieudat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnLoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,19 +47,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtpTG2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvPhieu_Giao = new System.Windows.Forms.DataGridView();
-            this.magiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaygiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maphieudat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCT_PhieuGiao = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieu_Giao)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieu_Giao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_PhieuGiao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +120,48 @@
             this.groupBox4.TabIndex = 123;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách hóa đơn";
+            // 
+            // dgvPhieu_Giao
+            // 
+            this.dgvPhieu_Giao.AllowUserToAddRows = false;
+            this.dgvPhieu_Giao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhieu_Giao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhieu_Giao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.magiao,
+            this.ngaygiao,
+            this.manv,
+            this.maphieudat});
+            this.dgvPhieu_Giao.Location = new System.Drawing.Point(18, 65);
+            this.dgvPhieu_Giao.Name = "dgvPhieu_Giao";
+            this.dgvPhieu_Giao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPhieu_Giao.Size = new System.Drawing.Size(557, 352);
+            this.dgvPhieu_Giao.TabIndex = 126;
+            this.dgvPhieu_Giao.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPhieu_Giao_CellFormatting);
+            this.dgvPhieu_Giao.Click += new System.EventHandler(this.dgvPhieu_Giao_Click);
+            // 
+            // magiao
+            // 
+            this.magiao.DataPropertyName = "MAPHIEUGIAO";
+            this.magiao.HeaderText = "Mã phiếu giao";
+            this.magiao.Name = "magiao";
+            // 
+            // ngaygiao
+            // 
+            this.ngaygiao.DataPropertyName = "NGAYGIAO";
+            this.ngaygiao.HeaderText = "Ngày giao";
+            this.ngaygiao.Name = "ngaygiao";
+            // 
+            // manv
+            // 
+            this.manv.DataPropertyName = "MANV";
+            this.manv.HeaderText = "Mã nhân viên";
+            this.manv.Name = "manv";
+            // 
+            // maphieudat
+            // 
+            this.maphieudat.DataPropertyName = "MADDH";
+            this.maphieudat.HeaderText = "Mã đơn đặt";
+            this.maphieudat.Name = "maphieudat";
             // 
             // checkBox1
             // 
@@ -205,47 +247,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chi tiết hóa đơn";
             // 
-            // dgvPhieu_Giao
-            // 
-            this.dgvPhieu_Giao.AllowUserToAddRows = false;
-            this.dgvPhieu_Giao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhieu_Giao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhieu_Giao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.magiao,
-            this.ngaygiao,
-            this.manv,
-            this.maphieudat});
-            this.dgvPhieu_Giao.Location = new System.Drawing.Point(18, 65);
-            this.dgvPhieu_Giao.Name = "dgvPhieu_Giao";
-            this.dgvPhieu_Giao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhieu_Giao.Size = new System.Drawing.Size(557, 352);
-            this.dgvPhieu_Giao.TabIndex = 126;
-            this.dgvPhieu_Giao.Click += new System.EventHandler(this.dgvPhieu_Giao_Click);
-            // 
-            // magiao
-            // 
-            this.magiao.DataPropertyName = "MAPHIEUGIAO";
-            this.magiao.HeaderText = "Mã phiếu giao";
-            this.magiao.Name = "magiao";
-            // 
-            // ngaygiao
-            // 
-            this.ngaygiao.DataPropertyName = "NGAYGIAO";
-            this.ngaygiao.HeaderText = "Ngày giao";
-            this.ngaygiao.Name = "ngaygiao";
-            // 
-            // manv
-            // 
-            this.manv.DataPropertyName = "MANV";
-            this.manv.HeaderText = "Mã nhân viên";
-            this.manv.Name = "manv";
-            // 
-            // maphieudat
-            // 
-            this.maphieudat.DataPropertyName = "MADDH";
-            this.maphieudat.HeaderText = "Mã đơn đặt";
-            this.maphieudat.Name = "maphieudat";
-            // 
             // dgvCT_PhieuGiao
             // 
             this.dgvCT_PhieuGiao.AllowUserToAddRows = false;
@@ -260,6 +261,7 @@
             this.dgvCT_PhieuGiao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_PhieuGiao.Size = new System.Drawing.Size(510, 326);
             this.dgvCT_PhieuGiao.TabIndex = 30;
+            this.dgvCT_PhieuGiao.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_PhieuGiao_CellFormatting);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -279,7 +281,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Số lượng giao";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // fmDSPhieugiao
+            // frmDSPhieugiao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -290,15 +292,15 @@
             this.Controls.Add(this.lblSanpham);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
-            this.Name = "fmDSPhieugiao";
+            this.Name = "frmDSPhieugiao";
             this.Text = "Danh sách phiếu giao";
             this.Load += new System.EventHandler(this.fmDSPhieugiao_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieu_Giao)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieu_Giao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_PhieuGiao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

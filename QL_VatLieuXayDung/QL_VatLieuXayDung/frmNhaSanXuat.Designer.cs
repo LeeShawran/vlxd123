@@ -131,6 +131,7 @@
             this.dgvNSX.ReadOnly = true;
             this.dgvNSX.Size = new System.Drawing.Size(409, 296);
             this.dgvNSX.TabIndex = 0;
+            this.dgvNSX.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNSX_CellFormatting);
             this.dgvNSX.Click += new System.EventHandler(this.dgvNSX_Click);
             // 
             // ColumnMaNSX_NSX

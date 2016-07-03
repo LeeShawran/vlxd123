@@ -329,6 +329,7 @@
             this.dgvXuatHang.ReadOnly = true;
             this.dgvXuatHang.Size = new System.Drawing.Size(1175, 285);
             this.dgvXuatHang.TabIndex = 92;
+            this.dgvXuatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvXuatHang_CellFormatting);
             // 
             // masp
             // 

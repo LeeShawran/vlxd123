@@ -273,5 +273,38 @@ namespace QL_VatLieuXayDung
         {
  
         }
+
+        private void dgvCT_HOADON_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvCT_HOADON.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvCT_HOADON.Rows[i].DefaultCellStyle = style1;
+            }
+        }
+
+        private void dgvPhieu_Giao_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvPhieu_Giao.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvPhieu_Giao.Rows[i].DefaultCellStyle = style1;
+            }
+        }
+
+        private void dgvCT_PhieuGiao_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle style1 = new DataGridViewCellStyle();
+            //style1.ForeColor = Color.Gray;
+            style1.BackColor = Color.LightBlue;
+            for (int i = dgvCT_PhieuGiao.RowCount - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0) dgvCT_PhieuGiao.Rows[i].DefaultCellStyle = style1;
+            }
+        }
     }
 }

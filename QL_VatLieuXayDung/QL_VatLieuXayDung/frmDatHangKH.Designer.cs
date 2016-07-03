@@ -123,6 +123,7 @@
             this.dgvCT_DonDatHang.ReadOnly = true;
             this.dgvCT_DonDatHang.Size = new System.Drawing.Size(438, 192);
             this.dgvCT_DonDatHang.TabIndex = 1;
+            this.dgvCT_DonDatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DonDatHang_CellFormatting);
             this.dgvCT_DonDatHang.Click += new System.EventHandler(this.dgvCT_DonDatHang_Click);
             // 
             // Column1
@@ -176,6 +177,7 @@
             this.dgvSanPHam.ReadOnly = true;
             this.dgvSanPHam.Size = new System.Drawing.Size(371, 150);
             this.dgvSanPHam.TabIndex = 106;
+            this.dgvSanPHam.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSanPHam_CellFormatting);
             // 
             // masp
             // 
@@ -283,6 +285,7 @@
             this.dgvDonDatHang.Size = new System.Drawing.Size(735, 204);
             this.dgvDonDatHang.TabIndex = 2;
             this.dgvDonDatHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonDatHang_CellContentClick);
+            this.dgvDonDatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDonDatHang_CellFormatting);
             this.dgvDonDatHang.Click += new System.EventHandler(this.dgvDonDatHang_Click);
             // 
             // ma
@@ -363,16 +366,16 @@
             this.groupBox3.Controls.Add(this.btnLuuDH);
             this.groupBox3.Controls.Add(this.btnXoaDH);
             this.groupBox3.Controls.Add(this.btnThemDH);
-            this.groupBox3.Location = new System.Drawing.Point(561, 19);
+            this.groupBox3.Location = new System.Drawing.Point(520, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(189, 220);
+            this.groupBox3.Size = new System.Drawing.Size(230, 220);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thao tác";
             // 
             // btnGiaoHang
             // 
-            this.btnGiaoHang.Location = new System.Drawing.Point(97, 123);
+            this.btnGiaoHang.Location = new System.Drawing.Point(133, 123);
             this.btnGiaoHang.Name = "btnGiaoHang";
             this.btnGiaoHang.Size = new System.Drawing.Size(81, 85);
             this.btnGiaoHang.TabIndex = 106;
@@ -382,7 +385,7 @@
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(97, 16);
+            this.btnThanhToan.Location = new System.Drawing.Point(133, 16);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(81, 98);
             this.btnThanhToan.TabIndex = 104;
@@ -396,7 +399,7 @@
             this.btnLammoiHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLammoiHD.Location = new System.Drawing.Point(15, 172);
             this.btnLammoiHD.Name = "btnLammoiHD";
-            this.btnLammoiHD.Size = new System.Drawing.Size(66, 36);
+            this.btnLammoiHD.Size = new System.Drawing.Size(82, 36);
             this.btnLammoiHD.TabIndex = 4;
             this.btnLammoiHD.Text = "Làm mới";
             this.btnLammoiHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -409,7 +412,7 @@
             this.btnLuuDH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuuDH.Location = new System.Drawing.Point(15, 121);
             this.btnLuuDH.Name = "btnLuuDH";
-            this.btnLuuDH.Size = new System.Drawing.Size(63, 42);
+            this.btnLuuDH.Size = new System.Drawing.Size(82, 42);
             this.btnLuuDH.TabIndex = 3;
             this.btnLuuDH.Text = "Lưu";
             this.btnLuuDH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -422,7 +425,7 @@
             this.btnXoaDH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaDH.Location = new System.Drawing.Point(15, 72);
             this.btnXoaDH.Name = "btnXoaDH";
-            this.btnXoaDH.Size = new System.Drawing.Size(63, 42);
+            this.btnXoaDH.Size = new System.Drawing.Size(82, 42);
             this.btnXoaDH.TabIndex = 1;
             this.btnXoaDH.Text = "Xóa";
             this.btnXoaDH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -435,7 +438,7 @@
             this.btnThemDH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemDH.Location = new System.Drawing.Point(15, 24);
             this.btnThemDH.Name = "btnThemDH";
-            this.btnThemDH.Size = new System.Drawing.Size(66, 42);
+            this.btnThemDH.Size = new System.Drawing.Size(82, 42);
             this.btnThemDH.TabIndex = 0;
             this.btnThemDH.Text = "Thêm";
             this.btnThemDH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -465,7 +468,7 @@
             this.groupBoxThongTinDH.Controls.Add(this.lblMaHDBH);
             this.groupBoxThongTinDH.Location = new System.Drawing.Point(15, 19);
             this.groupBoxThongTinDH.Name = "groupBoxThongTinDH";
-            this.groupBoxThongTinDH.Size = new System.Drawing.Size(530, 220);
+            this.groupBoxThongTinDH.Size = new System.Drawing.Size(499, 220);
             this.groupBoxThongTinDH.TabIndex = 0;
             this.groupBoxThongTinDH.TabStop = false;
             this.groupBoxThongTinDH.Enter += new System.EventHandler(this.groupBox2_Enter);
