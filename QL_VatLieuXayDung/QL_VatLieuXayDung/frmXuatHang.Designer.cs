@@ -52,18 +52,18 @@
             this.manv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maphieudat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCT_DatHang = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvCT_HD = new System.Windows.Forms.DataGridView();
             this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dongiaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluongkho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvCT_HD = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -256,6 +256,7 @@
             this.maphieudat,
             this.tongtien});
             this.dgvHoaDon.Location = new System.Drawing.Point(16, 29);
+            this.dgvHoaDon.MultiSelect = false;
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(455, 195);
@@ -293,17 +294,17 @@
             this.tongtien.HeaderText = "Tổng tiền";
             this.tongtien.Name = "tongtien";
             // 
-            // button3
+            // btnXuatExcel
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(159, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 34);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Xuất Excel";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
+            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel.Location = new System.Drawing.Point(159, 30);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(95, 34);
+            this.btnXuatExcel.TabIndex = 17;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
             // 
             // btnThem
             // 
@@ -340,49 +341,12 @@
             this.giam,
             this.soluongkho});
             this.dgvCT_DatHang.Location = new System.Drawing.Point(16, 24);
+            this.dgvCT_DatHang.MultiSelect = false;
             this.dgvCT_DatHang.Name = "dgvCT_DatHang";
             this.dgvCT_DatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 185);
             this.dgvCT_DatHang.TabIndex = 27;
             this.dgvCT_DatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DatHang_CellFormatting);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Location = new System.Drawing.Point(8, 271);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 84);
-            this.groupBox2.TabIndex = 114;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thao tác";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dgvCT_HD);
-            this.groupBox5.Location = new System.Drawing.Point(841, 56);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(484, 475);
-            this.groupBox5.TabIndex = 116;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Chi tiết hóa đơn";
-            // 
-            // dgvCT_HD
-            // 
-            this.dgvCT_HD.AllowUserToAddRows = false;
-            this.dgvCT_HD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCT_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCT_HD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6,
-            this.Column2,
-            this.gg});
-            this.dgvCT_HD.Location = new System.Drawing.Point(22, 24);
-            this.dgvCT_HD.Name = "dgvCT_HD";
-            this.dgvCT_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCT_HD.Size = new System.Drawing.Size(447, 434);
-            this.dgvCT_HD.TabIndex = 29;
-            this.dgvCT_HD.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_HD_CellFormatting);
             // 
             // masp
             // 
@@ -413,6 +377,45 @@
             this.soluongkho.DataPropertyName = "SOLUONG1";
             this.soluongkho.HeaderText = "Số lượng trong kho";
             this.soluongkho.Name = "soluongkho";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnXuatExcel);
+            this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Location = new System.Drawing.Point(8, 271);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(302, 84);
+            this.groupBox2.TabIndex = 114;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thao tác";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgvCT_HD);
+            this.groupBox5.Location = new System.Drawing.Point(841, 56);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(484, 475);
+            this.groupBox5.TabIndex = 116;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Chi tiết hóa đơn";
+            // 
+            // dgvCT_HD
+            // 
+            this.dgvCT_HD.AllowUserToAddRows = false;
+            this.dgvCT_HD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCT_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCT_HD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6,
+            this.Column2,
+            this.gg});
+            this.dgvCT_HD.Location = new System.Drawing.Point(22, 24);
+            this.dgvCT_HD.MultiSelect = false;
+            this.dgvCT_HD.Name = "dgvCT_HD";
+            this.dgvCT_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCT_HD.Size = new System.Drawing.Size(447, 434);
+            this.dgvCT_HD.TabIndex = 29;
+            this.dgvCT_HD.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_HD_CellFormatting);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -486,7 +489,7 @@
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvHoaDon;
-        protected System.Windows.Forms.Button button3;
+        protected System.Windows.Forms.Button btnXuatExcel;
         protected System.Windows.Forms.Button btnThem;
         protected System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvCT_DatHang;

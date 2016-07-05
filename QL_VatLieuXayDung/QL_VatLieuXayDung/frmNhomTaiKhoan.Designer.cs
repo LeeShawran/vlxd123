@@ -197,6 +197,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvNTK.Location = new System.Drawing.Point(20, 19);
+            this.dgvNTK.MultiSelect = false;
             this.dgvNTK.Name = "dgvNTK";
             this.dgvNTK.ReadOnly = true;
             this.dgvNTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -229,7 +230,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbDSKH);
             this.Name = "frmNhomTaiKhoan";
-            this.Text = "frmNhomTaiKhoan";
+            this.Text = "Nhóm tài khoản";
             this.Load += new System.EventHandler(this.frmNhomTaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -440,6 +440,7 @@
             this.btnDinhGia.Caption = "Định giá";
             this.btnDinhGia.Id = 42;
             this.btnDinhGia.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDinhGia.LargeGlyph")));
+            this.btnDinhGia.LargeWidth = 90;
             this.btnDinhGia.Name = "btnDinhGia";
             this.btnDinhGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 

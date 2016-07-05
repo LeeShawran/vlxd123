@@ -58,7 +58,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTongtien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3.SuspendLayout();
@@ -99,6 +99,7 @@
             this.soluong,
             this.dongianhap});
             this.dgvCT_DatHang.Location = new System.Drawing.Point(16, 24);
+            this.dgvCT_DatHang.MultiSelect = false;
             this.dgvCT_DatHang.Name = "dgvCT_DatHang";
             this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 183);
             this.dgvCT_DatHang.TabIndex = 27;
@@ -195,6 +196,7 @@
             this.Column2,
             this.dataGridViewTextBoxColumn6});
             this.dgvCT_NhapHang.Location = new System.Drawing.Point(22, 24);
+            this.dgvCT_NhapHang.MultiSelect = false;
             this.dgvCT_NhapHang.Name = "dgvCT_NhapHang";
             this.dgvCT_NhapHang.ReadOnly = true;
             this.dgvCT_NhapHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -266,6 +268,7 @@
             this.dataGridViewTextBoxColumn3,
             this.Column3});
             this.dgvNhapHang.Location = new System.Drawing.Point(16, 29);
+            this.dgvNhapHang.MultiSelect = false;
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.ReadOnly = true;
             this.dgvNhapHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -345,17 +348,17 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Tổng tiền:";
             // 
-            // button3
+            // btnXuatExcel
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(168, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 41);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Xuất Excel";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
+            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel.Location = new System.Drawing.Point(168, 33);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(97, 41);
+            this.btnXuatExcel.TabIndex = 17;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
             // 
             // btnThem
             // 
@@ -372,7 +375,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnXuatExcel);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Location = new System.Drawing.Point(6, 221);
             this.groupBox2.Name = "groupBox2";
@@ -425,7 +428,7 @@
         protected System.Windows.Forms.Label label6;
         protected System.Windows.Forms.GroupBox groupBox4;
         protected System.Windows.Forms.GroupBox groupBox1;
-        protected System.Windows.Forms.Button button3;
+        protected System.Windows.Forms.Button btnXuatExcel;
         protected System.Windows.Forms.Button btnThem;
         protected System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvCT_NhapHang;

@@ -126,6 +126,7 @@ namespace QL_VatLieuXayDung
         private void btnThem_Click(object sender, EventArgs e)
         {
             luu = 1;
+            conn.Close();
             conn.Open();
             /// MA TU DONG
             string lenh = "select MASP from T_SAN_PHAM order by MASP desc";

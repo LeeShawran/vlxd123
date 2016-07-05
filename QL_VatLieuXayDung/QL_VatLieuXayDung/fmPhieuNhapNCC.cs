@@ -177,7 +177,7 @@ namespace QL_VatLieuXayDung
 
                         string lenh3 = "update T_SAN_PHAM set SOLUONG=" + c + " where MASP='" + dt.Rows[i].Field<string>(1) + "'";
                         OleDbCommand cmd3 = new OleDbCommand(lenh3, conn);
-
+                        cmd3.ExecuteNonQuery();
                         string lenh4 = "Insert into T_GIA_NHAP values('" + dt.Rows[i].Field<string>(1) + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongianhap"].Value.ToString()) + ")";
                         OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
                         cmd4.ExecuteNonQuery();

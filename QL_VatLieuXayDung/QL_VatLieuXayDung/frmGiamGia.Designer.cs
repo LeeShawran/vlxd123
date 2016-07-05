@@ -135,6 +135,7 @@
             this.tensp,
             this.giaban});
             this.dgvSanPHam.Location = new System.Drawing.Point(18, 72);
+            this.dgvSanPHam.MultiSelect = false;
             this.dgvSanPHam.Name = "dgvSanPHam";
             this.dgvSanPHam.Size = new System.Drawing.Size(402, 158);
             this.dgvSanPHam.TabIndex = 106;
@@ -191,6 +192,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvCT_DonDatHang.Location = new System.Drawing.Point(21, 267);
+            this.dgvCT_DonDatHang.MultiSelect = false;
             this.dgvCT_DonDatHang.Name = "dgvCT_DonDatHang";
             this.dgvCT_DonDatHang.ReadOnly = true;
             this.dgvCT_DonDatHang.Size = new System.Drawing.Size(411, 178);
@@ -237,7 +239,8 @@
             // 
             // dtpKetthuc_GG
             // 
-            this.dtpKetthuc_GG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpKetthuc_GG.CustomFormat = "dd/MM/yyyy";
+            this.dtpKetthuc_GG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpKetthuc_GG.Location = new System.Drawing.Point(127, 115);
             this.dtpKetthuc_GG.Name = "dtpKetthuc_GG";
             this.dtpKetthuc_GG.Size = new System.Drawing.Size(154, 20);
@@ -268,6 +271,7 @@
             this.ngaykt,
             this.manv});
             this.dgvGG.Location = new System.Drawing.Point(44, 203);
+            this.dgvGG.MultiSelect = false;
             this.dgvGG.Name = "dgvGG";
             this.dgvGG.ReadOnly = true;
             this.dgvGG.Size = new System.Drawing.Size(549, 242);
@@ -322,7 +326,7 @@
             this.btnLammoiHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLammoiHD.Location = new System.Drawing.Point(105, 90);
             this.btnLammoiHD.Name = "btnLammoiHD";
-            this.btnLammoiHD.Size = new System.Drawing.Size(66, 42);
+            this.btnLammoiHD.Size = new System.Drawing.Size(77, 42);
             this.btnLammoiHD.TabIndex = 7;
             this.btnLammoiHD.Text = "Làm mới";
             this.btnLammoiHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -396,8 +400,9 @@
             // 
             // dtpBatdau_GG
             // 
+            this.dtpBatdau_GG.CustomFormat = "dd/MM/yyyy";
             this.dtpBatdau_GG.Enabled = false;
-            this.dtpBatdau_GG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBatdau_GG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBatdau_GG.Location = new System.Drawing.Point(127, 89);
             this.dtpBatdau_GG.Name = "dtpBatdau_GG";
             this.dtpBatdau_GG.Size = new System.Drawing.Size(154, 20);

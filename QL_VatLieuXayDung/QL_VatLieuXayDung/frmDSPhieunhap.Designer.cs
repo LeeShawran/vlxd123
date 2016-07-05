@@ -135,6 +135,7 @@
             this.dataGridViewTextBoxColumn3,
             this.Column3});
             this.dgvPhieunhap.Location = new System.Drawing.Point(18, 72);
+            this.dgvPhieunhap.MultiSelect = false;
             this.dgvPhieunhap.Name = "dgvPhieunhap";
             this.dgvPhieunhap.ReadOnly = true;
             this.dgvPhieunhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -273,6 +274,7 @@
             this.Column2,
             this.dataGridViewTextBoxColumn6});
             this.dgvCT_NhapHang.Location = new System.Drawing.Point(28, 31);
+            this.dgvCT_NhapHang.MultiSelect = false;
             this.dgvCT_NhapHang.Name = "dgvCT_NhapHang";
             this.dgvCT_NhapHang.ReadOnly = true;
             this.dgvCT_NhapHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -325,6 +325,7 @@
             this.dongia,
             this.thanhtien});
             this.dgvXuatHang.Location = new System.Drawing.Point(71, 235);
+            this.dgvXuatHang.MultiSelect = false;
             this.dgvXuatHang.Name = "dgvXuatHang";
             this.dgvXuatHang.ReadOnly = true;
             this.dgvXuatHang.Size = new System.Drawing.Size(1175, 285);

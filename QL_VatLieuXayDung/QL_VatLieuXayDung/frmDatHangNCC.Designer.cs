@@ -132,6 +132,7 @@
             this.Column9,
             this.ttnhap});
             this.dgvDonDatHang.Location = new System.Drawing.Point(23, 206);
+            this.dgvDonDatHang.MultiSelect = false;
             this.dgvDonDatHang.Name = "dgvDonDatHang";
             this.dgvDonDatHang.ReadOnly = true;
             this.dgvDonDatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -268,8 +269,9 @@
             // 
             // dtpNgayLap
             // 
+            this.dtpNgayLap.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayLap.Enabled = false;
-            this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayLap.Location = new System.Drawing.Point(127, 76);
             this.dtpNgayLap.Name = "dtpNgayLap";
             this.dtpNgayLap.Size = new System.Drawing.Size(174, 20);
@@ -376,6 +378,7 @@
             this.masp,
             this.tensp});
             this.dgvSanPHam.Location = new System.Drawing.Point(18, 51);
+            this.dgvSanPHam.MultiSelect = false;
             this.dgvSanPHam.Name = "dgvSanPHam";
             this.dgvSanPHam.ReadOnly = true;
             this.dgvSanPHam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -437,6 +440,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgvCTDonDatHang.Location = new System.Drawing.Point(19, 250);
+            this.dgvCTDonDatHang.MultiSelect = false;
             this.dgvCTDonDatHang.Name = "dgvCTDonDatHang";
             this.dgvCTDonDatHang.ReadOnly = true;
             this.dgvCTDonDatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

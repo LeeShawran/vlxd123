@@ -130,6 +130,8 @@ namespace QL_VatLieuXayDung
             dgvNTK.Enabled = false;
             txtTenNTK_NTK.Clear();
             txtMaNTK_NTK.Clear();
+            txtMaNTK_NTK.Enabled = true;
+            txtTenNTK_NTK.Enabled = true;
 
         }
 

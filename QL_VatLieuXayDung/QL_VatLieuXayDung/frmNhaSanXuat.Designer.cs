@@ -127,6 +127,7 @@
             this.ColumnMaNSX_NSX,
             this.ColumnTenNSX_NSX});
             this.dgvNSX.Location = new System.Drawing.Point(22, 45);
+            this.dgvNSX.MultiSelect = false;
             this.dgvNSX.Name = "dgvNSX";
             this.dgvNSX.ReadOnly = true;
             this.dgvNSX.Size = new System.Drawing.Size(409, 296);

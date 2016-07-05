@@ -477,6 +477,7 @@
             this.nhom,
             this.matkhau});
             this.dgvNV.Location = new System.Drawing.Point(17, 51);
+            this.dgvNV.MultiSelect = false;
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.ReadOnly = true;
             this.dgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

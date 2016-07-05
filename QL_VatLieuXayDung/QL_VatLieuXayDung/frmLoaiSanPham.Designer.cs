@@ -134,6 +134,7 @@
             this.ColumnMaLoai_LoaiSP,
             this.ColumnTenLoai_LoaiSP});
             this.dgvLoaiSP.Location = new System.Drawing.Point(21, 45);
+            this.dgvLoaiSP.MultiSelect = false;
             this.dgvLoaiSP.Name = "dgvLoaiSP";
             this.dgvLoaiSP.ReadOnly = true;
             this.dgvLoaiSP.Size = new System.Drawing.Size(369, 308);

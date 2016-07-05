@@ -40,6 +40,7 @@ namespace QL_VatLieuXayDung
 
         public void loadSP()
         {
+            txtGiam.Text = "" + 0;
             string st = "select T_SAN_PHAM.MASP,TENSP,SOLUONG,DONGIABAN from T_SAN_PHAM, T_GIA_BAN where T_SAN_PHAM.MASP=T_GIA_BAN.MASP AND T_GIA_BAN.NGAYHIEULUC =(SELECT MAX(T_GIA_BAN.NGAYHIEULUC) FROM  T_GIA_BAN WHERE T_GIA_BAN.NGAYHIEULUC <=TO_DATE ('" + dtpNgaydat.Text + "', 'DD/MM/YYYY') and T_SAN_PHAM.MASP=T_GIA_BAN.MASP) order by T_SAN_PHAM.MASP ASC";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
@@ -191,6 +192,7 @@ namespace QL_VatLieuXayDung
         private void btnThemDH_Click(object sender, EventArgs e)
         {
             luu = 1;
+            conn.Close();
             conn.Open();
             /// MA TU DONG
             string lenh = "select MADDH from T_DON_DAT_HANG_KH order by MADDH desc";
@@ -246,7 +248,7 @@ namespace QL_VatLieuXayDung
                 if (radtratruoc.Checked == true)
                     kieu = "Tra truoc";
                 else kieu = "Tra sau";
-                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_KH values('" + txtMaDH.Text + "',TO_DATE('" + dtpNgaydat.Text + "','DD-MM-RR'),'" + cbKH.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + 0 + ",'Chua thanh toan','" + kieu + "','Chua giao'," + int.Parse(cbTongLanGiao.Text) + ", " + int.Parse(txtConLai.Text) + ", " + int.Parse(txtConLai.Text) + ")", conn);
+                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_KH values('" + txtMaDH.Text + "',TO_DATE('" + dtpNgaydat.Text + "','DD-MM-RR'),'" + cbKH.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + 0 + ",'Chua thanh toan','" + kieu + "','Chua giao'," + int.Parse(cbTongLanGiao.Text) + ", " + int.Parse(txtConLai.Text) + ")", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadLai();

@@ -116,7 +116,7 @@
             this.lblNhanvien.AutoSize = true;
             this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhanvien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblNhanvien.Location = new System.Drawing.Point(171, 19);
+            this.lblNhanvien.Location = new System.Drawing.Point(181, 9);
             this.lblNhanvien.Name = "lblNhanvien";
             this.lblNhanvien.Size = new System.Drawing.Size(236, 33);
             this.lblNhanvien.TabIndex = 86;

@@ -42,8 +42,8 @@
             this.btnThem_NCC = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnLuu_NCC = new System.Windows.Forms.Button();
-            this.btnXoa_NCC = new System.Windows.Forms.Button();
             this.btnSua_NCC = new System.Windows.Forms.Button();
+            this.btnXoa_NCC = new System.Windows.Forms.Button();
             this.lblTenNCC_NCC = new System.Windows.Forms.Label();
             this.lblNCC = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -199,19 +199,6 @@
             this.btnLuu_NCC.UseVisualStyleBackColor = true;
             this.btnLuu_NCC.Click += new System.EventHandler(this.btnLuu_NCC_Click);
             // 
-            // btnXoa_NCC
-            // 
-            this.btnXoa_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NCC.Image")));
-            this.btnXoa_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_NCC.Location = new System.Drawing.Point(15, 95);
-            this.btnXoa_NCC.Name = "btnXoa_NCC";
-            this.btnXoa_NCC.Size = new System.Drawing.Size(94, 39);
-            this.btnXoa_NCC.TabIndex = 19;
-            this.btnXoa_NCC.Text = "Xóa";
-            this.btnXoa_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa_NCC.UseVisualStyleBackColor = true;
-            this.btnXoa_NCC.Click += new System.EventHandler(this.btnXoa_NCC_Click);
-            // 
             // btnSua_NCC
             // 
             this.btnSua_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnSua_NCC.Image")));
@@ -224,6 +211,19 @@
             this.btnSua_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua_NCC.UseVisualStyleBackColor = true;
             this.btnSua_NCC.Click += new System.EventHandler(this.btnSua_NCC_Click);
+            // 
+            // btnXoa_NCC
+            // 
+            this.btnXoa_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa_NCC.Image")));
+            this.btnXoa_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa_NCC.Location = new System.Drawing.Point(15, 95);
+            this.btnXoa_NCC.Name = "btnXoa_NCC";
+            this.btnXoa_NCC.Size = new System.Drawing.Size(94, 39);
+            this.btnXoa_NCC.TabIndex = 19;
+            this.btnXoa_NCC.Text = "Xóa";
+            this.btnXoa_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa_NCC.UseVisualStyleBackColor = true;
+            this.btnXoa_NCC.Click += new System.EventHandler(this.btnXoa_NCC_Click);
             // 
             // lblTenNCC_NCC
             // 
@@ -362,6 +362,7 @@
             this.ColumnDchi_NCC,
             this.ColumnDthoai_NCC});
             this.dgvNCC.Location = new System.Drawing.Point(11, 45);
+            this.dgvNCC.MultiSelect = false;
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.ReadOnly = true;
             this.dgvNCC.Size = new System.Drawing.Size(490, 312);

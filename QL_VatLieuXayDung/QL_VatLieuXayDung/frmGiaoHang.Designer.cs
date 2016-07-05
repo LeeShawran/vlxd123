@@ -35,7 +35,7 @@
             this.soluonggiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvCT_PhieuGiao = new System.Windows.Forms.DataGridView();
@@ -82,6 +82,7 @@
             this.soluongmua,
             this.soluonggiao});
             this.dgvCT_HOADON.Location = new System.Drawing.Point(16, 24);
+            this.dgvCT_HOADON.MultiSelect = false;
             this.dgvCT_HOADON.Name = "dgvCT_HOADON";
             this.dgvCT_HOADON.Size = new System.Drawing.Size(455, 185);
             this.dgvCT_HOADON.TabIndex = 27;
@@ -119,7 +120,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnXuatExcel);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Location = new System.Drawing.Point(8, 245);
             this.groupBox2.Name = "groupBox2";
@@ -128,17 +129,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
             // 
-            // button3
+            // btnXuatExcel
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(167, 31);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 32);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Xuất Excel";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.Image")));
+            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel.Location = new System.Drawing.Point(167, 31);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(93, 32);
+            this.btnXuatExcel.TabIndex = 17;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
             // 
             // btnThem
             // 
@@ -173,6 +174,7 @@
             this.Column2,
             this.dataGridViewTextBoxColumn6});
             this.dgvCT_PhieuGiao.Location = new System.Drawing.Point(22, 24);
+            this.dgvCT_PhieuGiao.MultiSelect = false;
             this.dgvCT_PhieuGiao.Name = "dgvCT_PhieuGiao";
             this.dgvCT_PhieuGiao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_PhieuGiao.Size = new System.Drawing.Size(447, 434);
@@ -208,6 +210,7 @@
             this.manv,
             this.maphieudat});
             this.dgvPhieu_Giao.Location = new System.Drawing.Point(16, 29);
+            this.dgvPhieu_Giao.MultiSelect = false;
             this.dgvPhieu_Giao.Name = "dgvPhieu_Giao";
             this.dgvPhieu_Giao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieu_Giao.Size = new System.Drawing.Size(455, 195);
@@ -420,7 +423,7 @@
         private System.Windows.Forms.DataGridView dgvCT_HOADON;
         protected System.Windows.Forms.GroupBox groupBox3;
         protected System.Windows.Forms.GroupBox groupBox2;
-        protected System.Windows.Forms.Button button3;
+        protected System.Windows.Forms.Button btnXuatExcel;
         protected System.Windows.Forms.Button btnThem;
         protected System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dgvCT_PhieuGiao;

@@ -51,7 +51,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(714, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(633, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(134, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,22 +107,22 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(270, 374);
+            this.label7.Location = new System.Drawing.Point(278, 377);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 20);
+            this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 105;
-            this.label7.Text = "Email";
+            this.label7.Text = "Email:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(226, 326);
+            this.label6.Location = new System.Drawing.Point(221, 329);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
+            this.label6.Size = new System.Drawing.Size(120, 20);
             this.label6.TabIndex = 104;
-            this.label6.Text = "Số điện thoại";
+            this.label6.Text = "Số điện thoại:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label5
@@ -130,11 +130,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(257, 279);
+            this.label5.Location = new System.Drawing.Point(263, 279);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 103;
-            this.label5.Text = "Chức Vụ";
+            this.label5.Text = "Chức vụ:";
             // 
             // label4
             // 
@@ -143,9 +143,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(258, 188);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 102;
-            this.label4.Text = "Mật khẩu";
+            this.label4.Text = "Mật khẩu:";
             // 
             // label3
             // 
@@ -154,9 +154,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(265, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 101;
-            this.label3.Text = "Giới tính";
+            this.label3.Text = "Giới tính:";
             // 
             // label2
             // 
@@ -165,9 +165,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(226, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
+            this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 100;
-            this.label2.Text = "Mã nhân viên";
+            this.label2.Text = "Mã nhân viên:";
             // 
             // label1
             // 
@@ -198,9 +198,9 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label15.Location = new System.Drawing.Point(278, 142);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 20);
+            this.label15.Size = new System.Drawing.Size(68, 20);
             this.label15.TabIndex = 114;
-            this.label15.Text = "Họ tên";
+            this.label15.Text = "Họ tên:";
             // 
             // txtsdt
             // 

@@ -234,7 +234,15 @@ namespace QL_VatLieuXayDung
         {
             if (sttdong == -1)
             {
-                sttdong = dgvGG.CurrentRow.Index;
+                try
+                {
+                    sttdong = dgvGG.CurrentRow.Index;
+                }
+                catch
+                {
+                    sttdong = 0;
+                }
+                
             }
             if (txtGiam.Text == "")
             {

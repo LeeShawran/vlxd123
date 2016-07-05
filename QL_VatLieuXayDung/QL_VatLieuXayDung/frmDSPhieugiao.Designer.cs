@@ -132,6 +132,7 @@
             this.manv,
             this.maphieudat});
             this.dgvPhieu_Giao.Location = new System.Drawing.Point(18, 65);
+            this.dgvPhieu_Giao.MultiSelect = false;
             this.dgvPhieu_Giao.Name = "dgvPhieu_Giao";
             this.dgvPhieu_Giao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieu_Giao.Size = new System.Drawing.Size(557, 352);
@@ -257,6 +258,7 @@
             this.Column2,
             this.dataGridViewTextBoxColumn6});
             this.dgvCT_PhieuGiao.Location = new System.Drawing.Point(16, 19);
+            this.dgvCT_PhieuGiao.MultiSelect = false;
             this.dgvCT_PhieuGiao.Name = "dgvCT_PhieuGiao";
             this.dgvCT_PhieuGiao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_PhieuGiao.Size = new System.Drawing.Size(510, 326);

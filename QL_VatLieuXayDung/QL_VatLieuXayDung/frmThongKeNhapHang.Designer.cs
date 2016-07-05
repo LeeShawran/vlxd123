@@ -309,6 +309,7 @@
             this.dongia,
             this.thanhtien});
             this.dgvNhapHang.Location = new System.Drawing.Point(79, 261);
+            this.dgvNhapHang.MultiSelect = false;
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.ReadOnly = true;
             this.dgvNhapHang.Size = new System.Drawing.Size(1175, 271);

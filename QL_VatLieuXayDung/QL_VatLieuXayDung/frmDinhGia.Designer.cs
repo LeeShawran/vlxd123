@@ -64,6 +64,7 @@
             this.Column1,
             this.Column2});
             this.dgvGia.Location = new System.Drawing.Point(16, 176);
+            this.dgvGia.MultiSelect = false;
             this.dgvGia.Name = "dgvGia";
             this.dgvGia.Size = new System.Drawing.Size(284, 294);
             this.dgvGia.TabIndex = 0;

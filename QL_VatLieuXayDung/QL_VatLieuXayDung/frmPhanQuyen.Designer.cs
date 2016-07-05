@@ -64,6 +64,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvNhomTK.Location = new System.Drawing.Point(29, 19);
+            this.dgvNhomTK.MultiSelect = false;
             this.dgvNhomTK.Name = "dgvNhomTK";
             this.dgvNhomTK.ReadOnly = true;
             this.dgvNhomTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -89,6 +90,7 @@
             // 
             // dgvPhanQuyen
             // 
+            this.dgvPhanQuyen.AllowUserToAddRows = false;
             this.dgvPhanQuyen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhanQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhanQuyen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -96,6 +98,7 @@
             this.Column2,
             this.Column3});
             this.dgvPhanQuyen.Location = new System.Drawing.Point(368, 19);
+            this.dgvPhanQuyen.MultiSelect = false;
             this.dgvPhanQuyen.Name = "dgvPhanQuyen";
             this.dgvPhanQuyen.Size = new System.Drawing.Size(561, 266);
             this.dgvPhanQuyen.TabIndex = 46;

@@ -31,7 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatHangKH));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCT_DonDatHang = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxsanpham = new System.Windows.Forms.GroupBox();
+            this.txtGiam = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgvSanPHam = new System.Windows.Forms.DataGridView();
             this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tensp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,12 +89,6 @@
             this.lblMaNV = new System.Windows.Forms.Label();
             this.lblMaHDBH = new System.Windows.Forms.Label();
             this.lblBanHangKhachHang = new System.Windows.Forms.Label();
-            this.txtGiam = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_DonDatHang)).BeginInit();
             this.groupBoxsanpham.SuspendLayout();
@@ -123,12 +123,41 @@
             this.Column3,
             this.Column4});
             this.dgvCT_DonDatHang.Location = new System.Drawing.Point(30, 262);
+            this.dgvCT_DonDatHang.MultiSelect = false;
             this.dgvCT_DonDatHang.Name = "dgvCT_DonDatHang";
             this.dgvCT_DonDatHang.ReadOnly = true;
             this.dgvCT_DonDatHang.Size = new System.Drawing.Size(474, 192);
             this.dgvCT_DonDatHang.TabIndex = 1;
             this.dgvCT_DonDatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DonDatHang_CellFormatting);
             this.dgvCT_DonDatHang.Click += new System.EventHandler(this.dgvCT_DonDatHang_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MASP";
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SOLUONG";
+            this.Column2.HeaderText = "Số lượng";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DONGIABAN";
+            this.Column3.HeaderText = "Đơn giá bán";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "GIAMGIA";
+            this.Column4.HeaderText = "Giảm (%)";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // groupBoxsanpham
             // 
@@ -146,6 +175,24 @@
             this.groupBoxsanpham.TabStop = false;
             this.groupBoxsanpham.Text = "Sản phẩm trong kho";
             // 
+            // txtGiam
+            // 
+            this.txtGiam.Enabled = false;
+            this.txtGiam.Location = new System.Drawing.Point(242, 24);
+            this.txtGiam.MaxLength = 2;
+            this.txtGiam.Name = "txtGiam";
+            this.txtGiam.Size = new System.Drawing.Size(46, 20);
+            this.txtGiam.TabIndex = 110;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(181, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 109;
+            this.label2.Text = "Giảm %";
+            // 
             // dgvSanPHam
             // 
             this.dgvSanPHam.AllowUserToAddRows = false;
@@ -158,6 +205,7 @@
             this.soluong,
             this.giaban});
             this.dgvSanPHam.Location = new System.Drawing.Point(18, 61);
+            this.dgvSanPHam.MultiSelect = false;
             this.dgvSanPHam.Name = "dgvSanPHam";
             this.dgvSanPHam.ReadOnly = true;
             this.dgvSanPHam.Size = new System.Drawing.Size(474, 150);
@@ -266,6 +314,7 @@
             this.tonglangiao,
             this.conlai});
             this.dgvDonDatHang.Location = new System.Drawing.Point(15, 245);
+            this.dgvDonDatHang.MultiSelect = false;
             this.dgvDonDatHang.Name = "dgvDonDatHang";
             this.dgvDonDatHang.ReadOnly = true;
             this.dgvDonDatHang.Size = new System.Drawing.Size(735, 204);
@@ -578,8 +627,9 @@
             // 
             // dtpNgaydat
             // 
+            this.dtpNgaydat.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaydat.Enabled = false;
-            this.dtpNgaydat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaydat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaydat.Location = new System.Drawing.Point(140, 65);
             this.dtpNgaydat.Name = "dtpNgaydat";
             this.dtpNgaydat.Size = new System.Drawing.Size(143, 20);
@@ -664,52 +714,6 @@
             this.lblBanHangKhachHang.Size = new System.Drawing.Size(385, 33);
             this.lblBanHangKhachHang.TabIndex = 103;
             this.lblBanHangKhachHang.Text = "ĐẶT HÀNG KHÁCH HÀNG";
-            // 
-            // txtGiam
-            // 
-            this.txtGiam.Enabled = false;
-            this.txtGiam.Location = new System.Drawing.Point(242, 24);
-            this.txtGiam.MaxLength = 2;
-            this.txtGiam.Name = "txtGiam";
-            this.txtGiam.Size = new System.Drawing.Size(46, 20);
-            this.txtGiam.TabIndex = 110;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Giảm %";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MASP";
-            this.Column1.HeaderText = "Mã sản phẩm";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SOLUONG";
-            this.Column2.HeaderText = "Số lượng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "DONGIABAN";
-            this.Column3.HeaderText = "Đơn giá bán";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "GIAMGIA";
-            this.Column4.HeaderText = "Giảm (%)";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // frmDatHangKH
             // 

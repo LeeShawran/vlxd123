@@ -122,6 +122,7 @@
             // txtDienthoai_KH
             // 
             this.txtDienthoai_KH.Location = new System.Drawing.Point(428, 51);
+            this.txtDienthoai_KH.MaxLength = 11;
             this.txtDienthoai_KH.Name = "txtDienthoai_KH";
             this.txtDienthoai_KH.Size = new System.Drawing.Size(229, 20);
             this.txtDienthoai_KH.TabIndex = 42;
@@ -137,7 +138,7 @@
             // txtDiachi_KH
             // 
             this.txtDiachi_KH.Location = new System.Drawing.Point(428, 27);
-            this.txtDiachi_KH.MaxLength = 11;
+            this.txtDiachi_KH.MaxLength = 10000;
             this.txtDiachi_KH.Name = "txtDiachi_KH";
             this.txtDiachi_KH.Size = new System.Drawing.Size(229, 20);
             this.txtDiachi_KH.TabIndex = 41;
@@ -356,6 +357,7 @@
             this.Column5,
             this.Column7});
             this.dgvKH.Location = new System.Drawing.Point(6, 56);
+            this.dgvKH.MultiSelect = false;
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.ReadOnly = true;
             this.dgvKH.Size = new System.Drawing.Size(571, 248);

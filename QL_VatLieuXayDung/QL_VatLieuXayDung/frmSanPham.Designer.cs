@@ -250,6 +250,7 @@
             this.Column5,
             this.Column7});
             this.dgvSanPham.Location = new System.Drawing.Point(18, 45);
+            this.dgvSanPham.MultiSelect = false;
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.ReadOnly = true;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
