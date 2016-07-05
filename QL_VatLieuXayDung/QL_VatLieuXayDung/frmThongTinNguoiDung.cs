@@ -72,7 +72,7 @@ namespace QL_VatLieuXayDung
                 Stream s = File.Open(duongdan2, FileMode.Open);
                 Image hinh = Image.FromStream(s);
                 s.Close();
-                pictureBox1.Image = hinh;
+                pictureBox1.Image = hinh;       
 
             }
             conn.Close();

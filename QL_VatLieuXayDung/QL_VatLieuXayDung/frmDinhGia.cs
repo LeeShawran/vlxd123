@@ -25,26 +25,30 @@ namespace QL_VatLieuXayDung
             InitializeComponent();
             conn = Connect.getConnect();
         }
+        public void load_lai()
+        {
+            string s = "select T_SAN_PHAM.MASP,TENSP from T_SAN_PHAM,T_GIA_NHAP where T_SAN_PHAM.MASP=T_GIA_NHAP.MASP AND T_GIA_NHAP.NGAYAPDUNG =(SELECT MAX(T_GIA_NHAP.NGAYAPDUNG) FROM  T_GIA_NHAP WHERE T_GIA_NHAP.NGAYAPDUNG <=(SYSDATE) and T_SAN_PHAM.MASP=T_GIA_NHAP.MASP) order by T_SAN_PHAM.MASP ASC";
+            adapter = new OleDbDataAdapter(s, conn);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dgvGia.DataSource = dt;
 
+            button1.Enabled = false;
+        }
         private void frmDinhGia_Load(object sender, EventArgs e)
         {
+            conn.Close();
             conn.Open();
             txtNgayLap.Format = DateTimePickerFormat.Custom;
             txtNgayLap.CustomFormat = "dd/MM/yyyy";
 
-            string s = "select MASP,TENSP from T_SAN_PHAM where (SOLUONG>0)";
-            adapter = new OleDbDataAdapter(s, conn);
-             dt = new DataTable();
-            adapter.Fill(dt);
-            dgvGia.DataSource = dt;
-            conn.Close();
-
-            
+            load_lai();
+            conn.Close();         
         }
 
         private void dgvGia_Click(object sender, EventArgs e)
         {
-           
+            button1.Enabled = true;
             txtMaSP.Text=dgvGia.CurrentRow.Cells[0].Value.ToString();
             txtTenSP.Text=dgvGia.CurrentRow.Cells[1].Value.ToString();
             conn.Open();
@@ -77,6 +81,7 @@ namespace QL_VatLieuXayDung
 
         private void button1_Click(object sender, EventArgs e)
         {
+            conn.Close();
             conn.Open();
             
             if (abc == 0)
@@ -84,22 +89,36 @@ namespace QL_VatLieuXayDung
                 string lenh4 = "Insert into T_GIA_BAN values('" + txtMaSP.Text + "',TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR')," + txtGiaBan.Text + ")";
                 OleDbCommand cmd4 = new OleDbCommand(lenh4, conn);
                 cmd4.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật giá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                load_lai(); conn.Close();
+
             }
             else 
             {
-                string lenh5 = "Update T_GIA_BAN set DONGIABAN='" + float.Parse(txtGiaBan.Text) + "', NGAYHIEULUC=TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR') where MASP='"+txtMaSP.Text+"'";
+                //cmd = new OleDbCommand("select NGAYHIEULUC from T_GIA_BAN where MASP='" + txtMaSP.Text + "'", conn);
+                //string ngay = cmd.ExecuteScalar().ToString();
+                //MessageBox.Show(ngay + "");
+                string lenh5 = "Update T_GIA_BAN set DONGIABAN=" + float.Parse(txtGiaBan.Text) + ", NGAYHIEULUC=TO_DATE('" + txtNgayLap.Text + "','DD-MM-RR') where MASP='" + txtMaSP.Text + "' and T_GIA_BAN.NGAYHIEULUC =(SELECT MAX(T_GIA_BAN.NGAYHIEULUC) FROM  T_GIA_BAN WHERE T_GIA_BAN.NGAYHIEULUC <=(SYSDATE) and MASP='"+txtMaSP.Text+"')";
                 OleDbCommand cmd5 = new OleDbCommand(lenh5, conn);
                 cmd5.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật giá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                load_lai();
+                conn.Close();
             }
-           
 
+            button1.Enabled = false;
             conn.Close();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            float giaban = float.Parse(txtGiaNhap.Text) + (float.Parse(txtGiaNhap.Text) * float.Parse(txtLai.Text) / 100);
-            txtGiaBan.Text = giaban.ToString();
+            try
+            {
+                float giaban = float.Parse(txtGiaNhap.Text) + (float.Parse(txtGiaNhap.Text) * float.Parse(txtLai.Text) / 100);
+                txtGiaBan.Text = giaban.ToString();
+            }
+            catch { }
+            
         }
 
         private void txtLai_KeyPress(object sender, KeyPressEventArgs e)

@@ -40,11 +40,36 @@ namespace QL_VatLieuXayDung
 
         public void loadSP()
         {
-            string st = "select T_SAN_PHAM.MASP,TENSP,SOLUONG,DONGIABAN from T_SAN_PHAM, T_GIA_BAN where T_SAN_PHAM.MASP=T_GIA_BAN.MASP AND T_GIA_BAN.NGAYHIEULUC =(SELECT MAX(T_GIA_BAN.NGAYHIEULUC) FROM  T_GIA_BAN WHERE T_GIA_BAN.NGAYHIEULUC <=TO_DATE ('" + dtpNgaydat.Text + "', 'DD/MM/YYYY')) order by T_SAN_PHAM.MASP ASC";
+            string st = "select T_SAN_PHAM.MASP,TENSP,SOLUONG,DONGIABAN from T_SAN_PHAM, T_GIA_BAN where T_SAN_PHAM.MASP=T_GIA_BAN.MASP AND T_GIA_BAN.NGAYHIEULUC =(SELECT MAX(T_GIA_BAN.NGAYHIEULUC) FROM  T_GIA_BAN WHERE T_GIA_BAN.NGAYHIEULUC <=TO_DATE ('" + dtpNgaydat.Text + "', 'DD/MM/YYYY') and T_SAN_PHAM.MASP=T_GIA_BAN.MASP) order by T_SAN_PHAM.MASP ASC";
             adapter = new OleDbDataAdapter(st, conn);
             dt = new DataTable();
             adapter.Fill(dt);
             dgvSanPHam.DataSource = dt;
+            //dgvSanPHam.Columns.Add("Column55", "Test");
+
+
+            //string lenh = "select MASP, GIAM from T_GIAM_GIA,T_CT_GIAM_GIA where T_CT_GIAM_GIA.MAGG=T_GIAM_GIA.MAGG and NGAYBATDAU<=(SYSDATE)and NGAYKETTHUC >= (SYSDATE)";
+            //OleDbDataAdapter adapter2 = new OleDbDataAdapter(lenh, conn);
+            //DataTable dt2 = new DataTable();
+            //adapter2.Fill(dt2);
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    for (int j = 0; j < dt2.Rows.Count; j++)
+            //    {
+            //        //MessageBox.Show("san pham-" + dt.Rows[i].Field<string>(0)); MessageBox.Show("gg-" + dt2.Rows[j].Field<string>(0));
+            //        if (dt.Rows[i].Field<string>(0) == dt2.Rows[j].Field<string>(0))
+            //        {
+
+            //            txtGiam.Text = dt2.Rows[j].Field<decimal>(1)+"";
+
+            //        }
+            //        else
+            //        {
+            //            txtGiam.Text = "0";
+            //        }
+            //    }
+
+            //}
 
         }
         public void load_DatHang()
@@ -56,11 +81,34 @@ namespace QL_VatLieuXayDung
         }
         public void load_ct_dathang(string madondat)
         {
-            string s = "select MASP,SOLUONG,DONGIABAN from T_CT_DAT_HANG_KH where MADDH='" + madondat + "' order by MASP ASC";
+            string s = "select MASP,SOLUONG,DONGIABAN,GIAMGIA from T_CT_DAT_HANG_KH where MADDH='" + madondat + "' order by MASP ASC";
             adapter = new OleDbDataAdapter(s, conn);
             DataTable dt2 = new DataTable();
             adapter.Fill(dt2);
             dgvCT_DonDatHang.DataSource = dt2;
+        }
+        public void load_giam_gia(string masp)
+        {
+            string lenh = "select MASP, GIAM from T_GIAM_GIA,T_CT_GIAM_GIA where T_CT_GIAM_GIA.MAGG=T_GIAM_GIA.MAGG and NGAYBATDAU<=(SYSDATE)and NGAYKETTHUC >= (SYSDATE)";
+            OleDbDataAdapter adapter2 = new OleDbDataAdapter(lenh, conn);
+            DataTable dt2 = new DataTable();
+            adapter2.Fill(dt2);
+
+            for (int j = 0; j < dt2.Rows.Count; j++)
+            {
+                //MessageBox.Show("san pham-" + dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString()); MessageBox.Show("gg-" + dt2.Rows[j].Field<string>(0));
+                if (masp == dt2.Rows[j].Field<string>(0))
+                {
+                    //MessageBox.Show("bang");
+                    txtGiam.Text = dt2.Rows[j].Field<decimal>(1) + "";
+                    break;
+                }
+                else
+                {
+                    txtGiam.Text = "0";
+
+                }
+            }
         }
         public void loadLai()
         {
@@ -70,7 +118,7 @@ namespace QL_VatLieuXayDung
             loadKH();
             loadSP();
             load_DatHang();
-
+            load_giam_gia(dgvSanPHam.Rows[0].Cells[0].Value.ToString());
             groupBoxsanpham.Enabled = false;
             groupBoxThongTinDH.Enabled = false;
             btnThemDH.Enabled = true;
@@ -198,7 +246,7 @@ namespace QL_VatLieuXayDung
                 if (radtratruoc.Checked == true)
                     kieu = "Tra truoc";
                 else kieu = "Tra sau";
-                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_KH values('" + txtMaDH.Text + "',TO_DATE('" + dtpNgaydat.Text + "','DD-MM-RR'),'" + cbKH.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + 0 + ",'Chua thanh toan','" + kieu + "','Chua giao'," + int.Parse(cbTongLanGiao.Text) + ", " + int.Parse(txtConLai.Text) + ")", conn);
+                cmd = new OleDbCommand("Insert into T_DON_DAT_HANG_KH values('" + txtMaDH.Text + "',TO_DATE('" + dtpNgaydat.Text + "','DD-MM-RR'),'" + cbKH.SelectedValue.ToString() + "','" + txtMaNV.Text + "'," + 0 + ",'Chua thanh toan','" + kieu + "','Chua giao'," + int.Parse(cbTongLanGiao.Text) + ", " + int.Parse(txtConLai.Text) + ", " + int.Parse(txtConLai.Text) + ")", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadLai();
@@ -335,7 +383,7 @@ namespace QL_VatLieuXayDung
         
         private void btnThemCT_Click(object sender, EventArgs e)
         {
-            
+
             if (sttdong == -1)
             {
                 sttdong = dgvDonDatHang.CurrentRow.Index;
@@ -360,9 +408,10 @@ namespace QL_VatLieuXayDung
             {
                 float sldat = float.Parse(txtSoluongmua.Text);
                 float giaban = float.Parse(dgvSanPHam.CurrentRow.Cells["giaban"].Value.ToString());
-                tong = tong + sldat * giaban;
+                float giam_gia = float.Parse(txtGiam.Text);
+                tong = tong + ((sldat * giaban) - (sldat * giaban * giam_gia / 100));
 
-                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_KH values('" + txtMaDH.Text + "','" + dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString() + "'," + int.Parse(txtSoluongmua.Text) + "," + float.Parse(dgvSanPHam.CurrentRow.Cells["giaban"].Value.ToString()) + ")", conn);
+                cmd = new OleDbCommand("Insert into T_CT_DAT_HANG_KH values('" + txtMaDH.Text + "','" + dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString() + "'," + int.Parse(txtSoluongmua.Text) + "," + float.Parse(dgvSanPHam.CurrentRow.Cells["giaban"].Value.ToString()) + "," + int.Parse(txtGiam.Text) + ")", conn);
                 cmd.ExecuteNonQuery();
 
                 cmd = new OleDbCommand("Update T_DON_DAT_HANG_KH set TONGTIEN=" + tong + " where MADDH='" + txtMaDH.Text + "'", conn);
@@ -417,14 +466,16 @@ namespace QL_VatLieuXayDung
 
                 float sldat = float.Parse(dgvCT_DonDatHang.CurrentRow.Cells[1].Value.ToString());
                 float giaban = float.Parse(dgvCT_DonDatHang.CurrentRow.Cells[2].Value.ToString());
-                tong = tong - sldat * giaban;
+                float giam_gia = float.Parse(dgvCT_DonDatHang.CurrentRow.Cells[3].Value.ToString());
+                tong = tong - ((sldat * giaban) - (sldat * giaban * giam_gia / 100));
+                //tong = tong - sldat * giaban;
 
                 cmd = new OleDbCommand("Update T_DON_DAT_HANG_KH set TONGTIEN=" + tong + " where MADDH='" + txtMaDH.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //load lai ct don dat
-                
+
                 load_DatHang();
                 dgvDonDatHang.Rows[0].Selected = false;
                 dgvDonDatHang.FirstDisplayedScrollingRowIndex = sttdong;
@@ -598,6 +649,14 @@ namespace QL_VatLieuXayDung
             {
                 if (i % 2 == 0) dgvCT_DonDatHang.Rows[i].DefaultCellStyle = style1;
             }
+        }
+
+        private void dgvSanPHam_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            conn.Open();
+            load_giam_gia(dgvSanPHam.CurrentRow.Cells["masp"].Value.ToString());
+            conn.Close();
         }
     }
 }

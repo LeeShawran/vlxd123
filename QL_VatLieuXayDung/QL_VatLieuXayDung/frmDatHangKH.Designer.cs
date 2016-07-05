@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatHangKH));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCT_DonDatHang = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxsanpham = new System.Windows.Forms.GroupBox();
             this.dgvSanPHam = new System.Windows.Forms.DataGridView();
             this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +83,12 @@
             this.lblMaNV = new System.Windows.Forms.Label();
             this.lblMaHDBH = new System.Windows.Forms.Label();
             this.lblBanHangKhachHang = new System.Windows.Forms.Label();
+            this.txtGiam = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_DonDatHang)).BeginInit();
             this.groupBoxsanpham.SuspendLayout();
@@ -117,38 +120,20 @@
             this.dgvCT_DonDatHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4});
             this.dgvCT_DonDatHang.Location = new System.Drawing.Point(30, 262);
             this.dgvCT_DonDatHang.Name = "dgvCT_DonDatHang";
             this.dgvCT_DonDatHang.ReadOnly = true;
-            this.dgvCT_DonDatHang.Size = new System.Drawing.Size(438, 192);
+            this.dgvCT_DonDatHang.Size = new System.Drawing.Size(474, 192);
             this.dgvCT_DonDatHang.TabIndex = 1;
             this.dgvCT_DonDatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DonDatHang_CellFormatting);
             this.dgvCT_DonDatHang.Click += new System.EventHandler(this.dgvCT_DonDatHang_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MASP";
-            this.Column1.HeaderText = "Mã sản phẩm";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SOLUONG";
-            this.Column2.HeaderText = "Số lượng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "DONGIABAN";
-            this.Column3.HeaderText = "Đơn giá bán";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // groupBoxsanpham
             // 
+            this.groupBoxsanpham.Controls.Add(this.txtGiam);
+            this.groupBoxsanpham.Controls.Add(this.label2);
             this.groupBoxsanpham.Controls.Add(this.dgvSanPHam);
             this.groupBoxsanpham.Controls.Add(this.btnXoaCT);
             this.groupBoxsanpham.Controls.Add(this.btnThemCT);
@@ -175,9 +160,10 @@
             this.dgvSanPHam.Location = new System.Drawing.Point(18, 61);
             this.dgvSanPHam.Name = "dgvSanPHam";
             this.dgvSanPHam.ReadOnly = true;
-            this.dgvSanPHam.Size = new System.Drawing.Size(371, 150);
+            this.dgvSanPHam.Size = new System.Drawing.Size(474, 150);
             this.dgvSanPHam.TabIndex = 106;
             this.dgvSanPHam.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSanPHam_CellFormatting);
+            this.dgvSanPHam.Click += new System.EventHandler(this.dgvSanPHam_Click);
             // 
             // masp
             // 
@@ -211,9 +197,9 @@
             // 
             this.btnXoaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCT.Image")));
             this.btnXoaCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaCT.Location = new System.Drawing.Point(419, 107);
+            this.btnXoaCT.Location = new System.Drawing.Point(405, 12);
             this.btnXoaCT.Name = "btnXoaCT";
-            this.btnXoaCT.Size = new System.Drawing.Size(66, 42);
+            this.btnXoaCT.Size = new System.Drawing.Size(66, 32);
             this.btnXoaCT.TabIndex = 4;
             this.btnXoaCT.Text = "Xóa";
             this.btnXoaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -224,9 +210,9 @@
             // 
             this.btnThemCT.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCT.Image")));
             this.btnThemCT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCT.Location = new System.Drawing.Point(419, 53);
+            this.btnThemCT.Location = new System.Drawing.Point(323, 12);
             this.btnThemCT.Name = "btnThemCT";
-            this.btnThemCT.Size = new System.Drawing.Size(66, 42);
+            this.btnThemCT.Size = new System.Drawing.Size(66, 32);
             this.btnThemCT.TabIndex = 3;
             this.btnThemCT.Text = "Thêm";
             this.btnThemCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -679,6 +665,52 @@
             this.lblBanHangKhachHang.TabIndex = 103;
             this.lblBanHangKhachHang.Text = "ĐẶT HÀNG KHÁCH HÀNG";
             // 
+            // txtGiam
+            // 
+            this.txtGiam.Enabled = false;
+            this.txtGiam.Location = new System.Drawing.Point(242, 24);
+            this.txtGiam.MaxLength = 2;
+            this.txtGiam.Name = "txtGiam";
+            this.txtGiam.Size = new System.Drawing.Size(46, 20);
+            this.txtGiam.TabIndex = 110;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(181, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 109;
+            this.label2.Text = "Giảm %";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MASP";
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SOLUONG";
+            this.Column2.HeaderText = "Số lượng";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DONGIABAN";
+            this.Column3.HeaderText = "Đơn giá bán";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "GIAMGIA";
+            this.Column4.HeaderText = "Giảm (%)";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // frmDatHangKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,9 +775,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tensp;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaban;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnGiaoHang;
         private System.Windows.Forms.TextBox txtConLai;
         protected System.Windows.Forms.Label label1;
@@ -766,6 +795,12 @@
         private System.Windows.Forms.RadioButton radtratruoc;
         private System.Windows.Forms.TextBox txtTTGiao;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox txtGiam;
+        private System.Windows.Forms.Label label2;
 
 
     }

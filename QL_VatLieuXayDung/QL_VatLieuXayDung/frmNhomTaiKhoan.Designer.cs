@@ -94,7 +94,7 @@
             this.groupBox1.Controls.Add(this.lblTenNTK);
             this.groupBox1.Location = new System.Drawing.Point(493, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 119);
+            this.groupBox1.Size = new System.Drawing.Size(341, 119);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
@@ -168,7 +168,7 @@
             this.groupBox2.Controls.Add(this.btnSua_NTK);
             this.groupBox2.Controls.Add(this.btnXoa_NTK);
             this.groupBox2.Controls.Add(this.btnThem_NTK);
-            this.groupBox2.Location = new System.Drawing.Point(776, 59);
+            this.groupBox2.Location = new System.Drawing.Point(864, 59);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(186, 119);
             this.groupBox2.TabIndex = 80;

@@ -83,6 +83,7 @@ namespace QL_VatLieuXayDung
                     groupBox1.Enabled = false;
                     btnLoc.Enabled = false;
                     chon = false;
+                    conn.Close();
                     conn.Open();
                     loadLai();
                     conn.Close();

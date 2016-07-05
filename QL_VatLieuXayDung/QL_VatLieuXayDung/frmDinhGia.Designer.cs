@@ -102,6 +102,7 @@
             // 
             // txtGiaNhap
             // 
+            this.txtGiaNhap.Enabled = false;
             this.txtGiaNhap.Location = new System.Drawing.Point(87, 71);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(171, 20);
@@ -109,6 +110,7 @@
             // 
             // txtMaSP
             // 
+            this.txtMaSP.Enabled = false;
             this.txtMaSP.Location = new System.Drawing.Point(87, 19);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(129, 20);
@@ -125,6 +127,7 @@
             // 
             // txtGiaBan
             // 
+            this.txtGiaBan.Enabled = false;
             this.txtGiaBan.Location = new System.Drawing.Point(87, 150);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(158, 20);
@@ -141,6 +144,7 @@
             // 
             // txtTenSP
             // 
+            this.txtTenSP.Enabled = false;
             this.txtTenSP.Location = new System.Drawing.Point(87, 45);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(129, 20);
@@ -162,6 +166,7 @@
             // txtLai
             // 
             this.txtLai.Location = new System.Drawing.Point(87, 124);
+            this.txtLai.MaxLength = 3;
             this.txtLai.Name = "txtLai";
             this.txtLai.Size = new System.Drawing.Size(144, 20);
             this.txtLai.TabIndex = 19;
@@ -179,6 +184,7 @@
             // txtNgayLap
             // 
             this.txtNgayLap.CustomFormat = "dd/MM/yyyy";
+            this.txtNgayLap.Enabled = false;
             this.txtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtNgayLap.Location = new System.Drawing.Point(87, 97);
             this.txtNgayLap.Name = "txtNgayLap";
@@ -217,7 +223,7 @@
             this.groupBox1.Controls.Add(this.lblTenLoai_LoaiSP);
             this.groupBox1.Location = new System.Drawing.Point(538, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(316, 485);
+            this.groupBox1.Size = new System.Drawing.Size(321, 485);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều chỉnh giá";

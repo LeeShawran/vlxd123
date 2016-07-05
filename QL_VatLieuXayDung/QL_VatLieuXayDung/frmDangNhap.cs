@@ -85,6 +85,37 @@ namespace QL_VatLieuXayDung
                                 Program.mainForm.MH03 = false;
                             if (row.Field<String>(1) == "MH04" && row.Field<Decimal>(2) == 0)
                                 Program.mainForm.MH04 = false;
+                            if (row.Field<String>(1) == "MH05" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH05 = false;
+                            if (row.Field<String>(1) == "MH06" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH06 = false;
+                            if (row.Field<String>(1) == "MH07" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH07 = false;
+                            if (row.Field<String>(1) == "MH08" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH08 = false;
+                            if (row.Field<String>(1) == "MH09" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH09 = false;
+                            if (row.Field<String>(1) == "MH10" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH10 = false;
+                            if (row.Field<String>(1) == "MH11" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH11 = false;
+                            if (row.Field<String>(1) == "MH12" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH12 = false;
+                            if (row.Field<String>(1) == "MH13" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH13 = false;
+                            if (row.Field<String>(1) == "MH14" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH14 = false;
+                            if (row.Field<String>(1) == "MH15" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH15 = false;
+                            if (row.Field<String>(1) == "MH16" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH16 = false;
+                            if (row.Field<String>(1) == "MH17" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH17 = false;
+                            if (row.Field<String>(1) == "MH18" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH18 = false;
+                            if (row.Field<String>(1) == "MH19" && row.Field<Decimal>(2) == 0)
+                                Program.mainForm.MH19 = false;
+                           
 
                         }
                         Program.mainForm.Show();

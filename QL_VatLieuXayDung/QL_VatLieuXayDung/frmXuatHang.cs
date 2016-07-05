@@ -40,7 +40,7 @@ namespace QL_VatLieuXayDung
 
         public void loadCT_DonDatHang()
         {
-            string st = "select T_CT_DAT_HANG_KH.MASP,T_CT_DAT_HANG_KH.SOLUONG,T_CT_DAT_HANG_KH.DONGIABAN,T_SAN_PHAM.SOLUONG from T_CT_DAT_HANG_KH, T_SAN_PHAM where T_CT_DAT_HANG_KH.MASP=T_SAN_PHAM.MASP AND MADDH='" + txtMaDonDat.Text + "' order by T_CT_DAT_HANG_KH.MASP asc";
+            string st = "select T_CT_DAT_HANG_KH.MASP,T_CT_DAT_HANG_KH.SOLUONG,T_CT_DAT_HANG_KH.DONGIABAN,GIAMGIA,T_SAN_PHAM.SOLUONG from T_CT_DAT_HANG_KH, T_SAN_PHAM where T_CT_DAT_HANG_KH.MASP=T_SAN_PHAM.MASP AND MADDH='" + txtMaDonDat.Text + "' order by T_CT_DAT_HANG_KH.MASP asc";
             adapter = new OleDbDataAdapter(st, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -59,7 +59,7 @@ namespace QL_VatLieuXayDung
 
         public void loadCT_HoaDon(string mahoadon)
         {
-            string st = "select MASP,SOLUONGBAN,DONGIABAN from T_CT_HOA_DON where MAHD='" + mahoadon + "' order by MASP asc";
+            string st = "select MASP,SOLUONGBAN,DONGIABAN,GIAM_GIA from T_CT_HOA_DON where MAHD='" + mahoadon + "' order by MASP asc";
             adapter = new OleDbDataAdapter(st, conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -112,7 +112,8 @@ namespace QL_VatLieuXayDung
             {
                 float slban = float.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString());
                 float dongia = float.Parse(dgvCT_DatHang.Rows[i].Cells["dongiaban"].Value.ToString());
-                tong = tong + slban * dongia;
+                float giam_gia = float.Parse(dgvCT_DatHang.Rows[i].Cells["giam"].Value.ToString());
+                tong = tong + ((slban * dongia) - (slban * dongia * giam_gia / 100));
             }
             string st = "select KIEUTHANHTOAN from T_DON_DAT_HANG_KH where MADDH='" + txtMaDonDat.Text + "'";
             cmd = new OleDbCommand(st, conn);
@@ -172,7 +173,7 @@ namespace QL_VatLieuXayDung
                     {
                         int a = 0; int b = 0; int c = 0;
                         //them vao chi tiet phieu nhap
-                        cmd = new OleDbCommand("insert into T_CT_HOA_DON values ('" + txtMaHD.Text + "','" + dt.Rows[i].Field<string>(1) + "'," + int.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString()) + "," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongiaban"].Value.ToString()) + "," + int.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString()) + ")", conn);
+                        cmd = new OleDbCommand("insert into T_CT_HOA_DON values ('" + txtMaHD.Text + "','" + dt.Rows[i].Field<string>(1) + "'," + int.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString()) + "," + float.Parse(dgvCT_DatHang.Rows[i].Cells["dongiaban"].Value.ToString()) + "," + int.Parse(dgvCT_DatHang.Rows[i].Cells["soluong"].Value.ToString()) + "," + int.Parse(dgvCT_DatHang.Rows[i].Cells["giam"].Value.ToString()) + ")", conn);
                         cmd.ExecuteNonQuery();
                         //lay so luong tu bang san pham gan vao a
                         string lenh1 = "select SOLUONG from T_SAN_PHAM where MASP='" + dt.Rows[i].Field<string>(1) + "'";

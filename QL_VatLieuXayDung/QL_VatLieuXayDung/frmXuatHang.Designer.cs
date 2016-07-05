@@ -56,16 +56,18 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCT_DatHang = new System.Windows.Forms.DataGridView();
-            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongiaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongkho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvCT_HD = new System.Windows.Forms.DataGridView();
+            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongiaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongkho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -335,6 +337,7 @@
             this.masp,
             this.soluong,
             this.dongiaban,
+            this.giam,
             this.soluongkho});
             this.dgvCT_DatHang.Location = new System.Drawing.Point(16, 24);
             this.dgvCT_DatHang.Name = "dgvCT_DatHang";
@@ -342,30 +345,6 @@
             this.dgvCT_DatHang.Size = new System.Drawing.Size(455, 185);
             this.dgvCT_DatHang.TabIndex = 27;
             this.dgvCT_DatHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_DatHang_CellFormatting);
-            // 
-            // masp
-            // 
-            this.masp.DataPropertyName = "MASP";
-            this.masp.HeaderText = "Mã sản phẩm";
-            this.masp.Name = "masp";
-            // 
-            // soluong
-            // 
-            this.soluong.DataPropertyName = "SOLUONG";
-            this.soluong.HeaderText = "Số lượng đặt";
-            this.soluong.Name = "soluong";
-            // 
-            // dongiaban
-            // 
-            this.dongiaban.DataPropertyName = "DONGIABAN";
-            this.dongiaban.HeaderText = "Đơn giá bán";
-            this.dongiaban.Name = "dongiaban";
-            // 
-            // soluongkho
-            // 
-            this.soluongkho.DataPropertyName = "SOLUONG1";
-            this.soluongkho.HeaderText = "Số lượng trong kho";
-            this.soluongkho.Name = "soluongkho";
             // 
             // groupBox2
             // 
@@ -396,13 +375,44 @@
             this.dgvCT_HD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn6,
-            this.Column2});
+            this.Column2,
+            this.gg});
             this.dgvCT_HD.Location = new System.Drawing.Point(22, 24);
             this.dgvCT_HD.Name = "dgvCT_HD";
             this.dgvCT_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCT_HD.Size = new System.Drawing.Size(447, 434);
             this.dgvCT_HD.TabIndex = 29;
             this.dgvCT_HD.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCT_HD_CellFormatting);
+            // 
+            // masp
+            // 
+            this.masp.DataPropertyName = "MASP";
+            this.masp.HeaderText = "Mã sản phẩm";
+            this.masp.Name = "masp";
+            // 
+            // soluong
+            // 
+            this.soluong.DataPropertyName = "SOLUONG";
+            this.soluong.HeaderText = "Số lượng đặt";
+            this.soluong.Name = "soluong";
+            // 
+            // dongiaban
+            // 
+            this.dongiaban.DataPropertyName = "DONGIABAN";
+            this.dongiaban.HeaderText = "Đơn giá bán";
+            this.dongiaban.Name = "dongiaban";
+            // 
+            // giam
+            // 
+            this.giam.DataPropertyName = "GIAMGIA";
+            this.giam.HeaderText = "Giảm (%)";
+            this.giam.Name = "giam";
+            // 
+            // soluongkho
+            // 
+            this.soluongkho.DataPropertyName = "SOLUONG1";
+            this.soluongkho.HeaderText = "Số lượng trong kho";
+            this.soluongkho.Name = "soluongkho";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -421,6 +431,12 @@
             this.Column2.DataPropertyName = "DONGIABAN";
             this.Column2.HeaderText = "Đơn giá bán";
             this.Column2.Name = "Column2";
+            // 
+            // gg
+            // 
+            this.gg.DataPropertyName = "GIAM_GIA";
+            this.gg.HeaderText = "Giảm (%)";
+            this.gg.Name = "gg";
             // 
             // frmXuatHang
             // 
@@ -485,9 +501,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn masp;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongiaban;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giam;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluongkho;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gg;
     }
 }

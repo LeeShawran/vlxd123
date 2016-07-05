@@ -248,26 +248,86 @@ namespace QL_VatLieuXayDung
         }
 
         public string ma;
-        public bool MH01 = true, MH02 = true, MH03 = true, MH04 = true;
+        public bool MH01 = true, MH02 = true, MH03 = true, MH04 = true, MH05 = true, MH06 = true, MH07 = true, MH08 = true, MH09 = true, MH10 = true, MH11 = true, MH12 = true, MH13 = true, MH14 = true, MH15 = true, MH16 = true, MH17 = true, MH18 = true, MH19 = true;
         private void FormMain_Load(object sender, EventArgs e)
         {
             //lbTen = labelTen;
          
             if (MH01 == false)
             {
-                ribbonPageLienHe.Enabled = false;
+                btnNhomTaiKhoan.Enabled = false;
             }
             if (MH02 == false)
             {
-                ribbonPageNhomtk.Enabled = false;
+                btnNhanVien.Enabled = false;
             }
             if (MH03 == false)
             {
-                ribbonPagePhanQuyen.Enabled = false;
+                btnPhanQuyen.Enabled = false;
             }
             if (MH04 == false)
             {
-                ribbonPageNhanVien.Enabled = false;
+                btnKhachHang.Enabled = false;
+            }
+            if (MH05 == false)
+            {
+                btnSanPham.Enabled = false;
+            }
+            if (MH06 == false)
+            {
+                btnLoaiSanPham.Enabled = false;
+            }
+            if (MH07 == false)
+            {
+                btnNhaCungCap.Enabled = false;
+            }
+            if (MH08 == false)
+            {
+                btnNhaSanXuat.Enabled = false;
+            }
+            if (MH09 == false)
+            {
+                btnDatNCC.Enabled = false;
+            }
+            if (MH10 == false)
+            {
+                barButtonItem30.Enabled = false;
+            }
+            if (MH11 == false)
+            {
+                btnDSPhieunhap.Enabled = false;
+            }
+            if (MH12 == false)
+            {
+                btnDSHoadon.Enabled = false;
+            }
+            if (MH13 == false)
+            {
+                btnDSPhieugiao.Enabled = false;
+            }
+            if (MH14 == false)
+            {
+                btnDinhGia.Enabled = false;
+            }
+            if (MH15 == false)
+            {
+                btnGiamGia.Enabled = false;
+            }
+            if (MH16 == false)
+            {
+                btnThongkeSP.Enabled = false;
+            }
+            if (MH17 == false)
+            {
+                btnThongKeTonKho.Enabled = false;
+            }
+            if (MH18 == false)
+            {
+                btnThongkeNhapHang.Enabled = false;
+            }
+            if (MH19 == false)
+            {
+                btnThongKeXuatHang.Enabled = false;
             }
         }
 
